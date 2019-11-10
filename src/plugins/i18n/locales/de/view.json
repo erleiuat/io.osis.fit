@@ -1,0 +1,71 @@
+{
+    "home": {
+        "name": "Startseite"
+    },
+    "theme": {
+        "name": "Design"
+    },
+    "notFound": {
+        "name": "Nicht gefunden"
+    },
+    "about": {
+        "name": "Über",
+        "imprint": {
+            "name": "Impressum"
+        },
+        "cookie": {
+            "name": "Cookie-Richtlinie"
+        },
+        "terms": {
+            "name": "Allgemeine Geschäftsbedingungen"
+        },
+        "privacy": {
+            "name": "Datenschutzerklärung"
+        }
+    },
+    "settings": {
+        "name": "Einstellungen",
+        "account": {
+            "name": "Konto"
+        },
+        "app": {
+            "name": "App"
+        }
+    },
+    "auth": {
+        "name": "Anmelden",
+        "register": {
+            "name": "Konto erstellen"
+        },
+        "logout": {
+            "name": "Abmelden"
+        },
+        "forgotten": {
+            "name": "Passwort zurücksetzen"
+        }
+    },
+    "admin": {
+        "name": "Admin",
+        "log": {
+            "name": "Log"
+        },
+        "accounts": {
+            "name": "Konten"
+        },
+        "errorcodes": {
+            "name": "Fehler-Codes"
+        },
+        "images": {
+            "name": "Bilder"
+        }
+    },
+    "support": {
+        "name": "Support",
+        "contact": {
+            "name": "Kontakt"
+        },
+        "install": {
+            "name": "App installieren"
+        }
+    }
+}

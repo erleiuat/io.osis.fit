@@ -1,0 +1,8 @@
+{
+    "mail": "Mail",
+    "firstname": "Vorname",
+    "lastname": "Nachname",
+    "username": "Benutzername",
+    "password": "Passwort",
+    "identifier": "Mail oder Benutzername"
+}

@@ -1,0 +1,27 @@
+{
+    "error": {
+        "general": "Something went wrong..."
+    },
+    "success": {
+        "general": "Action successfully finished",
+        "changed": "Changes have been saved",
+        "added": "Data has been saved"
+    },
+    "form": {
+        "invalid": "This value is invalid",
+        "required": "This value is required",
+        "require": "{name} is required",
+        "tooShort": "The value must have more than {amount} digits",
+        "tooLong": "The value must not have more than {amount} digits",
+        "tooBig": "The value must be less than {amount}",
+        "tooSmall": "The value must be greater than {amount}",
+        "whitespace": "The value must not contain a whitespace",
+        "existing": {
+            "mail": "This Mail is already registered",
+            "username": "This Username is already taken"
+        }
+    },
+    "aaa": "aaa",
+    "bbb": "bbb",
+    "ccc": "ccc"
+}

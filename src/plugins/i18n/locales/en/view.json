@@ -1,0 +1,71 @@
+{
+    "home": {
+        "name": "Home"
+    },
+    "theme": {
+        "name": "Design"
+    },
+    "notFound": {
+        "name": "Not found"
+    },
+    "about": {
+        "name": "About",
+        "imprint": {
+            "name": "Imprint"
+        },
+        "cookie": {
+            "name": "Cookie-Policy"
+        },
+        "terms": {
+            "name": "Terms and Conditions"
+        },
+        "privacy": {
+            "name": "Privacy-Policy"
+        }
+    },
+    "settings": {
+        "name": "Settings",
+        "account": {
+            "name": "Account"
+        },
+        "app": {
+            "name": "App"
+        }
+    },
+    "auth": {
+        "name": "Sign In",
+        "register": {
+            "name": "Create Account"
+        },
+        "logout": {
+            "name": "Sign Out"
+        },
+        "forgotten": {
+            "name": "Reset Password"
+        }
+    },
+    "admin": {
+        "name": "Admin",
+        "log": {
+            "name": "Log"
+        },
+        "accounts": {
+            "name": "Accounts"
+        },
+        "errorcodes": {
+            "name": "Error-Codes"
+        },
+        "images": {
+            "name": "Images"
+        }
+    },
+    "support": {
+        "name": "Support",
+        "contact": {
+            "name": "Contact"
+        },
+        "install": {
+            "name": "Install App"
+        }
+    }
+}

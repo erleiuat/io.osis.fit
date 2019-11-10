@@ -1,0 +1,27 @@
+{
+    "error": {
+        "general": "Etwas ging schief..."
+    },
+    "success": {
+        "general": "Aktion erfolgreich abgeschlossen",
+        "changed": "Änderungen wurden gespeichert",
+        "added": "Daten wurden gespeichert"
+    },
+    "form": {
+        "invalid": "Dieser Wert ist ungültig",
+        "required": "Dieser Wert wird benötigt",
+        "require": "{name} wird benötigt",
+        "tooShort": "Der Wert muss mehr als {amount} Ziffern haben",
+        "tooLong": "Der Wert darf nicht mehr als {amount} Ziffern haben",
+        "tooBig": "Der Wert muss kleiner als {amount} sein",
+        "tooSmall": "Der Wert muss grösser als {amount} sein",
+        "whitespace": "Der Wert darf kein Leerzeichen enthalten",
+        "existing": {
+            "mail": "Diese Mail ist bereits registriert",
+            "username": "Dieser Benutzername ist bereits vergeben"
+        }
+    },
+    "aaa": "aaa",
+    "bbb": "bbb",
+    "ccc": "ccc"
+}
