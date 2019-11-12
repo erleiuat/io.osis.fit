@@ -14,5 +14,13 @@
     "gram": {
         "long": "Gramm",
         "short": "g"
+    },
+    "percentage": {
+        "long": "Prozent",
+        "short": "%"
+    },
+    "kilogram": {
+        "long": "Kilogramm",
+        "short": "Kg"
     }
 }

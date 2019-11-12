@@ -1,8 +1,10 @@
 {
-    "xyz": {
-        "abc": "jaaa"
-    },
-    "aaa": "aaa",
-    "bbb": "bbb",
-    "ccc": "ccc"
+    "activityTypes": {
+        "strength": "Stärke",
+        "stamina": "Ausdauer",
+        "fitness": "Fitness",
+        "flexibility": "Flexibilität",
+        "coordination": "Koordination",
+        "other": "Sonstiges"
+    }
 }

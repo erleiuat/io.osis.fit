@@ -12,7 +12,7 @@
 
         <v-spacer />
 
-        <v-btn v-if="show.add" @click="$router.push({name: 'log.food.add'})" icon>
+        <v-btn v-if="show.add" @click="$router.push({name: show.add})" icon>
             <v-icon>mdi-plus</v-icon>
         </v-btn>
         <v-btn v-if="show.save" @click="$store.commit('form/send')" icon :loading="$store.state.form.sending">
@@ -33,11 +33,31 @@ export default {
         },
 
         show () {
-            return {
-                add: (this.$route.name !== 'log.food.add'),
-                save: (this.$route.name === 'log.food.add'),
-                back: (this.$route.name === 'log.food.add')
+            var tmp = this.$route.name.split('.')
+            if (tmp[0] !== 'log') return
+            if (tmp[1] === 'food') {
+                return {
+                    add: (tmp[2] !== 'add' ? 'log.activity.add' : false),
+                    save: (tmp[2] === 'add'),
+                    back: (tmp[2] === 'add')
+                }
             }
+            if (tmp[1] === 'activity') {
+                return {
+                    add: (tmp[2] !== 'add' ? 'log.activity.add' : false),
+                    save: (tmp[2] === 'add'),
+                    back: (tmp[2] === 'add')
+                }
+            }
+            if (tmp[1] === 'body') {
+                return {
+                    add: (tmp[2] !== 'add' ? 'log.body.add' : false),
+                    save: (tmp[2] === 'add'),
+                    back: (tmp[2] === 'add')
+                }
+            }
+
+            return false
         }
     }
 

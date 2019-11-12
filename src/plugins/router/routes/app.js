@@ -8,14 +8,41 @@ export default [{
     children: [
         {
             path: 'activity',
-            name: 'log.activity',
             component: () => import('@/views/log/activity/'),
-            meta: { auth: true }
+            meta: { auth: true },
+            children: [
+                {
+                    path: 'add',
+                    name: 'log.activity.add',
+                    component: () => import('@/views/log/activity/Add'),
+                    meta: { auth: true }
+                },
+                {
+                    path: ':year?/:week?',
+                    name: 'log.activity',
+                    component: () => import('@/views/log/activity/List'),
+                    meta: { auth: true }
+                }
+            ]
         }, {
             path: 'body',
             name: 'log.body',
             component: () => import('@/views/log/body/'),
-            meta: { auth: true }
+            meta: { auth: true },
+            children: [
+                {
+                    path: 'add',
+                    name: 'log.body.add',
+                    component: () => import('@/views/log/body/Add'),
+                    meta: { auth: true }
+                },
+                {
+                    path: '',
+                    name: 'log.body',
+                    component: () => import('@/views/log/body/List'),
+                    meta: { auth: true }
+                }
+            ]
         }, {
             path: 'food',
             component: () => import('@/views/log/food/'),
