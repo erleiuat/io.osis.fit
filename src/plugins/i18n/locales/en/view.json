@@ -8,6 +8,21 @@
     "notFound": {
         "name": "Not found"
     },
+    "log": {
+        "name": "Protocols",
+        "food": {
+            "name": "Food"
+        },
+        "activity": {
+            "name": "Activity"
+        },
+        "body": {
+            "name": "Body"
+        }
+    },
+    "template": {
+        "name": "Templates"
+    },
     "about": {
         "name": "About",
         "imprint": {

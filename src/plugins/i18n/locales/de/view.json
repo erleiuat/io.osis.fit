@@ -8,6 +8,21 @@
     "notFound": {
         "name": "Nicht gefunden"
     },
+    "log": {
+        "name": "Protokolle",
+        "food": {
+            "name": "Nahrung"
+        },
+        "activity": {
+            "name": "Akitivität"
+        },
+        "body": {
+            "name": "Körper"
+        }
+    },
+    "template": {
+        "name": "Vorlagen"
+    },
     "about": {
         "name": "Über",
         "imprint": {

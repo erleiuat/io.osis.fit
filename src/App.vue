@@ -8,10 +8,6 @@
         <v-content>
             <Update />
             <router-view />
-            <!-- TODO
-            <router-view v-if="premium"/>
-            <Premium v-else/>
-            -->
         </v-content>
 
         <Notification />
@@ -23,7 +19,6 @@
 import Drawer from '@/components/Navigation/Drawer/'
 import Notification from '@/components/Notification'
 import Update from '@/components/Update'
-// import Premium from '@/components/Premium'
 
 export default {
     name: 'App',

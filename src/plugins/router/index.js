@@ -6,6 +6,7 @@ import i18n from '@/plugins/i18n/'
 import main from '@/plugins/router/routes/main'
 import auth from '@/plugins/router/routes/auth'
 import general from '@/plugins/router/routes/general'
+import app from '@/plugins/router/routes/app'
 
 Vue.use(VueRouter)
 
@@ -16,7 +17,8 @@ const router = new VueRouter({
     routes: [
         ...main,
         ...auth,
-        ...general
+        ...general,
+        ...app
     ]
 })
 
