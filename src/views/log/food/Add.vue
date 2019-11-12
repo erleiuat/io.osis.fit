@@ -1,12 +1,10 @@
 <template>
     <v-container>
-
         <v-row>
-            <v-col>
-                Add Food
+            <v-col class="title">
+                {{ $t('addFood') }}
             </v-col>
         </v-row>
-
         <v-form v-model="form.valid" ref="form" @submit.prevent="submit()">
             <v-row dense justify="center" align="center">
                 <v-col cols="12" md="8">
@@ -32,19 +30,16 @@
                 </v-col>
             </v-row>
             <v-row dense justify="center" align="center">
-                <v-col cols="12" md="6">
+                <v-col cols="12">
                     <v-btn :loading="form.sending" type="submit" block color="primary">
-                        {{ $t('button.submit') }}
+                        {{ $t('button.add') }}
                     </v-btn>
                 </v-col>
             </v-row>
         </v-form>
-
     </v-container>
 </template>
 <script>
-import Apios from '@/plugins/apios/'
-
 export default {
 
     data () {
@@ -84,12 +79,13 @@ export default {
     methods: {
         submit () {
             if (!this.$refs.form.validate()) return false
-            this.form.sending = true
 
-            Apios.post('log/food', this.form.data).then(() => {
-                this.$notify({ type: 'success', title: this.$t('accCreated') })
+            this.form.sending = true
+            this.$store.dispatch('logFood/create', this.form.data).then(() => {
+                this.$router.back()
+                this.$notify({ type: 'success', title: this.$t('alert.success.added') })
             }).catch(err => {
-                console.log(err)
+                this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
             }).finally(() => {
                 this.form.sending = false
             })

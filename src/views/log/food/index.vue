@@ -1,34 +1,19 @@
 <template>
     <v-container>
-        <v-row>
-            <v-col>
+        <v-row justify="space-between" align="center">
+            <v-col cols="auto">
                 Food-Log
+            </v-col>
+            <v-col cols="auto">
+                <v-btn :to="{name: 'log.food.add'}" depressed color="primary">
+                    <v-icon left>mdi-plus</v-icon>
+                    {{ $t('button.new') }}
+                </v-btn>
             </v-col>
         </v-row>
 
         <v-row>
             <router-view />
-        </v-row>
-
-        <v-row>
-            <v-col cols="12" class="title">
-                <v-btn :to="{name: 'log.food.add'}">
-                    Add
-                </v-btn>
-            </v-col>
-            <v-col cols="12" class="title">
-                Eigenschaften
-            </v-col>
-            <v-col>
-                Titel, <br />
-                Menge in g/ml, <br />
-                Total Kalorien, <br />
-                Total Fett, <br />
-                Total Eiweiss <br />
-
-                <br />
-                ( + Zeitstempel)
-            </v-col>
         </v-row>
 
     </v-container>
