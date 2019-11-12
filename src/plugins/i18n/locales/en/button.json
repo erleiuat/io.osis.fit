@@ -4,5 +4,7 @@
     "logout": "Sign out",
     "cancel": "Cancel",
     "save": "Save",
-    "edit": "Edit"
+    "edit": "Edit",
+    "add": "Add",
+    "new": "New"
 }

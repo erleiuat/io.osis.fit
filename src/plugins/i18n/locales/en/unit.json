@@ -1,0 +1,18 @@
+{
+    "per": {
+        "long": "per",
+        "short": "/"
+    },
+    "calories": {
+        "long": "Calories",
+        "short": "Kcal"
+    },
+    "milliliters": {
+        "long": "Milliliters",
+        "short": "ml"
+    },
+    "gram": {
+        "long": "Gram",
+        "short": "g"
+    }
+}

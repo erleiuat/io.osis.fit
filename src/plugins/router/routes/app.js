@@ -3,7 +3,7 @@ export default [{
     path: '/log',
     components: {
         default: () => import('@/views/log/'),
-        toolbar: () => import('@/components/Navigation/AppBar/')
+        toolbar: () => import('@/views/log/AppBar')
     },
     children: [
         {
@@ -28,12 +28,7 @@ export default [{
                     meta: { auth: true }
                 },
                 {
-                    path: '*',
-                    component: () => import('@/views/log/food/List'),
-                    meta: { auth: true }
-                },
-                {
-                    path: '',
+                    path: ':year?/:week?',
                     name: 'log.food',
                     component: () => import('@/views/log/food/List'),
                     meta: { auth: true }

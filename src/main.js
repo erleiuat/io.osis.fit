@@ -14,6 +14,12 @@ import '@mdi/font/css/materialdesignicons.css'
 Vue.config.productionTip = false
 Vue.use(Notifications)
 
+Vue.prototype.$dateFormat = (date) => {
+    if (!date) return null
+    const [year, month, day] = date.split('-')
+    return `${day}.${month}.${year}`
+}
+
 new Vue({
     router,
     store,

@@ -5,14 +5,24 @@ export default {
     namespaced: true,
 
     state: {
-        date: new Date(),
+        time: false,
         title: process.env.VUE_APP_TITLE,
         loading: 0,
         drawer: true,
         locale: VueCookies.get(process.env.VUE_APP_COOKIE_PREF + 'appLoc') || false,
         dark: VueCookies.get(process.env.VUE_APP_COOKIE_PREF + 'drkMde') || false,
         hasLoaded: (!!VueCookies.get(process.env.VUE_APP_COOKIE_PREF + 'hasLoaded')),
-        update: null
+        update: null,
+        current: (() => {
+            var tDat = new Date()
+            var d = (new Date(Date.UTC(tDat.getFullYear(), tDat.getMonth(), tDat.getDate())))
+            d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7))
+            return {
+                date: tDat,
+                year: tDat.getUTCFullYear(),
+                week: Math.ceil((((d - new Date(Date.UTC(d.getUTCFullYear(), 0, 1))) / 86400000) + 1) / 7)
+            }
+        })()
     },
 
     getters: {

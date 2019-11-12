@@ -4,5 +4,7 @@
     "logout": "Abmelden",
     "cancel": "Abbrechen",
     "save": "Speichern",
-    "edit": "Bearbeiten"
+    "edit": "Bearbeiten",
+    "add": "Hinzufügen",
+    "new": "Neu"
 }

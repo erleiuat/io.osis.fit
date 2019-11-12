@@ -21,7 +21,5 @@
             "username": "This Username is already taken"
         }
     },
-    "aaa": "aaa",
-    "bbb": "bbb",
-    "ccc": "ccc"
+    "noData": "No data available"
 }

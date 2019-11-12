@@ -21,7 +21,5 @@
             "username": "Dieser Benutzername ist bereits vergeben"
         }
     },
-    "aaa": "aaa",
-    "bbb": "bbb",
-    "ccc": "ccc"
+    "noData": "Keine Daten vorhanden"
 }

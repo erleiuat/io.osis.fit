@@ -5,7 +5,7 @@
                 {{ $t('addFood') }}
             </v-col>
         </v-row>
-        <v-form v-model="form.valid" ref="form" @submit.prevent="submit()">
+        <v-form v-model="form.valid" ref="form" @submit.prevent="$store.dispatch('form/submit')">
             <v-row dense justify="center" align="center">
                 <v-col cols="12" md="8">
                     <v-text-field v-model="form.data.title" :rules="form.rules.title" :label="$t('form.title')" type="text" solo required />
@@ -29,9 +29,16 @@
                     <v-text-field v-model="form.data.time" :rules="form.rules.time" :label="$t('form.time')" type="time" solo required />
                 </v-col>
             </v-row>
-            <v-row dense justify="center" align="center">
-                <v-col cols="12">
-                    <v-btn :loading="form.sending" type="submit" block color="primary">
+            <v-row dense justify="space-between" align="center">
+                <v-col cols="auto">
+                    <v-btn @click="$router.back()" block outlined :loading="$store.state.form.sending">
+                        {{ $t('button.cancel') }}
+                        <v-icon right>mdi-cancel</v-icon>
+                    </v-btn>
+                </v-col>
+                <v-col cols="auto">
+                    <v-btn type="submit" block depressed color="primary" :loading="$store.state.form.sending">
+                        <v-icon left>mdi-content-save</v-icon>
                         {{ $t('button.add') }}
                     </v-btn>
                 </v-col>
@@ -39,6 +46,7 @@
         </v-form>
     </v-container>
 </template>
+
 <script>
 export default {
 
@@ -46,7 +54,6 @@ export default {
         return {
             form: {
                 valid: false,
-                sending: false,
                 data: {
                     title: '',
                     totalCalories: '',
@@ -77,19 +84,26 @@ export default {
     },
 
     methods: {
+
         submit () {
             if (!this.$refs.form.validate()) return false
 
-            this.form.sending = true
             this.$store.dispatch('logFood/create', this.form.data).then(() => {
                 this.$router.back()
                 this.$notify({ type: 'success', title: this.$t('alert.success.added') })
             }).catch(err => {
                 this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
             }).finally(() => {
-                this.form.sending = false
+                this.$store.commit('form/sent')
             })
         }
+
+    },
+
+    created () {
+        this.$store.subscribe((mutation, state) => {
+            if (mutation.type === 'form/submit') this.submit()
+        })
     },
 
     mounted () {
