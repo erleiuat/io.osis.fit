@@ -7,6 +7,15 @@
         </v-row>
 
         <v-row>
+            <router-view />
+        </v-row>
+
+        <v-row>
+            <v-col cols="12" class="title">
+                <v-btn :to="{name: 'log.food.add'}">
+                    Add
+                </v-btn>
+            </v-col>
             <v-col cols="12" class="title">
                 Eigenschaften
             </v-col>
@@ -17,7 +26,7 @@
                 Total Fett, <br />
                 Total Eiweiss <br />
 
-                <br/>
+                <br />
                 ( + Zeitstempel)
             </v-col>
         </v-row>

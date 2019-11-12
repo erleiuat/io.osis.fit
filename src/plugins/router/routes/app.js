@@ -25,7 +25,17 @@ export default [{
             path: 'food',
             name: 'log.food',
             component: () => import('@/views/log/food/'),
-            meta: { auth: true }
+            meta: { auth: true },
+            children: [
+                {
+
+                    path: 'add',
+                    name: 'log.food.add',
+                    component: () => import('@/views/log/food/Add'),
+                    meta: { auth: true }
+
+                }
+            ]
 
         }
     ]
