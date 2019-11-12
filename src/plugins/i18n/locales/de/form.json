@@ -4,5 +4,8 @@
     "lastname": "Nachname",
     "username": "Benutzername",
     "password": "Passwort",
-    "identifier": "Mail oder Benutzername"
+    "identifier": "Mail oder Benutzername",
+    "title": "Titel",
+    "date": "Datum",
+    "time": "Zeit"
 }

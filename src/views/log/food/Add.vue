@@ -1,26 +1,21 @@
 <template>
     <v-container>
-        <v-row>
-            <v-col class="title">
-                {{ $t('addFood') }}
-            </v-col>
-        </v-row>
-        <v-form v-model="form.valid" ref="form" @submit.prevent="$store.dispatch('form/submit')">
+        <v-form v-model="form.valid" ref="form" @submit.prevent="$store.commit('form/send')">
             <v-row dense justify="center" align="center">
                 <v-col cols="12" md="8">
                     <v-text-field v-model="form.data.title" :rules="form.rules.title" :label="$t('form.title')" type="text" solo required />
                 </v-col>
                 <v-col cols="12" md="4">
-                    <v-text-field v-model="form.data.portionSize" :rules="form.rules.number" :label="$t('form.portionSize')" type="number" solo required />
+                    <v-text-field v-model="form.data.portionSize" :rules="form.rules.number" :label="$t('portionSize')" type="number" solo required />
                 </v-col>
                 <v-col cols="12" md="4">
-                    <v-text-field v-model="form.data.totalCalories" :rules="form.rules.number" :label="$t('form.totalCalories')" type="number" solo required />
+                    <v-text-field v-model="form.data.totalCalories" :rules="form.rules.number" :label="$t('totalCalories')" type="number" solo required />
                 </v-col>
                 <v-col cols="12" md="4">
-                    <v-text-field v-model="form.data.totalFat" :rules="form.rules.number" :label="$t('form.totalFat')" type="number" solo required />
+                    <v-text-field v-model="form.data.totalFat" :rules="form.rules.number" :label="$t('totalFat')" type="number" solo required />
                 </v-col>
                 <v-col cols="12" md="4">
-                    <v-text-field v-model="form.data.totalProtein" :rules="form.rules.number" :label="$t('form.totalProtein')" type="number" solo required />
+                    <v-text-field v-model="form.data.totalProtein" :rules="form.rules.number" :label="$t('totalProtein')" type="number" solo required />
                 </v-col>
                 <v-col cols="12" md="6">
                     <v-text-field v-model="form.data.date" :rules="form.rules.date" :label="$t('form.date')" type="date" solo required />
@@ -83,11 +78,16 @@ export default {
         }
     },
 
-    methods: {
+    computed: {
+        doSend () {
+            return this.$store.state.form.send
+        }
+    },
+    watch: {
+        doSend (val) {
+            if (!this.$refs.form.validate() || !val) return false
 
-        submit () {
-            if (!this.$refs.form.validate()) return false
-
+            this.$store.commit('form/sending')
             this.$store.dispatch('logFood/create', this.form.data).then(() => {
                 this.$router.back()
                 this.$notify({ type: 'success', title: this.$t('alert.success.added') })
@@ -97,13 +97,6 @@ export default {
                 this.$store.commit('form/sent')
             })
         }
-
-    },
-
-    created () {
-        this.$store.subscribe((mutation, state) => {
-            if (mutation.type === 'form/submit') this.submit()
-        })
     },
 
     mounted () {
@@ -126,8 +119,16 @@ export default {
     i18n: {
         messages: {
             en: {
+                totalCalories: 'Total Calories',
+                totalFat: 'Total Fat',
+                totalProtein: 'Total Protein',
+                portionSize: 'Serving size'
             },
             de: {
+                totalCalories: 'Total Kalorien',
+                totalFat: 'Total Fett',
+                totalProtein: 'Total Protein',
+                portionSize: 'Portionsgrösse'
             }
         }
     }

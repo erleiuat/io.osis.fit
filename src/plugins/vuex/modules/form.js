@@ -2,24 +2,26 @@ export default {
     namespaced: true,
 
     state: {
-        sending: false
+        send: false,
+        sending: false,
+        sent: false
     },
 
     mutations: {
-        submit (state) {
+        send (state) {
+            state.send = true
+            state.sending = false
+            state.sent = false
+        },
+        sending (state) {
+            state.send = false
             state.sending = true
+            state.sent = false
         },
         sent (state) {
+            state.send = false
             state.sending = false
-        }
-    },
-
-    actions: {
-        submit (con) {
-            con.commit('submit')
-        },
-        sent (con) {
-            con.commit('sent')
+            state.sent = true
         }
     }
 

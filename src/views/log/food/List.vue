@@ -2,10 +2,10 @@
     <v-container>
 
         <v-row align="center" justify="center">
-            <v-col cols="12" md="6">
+            <v-col cols="" sm="6">
                 <TableNavi :value="filter.year" :label="$t('year')" @input="setFilter($event, false)" />
             </v-col>
-            <v-col cols="12" md="6">
+            <v-col cols="" sm="6">
                 <TableNavi :value="filter.week" :label="$t('week')" @input="setFilter(false, $event)" />
             </v-col>
         </v-row>

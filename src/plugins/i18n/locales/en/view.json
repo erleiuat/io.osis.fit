@@ -11,7 +11,10 @@
     "log": {
         "name": "Protocols",
         "food": {
-            "name": "Food"
+            "name": "Food",
+            "add": {
+                "name": "Add Food"
+            }
         },
         "activity": {
             "name": "Activity"

@@ -11,7 +11,10 @@
     "log": {
         "name": "Protokolle",
         "food": {
-            "name": "Nahrung"
+            "name": "Nahrung",
+            "add": {
+                "name": "Nahrung hinzufügen"
+            }
         },
         "activity": {
             "name": "Akitivität"
