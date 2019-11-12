@@ -37,7 +37,7 @@ export default {
             if (tmp[0] !== 'log') return
             if (tmp[1] === 'food') {
                 return {
-                    add: (tmp[2] !== 'add' ? 'log.activity.add' : false),
+                    add: (tmp[2] !== 'add' ? 'log.food.add' : false),
                     save: (tmp[2] === 'add'),
                     back: (tmp[2] === 'add')
                 }

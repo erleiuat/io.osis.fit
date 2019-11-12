@@ -17,10 +17,16 @@
             }
         },
         "activity": {
-            "name": "Akitivität"
+            "name": "Akitivität",
+            "add": {
+                "name": "Akitivität hinzufügen"
+            }
         },
         "body": {
-            "name": "Körper"
+            "name": "Körper",
+            "add": {
+                "name": "Körperwerte hinzufügen"
+            }
         }
     },
     "template": {

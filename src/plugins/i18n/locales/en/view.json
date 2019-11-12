@@ -17,10 +17,16 @@
             }
         },
         "activity": {
-            "name": "Activity"
+            "name": "Activity",
+            "add": {
+                "name": "Add Activity"
+            }
         },
         "body": {
-            "name": "Body"
+            "name": "Body",
+            "add": {
+                "name": "Add body values"
+            }
         }
     },
     "template": {
