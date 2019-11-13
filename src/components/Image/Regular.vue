@@ -1,20 +1,28 @@
 <template>
     <v-dialog v-model="dialog" fullscreen>
         <template v-slot:activator="{ on }">
-            <v-img v-if="!pic.error" :src="pic.small" :lazy-src="pic.lazy" :aspect-ratio="aspectRatio" :width="width" :height="height" v-on="on" @error="loadingError(pic)" style="cursor:pointer;">
-                <template v-slot:placeholder>
-                    <v-row class="fill-height ma-0" align="center" justify="center">
-                        <v-progress-circular indeterminate color="grey" />
-                    </v-row>
-                </template>
-            </v-img>
-            <v-img v-else :aspect-ratio="aspectRatio" :width="width" :height="height">
+            <v-img v-if="!pic" :src="placeholder" :aspect-ratio="aspectRatio" :width="width" :height="height" />
+            <v-img v-else-if="pic.error" :aspect-ratio="aspectRatio" :width="width" :height="height">
                 <template v-slot:placeholder>
                     <v-row class="fill-height ma-0 error" align="center" justify="center">
                         <span class="white--text title text-center">
                             <v-icon dark x-large>mdi-file-alert-outline</v-icon>
                             <br />{{ $t('fileNotFound') }}
                         </span>
+                    </v-row>
+                </template>
+            </v-img>
+            <v-img v-else-if="!noClick" :src="pic.small" :lazy-src="pic.lazy" :aspect-ratio="aspectRatio" :width="width" :height="height" v-on="on" @error="loadingError(pic)" style="cursor:pointer;">
+                <template v-slot:placeholder>
+                    <v-row class="fill-height ma-0" align="center" justify="center">
+                        <v-progress-circular indeterminate color="grey" />
+                    </v-row>
+                </template>
+            </v-img>
+            <v-img v-else :src="pic.small" :lazy-src="pic.lazy" :aspect-ratio="aspectRatio" :width="width" :height="height" @error="loadingError(pic)">
+                <template v-slot:placeholder>
+                    <v-row class="fill-height ma-0" align="center" justify="center">
+                        <v-progress-circular indeterminate color="grey" />
                     </v-row>
                 </template>
             </v-img>
@@ -67,14 +75,20 @@ export default {
 
     props: {
         image: {
-            type: Object,
-            default: function () {
-                return false
-            }
+            type: [Object, Boolean],
+            default: false
         },
         aspectRatio: [String, Number],
         width: [String, Number],
-        height: [String, Number]
+        height: [String, Number],
+        placeholder: {
+            type: String,
+            default: require('@/assets/image/noFile.jpg')
+        },
+        noClick: {
+            type: Boolean,
+            default: false
+        }
     },
 
     data () {

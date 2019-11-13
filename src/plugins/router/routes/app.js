@@ -26,7 +26,6 @@ export default [{
             ]
         }, {
             path: 'body',
-            name: 'log.body',
             component: () => import('@/views/log/body/'),
             meta: { auth: true },
             children: [
@@ -67,10 +66,29 @@ export default [{
 }, {
 
     path: '/template',
-    name: 'template',
     components: {
         default: () => import('@/views/template/'),
-        toolbar: () => import('@/components/Navigation/AppBar/')
-    }
+        toolbar: () => import('@/views/template/AppBar')
+    },
+    children: [
+        {
+            path: '',
+            name: 'template',
+            component: () => import('@/views/template/List'),
+            meta: { auth: true }
+        },
+        {
+            path: 'add',
+            name: 'template.add',
+            component: () => import('@/views/template/Editor'),
+            meta: { auth: true }
+        },
+        {
+            path: 'edit/:id',
+            name: 'template.edit',
+            component: () => import('@/views/template/Editor'),
+            meta: { auth: true }
+        }
+    ]
 
 }]

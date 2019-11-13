@@ -1,32 +1,15 @@
 <template>
-    <v-container>
-        <v-row dense justify="center">
-            <v-col cols="auto">
-                <v-card link v-if="form.data.avatar">
-                    <RegularImage :image="form.data.avatar" aspectRatio="1" width="200" />
-                </v-card>
-                <v-card v-else>
-                    <v-img aspect-ratio="1" width="200" :src="require('@/assets/image/avatar.png')" />
-                </v-card>
-            </v-col>
-        </v-row>
-        <v-row dense justify="center">
-            <v-col style="max-width:210px">
-                <ImageUpload @input="save()" @delete="deleteImage()" v-model="form.data.avatar" :loading="form.sending" />
-            </v-col>
-        </v-row>
-    </v-container>
+    <ImageForm v-model="form.data.avatar" :loading="form.sending" @input="save()" @delete="deleteImage()" :placeholder="require('@/assets/image/avatar.jpg')" />
 </template>
 
 <script>
 import Apios from '@/plugins/apios/'
-import ImageUpload from '@/components/ImageUpload'
-import RegularImage from '@/components/RegularImage'
+import ImageForm from '@/components/Image/Form'
 
 export default {
 
     components: {
-        ImageUpload, RegularImage
+        ImageForm
     },
 
     data () {

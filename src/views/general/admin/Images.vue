@@ -28,7 +28,7 @@
 
 <script>
 import Apios from '@/plugins/apios/'
-import RegularImage from '@/components/RegularImage'
+import RegularImage from '@/components/Image/Regular'
 
 export default {
 

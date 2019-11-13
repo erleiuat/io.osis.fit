@@ -50,8 +50,7 @@
                 <v-list two-line>
                     <v-list-item v-for="(item, key) in accounts" :key="key" @click="detailed = key" :class="key === detailed ? 'primary': ''">
                         <v-list-item-avatar>
-                            <v-img v-if="item.avatar.path_small" :lazy-src="item.avatar.path_lazy" :src="item.avatar.path_small" />
-                            <v-img v-else :src="require('@/assets/image/avatar.png')" />
+                            <RegularImage :image="item.avatar" :placeholder="require('@/assets/image/avatar.jpg')" aspectRatio="1" />
                         </v-list-item-avatar>
 
                         <v-list-item-content>
@@ -74,11 +73,12 @@
 <script>
 import Apios from '@/plugins/apios/'
 import Detailed from '@/views/general/admin/Accounts/Detailed'
+import RegularImage from '@/components/Image/Regular'
 
 export default {
 
     components: {
-        Detailed
+        Detailed, RegularImage
     },
 
     data () {

@@ -6,5 +6,6 @@
     "save": "Save",
     "edit": "Edit",
     "add": "Add",
-    "new": "New"
+    "new": "New",
+    "delete": "Delete"
 }

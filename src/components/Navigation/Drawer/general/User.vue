@@ -1,8 +1,7 @@
 <template>
     <v-list-item :to="{name: 'settings.account'}">
         <v-list-item-avatar>
-            <v-img v-if="avatar" :lazy-src="avatar.lazy" :src="avatar.src" />
-            <v-img v-else :src="require('@/assets/image/avatar.png')" />
+            <RegularImage :image="avatar" :placeholder="require('@/assets/image/avatar.jpg')" aspectRatio="1" />
         </v-list-item-avatar>
         <v-list-item-content>
             <v-list-item-title>
@@ -13,7 +12,13 @@
 </template>
 
 <script>
+import RegularImage from '@/components/Image/Regular'
+
 export default {
+
+    components: {
+        RegularImage
+    },
 
     computed: {
         avatar () {

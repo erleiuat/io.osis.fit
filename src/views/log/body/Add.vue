@@ -1,29 +1,29 @@
 <template>
-    <v-container>
+    <v-container fill-height>
         <v-form v-model="form.valid" ref="form" @submit.prevent="$store.commit('form/send')">
             <v-row dense justify="center" align="center">
                 <v-col cols="12" md="6">
-                    <v-text-field v-model="form.data.weight" :rules="form.rules.number" :label="$t('weight')" type="text" solo required />
+                    <v-text-field v-model="form.data.weight" :rules="form.rules.number" :label="$t('weight')" :suffix="$t('unit.kilogram.short')" type="text" />
                 </v-col>
                 <v-col cols="12" md="6">
-                    <v-text-field v-model="form.data.fat" :rules="form.rules.number" :label="$t('fat')" type="number" solo required />
+                    <v-text-field v-model="form.data.fat" :rules="form.rules.number" :label="$t('fat')" :suffix="$t('unit.percentage.short')" type="number" />
                 </v-col>
                 <v-col cols="12" md="6">
-                    <v-text-field v-model="form.data.date" :rules="form.rules.date" :label="$t('form.date')" type="date" solo required />
+                    <v-text-field v-model="form.data.date" :rules="form.rules.date" :label="$t('form.date')" type="date" />
                 </v-col>
                 <v-col cols="12" md="6">
-                    <v-text-field v-model="form.data.time" :rules="form.rules.time" :label="$t('form.time')" type="time" solo required />
+                    <v-text-field v-model="form.data.time" :rules="form.rules.time" :label="$t('form.time')" type="time" />
                 </v-col>
             </v-row>
             <v-row dense justify="space-between" align="center">
                 <v-col cols="auto">
-                    <v-btn @click="$router.back()" block outlined :loading="$store.state.form.sending">
+                    <v-btn @click="$router.back()" depressed :loading="$store.state.form.sending">
+                        <v-icon left>mdi-cancel</v-icon>
                         {{ $t('button.cancel') }}
-                        <v-icon right>mdi-cancel</v-icon>
                     </v-btn>
                 </v-col>
                 <v-col cols="auto">
-                    <v-btn type="submit" block depressed color="primary" :loading="$store.state.form.sending">
+                    <v-btn type="submit" depressed color="primary" :loading="$store.state.form.sending">
                         <v-icon left>mdi-content-save</v-icon>
                         {{ $t('button.add') }}
                     </v-btn>

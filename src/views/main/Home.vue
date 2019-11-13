@@ -2,9 +2,7 @@
     <v-container fill-height>
         <v-row justify="center">
             <v-col cols="auto" class="headline">
-                {{ welcome }} {{ $store.state.auth.account.firstname }}!<br/>
-                {{ $store.state.auth.account.level }} <br/> <br/>
-                {{ $store.state.app.current.year }} / {{ $store.state.app.current.week }}
+                {{ welcome }} {{ $store.state.auth.account.firstname }}!
             </v-col>
         </v-row>
     </v-container>

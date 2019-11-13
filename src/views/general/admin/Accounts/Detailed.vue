@@ -40,8 +40,7 @@
             </v-col>
             <v-col cols="12" md="" class="text-md-right">
                 <v-avatar size="200">
-                    <v-img v-if="value.avatar.path_small" :lazy-src="value.avatar.path_lazy" :src="value.avatar.path_small" />
-                    <v-img v-else :src="require('@/assets/image/avatar.png')" />
+                    <RegularImage :image="value.avatar" :placeholder="require('@/assets/image/avatar.jpg')" aspectRatio="1" />
                 </v-avatar>
             </v-col>
         </v-row>
@@ -99,8 +98,13 @@
 
 <script>
 import Apios from '@/plugins/apios/'
+import RegularImage from '@/components/Image/Regular'
 
 export default {
+
+    components: {
+        RegularImage
+    },
 
     props: ['value'],
 

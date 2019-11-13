@@ -7,6 +7,7 @@ import form from '@/plugins/vuex/modules/form'
 import logFood from '@/plugins/vuex/modules/log/food'
 import logActivity from '@/plugins/vuex/modules/log/activity'
 import logBody from '@/plugins/vuex/modules/log/body'
+import template from '@/plugins/vuex/modules/template'
 
 Vue.use(Vuex)
 
@@ -22,7 +23,7 @@ export default new Vuex.Store({
     },
 
     modules: {
-        auth, app, form, logFood, logActivity, logBody
+        auth, app, form, logFood, logActivity, logBody, template
     }
 
 })
