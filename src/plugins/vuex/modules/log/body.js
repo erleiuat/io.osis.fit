@@ -10,6 +10,25 @@ export default {
 
     getters: {
 
+        current: state => {
+            var tmp = state.items
+
+            if (Object.keys(tmp).length === 0) return null
+
+            var latest = new Date('1900-01-01')
+            var current = null
+
+            for (const key in tmp) {
+                var comp = new Date(tmp[key].date + 'T' + tmp[key].time)
+                if (comp.getTime() > latest.getTime()) {
+                    latest = comp
+                    current = tmp[key]
+                }
+            }
+
+            return current
+        }
+
     },
 
     mutations: {
@@ -62,6 +81,14 @@ export default {
                 }).catch(err => {
                     reject(err)
                 })
+            })
+        },
+
+        load (con) {
+            Apios.get('log/body').then(res => {
+                con.dispatch('setCurrent', res.data)
+            }).catch(err => {
+                console.log(err)
             })
         }
 

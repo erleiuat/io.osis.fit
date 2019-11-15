@@ -6,17 +6,17 @@
         <v-spacer />
 
         <v-toolbar-title>
-            {{ viewTitle }}
+            {{ $t('view.destiny.name') }}
         </v-toolbar-title>
 
         <template v-slot:extension>
             <v-tabs fixed-tabs background-color="transparent">
                 <v-tabs-slider />
                 <v-tab :to="{name: 'destiny.goals'}">
-                    Goals
+                    {{ $t('view.destiny.goals.name') }}
                 </v-tab>
                 <v-tab :to="{name: 'destiny.metabolism'}">
-                    Metabolism
+                    {{ $t('view.destiny.metabolism.name') }}
                 </v-tab>
             </v-tabs>
         </template>
@@ -26,13 +26,6 @@
 
 <script>
 export default {
-
-    computed: {
-        viewTitle () {
-            if (this.$route.name) return this.$t('view.' + this.$route.name + '.name')
-            else return null
-        }
-    }
 
 }
 </script>

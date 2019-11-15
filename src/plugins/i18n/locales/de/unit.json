@@ -23,5 +23,9 @@
     "kilogram": {
         "long": "Kilogramm",
         "short": "Kg"
+    },
+    "centimeter": {
+        "long": "Zentimeter",
+        "short": "cm"
     }
 }
