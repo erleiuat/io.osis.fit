@@ -20,6 +20,10 @@ export default {
             state.items = items
         },
 
+        addItem (state, item) {
+            state.items = { ...state.items, ...item }
+        },
+
         deleteItem (state, item) {
             Vue.delete(state.items, item.id)
         },
@@ -31,15 +35,10 @@ export default {
     },
 
     actions: {
-
-        setCurrent (con, items) {
-            con.commit('setItems', { ...con.state.items, ...items })
-        },
-
         create (con, form) {
             return new Promise((resolve, reject) => {
                 Apios.post('template', form).then(res => {
-                    con.dispatch('setCurrent', [res.data])
+                    con.commit('addItem', res.data)
                     resolve()
                 }).catch(err => {
                     reject(err)
@@ -62,7 +61,7 @@ export default {
         read (con) {
             return new Promise((resolve, reject) => {
                 Apios.get('template').then(res => {
-                    con.dispatch('setCurrent', res.data)
+                    con.commit('setItems', res.data)
                     resolve(res.data)
                 }).catch(err => {
                     reject(err)
@@ -76,7 +75,7 @@ export default {
                 Apios.get(url).then(res => {
                     var newObj = {}
                     newObj[res.data.id] = res.data
-                    con.dispatch('setCurrent', newObj)
+                    con.commit('addItem', newObj)
                     resolve(res.data)
                 }).catch(err => {
                     reject(err)

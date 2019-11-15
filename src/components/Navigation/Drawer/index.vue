@@ -2,6 +2,7 @@
     <!-- height:100% = Safari Bottom-Nav Fix on mobile -->
     <v-navigation-drawer v-model="drawer" v-if="$store.state.auth.login" width="300" style="height: 100%;" hide-overlay floating app>
         <v-list nav dense>
+
             <Head />
             <User />
             <v-divider class="mb-2 mt-2" />
@@ -50,7 +51,8 @@ export default {
         items () {
             return [
                 { text: this.$t('view.home.name'), icon: 'mdi-home-outline', to: { name: 'home' } },
-                { text: this.$t('view.template.name'), icon: 'mdi-file-replace-outline', to: { name: 'template' } }
+                { text: this.$t('view.template.name'), icon: 'mdi-file-replace-outline', to: { name: 'template' } },
+                { text: this.$t('view.destiny.name'), icon: 'mdi-target', to: { name: 'destiny.goals' } }
             ]
         },
 

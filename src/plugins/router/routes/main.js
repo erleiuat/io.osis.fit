@@ -6,12 +6,25 @@ export default [{
 }, {
 
     path: '/home',
-    name: 'home',
     components: {
-        default: () => import('@/views/main/Home'),
-        toolbar: () => import('@/components/Navigation/AppBar/')
+        default: () => import('@/views/main/Home/'),
+        toolbar: () => import('@/views/main/Home/AppBar')
     },
-    meta: { auth: true }
+    meta: { auth: true },
+    children: [
+        {
+            path: '',
+            name: 'home',
+            component: () => import('@/views/main/Home/Today'),
+            meta: { auth: true }
+        },
+        {
+            path: 'week',
+            name: 'home.week',
+            component: () => import('@/views/main/Home/Week'),
+            meta: { auth: true }
+        }
+    ]
 
 }, {
 
@@ -22,39 +35,29 @@ export default [{
     },
     children: [
         {
-
             path: '',
             name: 'about',
             component: () => import('@/views/main/About/Overview')
-
         },
         {
-
             path: 'imprint',
             name: 'about.imprint',
             component: () => import('@/views/main/About/docs/Imprint')
-
         },
         {
-
             path: 'cookie',
             name: 'about.cookie',
             component: () => import('@/views/main/About/docs/Cookie')
-
         },
         {
-
             path: 'privacy',
             name: 'about.privacy',
             component: () => import('@/views/main/About/docs/Privacy')
-
         },
         {
-
             path: 'terms',
             name: 'about.terms',
             component: () => import('@/views/main/About/docs/Terms')
-
         }
     ]
 
@@ -67,25 +70,19 @@ export default [{
     },
     children: [
         {
-
             path: '',
             name: 'support',
             component: () => import('@/views/main/Support/FAQ')
-
         },
         {
-
             path: 'contact',
             name: 'support.contact',
             component: () => import('@/views/main/Support/Contact')
-
         },
         {
-
             path: 'install',
             name: 'support.install',
             component: () => import('@/views/main/Support/Install/')
-
         }
     ]
 

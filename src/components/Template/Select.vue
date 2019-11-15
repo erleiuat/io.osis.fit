@@ -1,19 +1,19 @@
 <template>
-    <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
+    <v-dialog v-model="dialog" fullscreen scrollable hide-overlay transition="fade-transition">
         <template v-slot:activator="{ on }">
             <v-btn color="primary" depressed v-on="on" block>
                 {{ $t('useTemplate') }}
             </v-btn>
         </template>
-        <v-card>
-            <v-toolbar flat>
+        <v-card class="selector-window">
+            <v-card-title class="pt-2 pb-2 secondary">
                 <v-toolbar-title>{{ $t('useTemplate') }}</v-toolbar-title>
                 <v-spacer></v-spacer>
                 <v-btn icon dark @click="dialog = false">
                     <v-icon>mdi-close</v-icon>
                 </v-btn>
-            </v-toolbar>
-            <v-container>
+            </v-card-title>
+            <v-card-text class="pt-1 pl-2 pr-2">
                 <v-row v-if="loading" align="center" justify="center">
                     <v-col cols="12" sm="2" md="4" v-for="i in 3" :key="i">
                         <v-skeleton-loader loading transition="fade-transition" type="card" />
@@ -24,7 +24,7 @@
                         <TemplateCard :item="item" selectable @select="doSelect(item)" />
                     </v-col>
                 </v-row>
-            </v-container>
+            </v-card-text>
         </v-card>
     </v-dialog>
 </template>
@@ -87,3 +87,9 @@ export default {
 
 }
 </script>
+
+<style scoped>
+.selector-window {
+    background-color: rgba(130, 130, 130, 0.8);
+}
+</style>

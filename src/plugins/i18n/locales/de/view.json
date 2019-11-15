@@ -1,6 +1,9 @@
 {
     "home": {
-        "name": "Startseite"
+        "name": "Heute",
+        "week": {
+            "name": "Woche"
+        }
     },
     "theme": {
         "name": "Design"
@@ -30,7 +33,22 @@
         }
     },
     "template": {
-        "name": "Vorlagen"
+        "name": "Vorlagen",
+        "add": {
+            "name": "Vorlage erstellen"
+        },
+        "edit": {
+            "name": "Vorlage bearbeiten"
+        }
+    },
+    "destiny": {
+        "name": "Ziele und Stoffwechsel",
+        "goals": {
+            "name": "Ziele"
+        },
+        "metabolism": {
+            "name": "Stoffwechsel"
+        }
     },
     "about": {
         "name": "Über",

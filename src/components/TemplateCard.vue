@@ -1,5 +1,5 @@
 <template>
-    <v-card @click.native="doSelect()" :link="selectable">
+    <v-card @click.native="doSelect()" :link="selectable" flat>
         <RegularImage :image="item.image" :noClick="selectable" :placeholder="require('@/assets/image/food.jpg')" aspectRatio="1" height="120px" />
         <v-card-title class="pt-2 pb-2">
             {{ item.title }}
@@ -12,14 +12,14 @@
         <v-divider class="mx-4" />
         <v-card-text class="pt-1 pb-1">
             <v-chip-group>
-                <v-chip small>
-                    {{ item.caloriesPer100/100 * item.portionSize }} {{ $t('unit.calories.short') }}
+                <v-chip small v-if="totals.calories">
+                    {{ totals.calories }}{{ $t('unit.calories.short') }}
                 </v-chip>
-                <v-chip small>
-                    {{ item.fatPer100/100 * item.portionSize }}{{ $t('unit.gram.short') }} {{ $t('fat') }}
+                <v-chip small v-if="totals.fat">
+                    {{ totals.fat }}{{ $t('unit.gram.short') }} {{ $t('fat') }}
                 </v-chip>
-                <v-chip small>
-                    {{ item.proteinPer100/100 * item.portionSize }}{{ $t('unit.gram.short') }} {{ $t('protein') }}
+                <v-chip small v-if="totals.protein">
+                    {{ totals.protein }}{{ $t('unit.gram.short') }} {{ $t('protein') }}
                 </v-chip>
             </v-chip-group>
         </v-card-text>
@@ -51,6 +51,16 @@ export default {
         deletable: {
             type: Boolean,
             default: false
+        }
+    },
+
+    computed: {
+        totals () {
+            return {
+                calories: Math.round((this.item.caloriesPer100 / 100 * this.item.portionSize) * 100) / 100,
+                fat: Math.round((this.item.fatPer100 / 100 * this.item.portionSize) * 100) / 100,
+                protein: Math.round((this.item.proteinPer100 / 100 * this.item.portionSize) * 100) / 100
+            }
         }
     },
 

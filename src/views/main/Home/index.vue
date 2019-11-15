@@ -1,11 +1,5 @@
 <template>
-    <v-container fill-height>
-        <v-row justify="center">
-            <v-col cols="auto" class="headline">
-                {{ welcome }} {{ $store.state.auth.account.firstname }}!
-            </v-col>
-        </v-row>
-    </v-container>
+    <router-view />
 </template>
 
 <script>

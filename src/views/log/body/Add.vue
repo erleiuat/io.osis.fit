@@ -3,7 +3,7 @@
         <v-form v-model="form.valid" ref="form" @submit.prevent="$store.commit('form/send')">
             <v-row dense justify="center" align="center">
                 <v-col cols="12" md="6">
-                    <v-text-field v-model="form.data.weight" :rules="form.rules.number" :label="$t('weight')" :suffix="$t('unit.kilogram.short')" type="text" />
+                    <v-text-field v-model="form.data.weight" :rules="form.rules.number" :label="$t('weight')" :suffix="$t('unit.kilogram.short')" type="number" />
                 </v-col>
                 <v-col cols="12" md="6">
                     <v-text-field v-model="form.data.fat" :rules="form.rules.number" :label="$t('fat')" :suffix="$t('unit.percentage.short')" type="number" />

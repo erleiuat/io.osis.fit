@@ -91,4 +91,27 @@ export default [{
         }
     ]
 
+}, {
+
+    path: '/destiny',
+    name: 'destiny',
+    components: {
+        default: () => import('@/views/destiny/'),
+        toolbar: () => import('@/views/destiny/AppBar')
+    },
+    children: [
+        {
+            path: 'goals',
+            name: 'destiny.goals',
+            component: () => import('@/views/destiny/Goals/'),
+            meta: { auth: true }
+        },
+        {
+            path: 'metabolism',
+            name: 'destiny.metabolism',
+            component: () => import('@/views/destiny/Metabolism/'),
+            meta: { auth: true }
+        }
+    ]
+
 }]

@@ -1,6 +1,9 @@
 {
     "home": {
-        "name": "Home"
+        "name": "Today",
+        "week": {
+            "name": "Week"
+        }
     },
     "theme": {
         "name": "Design"
@@ -30,7 +33,22 @@
         }
     },
     "template": {
-        "name": "Templates"
+        "name": "Templates",
+        "add": {
+            "name": "Create Template"
+        },
+        "edit": {
+            "name": "Edit Template"
+        }
+    },
+    "destiny": {
+        "name": "Goals and Metabolism",
+        "goals": {
+            "name": "Goals"
+        },
+        "metabolism": {
+            "name": "Metabolism"
+        }
     },
     "about": {
         "name": "About",
