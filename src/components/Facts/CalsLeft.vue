@@ -7,11 +7,11 @@
             <v-row justify="space-around" no-gutters align="center">
                 <v-col cols="6" class="text-center">
                     <v-progress-circular :rotate="-90" :size="100" :width="15" :value="vals.percentage">
-                        {{ vals.percentage }} %
+                        {{ vals.percentage || '-' }} %
                     </v-progress-circular>
                 </v-col>
                 <v-col cols="6" class="display-1 text-center">
-                    {{ vals.remaining }}
+                    {{ vals.remaining || '-' }}
                 </v-col>
             </v-row>
         </v-container>
@@ -35,22 +35,20 @@ export default {
         }
     },
 
-    methods: {
-        divideRemaining (remainingWeek) {
+    computed: {
+
+        daysToSunday () {
             var today = new Date()
             today = today.getDay()
-            if (today === 0) return remainingWeek / 1 // So
-            else if (today === 1) return remainingWeek / 7 // Mo
-            else if (today === 2) return remainingWeek / 6 // Di
-            else if (today === 3) return remainingWeek / 5 // Mi
-            else if (today === 4) return remainingWeek / 4 // Do
-            else if (today === 5) return remainingWeek / 3 // Fr
-            else if (today === 6) return remainingWeek / 2 // Sa
-            else return false
-        }
-    },
-
-    computed: {
+            if (today === 0) return 0 // So
+            else if (today === 1) return 6 // Mo
+            else if (today === 2) return 5 // Di
+            else if (today === 3) return 4 // Mi
+            else if (today === 4) return 3 // Do
+            else if (today === 5) return 2 // Fr
+            else if (today === 6) return 1 // Sa
+            return null
+        },
 
         vals () {
             var toReturn = {
@@ -66,15 +64,15 @@ export default {
 
             weekPossible += this.$store.getters['logActivity/totalWeek'] || 0
             var weekUsed = this.$store.getters['logFood/totalWeek'].calories || 0
-            var weekRemaining = weekPossible - weekUsed
+            var daysLeft = this.daysToSunday
 
             if (this.weekly) {
-                toReturn.total = Math.round(weekPossible)
                 toReturn.used = Math.round(weekUsed)
-                toReturn.remaining = Math.round(weekRemaining)
+                toReturn.total = Math.round((weekPossible / 7) * (daysLeft + 1))
+                toReturn.remaining = Math.round(((weekPossible - weekUsed) / 7) * (daysLeft + 1))
             } else {
                 toReturn.used = this.$store.getters['logFood/totalDay'].calories || 0
-                toReturn.total = this.divideRemaining(weekRemaining + toReturn.used)
+                toReturn.total = Math.round(((weekPossible - (weekUsed - toReturn.used)) / 7))
                 toReturn.remaining = Math.round(toReturn.total - toReturn.used)
             }
 
