@@ -25,7 +25,7 @@
                 <span class="title">
                     {{ $t('avgCalsPerDay') }}
                 </span><br />
-                ≈ 1900 {{ $t('unit.calories.short') }}
+                {{ avgCalsPerDay ? '≈ ' + avgCalsPerDay : '-' }} {{ $t('unit.calories.short') }}
             </v-col>
         </v-row>
     </v-container>
@@ -37,30 +37,15 @@ export default {
     computed: {
 
         remaining () {
-            if (!this.$store.state.destiny.goals.date) return false
-            var date1 = new Date()
-            var date2 = new Date(this.$store.state.destiny.goals.date)
-            var DifferenceInDays = Math.round((date2.getTime() - date1.getTime()) / (1000 * 3600 * 24))
-            return {
-                days: DifferenceInDays,
-                weeks: Math.round(DifferenceInDays / 7 * 10) / 10
-            }
+            return this.$store.getters['destiny/timeRemaining']
         },
 
         requiredLoss () {
-            var current = (this.$store.getters['logBody/current'] ? this.$store.getters['logBody/current'].weight : false)
-            var goal = this.$store.state.destiny.goals.weight || false
-            if (!current || !goal) return { total: '-', perWeek: '-' }
-            var total = current - goal
-            return {
-                total: total,
-                perWeek: (this.remaining ? Math.round(total / this.remaining.weeks * 10) / 10 : '-')
-            }
+            return this.$store.getters['destiny/lossInKg']
         },
 
         avgCalsPerDay () {
-            // TODO
-            return false
+            return this.$store.getters['destiny/possibleCals'].daily
         }
 
     },

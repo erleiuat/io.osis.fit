@@ -15,13 +15,13 @@ export default [{
         {
             path: '',
             name: 'home',
-            component: () => import('@/views/main/Home/Today'),
+            component: () => import('@/views/main/Home/Today/'),
             meta: { auth: true }
         },
         {
             path: 'week',
             name: 'home.week',
-            component: () => import('@/views/main/Home/Week'),
+            component: () => import('@/views/main/Home/Week/'),
             meta: { auth: true }
         }
     ]

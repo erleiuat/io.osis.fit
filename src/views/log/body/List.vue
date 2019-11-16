@@ -2,24 +2,44 @@
     <v-container>
 
         <v-sheet>
-            <v-row dense align="center" justify="center">
-                <v-col cols="12" class="text-center caption">
-                    {{ $t('totalSum') }}
-                </v-col>
-            </v-row>
-            <v-divider />
             <v-row align="center" justify="center">
                 <v-col cols="6" class="text-center">
                     <span class="title text-center">
                         {{ $t('tbl.weight') }}
-                    </span><br />
-                    {{ total.weight }} {{ $t('unit.kilogram.short') }}
+                    </span>
                 </v-col>
                 <v-col cols="6" class="text-center">
                     <span class="title text-center">
                         {{ $t('tbl.fat') }}
-                    </span><br />
-                    {{ total.fat }} {{ $t('unit.percentage.short') }}
+                    </span>
+                </v-col>
+            </v-row>
+            <v-divider />
+            <v-row dense align="center" justify="center">
+                <v-col cols="12" class="text-center caption">
+                    {{ $t('current') }}
+                </v-col>
+            </v-row>
+            <v-row align="center" justify="center">
+                <v-col cols="6" class="text-center">
+                    {{ current.weight || '-' }} {{ $t('unit.kilogram.short') }}
+                </v-col>
+                <v-col cols="6" class="text-center">
+                    {{ current.fat || '-' }} {{ $t('unit.percentage.short') }}
+                </v-col>
+            </v-row>
+            <v-divider />
+            <v-row dense align="center" justify="center">
+                <v-col cols="12" class="text-center caption">
+                    {{ $t('progress') }}
+                </v-col>
+            </v-row>
+            <v-row align="center" justify="center">
+                <v-col cols="6" class="text-center">
+                    {{ progress.weight }} {{ $t('unit.kilogram.short') }}
+                </v-col>
+                <v-col cols="6" class="text-center">
+                    {{ progress.fat }} {{ $t('unit.percentage.short') }}
                 </v-col>
             </v-row>
         </v-sheet>
@@ -79,23 +99,19 @@ export default {
 
     computed: {
 
-        total () {
-            let fWeight = false
-            let fFat = false
-            let lWeight = false
-            let lFat = false
-
-            // TODO use correct order (date/time)
-            Object.keys(this.items).forEach(key => {
-                if (!fWeight) fWeight = this.items[key].weight
-                lWeight = this.items[key].weight
-                if (!fFat) fFat = this.items[key].fat
-                lFat = this.items[key].fat
-            })
-
+        current () {
+            let current = this.$store.getters['logBody/current']
             return {
-                weight: (fWeight - lWeight) * -1,
-                fat: (fFat - lFat) * -1
+                weight: current.weight,
+                fat: current.fat
+            }
+        },
+
+        progress () {
+            let first = this.$store.getters['logBody/first']
+            return {
+                weight: (first.weight - this.current.weight) * -1,
+                fat: (first.fat - this.current.fat) * -1
             }
         }
 
@@ -132,7 +148,8 @@ export default {
     i18n: {
         messages: {
             en: {
-                totalSum: 'Summary',
+                current: 'Currently',
+                progress: 'Progress',
                 tbl: {
                     time: 'Time',
                     title: 'Title',
@@ -141,7 +158,8 @@ export default {
                 }
             },
             de: {
-                totalSum: 'Übersicht',
+                current: 'Aktuell',
+                progress: 'Fortschritt',
                 tbl: {
                     time: 'Zeit',
                     title: 'Titel',

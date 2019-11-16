@@ -94,14 +94,8 @@ export default {
     computed: {
 
         total () {
-            let tCalories = 0
-
-            Object.keys(this.items).forEach(key => {
-                tCalories += this.items[key].burnedCalories
-            })
-
             return {
-                calories: tCalories
+                calories: this.$store.getters['logActivity/totalWeek']
             }
         }
 

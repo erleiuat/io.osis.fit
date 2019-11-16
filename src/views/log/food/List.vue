@@ -110,21 +110,7 @@ export default {
     computed: {
 
         total () {
-            let tCalories = 0
-            let tFat = 0
-            let tProtein = 0
-
-            Object.keys(this.items).forEach(key => {
-                tCalories += this.items[key].totalCalories
-                tFat += this.items[key].totalFat
-                tProtein += this.items[key].totalProtein
-            })
-
-            return {
-                calories: tCalories,
-                fat: tFat,
-                protein: tProtein
-            }
+            return this.$store.getters['logFood/totalWeek']
         }
 
     },

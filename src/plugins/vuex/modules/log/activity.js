@@ -10,6 +10,41 @@ export default {
 
     getters: {
 
+        week: state => {
+            return state.items
+        },
+
+        day: (state, getters, rootState) => {
+            var dat = new Date()
+            var month = dat.getMonth() + 1
+            var day = dat.getDate()
+            var date = dat.getFullYear() + '-' + (month < 10 ? '0' + month : month) + '-' + (day < 10 ? '0' + day : day)
+
+            var todays = {}
+            for (const key in getters.week) {
+                if (date === state.items[key].date) todays[key] = state.items[key]
+            }
+            return todays
+        },
+
+        totalWeek: (state, getters) => {
+            var week = getters.week
+            var total = null
+            for (const key in week) {
+                total += week[key].burnedCalories
+            }
+            return total
+        },
+
+        totalDay: (state, getters) => {
+            var day = getters.day
+            var total = null
+            for (const key in day) {
+                total += day[key].burnedCalories
+            }
+            return total
+        }
+
     },
 
     mutations: {
@@ -69,6 +104,20 @@ export default {
                 Apios.delete(url).then(() => {
                     con.commit('deleteItem', item)
                     resolve()
+                }).catch(err => {
+                    reject(err)
+                })
+            })
+        },
+
+        load (con) {
+            return new Promise((resolve, reject) => {
+                var current = con.rootState.app.current
+                con.dispatch('read', {
+                    year: parseInt(current.year),
+                    week: parseInt(current.week)
+                }).then(res => {
+                    resolve(res)
                 }).catch(err => {
                     reject(err)
                 })

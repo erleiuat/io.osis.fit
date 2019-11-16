@@ -1,9 +1,9 @@
 <template>
     <v-card flat>
-        <v-card-title>
+        <v-card-title class="pb-1">
             {{ $t('gender') }}
         </v-card-title>
-        <v-container>
+        <v-container class="pt-0">
             <v-row no-gutters justify="center" align="center">
                 <v-col cols="6" class="text-center">
                     <v-btn @click="setGender('male')" :color="selected.male" :loading="$store.state.form.sending" text x-large>

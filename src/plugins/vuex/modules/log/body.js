@@ -10,14 +10,28 @@ export default {
 
     getters: {
 
+        first: state => {
+            var tmp = state.items
+            if (Object.keys(tmp).length === 0) return false
+            var first = false
+
+            var earliest = new Date()
+            earliest.setDate(earliest.getDate() + 1)
+            for (const key in tmp) {
+                var comp = new Date(tmp[key].date + 'T' + tmp[key].time)
+                if (comp.getTime() < earliest.getTime()) {
+                    earliest = comp
+                    first = tmp[key]
+                }
+            }
+            return first
+        },
+
         current: state => {
             var tmp = state.items
-
-            if (Object.keys(tmp).length === 0) return null
-
+            if (Object.keys(tmp).length === 0) return false
+            var current = false
             var latest = new Date('1900-01-01')
-            var current = null
-
             for (const key in tmp) {
                 var comp = new Date(tmp[key].date + 'T' + tmp[key].time)
                 if (comp.getTime() > latest.getTime()) {
@@ -25,7 +39,6 @@ export default {
                     current = tmp[key]
                 }
             }
-
             return current
         }
 

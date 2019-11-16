@@ -1,6 +1,6 @@
 <template>
     <v-container fill-height>
-        <v-row justify="center" align="center">
+        <v-row justify="center" align="center" dense>
             <v-col cols="12" sm="6" md="">
                 <CurrentWeight />
             </v-col>
@@ -29,11 +29,6 @@ export default {
 
     components: {
         Weight, Date, Facts, CurrentWeight
-    },
-
-    mounted () {
-        this.$store.dispatch('destiny/loadGoals')
-        this.$store.dispatch('logBody/load')
     },
 
     computed: {

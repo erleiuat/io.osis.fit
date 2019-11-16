@@ -1,6 +1,6 @@
 <template>
     <v-container fill-height>
-        <v-row justify="center" align="center">
+        <v-row justify="center" align="center" dense>
             <v-col cols="12" sm="6">
                 <CurrentWeight />
             </v-col>
@@ -39,16 +39,12 @@ export default {
         CurrentWeight, Gender, Height, Birthdate, PAL, Facts
     },
 
-    mounted () {
-        this.$store.dispatch('destiny/loadMetabolism')
-        this.$store.dispatch('logBody/load')
-    },
-
     computed: {
         doSend () {
             return this.$store.state.form.send
         }
     },
+
     watch: {
         doSend (val) {
             if (!val) return
