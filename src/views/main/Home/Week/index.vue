@@ -5,15 +5,15 @@
 
         <v-row justify="center" align="center" dense>
 
-            <v-col cols="4">
-                <CalsLeft weekly />
+            <v-col cols="12" sm="6">
+                <Calories weekly />
             </v-col>
 
-            <v-col cols="4" align-self="stretch">
+            <v-col cols="12" sm="6" align-self="stretch">
                 <Stats weekly />
             </v-col>
 
-            <v-col cols="4" align-self="stretch">
+            <v-col cols="12" align-self="stretch">
                 <Weight />
             </v-col>
 
@@ -26,12 +26,12 @@
 import Adders from '@/views/main/Home/Adders'
 import Stats from '@/components/Facts/Stats'
 import Weight from '@/components/Facts/Weight'
-import CalsLeft from '@/components/Facts/CalsLeft'
+import Calories from '@/components/Facts/Calories'
 
 export default {
 
     components: {
-        Adders, Stats, Weight, CalsLeft
+        Adders, Stats, Weight, Calories
     }
 
 }

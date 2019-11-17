@@ -1,6 +1,9 @@
 {
     "home": {
-        "name": "Heute",
+        "name": "Übersicht",
+        "today": {
+            "name": "Heute"
+        },
         "week": {
             "name": "Woche"
         }

@@ -6,33 +6,20 @@
         <v-spacer />
 
         <v-toolbar-title>
-            {{ viewTitle }}
+            {{ $t('view.home.name') }}
         </v-toolbar-title>
 
         <template v-slot:extension>
             <v-tabs fixed-tabs background-color="transparent">
                 <v-tabs-slider />
-                <v-tab :to="{name: 'home'}">
-                    Heute
+                <v-tab :to="{name: 'home.today'}">
+                    {{ $t('view.home.today.name') }}
                 </v-tab>
                 <v-tab :to="{name: 'home.week'}">
-                    Woche
+                    {{ $t('view.home.week.name') }}
                 </v-tab>
             </v-tabs>
         </template>
 
     </v-app-bar>
 </template>
-
-<script>
-export default {
-
-    computed: {
-        viewTitle () {
-            if (this.$route.name) return this.$t('view.' + this.$route.name + '.name')
-            else return null
-        }
-    }
-
-}
-</script>

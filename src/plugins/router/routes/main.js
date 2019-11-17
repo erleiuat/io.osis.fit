@@ -14,7 +14,7 @@ export default [{
     children: [
         {
             path: '',
-            name: 'home',
+            name: 'home.today',
             component: () => import('@/views/main/Home/Today/'),
             meta: { auth: true }
         },

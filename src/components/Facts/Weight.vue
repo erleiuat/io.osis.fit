@@ -6,7 +6,7 @@
         <v-container>
             <v-row justify="space-around" align="center">
                 <v-col cols="12" class="text-center display-1">
-                    {{ vals.current || '-' }}
+                    {{ vals.current || '-' }} {{ $t('unit.kilogram.short') }}
                 </v-col>
             </v-row>
             <v-spacer />
@@ -17,10 +17,10 @@
                     </v-progress-linear>
                 </v-col>
                 <v-col cols="auto" class="text-center">
-                    {{ vals.first || '-' }}
+                    {{ $t('start') }}: {{ vals.first || '-' }} {{ $t('unit.kilogram.short') }}
                 </v-col>
                 <v-col cols="auto" class="text-center">
-                    {{ vals.goal || '-' }}
+                    {{ $t('goal') }}: {{ vals.goal || '-' }} {{ $t('unit.kilogram.short') }}
                 </v-col>
             </v-row>
         </v-container>
@@ -40,7 +40,8 @@ export default {
                 percentage: null
             }
 
-            toReturn.percentage = (((toReturn.current - toReturn.goal) / (toReturn.first - toReturn.goal)) * 100) || 0
+            let percentage = 100 - (((toReturn.current - toReturn.goal) / (toReturn.first - toReturn.goal)) * 100) || 0
+            toReturn.percentage = Math.round(percentage * 10) / 10
 
             return toReturn
         }
@@ -50,10 +51,14 @@ export default {
     i18n: {
         messages: {
             en: {
-                weight: 'Weight'
+                weight: 'Weight',
+                start: 'Start',
+                goal: 'Goal'
             },
             de: {
-                weight: 'Gewicht'
+                weight: 'Gewicht',
+                start: 'Start',
+                goal: 'Ziel'
             }
         }
     }
