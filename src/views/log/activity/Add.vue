@@ -3,19 +3,19 @@
         <v-container>
             <v-row dense justify="center" align="center">
                 <v-col cols="12" md="4">
-                    <v-text-field v-model="form.data.title" :rules="form.rules.title" :label="$t('form.title')" type="text" />
+                    <v-text-field v-model="form.data.title" :rules="form.rules.title" :label="$t('form.title')" type="text" filled />
                 </v-col>
                 <v-col cols="8" md="4">
-                    <v-text-field v-model="form.data.burnedCalories" :rules="form.rules.number" :label="$t('burnedCalories')" :suffix="$t('unit.calories.short')" type="number" />
+                    <v-text-field v-model="form.data.burnedCalories" :rules="form.rules.reqNumber" :label="$t('burnedCalories')" :suffix="$t('unit.calories.short')" type="number" filled />
                 </v-col>
                 <v-col cols="4" md="4">
-                    <v-select v-model="form.data.type" :items="typeItems" :label="$t('type')" />
+                    <v-select v-model="form.data.type" :items="typeItems" :label="$t('type')" filled />
                 </v-col>
                 <v-col cols="12" md="6">
-                    <v-text-field v-model="form.data.date" :rules="form.rules.date" :label="$t('form.date')" type="date" />
+                    <v-text-field v-model="form.data.date" :rules="form.rules.date" :label="$t('form.date')" type="date" filled />
                 </v-col>
                 <v-col cols="12" md="6">
-                    <v-text-field v-model="form.data.time" :rules="form.rules.time" :label="$t('form.time')" type="time" />
+                    <v-text-field v-model="form.data.time" :rules="form.rules.time" :label="$t('form.time')" type="time" filled />
                 </v-col>
             </v-row>
             <v-row dense justify="space-between" align="center">
@@ -54,7 +54,8 @@ export default {
                     title: [
                         v => v.length < 120 || this.$t('alert.form.tooLong', { amount: 120 })
                     ],
-                    number: [
+                    reqNumber: [
+                        v => !!v || this.$t('alert.form.required'),
                         v => !isNaN(v) || this.$t('alert.form.format.number')
                     ],
                     date: [
@@ -91,7 +92,10 @@ export default {
 
     watch: {
         doSend (val) {
-            if (!this.$refs.form.validate() || !val) return false
+            if (!this.$refs.form.validate() || !val) {
+                this.$store.commit('form/sent')
+                return false
+            }
 
             this.$store.commit('form/sending')
             this.$store.dispatch('logActivity/create', this.form.data).then(() => {

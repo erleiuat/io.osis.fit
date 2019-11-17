@@ -5,8 +5,8 @@
                 {{ $t('useTemplate') }}
             </v-btn>
         </template>
-        <v-card class="selector-window">
-            <v-card-title class="pt-2 pb-2 secondary">
+        <v-card class="selector-window" tile>
+            <v-card-title class="pt-2 pb-2 grey darken-3">
                 <v-toolbar-title>{{ $t('useTemplate') }}</v-toolbar-title>
                 <v-spacer></v-spacer>
                 <v-btn icon dark @click="dialog = false">
@@ -19,9 +19,14 @@
                         <v-skeleton-loader loading transition="fade-transition" type="card" />
                     </v-col>
                 </v-row>
-                <v-row dense v-else align="center" justify="center">
+                <v-row dense v-else-if="items.lenght" align="center" justify="center">
                     <v-col cols="12" sm="2" md="4" v-for="(item, key) in items" :key="key">
                         <TemplateCard :item="item" selectable @select="doSelect(item)" />
+                    </v-col>
+                </v-row>
+                <v-row dense v-else-if="items" align="center" justify="center">
+                    <v-col cols="12" class="text-center title black--text">
+                        {{ $t('alert.noData') }}
                     </v-col>
                 </v-row>
             </v-card-text>

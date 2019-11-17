@@ -1,13 +1,17 @@
 <template>
     <v-app>
 
-        <router-view name="toolbar" />
+        <transition name="fade-transition">
+            <router-view name="toolbar" />
+        </transition>
 
         <Drawer />
 
         <v-content>
             <Update />
-            <router-view />
+            <transition name="fade-transition" mode="out-in">
+                <router-view />
+            </transition>
         </v-content>
 
         <Notification />

@@ -7,17 +7,17 @@
                     <TemplateSelect @select="useItem" />
                 </v-col>
                 <v-col cols="12" md="6">
-                    <v-text-field v-model="form.data.title" :rules="form.rules.title" :label="$t('form.title')" type="text" />
+                    <v-text-field v-model="form.data.title" :rules="form.rules.title" :label="$t('form.title')" type="text" filled hide-details />
                 </v-col>
                 <v-col cols="8" md="4">
-                    <v-text-field v-model="form.data.portionSize" :rules="form.rules.number" :label="$t('portionSize')" :suffix="$t('unit.'+unit+'.short')" type="number" />
+                    <v-text-field v-model="form.data.portionSize" :rules="form.rules.number" :label="$t('portionSize')" :suffix="$t('unit.'+unit+'.short')" type="number" filled hide-details />
                 </v-col>
                 <v-col cols="4" md="2">
-                    <v-select v-model="unit" :items="units" :label="$t('unit.name')" />
+                    <v-select v-model="unit" :items="units" :label="$t('unit.name')" filled hide-details />
                 </v-col>
 
                 <v-col cols="12">
-                    <v-tabs v-model="tab" background-color="transparent" grow show-arrows>
+                    <v-tabs v-model="tab" grow show-arrows>
                         <v-tab>
                             {{ form.data.totalCalories || '' }} {{ $t('unit.calories.long') }}
                         </v-tab>
@@ -28,39 +28,39 @@
                             {{ form.data.totalProtein ? form.data.totalProtein + $t('unit.gram.short') : '' }} {{ $t('protein') }}
                         </v-tab>
                         <v-tab>
-                            {{ $dateFormat(form.data.date) }}
+                            {{ $t('form.time') }}
                         </v-tab>
                     </v-tabs>
                     <v-tabs-items v-model="tab">
                         <v-tab-item>
                             <v-card flat>
                                 <v-card-text>
-                                    <v-text-field v-model="form.data.totalCalories" :rules="form.rules.number" :label="$t('totalCalories')" :suffix="$t('unit.calories.short')" type="number" />
-                                    <v-text-field v-model="calsPer100" :rules="form.rules.number" :label="$t('caloriesPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.calories.short')" type="number" />
+                                    <v-text-field v-model="form.data.totalCalories" :rules="form.rules.number" :label="$t('totalCalories')" :suffix="$t('unit.calories.short')" type="number" filled hide-details />
+                                    <v-text-field v-model="calsPer100" :rules="form.rules.number" :label="$t('caloriesPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.calories.short')" type="number" filled hide-details />
                                 </v-card-text>
                             </v-card>
                         </v-tab-item>
                         <v-tab-item>
                             <v-card flat>
                                 <v-card-text>
-                                    <v-text-field v-model="form.data.totalFat" :rules="form.rules.number" :label="$t('totalFat')" :suffix="$t('unit.gram.short')" type="number" />
-                                    <v-text-field v-model="fatPer100" :rules="form.rules.number" :label="$t('fatPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.gram.short')" type="number" />
+                                    <v-text-field v-model="form.data.totalFat" :rules="form.rules.number" :label="$t('totalFat')" :suffix="$t('unit.gram.short')" type="number" filled hide-details />
+                                    <v-text-field v-model="fatPer100" :rules="form.rules.number" :label="$t('fatPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.gram.short')" type="number" filled hide-details />
                                 </v-card-text>
                             </v-card>
                         </v-tab-item>
                         <v-tab-item>
                             <v-card flat>
                                 <v-card-text>
-                                    <v-text-field v-model="form.data.totalProtein" :rules="form.rules.number" :label="$t('totalProtein')" :suffix="$t('unit.gram.short')" type="number" />
-                                    <v-text-field v-model="proteinPer100" :rules="form.rules.number" :label="$t('proteinPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.gram.short')" type="number" />
+                                    <v-text-field v-model="form.data.totalProtein" :rules="form.rules.number" :label="$t('totalProtein')" :suffix="$t('unit.gram.short')" type="number" filled hide-details />
+                                    <v-text-field v-model="proteinPer100" :rules="form.rules.number" :label="$t('proteinPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.gram.short')" type="number" filled hide-details />
                                 </v-card-text>
                             </v-card>
                         </v-tab-item>
                         <v-tab-item>
                             <v-card flat>
                                 <v-card-text>
-                                    <v-text-field v-model="form.data.date" :rules="form.rules.date" :label="$t('form.date')" type="date" />
-                                    <v-text-field v-model="form.data.time" :rules="form.rules.time" :label="$t('form.time')" type="time" />
+                                    <v-text-field v-model="form.data.date" :rules="form.rules.date" :label="$t('form.date')" type="date" filled hide-details />
+                                    <v-text-field v-model="form.data.time" :rules="form.rules.time" :label="$t('form.time')" type="time" filled hide-details />
                                 </v-card-text>
                             </v-card>
                         </v-tab-item>
@@ -193,7 +193,10 @@ export default {
 
     watch: {
         doSend (val) {
-            if (!this.$refs.form.validate() || !val) return false
+            if (!this.$refs.form.validate() || !val) {
+                this.$store.commit('form/sent')
+                return false
+            }
 
             this.$store.commit('form/sending')
             this.$store.dispatch('logFood/create', this.form.data).then(() => {
