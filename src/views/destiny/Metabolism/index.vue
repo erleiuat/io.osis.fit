@@ -1,6 +1,11 @@
 <template>
     <v-container fill-height>
         <v-row justify="center" align="center" dense>
+            <v-col cols="12">
+                <v-card flat>
+                    <Facts />
+                </v-card>
+            </v-col>
             <v-col cols="12" sm="6">
                 <CurrentWeight />
             </v-col>
@@ -15,11 +20,6 @@
             </v-col>
             <v-col cols="12">
                 <PAL />
-            </v-col>
-            <v-col cols="12">
-                <v-card flat>
-                    <Facts />
-                </v-card>
             </v-col>
         </v-row>
     </v-container>

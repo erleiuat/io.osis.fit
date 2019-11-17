@@ -1,5 +1,5 @@
 <template>
-    <v-card flat>
+    <v-card flat :color="state">
         <v-card-title>
             {{ $t('goalDate') }}
             <v-spacer />
@@ -28,6 +28,13 @@
 
 <script>
 export default {
+
+    props: {
+        state: {
+            type: String,
+            default: null
+        }
+    },
 
     data () {
         return {

@@ -1,8 +1,7 @@
 <template>
-    <v-container fill-height>
-        <v-form v-model="form.valid" ref="form" @submit.prevent="$store.commit('form/send')">
+    <v-form v-model="form.valid" ref="form" @submit.prevent="$store.commit('form/send')">
+        <v-container>
             <v-row dense justify="center" align="center">
-
                 <v-col cols="12" md="4">
                     <v-text-field v-model="form.data.title" :rules="form.rules.title" :label="$t('form.title')" type="text" />
                 </v-col>
@@ -18,7 +17,6 @@
                 <v-col cols="12" md="6">
                     <v-text-field v-model="form.data.time" :rules="form.rules.time" :label="$t('form.time')" type="time" />
                 </v-col>
-
             </v-row>
             <v-row dense justify="space-between" align="center">
                 <v-col cols="auto">
@@ -34,8 +32,8 @@
                     </v-btn>
                 </v-col>
             </v-row>
-        </v-form>
-    </v-container>
+        </v-container>
+    </v-form>
 </template>
 
 <script>

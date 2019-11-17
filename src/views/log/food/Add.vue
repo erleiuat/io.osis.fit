@@ -1,6 +1,6 @@
 <template>
-    <v-container fill-height>
-        <v-form v-model="form.valid" ref="form" @submit.prevent="$store.commit('form/send')">
+    <v-form v-model="form.valid" ref="form" @submit.prevent="$store.commit('form/send')">
+        <v-container>
             <v-row dense justify="center" align="center">
 
                 <v-col cols="12">
@@ -16,81 +16,56 @@
                     <v-select v-model="unit" :items="units" :label="$t('unit.name')" />
                 </v-col>
 
-                <v-expansion-panels>
-
-                    <v-expansion-panel>
-                        <v-expansion-panel-header>
-                            <template v-slot:default>
-                                <v-row no-gutters justify="space-between">
-                                    <v-col cols="auto">{{ $t('totalCalories') }}</v-col>
-                                    <v-col cols="auto" class="text--secondary pr-4">
-                                        {{ form.data.totalCalories || '-' }} {{ $t('unit.calories.short') }}
-                                    </v-col>
-                                </v-row>
-                            </template>
-                        </v-expansion-panel-header>
-                        <v-expansion-panel-content>
-                            <v-text-field v-model="form.data.totalCalories" :rules="form.rules.number" :label="$t('totalCalories')" :suffix="$t('unit.calories.short')" type="number" />
-                            <v-text-field v-model="calsPer100" :rules="form.rules.number" :label="$t('caloriesPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.calories.short')" type="number" />
-                        </v-expansion-panel-content>
-                    </v-expansion-panel>
-
-                    <v-expansion-panel>
-                        <v-expansion-panel-header>
-                            <template v-slot:default>
-                                <v-row no-gutters justify="space-between">
-                                    <v-col cols="auto">{{ $t('totalFat') }}</v-col>
-                                    <v-col cols="auto" class="text--secondary pr-4">
-                                        {{ form.data.totalFat || '-' }} {{ $t('unit.gram.short') }}
-                                    </v-col>
-                                </v-row>
-                            </template>
-                        </v-expansion-panel-header>
-                        <v-expansion-panel-content>
-                            <v-text-field v-model="form.data.totalFat" :rules="form.rules.number" :label="$t('totalFat')" :suffix="$t('unit.gram.short')" type="number" />
-                            <v-text-field v-model="fatPer100" :rules="form.rules.number" :label="$t('fatPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.gram.short')" type="number" />
-                        </v-expansion-panel-content>
-                    </v-expansion-panel>
-
-                    <v-expansion-panel>
-                        <v-expansion-panel-header>
-                            <template v-slot:default>
-                                <v-row no-gutters justify="space-between">
-                                    <v-col cols="auto">{{ $t('totalProtein') }}</v-col>
-                                    <v-col cols="auto" class="text--secondary pr-4">
-                                        {{ form.data.totalCalories || '-' }} {{ $t('unit.gram.short') }}
-                                    </v-col>
-                                </v-row>
-                            </template>
-                        </v-expansion-panel-header>
-                        <v-expansion-panel-content>
-                            <v-text-field v-model="form.data.totalProtein" :rules="form.rules.number" :label="$t('totalProtein')" :suffix="$t('unit.gram.short')" type="number" />
-                            <v-text-field v-model="proteinPer100" :rules="form.rules.number" :label="$t('proteinPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.gram.short')" type="number" />
-                        </v-expansion-panel-content>
-                    </v-expansion-panel>
-
-                    <v-expansion-panel>
-                        <v-expansion-panel-header>
-                            <template v-slot:default>
-                                <v-row no-gutters justify="space-between">
-                                    <v-col cols="auto">{{ $t('form.date') }}</v-col>
-                                    <v-col cols="auto" class="text--secondary pr-4">
-                                        {{ $dateFormat(form.data.date) }}
-                                    </v-col>
-                                    <v-col cols="auto">{{ $t('form.time') }}</v-col>
-                                    <v-col cols="auto" class="text--secondary pr-4">
-                                        {{ form.data.time }}
-                                    </v-col>
-                                </v-row>
-                            </template>
-                        </v-expansion-panel-header>
-                        <v-expansion-panel-content>
-                            <v-text-field v-model="form.data.date" :rules="form.rules.date" :label="$t('form.date')" type="date" />
-                            <v-text-field v-model="form.data.time" :rules="form.rules.time" :label="$t('form.time')" type="time" />
-                        </v-expansion-panel-content>
-                    </v-expansion-panel>
-
-                </v-expansion-panels>
+                <v-col cols="12">
+                    <v-tabs v-model="tab" background-color="transparent" grow show-arrows>
+                        <v-tab>
+                            {{ form.data.totalCalories || '' }} {{ $t('unit.calories.long') }}
+                        </v-tab>
+                        <v-tab>
+                            {{ form.data.totalFat ? form.data.totalFat + $t('unit.gram.short') : '' }} {{ $t('fat') }}
+                        </v-tab>
+                        <v-tab>
+                            {{ form.data.totalProtein ? form.data.totalProtein + $t('unit.gram.short') : '' }} {{ $t('protein') }}
+                        </v-tab>
+                        <v-tab>
+                            {{ $dateFormat(form.data.date) }}
+                        </v-tab>
+                    </v-tabs>
+                    <v-tabs-items v-model="tab">
+                        <v-tab-item>
+                            <v-card flat>
+                                <v-card-text>
+                                    <v-text-field v-model="form.data.totalCalories" :rules="form.rules.number" :label="$t('totalCalories')" :suffix="$t('unit.calories.short')" type="number" />
+                                    <v-text-field v-model="calsPer100" :rules="form.rules.number" :label="$t('caloriesPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.calories.short')" type="number" />
+                                </v-card-text>
+                            </v-card>
+                        </v-tab-item>
+                        <v-tab-item>
+                            <v-card flat>
+                                <v-card-text>
+                                    <v-text-field v-model="form.data.totalFat" :rules="form.rules.number" :label="$t('totalFat')" :suffix="$t('unit.gram.short')" type="number" />
+                                    <v-text-field v-model="fatPer100" :rules="form.rules.number" :label="$t('fatPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.gram.short')" type="number" />
+                                </v-card-text>
+                            </v-card>
+                        </v-tab-item>
+                        <v-tab-item>
+                            <v-card flat>
+                                <v-card-text>
+                                    <v-text-field v-model="form.data.totalProtein" :rules="form.rules.number" :label="$t('totalProtein')" :suffix="$t('unit.gram.short')" type="number" />
+                                    <v-text-field v-model="proteinPer100" :rules="form.rules.number" :label="$t('proteinPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.gram.short')" type="number" />
+                                </v-card-text>
+                            </v-card>
+                        </v-tab-item>
+                        <v-tab-item>
+                            <v-card flat>
+                                <v-card-text>
+                                    <v-text-field v-model="form.data.date" :rules="form.rules.date" :label="$t('form.date')" type="date" />
+                                    <v-text-field v-model="form.data.time" :rules="form.rules.time" :label="$t('form.time')" type="time" />
+                                </v-card-text>
+                            </v-card>
+                        </v-tab-item>
+                    </v-tabs-items>
+                </v-col>
 
             </v-row>
             <v-row justify="space-between" align="center">
@@ -107,8 +82,8 @@
                     </v-btn>
                 </v-col>
             </v-row>
-        </v-form>
-    </v-container>
+        </v-container>
+    </v-form>
 </template>
 
 <script>
@@ -122,6 +97,10 @@ export default {
 
     data () {
         return {
+            tab: null,
+            tabItems: [
+                this.$t('totalCalories'), this.$t('totalFat'), this.$t('totalProtein'), this.$t('form.date')
+            ],
             unit: 'gram',
             form: {
                 valid: false,
@@ -158,27 +137,33 @@ export default {
 
         calsPer100: {
             get () {
+                if (!this.form.data.portionSize) return
                 return Math.round((this.form.data.totalCalories / this.form.data.portionSize) * 1000) / 10 || ''
             },
             set (val) {
+                if (!this.form.data.portionSize) this.form.data.portionSize = 100
                 this.form.data.totalCalories = (val / 100) * this.form.data.portionSize
             }
         },
 
         fatPer100: {
             get () {
+                if (!this.form.data.portionSize) return
                 return Math.round((this.form.data.totalFat / this.form.data.portionSize) * 1000) / 10 || ''
             },
             set (val) {
+                if (!this.form.data.portionSize) this.form.data.portionSize = 100
                 this.form.data.totalFat = (val / 100) * this.form.data.portionSize
             }
         },
 
         proteinPer100: {
             get () {
+                if (!this.form.data.portionSize) return
                 return Math.round((this.form.data.totalProtein / this.form.data.portionSize) * 1000) / 10 || ''
             },
             set (val) {
+                if (!this.form.data.portionSize) this.form.data.portionSize = 100
                 this.form.data.totalProtein = (val / 100) * this.form.data.portionSize
             }
         },
@@ -242,6 +227,8 @@ export default {
     i18n: {
         messages: {
             en: {
+                fat: 'Fat',
+                protein: 'Protein',
                 totalCalories: 'Total Calories',
                 totalFat: 'Total Fat',
                 totalProtein: 'Total Protein',
@@ -251,6 +238,8 @@ export default {
                 proteinPer100: 'Protein per 100'
             },
             de: {
+                fat: 'Fett',
+                protein: 'Protein',
                 totalCalories: 'Total Kalorien',
                 totalFat: 'Total Fett',
                 totalProtein: 'Total Protein',

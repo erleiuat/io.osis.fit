@@ -1,6 +1,6 @@
 <template>
-    <v-container fill-height>
-        <v-form v-model="form.valid" ref="form" @submit.prevent="$store.commit('form/send')">
+    <v-form v-model="form.valid" ref="form" @submit.prevent="$store.commit('form/send')">
+        <v-container>
             <v-row dense justify="center" align="center">
                 <v-col cols="12" md="6">
                     <v-text-field v-model="form.data.weight" :rules="form.rules.number" :label="$t('weight')" :suffix="$t('unit.kilogram.short')" type="number" />
@@ -29,8 +29,8 @@
                     </v-btn>
                 </v-col>
             </v-row>
-        </v-form>
-    </v-container>
+        </v-container>
+    </v-form>
 </template>
 
 <script>

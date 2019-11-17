@@ -1,11 +1,11 @@
 <template>
     <v-card flat style="height:100%;">
-        <v-card-title>
+        <v-card-title class="pb-0">
             {{ $t('weight') }}
         </v-card-title>
         <v-container>
             <v-row justify="space-around" align="center">
-                <v-col cols="12" class="text-center display-1">
+                <v-col cols="12" class="text-center display-1 pt-0">
                     {{ vals.current || '-' }} {{ $t('unit.kilogram.short') }}
                 </v-col>
             </v-row>
@@ -23,6 +23,17 @@
                     {{ $t('goal') }}: {{ vals.goal || '-' }} {{ $t('unit.kilogram.short') }}
                 </v-col>
             </v-row>
+            <!--
+            <v-row>
+                <v-col cols="12">
+                    <v-sparkline :labels="line.labels" :value="line.vals" :gradient="line.gradient" smooth="5" padding="10" line-width="3" stroke-linecap="round" gradient-direction="top" type="trend" auto-draw>
+                        <template v-slot:label="item">
+                            {{ item.value }} {{ $t('unit.kilogram.short') }}
+                        </template>
+                    </v-sparkline>
+                </v-col>
+            </v-row>
+            -->
         </v-container>
     </v-card>
 </template>
@@ -31,6 +42,16 @@
 export default {
 
     computed: {
+
+        /* TODO?
+        line () {
+            return {
+                gradient: [this.$vuetify.theme.currentTheme.error, this.$vuetify.theme.currentTheme.success],
+                vals: [110, 105, 85],
+                labels: ['110', '105', '85']
+            }
+        },
+        */
 
         vals () {
             var toReturn = {

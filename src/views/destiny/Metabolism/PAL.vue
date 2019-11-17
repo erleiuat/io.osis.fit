@@ -174,7 +174,29 @@ export default {
             de: {
                 pal: 'PAL',
                 waaat: 'Physical Activity Level (körperliche Aktivität / Leistungsumsatz)',
-                howActive: 'Wie aktiv bist du durchschnittlich in deinem Alltag?'
+                howActive: 'Wie aktiv bist du durchschnittlich in deinem Alltag?',
+                pals: {
+                    1: {
+                        title: 'Niedrig',
+                        description: 'Nur sitzende und liegende Aktivitäten <br/> (z.B. gebrechliche Menschen)'
+                    },
+                    2: {
+                        title: 'Einfach',
+                        description: 'Meist sitzend, wenig körperliche Aktivität <br/> (z.B. Büroarbeiten am Schreibtisch)'
+                    },
+                    3: {
+                        title: 'Mittel',
+                        description: 'Überwiegend sitzend, teilweise gehend und stehend <br/> (z.B. Studenten, Schüler, Taxifahrer)'
+                    },
+                    4: {
+                        title: 'Schwer',
+                        description: 'Hauptsächlich gehend und stehend <br/> (z.B. Verkäufer, Kellner)'
+                    },
+                    5: {
+                        title: 'Extrem',
+                        description: 'Körperlich anstrengende Arbeiten <br/> (z.B. Landwirte, Bauarbeiter)'
+                    }
+                }
             }
         }
     }
