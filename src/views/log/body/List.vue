@@ -101,6 +101,7 @@ export default {
 
         current () {
             let current = this.$store.getters['logBody/current']
+            console.log(current)
             return {
                 weight: current.weight,
                 fat: current.fat

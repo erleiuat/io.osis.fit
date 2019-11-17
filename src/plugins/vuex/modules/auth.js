@@ -40,6 +40,26 @@ export default {
 
     mutations: {
 
+        clean (state) {
+            state.login = false
+            state.token = {
+                auth: null,
+                refresh: null
+            }
+            state.account = {
+                id: null,
+                mail: null,
+                username: null,
+                status: null,
+                level: null,
+                firstname: null,
+                lastname: null,
+                birthdate: null,
+                locale: null,
+                avatar: null
+            }
+        },
+
         place (state) {
             var dAuth = JSON.parse(window.atob((state.token.auth.split('.')[1]).replace('-', '+').replace('_', '/')))
             var dRefresh = JSON.parse(window.atob((state.token.refresh.split('.')[1]).replace('-', '+').replace('_', '/')))
@@ -56,22 +76,6 @@ export default {
         },
 
         remove (state) {
-            state.login = false
-            state.token.auth = null
-            state.token.refresh = null
-            state.account = {
-                id: null,
-                mail: null,
-                username: null,
-                status: null,
-                level: null,
-                firstname: null,
-                lastname: null,
-                birthdate: null,
-                locale: null,
-                avatar: null
-            }
-
             Apios.defaults.headers.common['Authorization'] = null
             VueCookies.remove(process.env.VUE_APP_COOKIE_PREF + 'tknRefr')
             VueCookies.remove(process.env.VUE_APP_COOKIE_PREF + 'tknAtrApp')
@@ -102,9 +106,18 @@ export default {
                     con.commit('place')
                     resolve()
                 }).catch(err => {
-                    con.commit('remove')
+                    con.dispatch('remove')
                     reject(err)
                 })
+            })
+        },
+
+        logout (con) {
+            return new Promise((resolve, reject) => {
+                con.commit('clean')
+                con.commit('remove')
+                con.dispatch('clean', null, { root: true })
+                resolve()
             })
         },
 
@@ -121,7 +134,7 @@ export default {
                     con.commit('place')
                     resolve()
                 }).catch(err => {
-                    con.commit('remove')
+                    con.dispatch('remove')
                     reject(err)
                 })
             })

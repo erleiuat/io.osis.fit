@@ -61,6 +61,10 @@ export default {
 
     mutations: {
 
+        clean (state) {
+            state.items = {}
+        },
+
         setItems (state, items) {
             state.items = items
         },
@@ -73,7 +77,7 @@ export default {
 
     actions: {
 
-        setCurrent (con, items) {
+        set (con, items) {
             var d = con.rootState.app.current.date
             var day = d.getDay()
             var weekFirst = new Date(d.setDate(d.getDate() - day + (day === 0 ? -6 : 1)))
@@ -90,7 +94,7 @@ export default {
         create (con, form) {
             return new Promise((resolve, reject) => {
                 Apios.post('log/food', form).then(res => {
-                    con.dispatch('setCurrent', [res.data])
+                    con.dispatch('set', [res.data])
                     resolve()
                 }).catch(err => {
                     reject(err)
@@ -102,7 +106,7 @@ export default {
             return new Promise((resolve, reject) => {
                 let url = 'log/food?year=' + filter.year + '&week=' + filter.week
                 Apios.get(url).then(res => {
-                    con.dispatch('setCurrent', res.data)
+                    con.dispatch('set', res.data)
                     resolve(res.data)
                 }).catch(err => {
                     reject(err)

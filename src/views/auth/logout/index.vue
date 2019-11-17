@@ -29,11 +29,11 @@ export default {
 
         submit () {
             Apios.delete('session').then(() => {
-                this.$router.push({ name: 'auth' })
             }).catch(err => {
                 this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
             }).finally(() => {
-                this.$store.commit('auth/remove')
+                this.$store.dispatch('auth/logout')
+                this.$router.push({ name: 'auth' })
             })
         }
 

@@ -88,7 +88,7 @@ export default {
                 this.dialog = false
                 this.$notify({ type: 'success', title: this.$t('alert.success.changed') })
                 var tmpMail = this.$store.state.auth.account.mail
-                this.$store.commit('auth/remove')
+                this.$store.dispatch('auth/logout')
                 this.$router.push({ name: 'auth', query: { mail: tmpMail } })
             }).catch(err => {
                 if (err.code === 'O1103') {
@@ -98,7 +98,6 @@ export default {
                 }
             }).finally(() => {
                 this.form.sending = false
-                this.$refs.form.reset()
                 this.form.data = {
                     password: '',
                     new: ''

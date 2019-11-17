@@ -81,15 +81,37 @@ export default {
     },
 
     mutations: {
+
+        clean (state) {
+            state.goals = {
+                weight: null,
+                fat: null,
+                date: null
+            }
+            state.metabolism = {
+                gender: null,
+                height: null,
+                birthdate: null,
+                pal: null
+            }
+        },
+
         setGoals (state, items) {
             state.goals = { ...state.goals, ...items }
         },
+
         setMetabolism (state, items) {
             state.metabolism = { ...state.metabolism, ...items }
         }
+
     },
 
     actions: {
+
+        set (con, items) {
+            con.commit('setGoals', items.goals)
+            con.commit('setMetabolism', items.metabolism)
+        },
 
         saveGoals (con) {
             return new Promise((resolve, reject) => {

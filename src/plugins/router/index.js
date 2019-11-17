@@ -45,7 +45,7 @@ router.beforeEach((to, from, next) => {
                 next({ name: 'auth' })
             })
         } else if (auth === 'unhooked') {
-            store.commit('auth/remove')
+            store.dispatch('auth/logout')
             next({ name: 'auth', query: { target: to.name } })
         } else if (auth === 'available') {
             store.commit('auth/place')

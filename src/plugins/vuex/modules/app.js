@@ -25,10 +25,6 @@ export default {
         })()
     },
 
-    getters: {
-
-    },
-
     mutations: {
 
         setDrawer: (state, condition) => {

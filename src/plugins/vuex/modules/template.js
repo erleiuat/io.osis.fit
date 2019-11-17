@@ -16,6 +16,10 @@ export default {
 
     mutations: {
 
+        clean (state) {
+            state.items = {}
+        },
+
         setItems (state, items) {
             state.items = items
         },

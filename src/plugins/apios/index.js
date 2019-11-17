@@ -33,7 +33,7 @@ apios.interceptors.response.use(res => {
     if (err.constructor.name === 'Cancel') return Promise.reject(err)
     pendingCalls[err.response.config.url] = null
     if (!err.response || !err.response.data) return Promise.reject(err)
-    if (err.response.data.error_code === 1188) store.commit('auth/remove')
+    if (err.response.data.error_code === 1188) store.dispatch('auth/logout')
     var error = new Error()
     error.message = err.response.data.message ? err.response.data.message : 'no message'
     error.code = err.response.data.error_code ? err.response.data.error_code : 'no code'

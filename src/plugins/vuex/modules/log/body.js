@@ -46,6 +46,10 @@ export default {
 
     mutations: {
 
+        clean (state) {
+            state.items = {}
+        },
+
         setItems (state, items) {
             state.items = items
         },
@@ -58,14 +62,14 @@ export default {
 
     actions: {
 
-        setCurrent (con, items) {
+        set (con, items) {
             con.commit('setItems', { ...con.state.items, ...items })
         },
 
         create (con, form) {
             return new Promise((resolve, reject) => {
                 Apios.post('log/body', form).then(res => {
-                    con.dispatch('setCurrent', [res.data])
+                    con.dispatch('set', [res.data])
                     resolve()
                 }).catch(err => {
                     reject(err)
@@ -77,7 +81,7 @@ export default {
             return new Promise((resolve, reject) => {
                 let url = 'log/body'
                 Apios.get(url).then(res => {
-                    con.dispatch('setCurrent', res.data)
+                    con.dispatch('set', res.data)
                     resolve(res.data)
                 }).catch(err => {
                     reject(err)
@@ -99,7 +103,7 @@ export default {
 
         load (con) {
             Apios.get('log/body').then(res => {
-                con.dispatch('setCurrent', res.data)
+                con.dispatch('set', res.data)
             }).catch(err => {
                 console.log(err)
             })

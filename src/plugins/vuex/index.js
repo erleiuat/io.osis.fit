@@ -14,13 +14,14 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
 
-    state: {
-    },
-
-    mutations: {
-    },
-
     actions: {
+        clean (con) {
+            con.commit('logFood/clean')
+            con.commit('logActivity/clean')
+            con.commit('logBody/clean')
+            con.commit('template/clean')
+            con.commit('destiny/clean')
+        }
     },
 
     modules: {

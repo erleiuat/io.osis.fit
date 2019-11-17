@@ -44,7 +44,6 @@ export default {
                     username: null
                 },
                 data: {
-                    avatar: this.$store.state.auth.account.avatar,
                     mail: this.$store.state.auth.account.mail || '',
                     username: this.$store.state.auth.account.username || '',
                     firstname: this.$store.state.auth.account.firstname || '',
@@ -77,8 +76,9 @@ export default {
             if (!this.$refs.form.validate()) return false
             this.form.sending = true
 
+            let data = { ...this.form.data, ...{ avatar: this.$store.state.auth.account.avatar } }
             let url = 'account/' + this.$store.state.auth.account.id
-            Apios.put(url, this.form.data).then(() => {
+            Apios.put(url, data).then(() => {
                 this.form.changes = false
                 this.$store.dispatch('auth/refresh', true)
                 this.$notify({ type: 'success', title: this.$t('alert.success.changed') })
