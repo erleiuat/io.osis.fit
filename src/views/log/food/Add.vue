@@ -118,7 +118,7 @@ export default {
                         v => v.length < 120 || this.$t('alert.form.tooLong', { amount: 120 })
                     ],
                     number: [
-                        v => !isNaN(v) || this.$t('alert.form.format.number')
+                        v => (v ? !isNaN(v) : true) || this.$t('alert.form.format.number')
                     ],
                     date: [
                         v => !!v || this.$t('alert.form.required'),
