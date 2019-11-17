@@ -13,9 +13,14 @@
             <v-col v-for="(item, key) in images" :key="key" class="d-flex child-flex" cols="12" md="4">
                 <v-card flat>
                     <RegularImage :image="item" aspectRatio="1" />
-                    <v-card-text class="pa-1 caption text-center">
+                    <v-card-text class="pa-1 pb-0 caption text-center">
                         {{ item.id }}
                     </v-card-text>
+                    <v-card-actions class="pa-1 pt-0">
+                        <v-spacer />
+                        <SafeDelete @click="delImage(key)" />
+                        <v-spacer />
+                    </v-card-actions>
                 </v-card>
             </v-col>
             <v-col class="text-center" cols="12" md="4" v-if="loading">
@@ -29,11 +34,12 @@
 <script>
 import Apios from '@/plugins/apios/'
 import RegularImage from '@/components/Image/Regular'
+import SafeDelete from '@/components/SafeDelete'
 
 export default {
 
     components: {
-        RegularImage
+        RegularImage, SafeDelete
     },
 
     data () {
@@ -41,13 +47,23 @@ export default {
             detailed: false,
             loading: false,
             page: 1,
-            images: [
-
-            ]
+            images: []
         }
     },
 
     methods: {
+
+        delImage (key) {
+            this.loading = true
+            Apios.delete('admin/images/' + this.images[key].id).then(() => {
+                this.images.splice(key, 1)
+                this.$notify({ type: 'success', title: this.$t('alert.success.changed') })
+            }).catch(err => {
+                this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
+            }).finally(() => {
+                this.loading = false
+            })
+        },
 
         loadImages () {
             this.loading = true
