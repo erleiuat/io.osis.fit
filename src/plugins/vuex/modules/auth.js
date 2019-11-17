@@ -8,7 +8,7 @@ export default {
     state: {
         login: false,
         token: {
-            auth: null,
+            auth: VueCookies.get(process.env.VUE_APP_COOKIE_PREF + 'tknAtrApp') || null,
             refresh: null
         },
         account: {
@@ -45,6 +45,7 @@ export default {
             var dRefresh = JSON.parse(window.atob((state.token.refresh.split('.')[1]).replace('-', '+').replace('_', '/')))
 
             VueCookies.set(process.env.VUE_APP_COOKIE_PREF + 'tknRefr', state.token.refresh, new Date(dRefresh.exp * 1000))
+            VueCookies.set(process.env.VUE_APP_COOKIE_PREF + 'tknAtrApp', state.token.auth, new Date(dAuth.exp * 1000))
             Apios.defaults.headers.common['Authorization'] = 'Bearer ' + state.token.auth
             state.account = dAuth.data.account
 
@@ -73,6 +74,7 @@ export default {
 
             Apios.defaults.headers.common['Authorization'] = null
             VueCookies.remove(process.env.VUE_APP_COOKIE_PREF + 'tknRefr')
+            VueCookies.remove(process.env.VUE_APP_COOKIE_PREF + 'tknAtrApp')
             clearTimeout(state.timeout)
             state.timeout = null
         },

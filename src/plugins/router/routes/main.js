@@ -1,6 +1,7 @@
 export default [{
 
     path: '/',
+    name: 'home',
     redirect: { name: 'home.today' }
 
 }, {

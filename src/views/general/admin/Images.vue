@@ -12,7 +12,7 @@
         <v-row dense>
             <v-col v-for="(item, key) in images" :key="key" class="d-flex child-flex" cols="12" md="4">
                 <v-card flat>
-                    <RegularImage :image="item" aspectRatio="1" />
+                    <RegularImage :key="key" :image="item" aspectRatio="1" />
                     <v-card-text class="pa-1 pb-0 caption text-center">
                         {{ item.id }}
                     </v-card-text>
@@ -56,7 +56,7 @@ export default {
         delImage (key) {
             this.loading = true
             Apios.delete('admin/images/' + this.images[key].id).then(() => {
-                this.images.splice(key, 1)
+                this.images[key] = false
                 this.$notify({ type: 'success', title: this.$t('alert.success.changed') })
             }).catch(err => {
                 this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })

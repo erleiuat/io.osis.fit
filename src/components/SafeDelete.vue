@@ -5,7 +5,7 @@
                 <v-icon>mdi-delete</v-icon>
             </v-btn>
         </template>
-        <v-card>
+        <v-card @keyup.enter="yesPlease()">
             <v-card-title class="text-center">
                 {{ $t('confirmDelete') }}
             </v-card-title>
@@ -38,6 +38,11 @@ export default {
     },
 
     methods: {
+        onkey (event) {
+            if (event.key === 'Enter' && this.dialog) {
+                this.yesPlease()
+            }
+        },
         yesPlease () {
             this.$emit('click')
             this.dialog = false
@@ -46,6 +51,11 @@ export default {
             this.$emit('cancel')
             this.dialog = false
         }
+    },
+
+    created: function () {
+        console.log('asdf')
+        window.addEventListener('keydown', this.onkey)
     },
 
     i18n: {

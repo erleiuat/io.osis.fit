@@ -2,7 +2,7 @@
     <v-container>
         <v-row dense justify="center" align="center">
             <v-col cols="auto">
-                <v-card link>
+                <v-card :link="img !== false">
                     <RegularImage v-if="placeholder" :image="img" aspectRatio="1" width="200" :placeholder="placeholder" />
                     <RegularImage v-else :image="img" aspectRatio="1" width="200" />
                 </v-card>

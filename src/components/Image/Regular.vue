@@ -1,25 +1,20 @@
 <template>
     <v-dialog v-model="dialog" fullscreen>
-        <template v-slot:activator="{ on }">
-            <v-img v-if="!pic" :src="placeholder" :aspect-ratio="aspectRatio" :width="width" :height="height" />
-            <v-img v-else-if="pic.error" :aspect-ratio="aspectRatio" :width="width" :height="height">
-                <template v-slot:placeholder>
-                    <v-row class="fill-height ma-0 error" align="center" justify="center">
-                        <span class="white--text title text-center">
-                            <v-icon dark x-large>mdi-file-alert-outline</v-icon>
-                            <br />{{ $t('fileNotFound') }}
-                        </span>
-                    </v-row>
-                </template>
+        <template v-if="getError()" v-slot:activator="{ on }">
+            <v-img :aspect-ratio="aspectRatio" :width="width" :height="height">
+                <v-row class="fill-height ma-0 error" align="center" justify="center">
+                    <span class="white--text title text-center">
+                        <v-icon dark x-large>mdi-file-alert-outline</v-icon>
+                        <br />{{ $t('fileNotFound') }}
+                    </span>
+                </v-row>
             </v-img>
-            <v-img v-else-if="!noClick" :src="pic.small" :lazy-src="pic.lazy" :aspect-ratio="aspectRatio" :width="width" :height="height" v-on="on" @error="loadingError(pic)" style="cursor:pointer;">
-                <template v-slot:placeholder>
-                    <v-row class="fill-height ma-0" align="center" justify="center">
-                        <v-progress-circular indeterminate color="grey" />
-                    </v-row>
-                </template>
-            </v-img>
-            <v-img v-else :src="pic.small" :lazy-src="pic.lazy" :aspect-ratio="aspectRatio" :width="width" :height="height" @error="loadingError(pic)">
+        </template>
+        <template v-else-if="!pic" v-slot:activator="{ on }">
+            <v-img :src="placeholder" :aspect-ratio="aspectRatio" :width="width" :height="height" />
+        </template>
+        <template v-else-if="!noClick" v-slot:activator="{ on }">
+            <v-img :src="pic.small" :lazy-src="pic.lazy" :aspect-ratio="aspectRatio" :width="width" :height="height" v-on="on" @error="setError(true)" style="cursor:pointer;">
                 <template v-slot:placeholder>
                     <v-row class="fill-height ma-0" align="center" justify="center">
                         <v-progress-circular indeterminate color="grey" />
@@ -27,9 +22,17 @@
                 </template>
             </v-img>
         </template>
-        <v-card tile dark height="100%">
+        <template v-else v-slot:activator="{ on }">
+            <v-img :src="pic.small" :lazy-src="pic.lazy" :aspect-ratio="aspectRatio" :width="width" :height="height" @error="setError(true)">
+                <template v-slot:placeholder>
+                    <v-row class="fill-height ma-0" align="center" justify="center">
+                        <v-progress-circular indeterminate color="grey" />
+                    </v-row>
+                </template>
+            </v-img>
+        </template>
+        <v-card v-if="!getError()" tile dark height="100%">
             <v-container fluid class="pt-0 pl-0 reg-img-container">
-
                 <v-row>
                     <v-col cols="12" class="pt-0 pr-0">
                         <v-toolbar flat class="transparent">
@@ -43,10 +46,9 @@
                         </v-toolbar>
                     </v-col>
                 </v-row>
-
                 <v-row class="reg-img-verticalCenter">
                     <v-col cols="12" class="pa-0">
-                        <v-img v-if="!pic.error" :src="pic.medium" :lazy-src="pic.small" @error="loadingError(pic)" contain style="max-height:85vh;max-width:100vw;">
+                        <v-img v-if="!pic.error" :src="pic.medium" :lazy-src="pic.small" @error="setError(true)" contain style="max-height:85vh;max-width:100vw;">
                             <template v-slot:placeholder>
                                 <v-row class="fill-height ma-0" align="center" justify="center">
                                     <v-progress-circular indeterminate color="white" />
@@ -94,41 +96,40 @@ export default {
     data () {
         return {
             dialog: false,
-            tmp: false
+            error: false
         }
     },
 
     computed: {
 
-        pic: {
-            get () {
-                if (!this.image) return false
-                return {
-                    name: this.image.name,
-                    original: this.image.path,
-                    medium: this.image.path_medium,
-                    small: this.image.path_small,
-                    lazy: this.image.path_lazy,
-                    error: this.tmp
-                }
-            },
-            set (content) {
-                this.tmp = true
+        pic () {
+            if (!this.image) {
+                this.setError(false)
+                return false
+            }
+            return {
+                name: this.image.name,
+                original: this.image.path,
+                medium: this.image.path_medium,
+                small: this.image.path_small,
+                lazy: this.image.path_lazy,
+                error: this.error
             }
         }
 
     },
 
     methods: {
-        loadingError (pic) {
-            this.pic = {
-                name: this.image.name,
-                original: 'https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png',
-                medium: 'https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png',
-                small: 'https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png',
-                lazy: 'https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png'
-            }
+
+        getError () {
+            if (!this.image) this.error = false
+            return this.error
+        },
+
+        setError (val) {
+            this.error = val
         }
+
     },
 
     i18n: {
