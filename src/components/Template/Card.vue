@@ -1,5 +1,5 @@
 <template>
-    <v-card @click.native="doSelect()" :link="selectable" flat>
+    <v-card @click.native="doSelect()" :link="selectable" flat style="height: 100%">
         <RegularImage :image="item.image" :noClick="selectable" :placeholder="require('@/assets/image/food.jpg')" aspectRatio="1" height="120px" />
         <v-card-title class="pt-2 pb-2">
             {{ item.title }}
@@ -9,7 +9,7 @@
                 <v-icon>mdi-pencil</v-icon>
             </v-btn>
         </v-card-title>
-        <v-divider class="mx-4" />
+        <v-divider class="mx-4" v-if="totals.calories || totals.fat || totals.protein"/>
         <v-card-text class="pt-1 pb-1">
             <v-chip-group>
                 <v-chip small v-if="totals.calories">

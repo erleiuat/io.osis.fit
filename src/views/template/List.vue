@@ -6,8 +6,8 @@
             </v-col>
         </v-row>
         <v-row dense v-else-if="Object.keys(items).length" align="center" justify="center">
-            <v-col cols="12" sm="2" md="4" v-for="(item, key) in items" :key="key">
-                <TemplateCard :item="item" editable deletable @edit="edit" @delete="deleteItem" />
+            <v-col cols="12" sm="2" md="4" v-for="(item, key) in items" :key="key" align-self="stretch">
+                <Card :item="item" editable deletable @edit="edit" @delete="deleteItem" />
             </v-col>
         </v-row>
         <v-row dense v-else align="center" justify="center">
@@ -24,12 +24,12 @@
 </template>
 
 <script>
-import TemplateCard from '@/components/TemplateCard'
+import Card from '@/components/Template/Card'
 
 export default {
 
     components: {
-        TemplateCard
+        Card
     },
 
     data () {
