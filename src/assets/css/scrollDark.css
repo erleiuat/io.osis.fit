@@ -1,0 +1,15 @@
+
+/* Change default Scrollbar */
+::-webkit-scrollbar {
+    height: 8px;
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #303030;
+}
+::-webkit-scrollbar-thumb {
+    background:  #424242;
+}
+::-webkit-scrollbar-thumb:hover {
+    background:  #424242;
+}

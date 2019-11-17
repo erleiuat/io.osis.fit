@@ -1,21 +1,19 @@
 <template>
-    <v-list nav>
+    <v-container class="pb-3 pt-1">
         <v-divider class="mb-2 mt-2" />
-        <v-list-item :to="{name: 'about'}">
-            <v-list-item-action>
-                <v-icon color="grey darken-1">mdi-information-variant</v-icon>
-            </v-list-item-action>
-            <v-list-item-title class="grey--text text--darken-1">
-                {{ $t('view.about.name') }}
-            </v-list-item-title>
-        </v-list-item>
-        <v-list-item :to="{name: 'support'}">
-            <v-list-item-action>
-                <v-icon color="grey darken-1">mdi-face-agent</v-icon>
-            </v-list-item-action>
-            <v-list-item-title class="grey--text text--darken-1">
-                {{ $t('view.support.name') }}
-            </v-list-item-title>
-        </v-list-item>
-    </v-list>
+        <v-row no-gutters>
+            <v-col cols="6">
+                <v-btn :to="{name: 'about'}" text block>
+                    <v-icon left>mdi-information-variant</v-icon>
+                    {{ $t('view.about.name') }}
+                </v-btn>
+            </v-col>
+            <v-col cols="6">
+                <v-btn :to="{name: 'support'}" text block>
+                    <v-icon left>mdi-face-agent</v-icon>
+                    {{ $t('view.support.name') }}
+                </v-btn>
+            </v-col>
+        </v-row>
+    </v-container>
 </template>
