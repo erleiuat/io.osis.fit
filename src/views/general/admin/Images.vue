@@ -59,7 +59,12 @@ export default {
                 this.images[key] = false
                 this.$notify({ type: 'success', title: this.$t('alert.success.changed') })
             }).catch(err => {
-                this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
+                if (err.code === 'D0204') {
+                    this.images[key] = false
+                    this.$notify({ type: 'error', title: 'Image removed but still in DB', text: err })
+                } else {
+                    this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
+                }
             }).finally(() => {
                 this.loading = false
             })

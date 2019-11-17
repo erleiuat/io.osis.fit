@@ -9,8 +9,8 @@
                 <v-icon>mdi-pencil</v-icon>
             </v-btn>
         </v-card-title>
-        <v-divider class="mx-4" v-if="totals.calories || totals.fat || totals.protein"/>
-        <v-card-text class="pt-1 pb-1">
+        <v-divider v-if="totals.calories || totals.fat || totals.protein"/>
+        <v-card-text v-if="totals.calories || totals.fat || totals.protein" class="pt-1 pb-1">
             <v-chip-group>
                 <v-chip small v-if="totals.calories">
                     {{ totals.calories }}{{ $t('unit.calories.short') }}
