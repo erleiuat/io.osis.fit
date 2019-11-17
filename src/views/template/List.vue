@@ -5,7 +5,7 @@
                 <v-skeleton-loader loading transition="fade-transition" type="card" />
             </v-col>
         </v-row>
-        <v-row dense v-else-if="items.lenght" align="center" justify="center">
+        <v-row dense v-else-if="Object.keys(items).length" align="center" justify="center">
             <v-col cols="12" sm="2" md="4" v-for="(item, key) in items" :key="key">
                 <TemplateCard :item="item" editable deletable @edit="edit" @delete="deleteItem" />
             </v-col>

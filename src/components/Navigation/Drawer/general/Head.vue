@@ -1,6 +1,6 @@
 <template>
     <v-list-item>
-        <v-list-item-avatar>
+        <v-list-item-avatar @click="$router.push({name: 'home.today'})">
             <v-img :src="require('@/assets/logo.svg')" contain />
         </v-list-item-avatar>
         <v-list-item-content>

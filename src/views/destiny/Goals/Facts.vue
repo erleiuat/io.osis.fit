@@ -1,7 +1,7 @@
 <template>
     <v-container>
         <v-row no-gutters justify="center" align="center">
-            <v-col class="text-center">
+            <v-col cols="12" sm="" class="text-center">
                 <span class="title">
                     {{ $t('timeRemaining') }}
                 </span><br />
@@ -11,7 +11,7 @@
                 </span>
             </v-col>
             <v-divider vertical />
-            <v-col class="text-center">
+            <v-col cols="12" sm="" class="text-center">
                 <span class="title">
                     {{ $t('requiredLoss') }}
                 </span><br />
@@ -21,7 +21,7 @@
                 </span>
             </v-col>
             <v-divider vertical />
-            <v-col class="text-center">
+            <v-col cols="12" sm="" class="text-center">
                 <span class="title">
                     {{ $t('avgCalsPerDay') }}
                 </span><br />
