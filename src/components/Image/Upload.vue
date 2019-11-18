@@ -79,14 +79,14 @@ export default {
                 uploadNew: 'Upload image',
                 deleteCurrent: 'Remove image',
                 processing: 'Processing',
-                fileTooBig: 'The file is too large (Max. 15 MB)'
+                fileTooBig: 'The file is too large (Max. 25 MB)'
             },
             de: {
                 editImage: 'Avatar bearbeiten',
                 uploadNew: 'Bild hochladen',
                 deleteCurrent: 'Bild entfernen',
                 processing: 'Wird gespeichert',
-                fileTooBig: 'Die Datei ist zu gross (Max. 15 MB)'
+                fileTooBig: 'Die Datei ist zu gross (Max. 25 MB)'
             }
         }
     }
