@@ -48,7 +48,6 @@
                     </v-col>
 
                     <v-col cols="12" class="pa-0">
-
                         <v-img v-if="!pic.error" :src="pic.medium" :lazy-src="pic.small" @error="setError(true)" contain class="reg-img-fullscreen">
                             <template v-slot:placeholder>
                                 <v-row class="fill-height ma-0" align="center" justify="center">
