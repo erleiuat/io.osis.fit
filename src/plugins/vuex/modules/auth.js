@@ -106,8 +106,9 @@ export default {
                     con.commit('place')
                     resolve()
                 }).catch(err => {
-                    con.dispatch('remove')
-                    reject(err)
+                    con.dispatch('logout').then(() => {
+                        reject(err)
+                    })
                 })
             })
         },
@@ -116,8 +117,9 @@ export default {
             return new Promise((resolve, reject) => {
                 con.commit('clean')
                 con.commit('remove')
-                con.dispatch('clean', null, { root: true })
-                resolve()
+                con.dispatch('clean', null, { root: true }).then(() => {
+                    resolve()
+                })
             })
         },
 
@@ -134,8 +136,9 @@ export default {
                     con.commit('place')
                     resolve()
                 }).catch(err => {
-                    con.dispatch('remove')
-                    reject(err)
+                    con.dispatch('logout').then(() => {
+                        reject(err)
+                    })
                 })
             })
         }

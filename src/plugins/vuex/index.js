@@ -16,11 +16,14 @@ export default new Vuex.Store({
 
     actions: {
         clean (con) {
-            con.commit('logFood/clean')
-            con.commit('logActivity/clean')
-            con.commit('logBody/clean')
-            con.commit('template/clean')
-            con.commit('destiny/clean')
+            return new Promise((resolve, reject) => {
+                con.commit('logFood/clean')
+                con.commit('logActivity/clean')
+                con.commit('logBody/clean')
+                con.commit('template/clean')
+                con.commit('destiny/clean')
+                resolve()
+            })
         }
     },
 
