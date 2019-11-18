@@ -44,7 +44,7 @@ export default {
 
         doUpload () {
             let photo = document.getElementById('uplImgField').files[0]
-            if (photo.size > 15 * 1000000) {
+            if (photo.size > 25 * 1000000) {
                 this.$notify({ type: 'error', title: this.$t('fileTooBig') })
                 return
             }
