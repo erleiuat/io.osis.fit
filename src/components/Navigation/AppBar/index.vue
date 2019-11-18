@@ -1,5 +1,5 @@
 <template>
-    <v-app-bar app flat dense>
+    <v-app-bar app flat dense color="primary" dark>
 
         <v-app-bar-nav-icon v-if="login && !$store.state.app.drawer" @click.stop="$store.dispatch('app/drawer')" />
 

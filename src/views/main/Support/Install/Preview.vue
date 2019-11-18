@@ -6,19 +6,19 @@
         </v-col>
         <v-col md="" class="text-center">
             <v-icon x-large class="pb-3">mdi-android-head</v-icon>
-            <v-btn :to="{ name: 'support.install', query: { plattform: 'android' } }" block depressed color="secondary">
+            <v-btn :to="{ name: 'support.install', query: { plattform: 'android' } }" block depressed color="primary">
                 Android
             </v-btn>
         </v-col>
         <v-col md="" class="text-center">
             <v-icon x-large class="pb-3">mdi-apple</v-icon>
-            <v-btn :to="{ name: 'support.install', query: { plattform: 'apple' } }" block depressed color="secondary">
+            <v-btn :to="{ name: 'support.install', query: { plattform: 'apple' } }" block depressed color="primary">
                 Apple
             </v-btn>
         </v-col>
         <v-col md="" class="text-center">
             <v-icon x-large class="pb-3">mdi-windows</v-icon>
-            <v-btn :to="{ name: 'support.install', query: { plattform: 'windows' } }" block depressed color="secondary">
+            <v-btn :to="{ name: 'support.install', query: { plattform: 'windows' } }" block depressed color="primary">
                 Windows
             </v-btn>
         </v-col>

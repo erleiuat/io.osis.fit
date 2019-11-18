@@ -1,5 +1,5 @@
 <template>
-    <v-app-bar app flat dense>
+    <v-app-bar app flat dense color="primary" dark>
 
         <v-app-bar-nav-icon v-if="!$store.state.app.drawer" @click.stop="$store.dispatch('app/drawer')" />
 
@@ -10,7 +10,7 @@
         </v-toolbar-title>
 
         <template v-slot:extension>
-            <v-tabs fixed-tabs background-color="transparent">
+            <v-tabs fixed-tabs background-color="transparent" color="white">
                 <v-tabs-slider />
                 <v-tab :to="{name: 'home.today'}">
                     {{ $t('view.home.today.name') }}

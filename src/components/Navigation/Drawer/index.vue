@@ -7,7 +7,7 @@
             <User />
             <v-divider class="mb-2 mt-2" />
 
-            <v-list-item v-for="(item, key) in items" :key="key" :to="item.to" color="white" active-class="secondary">
+            <v-list-item v-for="(item, key) in items" :key="key" :to="item.to" active-class="primary" color="white">
                 <v-list-item-action>
                     <v-icon>
                         {{ item.icon }}

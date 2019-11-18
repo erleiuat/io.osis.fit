@@ -5,7 +5,7 @@
                 <b>{{ $t('view.admin.name') }}</b>
             </v-list-item-title>
         </template>
-        <v-list-item :to="{name: 'admin.log'}" color="white" active-class="secondary">
+        <v-list-item :to="{name: 'admin.log'}" color="white" active-class="primary">
             <v-list-item-action />
             <v-list-item-title>
                 {{ $t('view.admin.log.name') }}

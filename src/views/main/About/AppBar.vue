@@ -1,5 +1,5 @@
 <template>
-    <v-app-bar app flat dense>
+    <v-app-bar app flat dense color="primary" dark>
         <v-btn v-if="noLogin || backToPrev" icon @click="goBack()">
             <v-icon>mdi-arrow-left</v-icon>
         </v-btn>

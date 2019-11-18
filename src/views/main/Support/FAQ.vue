@@ -1,14 +1,6 @@
 <template>
-    <v-container>
-        <v-row align="center">
-            <v-col cols="12">
-                <span class="display-1">{{ $t('support') }}</span>
-            </v-col>
-        </v-row>
+    <v-container fill-height>
         <v-row>
-            <v-col cols="12">
-                <v-divider />
-            </v-col>
             <v-col cols="12">
                 <span class="headline">{{ $t('faq') }}</span><br />
                 <span class="caption">{{ $t('faqText') }}</span>
@@ -22,12 +14,9 @@
             <v-col cols="12">
                 <v-divider />
             </v-col>
-            <v-col cols="12" class="headline">
-                {{ $t('contact') }}
-            </v-col>
             <v-col cols="auto" class="caption">
                 {{ $t('contactText') }}
-                <v-btn block depressed :to="{name: 'support.contact'}">
+                <v-btn block depressed :to="{name: 'support.contact'}" color="primary">
                 {{ $t('contactBtn') }}
                 </v-btn>
             </v-col>

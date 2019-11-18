@@ -14,29 +14,6 @@
                         (and <a href="https://vuejs.org/">Vue.js</a> + PHP)
                     </v-card-text>
                     <v-divider />
-                    <v-card-text>
-                        <v-row dense>
-                            <v-col cols="12">
-                                {{ $t('checkout') }}
-                            </v-col>
-                            <v-col >
-                                <v-btn href="https://github.com/erleiuat/osis-vue" target="_blank" block depressed color="primary">
-                                    osis-vue <v-icon right>mdi-github-circle</v-icon>
-                                </v-btn>
-                            </v-col>
-                            <v-col>
-                                <v-btn href="https://github.com/erleiuat/osis-api" target="_blank" block depressed color="primary">
-                                    osis-api <v-icon right>mdi-github-circle</v-icon>
-                                </v-btn>
-                            </v-col>
-                            <v-col>
-                                <v-btn href="https://github.com/users/erleiuat/projects/2" target="_blank" block depressed color="primary">
-                                    {{ $t('project') }} <v-icon right>mdi-github-circle</v-icon>
-                                </v-btn>
-                            </v-col>
-                        </v-row>
-                    </v-card-text>
-                    <v-divider />
 
                     <v-card-text>
                         <v-row dense>
@@ -46,22 +23,22 @@
                                 </span>
                             </v-col>
                             <v-col>
-                                <v-btn :to="{name: 'about.imprint'}" block depressed color="accent">
+                                <v-btn :to="{name: 'about.imprint'}" block depressed color="primary">
                                     {{ $t('imprint') }}
                                 </v-btn>
                             </v-col>
                             <v-col>
-                                <v-btn :to="{name: 'about.cookie'}" block depressed color="accent">
+                                <v-btn :to="{name: 'about.cookie'}" block depressed color="primary">
                                     {{ $t('cookie') }}
                                 </v-btn>
                             </v-col>
                             <v-col>
-                                <v-btn :to="{name: 'about.terms'}" block depressed color="accent">
+                                <v-btn :to="{name: 'about.terms'}" block depressed color="primary">
                                     {{ $t('terms') }}
                                 </v-btn>
                             </v-col>
                             <v-col>
-                                <v-btn :to="{name: 'about.privacy'}" block depressed color="accent">
+                                <v-btn :to="{name: 'about.privacy'}" block depressed color="primary">
                                     {{ $t('privacy') }}
                                 </v-btn>
                             </v-col>
@@ -80,12 +57,12 @@
                                 </span>
                             </v-col>
                             <v-col>
-                                <v-btn :to="{name: 'support'}" block depressed color="secondary">
+                                <v-btn :to="{name: 'support'}" block depressed color="primary">
                                     {{ $t('faqBtn') }}
                                 </v-btn>
                             </v-col>
                             <v-col>
-                                <v-btn :to="{name: 'support.contact'}" block depressed color="secondary">
+                                <v-btn :to="{name: 'support.contact'}" block depressed color="primary">
                                     {{ $t('contactBtn') }}
                                 </v-btn>
                             </v-col>

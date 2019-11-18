@@ -1,5 +1,5 @@
 <template>
-    <v-app-bar app dense flat>
+    <v-app-bar app dense flat color="primary" dark>
 
         <v-btn v-if="show.back" @click="$router.back()" icon>
             <v-icon>mdi-close</v-icon>
