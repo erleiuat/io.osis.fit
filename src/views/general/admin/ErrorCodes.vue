@@ -1,14 +1,6 @@
 <template>
     <v-container>
 
-        <v-row>
-            <v-col cols="12">
-                <span class="headline">
-                    API Error Codes
-                </span>
-            </v-col>
-        </v-row>
-
         <v-row justify="center">
             <v-col cols="12" v-if="loading">
                 <v-progress-circular :size="50" color="primary" indeterminate />

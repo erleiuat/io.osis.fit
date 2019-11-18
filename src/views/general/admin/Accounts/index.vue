@@ -1,18 +1,7 @@
 <template>
     <v-container>
 
-        <v-row>
-            <v-col cols="12">
-                <span class="headline">
-                    Account Management
-                </span>
-            </v-col>
-        </v-row>
-
         <v-row dense justify="center" align="center">
-            <v-col cols="12">
-                Filter
-            </v-col>
             <v-col cols="6" md="2">
                 <v-text-field label="From #" v-model="filter.from" hide-details />
             </v-col>

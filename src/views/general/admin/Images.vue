@@ -1,14 +1,6 @@
 <template>
     <v-container>
 
-        <v-row>
-            <v-col cols="12">
-                <span class="headline">
-                    All Images
-                </span>
-            </v-col>
-        </v-row>
-
         <v-row dense>
             <v-col v-for="(item, key) in images" :key="key" class="d-flex child-flex" cols="12" md="4">
                 <v-card flat>
