@@ -1,5 +1,5 @@
 <template>
-    <v-dialog v-model="dialog" fullscreen>
+    <v-dialog v-model="dialog" fullscreen transition="fade-transition">
         <template v-if="getError()" v-slot:activator="{ on }">
             <v-img :aspect-ratio="aspectRatio" :width="width" :height="height">
                 <v-row class="fill-height ma-0 error" align="center" justify="center">
@@ -32,9 +32,10 @@
             </v-img>
         </template>
         <v-card v-if="!getError()" tile dark height="100%">
-            <v-container fluid class="pt-0 pl-0 reg-img-container">
-                <v-row>
-                    <v-col cols="12" class="pt-0 pr-0">
+            <v-container fluid fill-height class="pt-0 pb-0 reg-img-container">
+                <v-row class="reg-img-container-inner">
+
+                    <v-col cols="12" class="pa-0 reg-img-toolbar">
                         <v-toolbar flat class="transparent">
                             <v-btn icon :href="pic.original" :download="pic.name" target="_blank">
                                 <v-icon large>mdi-download</v-icon>
@@ -45,17 +46,17 @@
                             </v-btn>
                         </v-toolbar>
                     </v-col>
-                </v-row>
-                <v-row class="reg-img-verticalCenter">
+
                     <v-col cols="12" class="pa-0">
-                        <v-img v-if="!pic.error" :src="pic.medium" :lazy-src="pic.small" @error="setError(true)" contain style="max-height:85vh;max-width:100vw;">
+
+                        <v-img v-if="!pic.error" :src="pic.medium" :lazy-src="pic.small" @error="setError(true)" contain class="reg-img-fullscreen">
                             <template v-slot:placeholder>
                                 <v-row class="fill-height ma-0" align="center" justify="center">
                                     <v-progress-circular indeterminate color="white" />
                                 </v-row>
                             </template>
                         </v-img>
-                        <v-img v-else contain style="max-height:85vh;max-width:100vw;">
+                        <v-img v-else contain class="reg-img-fullscreen">
                             <template v-slot:placeholder>
                                 <v-row class="fill-height ma-0 error" align="center" justify="center">
                                     <span class="white--text title text-center">
@@ -66,6 +67,7 @@
                             </template>
                         </v-img>
                     </v-col>
+
                 </v-row>
             </v-container>
         </v-card>
@@ -147,16 +149,25 @@ export default {
 </script>
 
 <style>
-.reg-img-container {
-    position: relative;
-  height: 100%;
+.reg-img-toolbar {
+    z-index: 200 !important;
+    position: absolute;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, transparent 56px);
 }
-.reg-img-verticalCenter {
-  margin: 0;
-  width: 100%;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+.reg-img-container-inner {
+    height: 100%;
+    position: relative;
+}
+.reg-img-container {
+    max-width: 100vw;
+    overflow: hidden;
+}
+.reg-img-fullscreen {
+    z-index: 100 !important;
+    max-width: 100vw;
+    max-height: 100vh;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
 </style>

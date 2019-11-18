@@ -3,8 +3,11 @@
         <v-container>
             <v-row dense justify="center" align="center">
 
-                <v-col cols="12">
+                <v-col cols="6">
                     <TemplateSelect @select="useItem" />
+                </v-col>
+                <v-col cols="6">
+                    <Barcode />
                 </v-col>
                 <v-col cols="12" md="6">
                     <v-text-field v-model="form.data.title" :rules="form.rules.title" :label="$t('form.title')" type="text" filled hide-details />
@@ -87,12 +90,13 @@
 </template>
 
 <script>
+import Barcode from '@/components/Barcode'
 import TemplateSelect from '@/components/Template/Select'
 
 export default {
 
     components: {
-        TemplateSelect
+        TemplateSelect, Barcode
     },
 
     data () {
