@@ -35,7 +35,7 @@
             <v-container fluid fill-height class="pt-0 pb-0 reg-img-container">
                 <v-row class="reg-img-container-inner">
 
-                    <v-col cols="12" class="pa-0 reg-img-toolbar">
+                    <v-col cols="12" class="pt-0 reg-img-toolbar">
                         <v-toolbar flat class="transparent">
                             <v-btn icon :href="pic.original" :download="pic.name" target="_blank">
                                 <v-icon large>mdi-download</v-icon>
@@ -150,9 +150,10 @@ export default {
 
 <style>
 .reg-img-toolbar {
+    height: 80px;
     z-index: 200 !important;
     position: absolute;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, transparent 56px);
+    background-image: linear-gradient(to bottom, rgba(66, 66, 66, 1) 0%, transparent 60px);
 }
 .reg-img-container-inner {
     height: 100%;
