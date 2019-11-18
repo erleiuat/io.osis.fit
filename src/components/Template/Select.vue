@@ -2,6 +2,7 @@
     <v-dialog v-model="dialog" fullscreen scrollable hide-overlay transition="fade-transition">
         <template v-slot:activator="{ on }">
             <v-btn color="primary" depressed v-on="on" block>
+                <v-icon left>mdi-file-replace-outline</v-icon>
                 {{ $t('useTemplate') }}
             </v-btn>
         </template>
@@ -82,10 +83,10 @@ export default {
     i18n: {
         messages: {
             en: {
-                useTemplate: 'Use Template'
+                useTemplate: 'Template'
             },
             de: {
-                useTemplate: 'Vorlage nutzen'
+                useTemplate: 'Vorlage'
             }
         }
     }

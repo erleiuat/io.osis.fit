@@ -7,7 +7,7 @@
                     <TemplateSelect @select="useItem" />
                 </v-col>
                 <v-col cols="6">
-                    <Barcode />
+                    <Barcode @select="useItem" />
                 </v-col>
                 <v-col cols="12" md="6">
                     <v-text-field v-model="form.data.title" :rules="form.rules.title" :label="$t('form.title')" type="text" filled hide-details />

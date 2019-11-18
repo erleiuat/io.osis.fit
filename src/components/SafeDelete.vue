@@ -54,7 +54,6 @@ export default {
     },
 
     created: function () {
-        console.log('asdf')
         window.addEventListener('keydown', this.onkey)
     },
 

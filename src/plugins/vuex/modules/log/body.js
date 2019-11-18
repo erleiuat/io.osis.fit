@@ -102,10 +102,13 @@ export default {
         },
 
         load (con) {
-            Apios.get('log/body').then(res => {
-                con.dispatch('set', res.data)
-            }).catch(err => {
-                console.log(err)
+            return new Promise((resolve, reject) => {
+                Apios.get('log/body').then(res => {
+                    con.dispatch('set', res.data)
+                    resolve()
+                }).catch(err => {
+                    reject(err)
+                })
             })
         }
 

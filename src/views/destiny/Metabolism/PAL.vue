@@ -92,7 +92,6 @@ export default {
             for (const key in this.pals) {
                 if (this.pals[key].active) return key
             }
-            console.log(this.pals)
             return false
         },
         pals () {

@@ -40,7 +40,7 @@
                             <v-btn icon :href="pic.original" :download="pic.name" target="_blank">
                                 <v-icon large>mdi-download</v-icon>
                             </v-btn>
-                            <v-spacer></v-spacer>
+                            <v-spacer />
                             <v-btn icon @click="dialog = false">
                                 <v-icon large>mdi-close</v-icon>
                             </v-btn>

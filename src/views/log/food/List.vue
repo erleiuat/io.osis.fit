@@ -108,11 +108,9 @@ export default {
     },
 
     computed: {
-
         total () {
             return this.$store.getters['logFood/totalWeek']
         }
-
     },
 
     methods: {

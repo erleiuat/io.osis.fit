@@ -66,11 +66,13 @@ export default {
     actions: {
 
         set (con, items) {
-            var d = con.rootState.app.current.date
+            var d = new Date()
+            d.setHours(0, 0, 0, 0)
             var day = d.getDay()
             var weekFirst = new Date(d.setDate(d.getDate() - day + (day === 0 ? -6 : 1)))
             var weekLast = new Date()
             weekLast.setDate(weekFirst.getDate() + 6)
+            weekLast.setHours(23, 59, 59)
             var toSet = {}
             for (const key in items) {
                 var check = new Date(items[key].date)
@@ -116,10 +118,12 @@ export default {
 
         load (con) {
             return new Promise((resolve, reject) => {
-                var current = con.rootState.app.current
+                var tDat = new Date()
+                var d = (new Date(Date.UTC(tDat.getFullYear(), tDat.getMonth(), tDat.getDate())))
+                d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7))
                 con.dispatch('read', {
-                    year: parseInt(current.year),
-                    week: parseInt(current.week)
+                    year: tDat.getUTCFullYear(),
+                    week: Math.ceil((((d - new Date(Date.UTC(d.getUTCFullYear(), 0, 1))) / 86400000) + 1) / 7)
                 }).then(res => {
                     resolve(res)
                 }).catch(err => {
