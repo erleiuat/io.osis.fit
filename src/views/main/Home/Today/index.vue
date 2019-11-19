@@ -17,6 +17,10 @@
                 <Weight />
             </v-col>
 
+            <v-col cols="12" align-self="stretch">
+                <Time />
+            </v-col>
+
         </v-row>
 
     </v-container>
@@ -27,11 +31,12 @@ import Adders from '@/views/main/Home/Adders'
 import Stats from '@/components/Facts/Stats'
 import Weight from '@/components/Facts/Weight'
 import Calories from '@/components/Facts/Calories'
+import Time from '@/components/Facts/Time'
 
 export default {
 
     components: {
-        Adders, Stats, Weight, Calories
+        Adders, Stats, Weight, Calories, Time
     }
 
 }
