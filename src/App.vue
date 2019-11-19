@@ -41,8 +41,6 @@ export default {
     methods: {
         setTheme (dark) {
             this.$vuetify.theme.dark = dark
-            var color = (dark ? process.env.VUE_APP_THEME_BACKGROUND_DARK : process.env.VUE_APP_THEME_BACKGROUND)
-            document.querySelector('meta[name=theme-color]').setAttribute('content', color)
             if (dark) require('@/assets/css/scrollDark.css')
             else require('@/assets/css/scrollLight.css')
         }

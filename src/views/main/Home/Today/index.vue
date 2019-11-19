@@ -13,11 +13,11 @@
                 <Stats />
             </v-col>
 
-            <v-col cols="12" align-self="stretch">
+            <v-col cols="12" md="8" align-self="stretch">
                 <Weight />
             </v-col>
 
-            <v-col cols="12" align-self="stretch">
+            <v-col cols="12" md="4" align-self="stretch">
                 <Time />
             </v-col>
 

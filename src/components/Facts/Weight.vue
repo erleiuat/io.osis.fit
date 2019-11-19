@@ -72,12 +72,12 @@ export default {
     i18n: {
         messages: {
             en: {
-                weight: 'Weight',
+                weight: 'Progress',
                 start: 'Start',
                 goal: 'Goal'
             },
             de: {
-                weight: 'Gewicht',
+                weight: 'Fortschritt',
                 start: 'Start',
                 goal: 'Ziel'
             }
