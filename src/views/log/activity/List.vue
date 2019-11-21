@@ -22,7 +22,7 @@
                     <span class="title text-center">
                         {{ $t('tbl.burnedCalories') }}
                     </span><br />
-                    {{ total.calories }} {{ $t('unit.calories.short') }}
+                    {{ Math.round(total.calories *10)/10 }} {{ $t('unit.calories.short') }}
                 </v-col>
             </v-row>
         </v-sheet>

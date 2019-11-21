@@ -22,10 +22,10 @@
             </v-row>
             <v-row align="center" justify="center">
                 <v-col cols="6" class="text-center">
-                    {{ current.weight || '-' }} {{ $t('unit.kilogram.short') }}
+                    {{ Math.round(current.weight * 10) / 10  || '-' }} {{ $t('unit.kilogram.short') }}
                 </v-col>
                 <v-col cols="6" class="text-center">
-                    {{ current.fat || '-' }} {{ $t('unit.percentage.short') }}
+                    {{ Math.round(current.fat * 10) / 10  || '-' }} {{ $t('unit.percentage.short') }}
                 </v-col>
             </v-row>
             <v-divider />
@@ -36,10 +36,10 @@
             </v-row>
             <v-row align="center" justify="center">
                 <v-col cols="6" class="text-center">
-                    {{ progress.weight }} {{ $t('unit.kilogram.short') }}
+                    {{ Math.round(progress.weight * 10) /10  }} {{ $t('unit.kilogram.short') }}
                 </v-col>
                 <v-col cols="6" class="text-center">
-                    {{ progress.fat }} {{ $t('unit.percentage.short') }}
+                    {{ Math.round(progress.fat * 10) /10  }} {{ $t('unit.percentage.short') }}
                 </v-col>
             </v-row>
         </v-sheet>

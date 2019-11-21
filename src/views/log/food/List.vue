@@ -22,19 +22,19 @@
                     <span class="title text-center">
                         {{ $t('tbl.totalCalories') }}
                     </span><br />
-                    {{ total.calories }} {{ $t('unit.calories.short') }}
+                    {{ Math.round(total.calories * 10) /10 }} {{ $t('unit.calories.short') }}
                 </v-col>
                 <v-col cols="4" class="text-center">
                     <span class="title text-center">
                         {{ $t('tbl.totalFat') }}
                     </span><br />
-                    {{ total.fat }} {{ $t('unit.gram.short') }}
+                    {{ Math.round(total.fat * 10) /10 }} {{ $t('unit.gram.short') }}
                 </v-col>
                 <v-col cols="4" class="text-center">
                     <span class="title text-center">
                         {{ $t('tbl.totalProtein') }}
                     </span><br />
-                    {{ total.protein }} {{ $t('unit.gram.short') }}
+                    {{ Math.round(total.protein * 10) /10 }} {{ $t('unit.gram.short') }}
                 </v-col>
             </v-row>
         </v-sheet>
