@@ -22,13 +22,13 @@
                 <v-col cols="12">
                     <v-tabs v-model="tab" grow show-arrows>
                         <v-tab>
-                            {{ form.data.totalCalories || '' }} {{ $t('unit.calories.long') }}
+                            {{ tCalories || '' }} {{ $t('unit.calories.long') }}
                         </v-tab>
                         <v-tab>
-                            {{ form.data.totalFat ? form.data.totalFat + $t('unit.gram.short') : '' }} {{ $t('fat') }}
+                            {{ tFat ? tFat + $t('unit.gram.short') : '' }} {{ $t('fat') }}
                         </v-tab>
                         <v-tab>
-                            {{ form.data.totalProtein ? form.data.totalProtein + $t('unit.gram.short') : '' }} {{ $t('protein') }}
+                            {{ tProtein ? tProtein + $t('unit.gram.short') : '' }} {{ $t('protein') }}
                         </v-tab>
                         <v-tab>
                             {{ $t('form.time') }}
@@ -37,31 +37,31 @@
                     <v-tabs-items v-model="tab">
                         <v-tab-item>
                             <v-card flat>
-                                <v-card-text>
-                                    <v-text-field v-model="form.data.totalCalories" :rules="form.rules.number" :label="$t('totalCalories')" :suffix="$t('unit.calories.short')" type="number" filled hide-details />
-                                    <v-text-field v-model="calsPer100" :rules="form.rules.number" :label="$t('caloriesPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.calories.short')" type="number" filled hide-details />
+                                <v-card-text class="pa-2">
+                                    <v-text-field v-model="per100.calories" :rules="form.rules.number" :label="$t('caloriesPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.calories.short')" type="number" filled hide-details />
+                                    <v-text-field v-model="tCalories" :rules="form.rules.number" :label="$t('totalCalories')" :suffix="$t('unit.calories.short')" type="number" filled hide-details />
                                 </v-card-text>
                             </v-card>
                         </v-tab-item>
                         <v-tab-item>
                             <v-card flat>
-                                <v-card-text>
-                                    <v-text-field v-model="form.data.totalFat" :rules="form.rules.number" :label="$t('totalFat')" :suffix="$t('unit.gram.short')" type="number" filled hide-details />
-                                    <v-text-field v-model="fatPer100" :rules="form.rules.number" :label="$t('fatPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.gram.short')" type="number" filled hide-details />
+                                <v-card-text class="pa-2">
+                                    <v-text-field v-model="per100.fat" :rules="form.rules.number" :label="$t('fatPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.gram.short')" type="number" filled hide-details />
+                                    <v-text-field v-model="tFat" :rules="form.rules.number" :label="$t('totalFat')" :suffix="$t('unit.gram.short')" type="number" filled hide-details />
                                 </v-card-text>
                             </v-card>
                         </v-tab-item>
                         <v-tab-item>
                             <v-card flat>
-                                <v-card-text>
-                                    <v-text-field v-model="form.data.totalProtein" :rules="form.rules.number" :label="$t('totalProtein')" :suffix="$t('unit.gram.short')" type="number" filled hide-details />
-                                    <v-text-field v-model="proteinPer100" :rules="form.rules.number" :label="$t('proteinPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.gram.short')" type="number" filled hide-details />
+                                <v-card-text class="pa-2">
+                                    <v-text-field v-model="per100.protein" :rules="form.rules.number" :label="$t('proteinPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.gram.short')" type="number" filled hide-details />
+                                    <v-text-field v-model="tProtein" :rules="form.rules.number" :label="$t('totalProtein')" :suffix="$t('unit.gram.short')" type="number" filled hide-details />
                                 </v-card-text>
                             </v-card>
                         </v-tab-item>
                         <v-tab-item>
                             <v-card flat>
-                                <v-card-text>
+                                <v-card-text class="pa-2">
                                     <v-text-field v-model="form.data.date" :rules="form.rules.date" :label="$t('form.date')" type="date" filled hide-details />
                                     <v-text-field v-model="form.data.time" :rules="form.rules.time" :label="$t('form.time')" type="time" filled hide-details />
                                 </v-card-text>
@@ -105,6 +105,11 @@ export default {
             tabItems: [
                 this.$t('totalCalories'), this.$t('totalFat'), this.$t('totalProtein'), this.$t('form.date')
             ],
+            per100: {
+                calories: null,
+                fat: null,
+                protein: null
+            },
             unit: 'gram',
             form: {
                 valid: false,
@@ -139,36 +144,36 @@ export default {
 
     computed: {
 
-        calsPer100: {
+        tCalories: {
             get () {
-                if (!this.form.data.portionSize) return
-                return Math.round((this.form.data.totalCalories / this.form.data.portionSize) * 1000) / 10 || ''
+                if (this.form.data.portionSize && this.per100.calories) return Math.round(((this.per100.calories / 100) * this.form.data.portionSize) * 100) / 100
+                else if (this.form.data.totalCalories) return Math.round(this.form.data.totalCalories * 100) / 100
+                return null
             },
             set (val) {
-                if (!this.form.data.portionSize) this.form.data.portionSize = 100
-                this.form.data.totalCalories = (val / 100) * this.form.data.portionSize
+                this.form.data.totalCalories = val
             }
         },
 
-        fatPer100: {
+        tFat: {
             get () {
-                if (!this.form.data.portionSize) return
-                return Math.round((this.form.data.totalFat / this.form.data.portionSize) * 1000) / 10 || ''
+                if (this.form.data.portionSize && this.per100.fat) return Math.round(((this.per100.fat / 100) * this.form.data.portionSize) * 100) / 100
+                else if (this.form.data.totalFat) return Math.round(this.form.data.totalFat * 100) / 100
+                return null
             },
             set (val) {
-                if (!this.form.data.portionSize) this.form.data.portionSize = 100
-                this.form.data.totalFat = (val / 100) * this.form.data.portionSize
+                this.form.data.totalFat = val
             }
         },
 
-        proteinPer100: {
+        tProtein: {
             get () {
-                if (!this.form.data.portionSize) return
-                return Math.round((this.form.data.totalProtein / this.form.data.portionSize) * 1000) / 10 || ''
+                if (this.form.data.portionSize && this.per100.protein) return Math.round(((this.per100.protein / 100) * this.form.data.portionSize) * 100) / 100
+                else if (this.form.data.totalProtein) return Math.round(this.form.data.totalProtein * 100) / 100
+                return null
             },
             set (val) {
-                if (!this.form.data.portionSize) this.form.data.portionSize = 100
-                this.form.data.totalProtein = (val / 100) * this.form.data.portionSize
+                this.form.data.totalProtein = val
             }
         },
 
@@ -189,9 +194,9 @@ export default {
         useItem (item) {
             this.form.data.title = item.title
             this.form.data.portionSize = item.portionSize
-            this.form.data.totalCalories = item.caloriesPer100 / 100 * item.portionSize
-            this.form.data.totalFat = item.fatPer100 / 100 * item.portionSize
-            this.form.data.totalProtein = item.proteinPer100 / 100 * item.portionSize
+            this.per100.calories = item.caloriesPer100
+            this.per100.fat = item.fatPer100
+            this.per100.protein = item.proteinPer100
         }
     },
 
@@ -201,6 +206,10 @@ export default {
                 this.$store.commit('form/sent')
                 return false
             }
+
+            this.form.data.totalCalories = this.tCalories
+            this.form.data.totalFat = this.tFat
+            this.form.data.totalProtein = this.tProtein
 
             this.$store.commit('form/sending')
             this.$store.dispatch('logFood/create', this.form.data).then(() => {

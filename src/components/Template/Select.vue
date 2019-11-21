@@ -7,8 +7,8 @@
             </v-btn>
         </template>
         <v-card class="selector-window" tile>
-            <v-card-title class="pt-2 pb-2 grey darken-3">
-                <v-toolbar-title>{{ $t('useTemplate') }}</v-toolbar-title>
+            <v-card-title class="pt-2 pb-2 primary">
+                <v-toolbar-title class="white--text">{{ $t('useTemplate') }}</v-toolbar-title>
                 <v-spacer></v-spacer>
                 <v-btn icon dark @click="dialog = false">
                     <v-icon>mdi-close</v-icon>

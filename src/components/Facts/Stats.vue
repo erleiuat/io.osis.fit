@@ -60,14 +60,14 @@ export default {
 
             if (this.weekly) {
                 tmp = this.$store.getters['logFood/totalWeek']
-                toReturn.activity = this.$store.getters['logActivity/totalWeek']
+                toReturn.activity = Math.round(this.$store.getters['logActivity/totalWeek'] * 10) / 10
             } else {
                 tmp = this.$store.getters['logFood/totalDay']
-                toReturn.activity = this.$store.getters['logActivity/totalDay']
+                toReturn.activity = Math.round(this.$store.getters['logActivity/totalDay'] * 10) / 10
             }
 
-            toReturn.fat = tmp.fat
-            toReturn.protein = tmp.protein
+            toReturn.fat = Math.round(tmp.fat * 10) / 10
+            toReturn.protein = Math.round(tmp.protein * 10) / 10
             return toReturn
         }
 

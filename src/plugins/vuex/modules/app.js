@@ -40,13 +40,13 @@ export default {
 
         setDark: (state, val) => {
             state.dark = val
-            if (val) VueCookies.set(process.env.VUE_APP_COOKIE_PREF + 'drkMde', 1)
+            if (val) VueCookies.set(process.env.VUE_APP_COOKIE_PREF + 'drkMde', 1, Infinity)
             else VueCookies.remove(process.env.VUE_APP_COOKIE_PREF + 'drkMde')
         },
 
         setLocale: (state, val) => {
             state.locale = val
-            VueCookies.set(process.env.VUE_APP_COOKIE_PREF + 'appLoc', val)
+            VueCookies.set(process.env.VUE_APP_COOKIE_PREF + 'appLoc', val, Infinity)
         },
 
         setUpdate: (state, val) => {
