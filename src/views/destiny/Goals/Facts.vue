@@ -2,7 +2,7 @@
     <v-container>
         <v-row no-gutters justify="center" align="center">
             <v-col cols="12" sm="" class="text-center">
-                <span class="title">
+                <span class="caption">
                     {{ $t('timeRemaining') }}
                 </span><br />
                 {{ remaining.days || '-' }} {{ $t('days') }}
@@ -12,20 +12,20 @@
             </v-col>
             <v-divider vertical />
             <v-col cols="12" sm="" class="text-center">
-                <span class="title">
+                <span class="caption">
                     {{ $t('requiredLoss') }}
                 </span><br />
-                {{requiredLoss.total}} {{ $t('unit.kilogram.short') }}
+                {{ Math.round(requiredLoss.total * 10) / 10 }} {{ $t('unit.kilogram.short') }}
                 <span class="caption">
-                    ({{requiredLoss.perWeek}} {{ $t('perWeek') }})
+                    ({{ Math.round(requiredLoss.perWeek * 10) / 10 }} {{ $t('perWeek') }})
                 </span>
             </v-col>
             <v-divider vertical />
             <v-col cols="12" sm="" class="text-center">
-                <span class="title">
+                <span class="caption">
                     {{ $t('avgCalsPerDay') }}
                 </span><br />
-                {{ avgCalsPerDay ? '≈ ' + avgCalsPerDay : '-' }} {{ $t('unit.calories.short') }}
+                {{ avgCalsPerDay ? '≈ ' + Math.round(avgCalsPerDay * 10) / 10 : '-' }} {{ $t('unit.calories.short') }}
             </v-col>
         </v-row>
     </v-container>
