@@ -16,12 +16,12 @@
             </v-card-title>
             <v-card-text class="pt-1 pl-2 pr-2">
                 <v-row v-if="loading" align="center" justify="center">
-                    <v-col cols="12" sm="2" md="4" v-for="i in 3" :key="i">
+                    <v-col cols="6" sm="4" md="3" v-for="i in 4" :key="i">
                         <v-skeleton-loader loading transition="fade-transition" type="card" />
                     </v-col>
                 </v-row>
                 <v-row dense v-else-if="Object.keys(items).length" align="center" justify="center">
-                    <v-col cols="12" sm="2" md="4" v-for="(item, key) in items" :key="key" align-self="stretch">
+                    <v-col cols="6" sm="4" md="3" v-for="(item, key) in items" :key="key" align-self="stretch">
                         <Card :item="item" selectable @select="doSelect(item)" />
                     </v-col>
                 </v-row>

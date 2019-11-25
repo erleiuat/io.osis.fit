@@ -92,8 +92,7 @@ export default {
 
     data () {
         return {
-            loading: true,
-            items: []
+            loading: true
         }
     },
 
@@ -113,6 +112,10 @@ export default {
                 weight: (first.weight - this.current.weight) * -1,
                 fat: (first.fat - this.current.fat) * -1
             }
+        },
+
+        items () {
+            return this.$store.getters['logBody/ordered']
         }
 
     },
@@ -121,9 +124,7 @@ export default {
 
         loadItems () {
             this.loading = true
-            this.$store.dispatch('logBody/read').then(res => {
-                this.items = res
-            }).catch(err => {
+            this.$store.dispatch('logBody/read').then().catch(err => {
                 this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
             }).finally(() => {
                 this.loading = false

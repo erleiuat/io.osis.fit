@@ -10,6 +10,14 @@ export default {
 
     getters: {
 
+        ordered: state => {
+            var sortable = Object.values(state.items)
+            sortable.sort((a, b) => {
+                return new Date(a.date + 'T' + a.time) - new Date(b.date + 'T' + b.time)
+            })
+            return sortable.reverse()
+        },
+
         first: state => {
             var tmp = state.items
             if (Object.keys(tmp).length === 0) return false

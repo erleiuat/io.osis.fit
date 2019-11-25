@@ -99,7 +99,6 @@ export default {
     data () {
         return {
             loading: true,
-            items: [],
             filter: {
                 year: null,
                 week: null
@@ -110,6 +109,9 @@ export default {
     computed: {
         total () {
             return this.$store.getters['logFood/totalWeek']
+        },
+        items () {
+            return this.$store.getters['logFood/ordered']
         }
     },
 
@@ -124,9 +126,7 @@ export default {
 
         loadItems () {
             this.loading = true
-            this.$store.dispatch('logFood/read', this.filter).then(res => {
-                this.items = res
-            }).catch(err => {
+            this.$store.dispatch('logFood/read', this.filter).then().catch(err => {
                 this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
             }).finally(() => {
                 this.loading = false
