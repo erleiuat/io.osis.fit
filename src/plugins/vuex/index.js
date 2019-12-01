@@ -9,6 +9,7 @@ import logActivity from '@/plugins/vuex/modules/log/activity'
 import logBody from '@/plugins/vuex/modules/log/body'
 import template from '@/plugins/vuex/modules/template'
 import destiny from '@/plugins/vuex/modules/destiny'
+import calorietable from '@/plugins/vuex/modules/calorietable'
 
 Vue.use(Vuex)
 
@@ -28,7 +29,7 @@ export default new Vuex.Store({
     },
 
     modules: {
-        auth, app, form, logFood, logActivity, logBody, template, destiny
+        auth, app, form, logFood, logActivity, logBody, template, destiny, calorietable
     }
 
 })

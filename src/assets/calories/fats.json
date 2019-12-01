@@ -1,0 +1,158 @@
+[
+    {
+        "name": "Halbfettmargarine",
+        "amout": 100,
+        "calories": 360,
+        "density": "3,6"
+    },
+    {
+        "name": "Lätta",
+        "amout": 100,
+        "calories": 360,
+        "density": "3,6"
+    },
+    {
+        "name": "Halbfettbutter",
+        "amout": 100,
+        "calories": 372,
+        "density": "3,72"
+    },
+    {
+        "name": "Margarine",
+        "amout": 100,
+        "calories": 540,
+        "density": "5,4"
+    },
+    {
+        "name": "Rama",
+        "amout": 100,
+        "calories": 630,
+        "density": "6,3"
+    },
+    {
+        "name": "Pflanzencreme",
+        "amout": 100,
+        "calories": 670,
+        "density": "6,7"
+    },
+    {
+        "name": "Pflanzenmargarine",
+        "amout": 100,
+        "calories": 720,
+        "density": "7,2"
+    },
+    {
+        "name": "Diätmargarine",
+        "amout": 100,
+        "calories": 722,
+        "density": "7,22"
+    },
+    {
+        "name": "Kochbutter",
+        "amout": 100,
+        "calories": 742,
+        "density": "7,42"
+    },
+    {
+        "name": "Teebutter",
+        "amout": 100,
+        "calories": 743,
+        "density": "7,43"
+    },
+    {
+        "name": "Butter",
+        "amout": 100,
+        "calories": 744,
+        "density": "7,44"
+    },
+    {
+        "name": "Erdnussöl",
+        "amout": 100,
+        "calories": 884,
+        "density": "8,84"
+    },
+    {
+        "name": "Kakaobutter",
+        "amout": 100,
+        "calories": 884,
+        "density": "8,84"
+    },
+    {
+        "name": "Olivenöl",
+        "amout": 100,
+        "calories": 884,
+        "density": "8,84"
+    },
+    {
+        "name": "Rapsöl",
+        "amout": 100,
+        "calories": 884,
+        "density": "8,84"
+    },
+    {
+        "name": "Sheafett",
+        "amout": 100,
+        "calories": 884,
+        "density": "8,84"
+    },
+    {
+        "name": "Erdnussfett",
+        "amout": 100,
+        "calories": 894,
+        "density": "8,94"
+    },
+    {
+        "name": "Butterschmalz",
+        "amout": 100,
+        "calories": 897,
+        "density": "8,97"
+    },
+    {
+        "name": "Frittierfett",
+        "amout": 100,
+        "calories": 900,
+        "density": 9
+    },
+    {
+        "name": "Kokosfett",
+        "amout": 100,
+        "calories": 900,
+        "density": 9
+    },
+    {
+        "name": "Sonnenblumenöl",
+        "amout": 100,
+        "calories": 900,
+        "density": 9
+    },
+    {
+        "name": "Heringsöl",
+        "amout": 100,
+        "calories": 902,
+        "density": "9,02"
+    },
+    {
+        "name": "Lachsöl",
+        "amout": 100,
+        "calories": 902,
+        "density": "9,02"
+    },
+    {
+        "name": "Lebertran",
+        "amout": 100,
+        "calories": 902,
+        "density": "9,02"
+    },
+    {
+        "name": "Gänseschmalz",
+        "amout": 100,
+        "calories": 930,
+        "density": "9,3"
+    },
+    {
+        "name": "Palmfett",
+        "amout": 100,
+        "calories": 930,
+        "density": "9,3"
+    }
+]

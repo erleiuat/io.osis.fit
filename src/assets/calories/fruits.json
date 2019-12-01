@@ -1,0 +1,668 @@
+[
+    {
+        "name": "Rhabarber",
+        "amout": 100,
+        "calories": 20,
+        "density": "0,2"
+    },
+    {
+        "name": "Baumstachelbeeren",
+        "amout": 100,
+        "calories": 24,
+        "density": "0,24"
+    },
+    {
+        "name": "Zuckermelone",
+        "amout": 100,
+        "calories": 26,
+        "density": "0,26"
+    },
+    {
+        "name": "Zitrone",
+        "amout": 100,
+        "calories": 29,
+        "density": "0,29"
+    },
+    {
+        "name": "Wassermelone",
+        "amout": 100,
+        "calories": 30,
+        "density": "0,3"
+    },
+    {
+        "name": "Limette",
+        "amout": 100,
+        "calories": 30,
+        "density": "0,3"
+    },
+    {
+        "name": "Wassermelone",
+        "amout": 100,
+        "calories": 30,
+        "density": "0,3"
+    },
+    {
+        "name": "Sternfrucht",
+        "amout": 100,
+        "calories": 31,
+        "density": "0,31"
+    },
+    {
+        "name": "Sternfrucht",
+        "amout": 100,
+        "calories": 31,
+        "density": "0,31"
+    },
+    {
+        "name": "Acerola Kirsche",
+        "amout": 100,
+        "calories": 32,
+        "density": "0,32"
+    },
+    {
+        "name": "Grapefruit /Pampelmuse",
+        "amout": 100,
+        "calories": 32,
+        "density": "0,32"
+    },
+    {
+        "name": "Acerola",
+        "amout": 100,
+        "calories": 32,
+        "density": "0,32"
+    },
+    {
+        "name": "Erdbeeren",
+        "amout": 100,
+        "calories": 32,
+        "density": "0,32"
+    },
+    {
+        "name": "Grapefruit / Pampelmuse",
+        "amout": 100,
+        "calories": 32,
+        "density": "0,32"
+    },
+    {
+        "name": "Pitanga",
+        "amout": 100,
+        "calories": 33,
+        "density": "0,33"
+    },
+    {
+        "name": "Schattenmorellen",
+        "amout": 100,
+        "calories": 33,
+        "density": "0,33"
+    },
+    {
+        "name": "Cantaloupe Melone",
+        "amout": 100,
+        "calories": 34,
+        "density": "0,34"
+    },
+    {
+        "name": "Guave",
+        "amout": 100,
+        "calories": 34,
+        "density": "0,34"
+    },
+    {
+        "name": "Cantaloupe Melone",
+        "amout": 100,
+        "calories": 34,
+        "density": "0,34"
+    },
+    {
+        "name": "Preiselbeeren",
+        "amout": 100,
+        "calories": 35,
+        "density": "0,35"
+    },
+    {
+        "name": "Honigmelone",
+        "amout": 100,
+        "calories": 36,
+        "density": "0,36"
+    },
+    {
+        "name": "Honigmelone",
+        "amout": 100,
+        "calories": 36,
+        "density": "0,36"
+    },
+    {
+        "name": "Pomelo",
+        "amout": 100,
+        "calories": 38,
+        "density": "0,38"
+    },
+    {
+        "name": "Pomelo",
+        "amout": 100,
+        "calories": 38,
+        "density": "0,38"
+    },
+    {
+        "name": "Papaya",
+        "amout": 100,
+        "calories": 39,
+        "density": "0,39"
+    },
+    {
+        "name": "Papaya",
+        "amout": 100,
+        "calories": 39,
+        "density": "0,39"
+    },
+    {
+        "name": "Papaya",
+        "amout": 100,
+        "calories": 39,
+        "density": "0,39"
+    },
+    {
+        "name": "Pfirsich",
+        "amout": 100,
+        "calories": 39,
+        "density": "0,39"
+    },
+    {
+        "name": "Kaktusfeige",
+        "amout": 100,
+        "calories": 41,
+        "density": "0,41"
+    },
+    {
+        "name": "Apfelmus",
+        "amout": 100,
+        "calories": 42,
+        "density": "0,42"
+    },
+    {
+        "name": "Maulbeeren",
+        "amout": 100,
+        "calories": 43,
+        "density": "0,43"
+    },
+    {
+        "name": "Brombeere",
+        "amout": 100,
+        "calories": 43,
+        "density": "0,43"
+    },
+    {
+        "name": "Nektarine",
+        "amout": 100,
+        "calories": 44,
+        "density": "0,44"
+    },
+    {
+        "name": "Stachelbeeren",
+        "amout": 100,
+        "calories": 44,
+        "density": "0,44"
+    },
+    {
+        "name": "Clementine / Klementine",
+        "amout": 100,
+        "calories": 46,
+        "density": "0,46"
+    },
+    {
+        "name": "Cranberry",
+        "amout": 100,
+        "calories": 46,
+        "density": "0,46"
+    },
+    {
+        "name": "Pflaume",
+        "amout": 100,
+        "calories": 46,
+        "density": "0,46"
+    },
+    {
+        "name": "Orange / Apfelsine",
+        "amout": 100,
+        "calories": 47,
+        "density": "0,47"
+    },
+    {
+        "name": "Drachenfrucht / Pitaya",
+        "amout": 100,
+        "calories": 48,
+        "density": "0,48"
+    },
+    {
+        "name": "Aprikose / Marille",
+        "amout": 100,
+        "calories": 48,
+        "density": "0,48"
+    },
+    {
+        "name": "Feijoa",
+        "amout": 100,
+        "calories": 49,
+        "density": "0,49"
+    },
+    {
+        "name": "Ananas",
+        "amout": 100,
+        "calories": 50,
+        "density": "0,5"
+    },
+    {
+        "name": "Ananas",
+        "amout": 100,
+        "calories": 50,
+        "density": "0,5"
+    },
+    {
+        "name": "Sauerkirschen",
+        "amout": 100,
+        "calories": 50,
+        "density": "0,5"
+    },
+    {
+        "name": "Zwetschgen",
+        "amout": 100,
+        "calories": 50,
+        "density": "0,5"
+    },
+    {
+        "name": "Apfel",
+        "amout": 100,
+        "calories": 52,
+        "density": "0,52"
+    },
+    {
+        "name": "Blutorange",
+        "amout": 100,
+        "calories": 52,
+        "density": "0,52"
+    },
+    {
+        "name": "Himbeeren",
+        "amout": 100,
+        "calories": 52,
+        "density": "0,52"
+    },
+    {
+        "name": "Nashi",
+        "amout": 100,
+        "calories": 53,
+        "density": "0,53"
+    },
+    {
+        "name": "Mandarine",
+        "amout": 100,
+        "calories": 53,
+        "density": "0,53"
+    },
+    {
+        "name": "Obstsalat",
+        "amout": 100,
+        "calories": 53,
+        "density": "0,53"
+    },
+    {
+        "name": "Johannisbeeren",
+        "amout": 100,
+        "calories": 56,
+        "density": "0,56"
+    },
+    {
+        "name": "Renekloden",
+        "amout": 100,
+        "calories": 56,
+        "density": "0,56"
+    },
+    {
+        "name": "Blaubeere",
+        "amout": 100,
+        "calories": 57,
+        "density": "0,57"
+    },
+    {
+        "name": "Quitte",
+        "amout": 100,
+        "calories": 57,
+        "density": "0,57"
+    },
+    {
+        "name": "Birne",
+        "amout": 100,
+        "calories": 58,
+        "density": "0,58"
+    },
+    {
+        "name": "Tamarillo",
+        "amout": 100,
+        "calories": 59,
+        "density": "0,59"
+    },
+    {
+        "name": "Loganbeeren",
+        "amout": 100,
+        "calories": 60,
+        "density": "0,6"
+    },
+    {
+        "name": "Longan",
+        "amout": 100,
+        "calories": 60,
+        "density": "0,6"
+    },
+    {
+        "name": "Kiwi",
+        "amout": 100,
+        "calories": 61,
+        "density": "0,61"
+    },
+    {
+        "name": "Kiwi",
+        "amout": 100,
+        "calories": 61,
+        "density": "0,61"
+    },
+    {
+        "name": "Sharon",
+        "amout": 100,
+        "calories": 62,
+        "density": "0,62"
+    },
+    {
+        "name": "Sharon",
+        "amout": 100,
+        "calories": 62,
+        "density": "0,62"
+    },
+    {
+        "name": "Kirschen",
+        "amout": 100,
+        "calories": 63,
+        "density": "0,63"
+    },
+    {
+        "name": "Galia Melone",
+        "amout": 100,
+        "calories": 64,
+        "density": "0,64"
+    },
+    {
+        "name": "Mirabellen",
+        "amout": 100,
+        "calories": 64,
+        "density": "0,64"
+    },
+    {
+        "name": "Netzmelone / Galiamelone",
+        "amout": 100,
+        "calories": 64,
+        "density": "0,64"
+    },
+    {
+        "name": "Mango",
+        "amout": 100,
+        "calories": 65,
+        "density": "0,65"
+    },
+    {
+        "name": "Mango",
+        "amout": 100,
+        "calories": 65,
+        "density": "0,65"
+    },
+    {
+        "name": "Litschi",
+        "amout": 100,
+        "calories": 66,
+        "density": "0,66"
+    },
+    {
+        "name": "Litschis",
+        "amout": 100,
+        "calories": 66,
+        "density": "0,66"
+    },
+    {
+        "name": "Weintrauben",
+        "amout": 100,
+        "calories": 69,
+        "density": "0,69"
+    },
+    {
+        "name": "Kaki",
+        "amout": 100,
+        "calories": 70,
+        "density": "0,7"
+    },
+    {
+        "name": "Minneola",
+        "amout": 100,
+        "calories": 70,
+        "density": "0,7"
+    },
+    {
+        "name": "Rambutan",
+        "amout": 100,
+        "calories": 70,
+        "density": "0,7"
+    },
+    {
+        "name": "Kaki",
+        "amout": 100,
+        "calories": 70,
+        "density": "0,7"
+    },
+    {
+        "name": "Minneola",
+        "amout": 100,
+        "calories": 70,
+        "density": "0,7"
+    },
+    {
+        "name": "Kumquat",
+        "amout": 100,
+        "calories": 71,
+        "density": "0,71"
+    },
+    {
+        "name": "Physalis",
+        "amout": 100,
+        "calories": 72,
+        "density": "0,72"
+    },
+    {
+        "name": "Physalis",
+        "amout": 100,
+        "calories": 72,
+        "density": "0,72"
+    },
+    {
+        "name": "Maracuja / Passionsfrucht",
+        "amout": 100,
+        "calories": 73,
+        "density": "0,73"
+    },
+    {
+        "name": "Holunderbeeren",
+        "amout": 100,
+        "calories": 73,
+        "density": "0,73"
+    },
+    {
+        "name": "Trauben",
+        "amout": 100,
+        "calories": 73,
+        "density": "0,73"
+    },
+    {
+        "name": "Cherimoya",
+        "amout": 100,
+        "calories": 74,
+        "density": "0,74"
+    },
+    {
+        "name": "Mangostane",
+        "amout": 100,
+        "calories": 74,
+        "density": "0,74"
+    },
+    {
+        "name": "Feigen",
+        "amout": 100,
+        "calories": 74,
+        "density": "0,74"
+    },
+    {
+        "name": "Jujube",
+        "amout": 100,
+        "calories": 79,
+        "density": "0,79"
+    },
+    {
+        "name": "Granatapfel",
+        "amout": 100,
+        "calories": 83,
+        "density": "0,83"
+    },
+    {
+        "name": "Sapodilla",
+        "amout": 100,
+        "calories": 83,
+        "density": "0,83"
+    },
+    {
+        "name": "Granatapfel",
+        "amout": 100,
+        "calories": 83,
+        "density": "0,83"
+    },
+    {
+        "name": "Felsenbirne",
+        "amout": 100,
+        "calories": 85,
+        "density": "0,85"
+    },
+    {
+        "name": "Banane",
+        "amout": 100,
+        "calories": 89,
+        "density": "0,89"
+    },
+    {
+        "name": "Banane",
+        "amout": 100,
+        "calories": 89,
+        "density": "0,89"
+    },
+    {
+        "name": "Hagebutten",
+        "amout": 100,
+        "calories": 90,
+        "density": "0,9"
+    },
+    {
+        "name": "Heidelbeeren",
+        "amout": 100,
+        "calories": 93,
+        "density": "0,93"
+    },
+    {
+        "name": "Jackfrucht",
+        "amout": 100,
+        "calories": 94,
+        "density": "0,94"
+    },
+    {
+        "name": "Apfelbeeren",
+        "amout": 100,
+        "calories": 96,
+        "density": "0,96"
+    },
+    {
+        "name": "Maracuja / Passionsfrucht",
+        "amout": 100,
+        "calories": 97,
+        "density": "0,97"
+    },
+    {
+        "name": "Zimtapfel",
+        "amout": 100,
+        "calories": 101,
+        "density": "1,01"
+    },
+    {
+        "name": "Brotfrucht",
+        "amout": 100,
+        "calories": 103,
+        "density": "1,03"
+    },
+    {
+        "name": "Kochbanane",
+        "amout": 100,
+        "calories": 116,
+        "density": "1,16"
+    },
+    {
+        "name": "Durian",
+        "amout": 100,
+        "calories": 147,
+        "density": "1,47"
+    },
+    {
+        "name": "Avocado",
+        "amout": 100,
+        "calories": 160,
+        "density": "1,6"
+    },
+    {
+        "name": "Avocado",
+        "amout": 100,
+        "calories": 160,
+        "density": "1,6"
+    },
+    {
+        "name": "Maraschino Kirschen",
+        "amout": 100,
+        "calories": 165,
+        "density": "1,65"
+    },
+    {
+        "name": "Tamarinden",
+        "amout": 100,
+        "calories": 239,
+        "density": "2,39"
+    },
+    {
+        "name": "Tamarinden",
+        "amout": 100,
+        "calories": 239,
+        "density": "2,39"
+    },
+    {
+        "name": "Datteln",
+        "amout": 100,
+        "calories": 282,
+        "density": "2,82"
+    },
+    {
+        "name": "Rosinen",
+        "amout": 100,
+        "calories": 299,
+        "density": "2,99"
+    },
+    {
+        "name": "Korinthen",
+        "amout": 100,
+        "calories": 327,
+        "density": "3,27"
+    },
+    {
+        "name": "Kokosnuss",
+        "amout": 100,
+        "calories": 354,
+        "density": "3,54"
+    }
+]

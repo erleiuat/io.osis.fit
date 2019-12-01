@@ -52,7 +52,8 @@ export default {
             return [
                 { text: this.$t('view.home.name'), icon: 'mdi-home-outline', to: { name: 'home.today' } },
                 { text: this.$t('view.template.name'), icon: 'mdi-file-replace-outline', to: { name: 'template' } },
-                { text: this.$t('view.destiny.name'), icon: 'mdi-target', to: { name: 'destiny.goals' } }
+                { text: this.$t('view.destiny.name'), icon: 'mdi-target', to: { name: 'destiny.goals' } },
+                { text: this.$t('view.calorietable.name'), icon: 'mdi-format-list-bulleted', to: { name: 'calorietable' } }
             ]
         },
 

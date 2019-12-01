@@ -1,0 +1,650 @@
+[
+    {
+        "name": "Molke",
+        "amout": "100",
+        "calories": 21,
+        "density": "#VALUE!"
+    },
+    {
+        "name": "Joghurt 0,1% Fett",
+        "amout": 100,
+        "calories": 31,
+        "density": "0,31"
+    },
+    {
+        "name": "Joghurt",
+        "amout": 100,
+        "calories": 31,
+        "density": "0,31"
+    },
+    {
+        "name": "Magermilch",
+        "amout": "100",
+        "calories": 33,
+        "density": "#VALUE!"
+    },
+    {
+        "name": "Buttermilch",
+        "amout": 100,
+        "calories": 38,
+        "density": "0,38"
+    },
+    {
+        "name": "Ayran",
+        "amout": "100",
+        "calories": 40,
+        "density": "#VALUE!"
+    },
+    {
+        "name": "Ayran",
+        "amout": "100",
+        "calories": 40,
+        "density": "#VALUE!"
+    },
+    {
+        "name": "Milch",
+        "amout": "100",
+        "calories": 46,
+        "density": "#VALUE!"
+    },
+    {
+        "name": "Laktosefreie Milch",
+        "amout": "100",
+        "calories": 47,
+        "density": "#VALUE!"
+    },
+    {
+        "name": "Magermilch Joghurt",
+        "amout": 100,
+        "calories": 49,
+        "density": "0,49"
+    },
+    {
+        "name": "Naturjoghurt",
+        "amout": 100,
+        "calories": 49,
+        "density": "0,49"
+    },
+    {
+        "name": "Vanille Joghurt",
+        "amout": 100,
+        "calories": 49,
+        "density": "0,49"
+    },
+    {
+        "name": "Halbfettmilch",
+        "amout": "100",
+        "calories": 49,
+        "density": "#VALUE!"
+    },
+    {
+        "name": "Erdbeermilch",
+        "amout": "100",
+        "calories": 58,
+        "density": "#VALUE!"
+    },
+    {
+        "name": "Activia Erdbeere",
+        "amout": 100,
+        "calories": 60,
+        "density": "0,6"
+    },
+    {
+        "name": "Probiotischer Joghurt",
+        "amout": 100,
+        "calories": 60,
+        "density": "0,6"
+    },
+    {
+        "name": "Dickmilch",
+        "amout": 100,
+        "calories": 60,
+        "density": "0,6"
+    },
+    {
+        "name": "Joghurt 3,5%",
+        "amout": 100,
+        "calories": 61,
+        "density": "0,61"
+    },
+    {
+        "name": "Joghurt Vollmilch",
+        "amout": 100,
+        "calories": 61,
+        "density": "0,61"
+    },
+    {
+        "name": "Ziegenmilch",
+        "amout": "100",
+        "calories": 61,
+        "density": "#VALUE!"
+    },
+    {
+        "name": "Fettarmer Joghurt 1,5%",
+        "amout": 100,
+        "calories": 62,
+        "density": "0,62"
+    },
+    {
+        "name": "Naturjoghurt",
+        "amout": 100,
+        "calories": 62,
+        "density": "0,62"
+    },
+    {
+        "name": "Kefir",
+        "amout": 100,
+        "calories": 64,
+        "density": "0,64"
+    },
+    {
+        "name": "Vollmilch",
+        "amout": "100",
+        "calories": 64,
+        "density": "#VALUE!"
+    },
+    {
+        "name": "Körniger Frischkäse 0,8%",
+        "amout": 100,
+        "calories": 65,
+        "density": "0,65"
+    },
+    {
+        "name": "Diät Fruchtjoghurt",
+        "amout": 100,
+        "calories": 65,
+        "density": "0,65"
+    },
+    {
+        "name": "Körniger Frischkäse 0,1%",
+        "amout": 100,
+        "calories": 66,
+        "density": "0,66"
+    },
+    {
+        "name": "Magerquark",
+        "amout": 100,
+        "calories": 67,
+        "density": "0,67"
+    },
+    {
+        "name": "Ananas Joghurt",
+        "amout": 100,
+        "calories": 69,
+        "density": "0,69"
+    },
+    {
+        "name": "Kirsch Joghurt",
+        "amout": 100,
+        "calories": 69,
+        "density": "0,69"
+    },
+    {
+        "name": "Vollmilch Joghurt",
+        "amout": 100,
+        "calories": 71,
+        "density": "0,71"
+    },
+    {
+        "name": "Hüttenkäse ohne Fett",
+        "amout": 100,
+        "calories": 72,
+        "density": "0,72"
+    },
+    {
+        "name": "Bio Joghurt",
+        "amout": 100,
+        "calories": 73,
+        "density": "0,73"
+    },
+    {
+        "name": "Activia",
+        "amout": 100,
+        "calories": 75,
+        "density": "0,75"
+    },
+    {
+        "name": "Milchmischgetränk",
+        "amout": "100",
+        "calories": 77,
+        "density": "#VALUE!"
+    },
+    {
+        "name": "Kakao",
+        "amout": "100",
+        "calories": 78,
+        "density": "#VALUE!"
+    },
+    {
+        "name": "Aloe Vera Joghurt",
+        "amout": 100,
+        "calories": 80,
+        "density": "0,8"
+    },
+    {
+        "name": "Zitronenjoghurt",
+        "amout": 100,
+        "calories": 80,
+        "density": "0,8"
+    },
+    {
+        "name": "Mango Lassi",
+        "amout": "100",
+        "calories": 87,
+        "density": "#VALUE!"
+    },
+    {
+        "name": "Der kleine Bauer Erdbeere",
+        "amout": 100,
+        "calories": 88,
+        "density": "0,88"
+    },
+    {
+        "name": "Trinkjoghurt",
+        "amout": "100",
+        "calories": 90,
+        "density": "#VALUE!"
+    },
+    {
+        "name": "Pfirsich Maracuja Joghurt",
+        "amout": 100,
+        "calories": 94,
+        "density": "0,94"
+    },
+    {
+        "name": "Schokomilch",
+        "amout": "100",
+        "calories": 94,
+        "density": "#VALUE!"
+    },
+    {
+        "name": "Hüttenkäse",
+        "amout": 100,
+        "calories": 98,
+        "density": "0,98"
+    },
+    {
+        "name": "Heidelbeer Joghurt",
+        "amout": 100,
+        "calories": 98,
+        "density": "0,98"
+    },
+    {
+        "name": "Activia Zitrone",
+        "amout": 100,
+        "calories": 99,
+        "density": "0,99"
+    },
+    {
+        "name": "Mocca Joghurt",
+        "amout": 100,
+        "calories": 100,
+        "density": 1
+    },
+    {
+        "name": "Fruchtjoghurt",
+        "amout": 100,
+        "calories": 101,
+        "density": "1,01"
+    },
+    {
+        "name": "Fruchtjoghurt",
+        "amout": 100,
+        "calories": 101,
+        "density": "1,01"
+    },
+    {
+        "name": "Erdbeer Joghurt",
+        "amout": 100,
+        "calories": 102,
+        "density": "1,02"
+    },
+    {
+        "name": "Froop Erdbeere",
+        "amout": 100,
+        "calories": 103,
+        "density": "1,03"
+    },
+    {
+        "name": "Himbeer Joghurt",
+        "amout": 100,
+        "calories": 103,
+        "density": "1,03"
+    },
+    {
+        "name": "Fruchtzwerge",
+        "amout": 100,
+        "calories": 105,
+        "density": "1,05"
+    },
+    {
+        "name": "Froop Himbeere",
+        "amout": 100,
+        "calories": 107,
+        "density": "1,07"
+    },
+    {
+        "name": "Froop Pfirsich-Maracuja",
+        "amout": 100,
+        "calories": 108,
+        "density": "1,08"
+    },
+    {
+        "name": "Obstgarten Kirsche",
+        "amout": 100,
+        "calories": 108,
+        "density": "1,08"
+    },
+    {
+        "name": "Obstgarten Ananas",
+        "amout": 100,
+        "calories": 111,
+        "density": "1,11"
+    },
+    {
+        "name": "Der kleine Bauer Stracciatella",
+        "amout": 100,
+        "calories": 112,
+        "density": "1,12"
+    },
+    {
+        "name": "Saure Sahne",
+        "amout": 100,
+        "calories": 115,
+        "density": "1,15"
+    },
+    {
+        "name": "Griechischer Joghurt",
+        "amout": 100,
+        "calories": 116,
+        "density": "1,16"
+    },
+    {
+        "name": "Fruchtjoghurt Müsli",
+        "amout": 100,
+        "calories": 117,
+        "density": "1,17"
+    },
+    {
+        "name": "Obstgarten Himbeere",
+        "amout": 100,
+        "calories": 117,
+        "density": "1,17"
+    },
+    {
+        "name": "Almighurt",
+        "amout": 100,
+        "calories": 118,
+        "density": "1,18"
+    },
+    {
+        "name": "Haselnuss Joghurt",
+        "amout": 100,
+        "calories": 119,
+        "density": "1,19"
+    },
+    {
+        "name": "Joghurt mit der Ecke",
+        "amout": 100,
+        "calories": 119,
+        "density": "1,19"
+    },
+    {
+        "name": "Zaziki",
+        "amout": 100,
+        "calories": 122,
+        "density": "1,22"
+    },
+    {
+        "name": "Kaffeesahne",
+        "amout": "100",
+        "calories": 123,
+        "density": "#VALUE!"
+    },
+    {
+        "name": "Sahne Joghurt",
+        "amout": 100,
+        "calories": 133,
+        "density": "1,33"
+    },
+    {
+        "name": "Kokosmilch",
+        "amout": "100",
+        "calories": 136,
+        "density": "#VALUE!"
+    },
+    {
+        "name": "Gemüse Frischkäse",
+        "amout": 100,
+        "calories": 139,
+        "density": "1,39"
+    },
+    {
+        "name": "Rahmjoghurt 10,0%",
+        "amout": 100,
+        "calories": 140,
+        "density": "1,4"
+    },
+    {
+        "name": "Kräuterfrischkäse",
+        "amout": 100,
+        "calories": 143,
+        "density": "1,43"
+    },
+    {
+        "name": "Stracciatella Joghurt",
+        "amout": 100,
+        "calories": 145,
+        "density": "1,45"
+    },
+    {
+        "name": "Bircher Müsli Joghurt",
+        "amout": 100,
+        "calories": 149,
+        "density": "1,49"
+    },
+    {
+        "name": "Feta & Gurke Frischkäse",
+        "amout": 100,
+        "calories": 151,
+        "density": "1,51"
+    },
+    {
+        "name": "Frischkäse 4 % Fett",
+        "amout": 100,
+        "calories": 151,
+        "density": "1,51"
+    },
+    {
+        "name": "Sahne Joghurt Stracciatella",
+        "amout": 100,
+        "calories": 156,
+        "density": "1,56"
+    },
+    {
+        "name": "Schnittlauch Frischkäse",
+        "amout": 100,
+        "calories": 158,
+        "density": "1,58"
+    },
+    {
+        "name": "Frischkäse Balance",
+        "amout": 100,
+        "calories": 160,
+        "density": "1,6"
+    },
+    {
+        "name": "Philadelphia Balance 12,0 %",
+        "amout": 100,
+        "calories": 160,
+        "density": "1,6"
+    },
+    {
+        "name": "Sauerrahm",
+        "amout": 100,
+        "calories": 162,
+        "density": "1,62"
+    },
+    {
+        "name": "Kaffeerahm",
+        "amout": "100",
+        "calories": 163,
+        "density": "#VALUE!"
+    },
+    {
+        "name": "Haydari",
+        "amout": 100,
+        "calories": 165,
+        "density": "1,65"
+    },
+    {
+        "name": "Creme legere",
+        "amout": 100,
+        "calories": 169,
+        "density": "1,69"
+    },
+    {
+        "name": "Ricotta",
+        "amout": 100,
+        "calories": 174,
+        "density": "1,74"
+    },
+    {
+        "name": "Kondensmilch",
+        "amout": "100",
+        "calories": 177,
+        "density": "#VALUE!"
+    },
+    {
+        "name": "Ziegenfrischkäse mit feinen Kräutern",
+        "amout": 100,
+        "calories": 178,
+        "density": "1,78"
+    },
+    {
+        "name": "Frischkäse 60% Fett i.Tr.",
+        "amout": 100,
+        "calories": 200,
+        "density": 2
+    },
+    {
+        "name": "Sahne",
+        "amout": 100,
+        "calories": 204,
+        "density": "2,04"
+    },
+    {
+        "name": "Hirtenkäse",
+        "amout": 100,
+        "calories": 209,
+        "density": "2,09"
+    },
+    {
+        "name": "Scheibletten",
+        "amout": 100,
+        "calories": 209,
+        "density": "2,09"
+    },
+    {
+        "name": "Waldbärlauch Frischkäse",
+        "amout": 100,
+        "calories": 210,
+        "density": "2,1"
+    },
+    {
+        "name": "Feta",
+        "amout": 100,
+        "calories": 210,
+        "density": "2,1"
+    },
+    {
+        "name": "Feta-Olive Frischkäse",
+        "amout": 100,
+        "calories": 212,
+        "density": "2,12"
+    },
+    {
+        "name": "Paprika & Peperoni Frischkäse",
+        "amout": 100,
+        "calories": 212,
+        "density": "2,12"
+    },
+    {
+        "name": "Philadelphia Doppelrahmstufe",
+        "amout": 100,
+        "calories": 233,
+        "density": "2,33"
+    },
+    {
+        "name": "Schmand",
+        "amout": 100,
+        "calories": 240,
+        "density": "2,4"
+    },
+    {
+        "name": "Philadelphia, klassisch",
+        "amout": 100,
+        "calories": 245,
+        "density": "2,45"
+    },
+    {
+        "name": "Buttermilchkäse",
+        "amout": 100,
+        "calories": 248,
+        "density": "2,48"
+    },
+    {
+        "name": "Knoblauch Frischkäse",
+        "amout": 100,
+        "calories": 250,
+        "density": "2,5"
+    },
+    {
+        "name": "Edamer",
+        "amout": 100,
+        "calories": 251,
+        "density": "2,51"
+    },
+    {
+        "name": "Meerrettich",
+        "amout": 100,
+        "calories": 254,
+        "density": "2,54"
+    },
+    {
+        "name": "Camembert",
+        "amout": 100,
+        "calories": 254,
+        "density": "2,54"
+    },
+    {
+        "name": "Der Sahnige Frischkäse",
+        "amout": 100,
+        "calories": 260,
+        "density": "2,6"
+    },
+    {
+        "name": "Ziegenfrischkäse",
+        "amout": 100,
+        "calories": 280,
+        "density": "2,8"
+    },
+    {
+        "name": "Crème fraîche",
+        "amout": 100,
+        "calories": 292,
+        "density": "2,92"
+    },
+    {
+        "name": "Sprühsahne",
+        "amout": 100,
+        "calories": 299,
+        "density": "2,99"
+    },
+    {
+        "name": "Schlagsahne",
+        "amout": 100,
+        "calories": 308,
+        "density": "3,08"
+    }
+]

@@ -8,6 +8,9 @@
             "name": "Woche"
         }
     },
+    "calorietable": {
+        "name": "Kalorientabelle"
+    },
     "theme": {
         "name": "Design"
     },

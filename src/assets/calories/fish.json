@@ -1,0 +1,500 @@
+[
+    {
+        "name": "Crevetten",
+        "amout": 100,
+        "calories": 58,
+        "density": "0,58"
+    },
+    {
+        "name": "Austern",
+        "amout": 100,
+        "calories": 68,
+        "density": "0,68"
+    },
+    {
+        "name": "Seelachs",
+        "amout": 100,
+        "calories": 74,
+        "density": "0,74"
+    },
+    {
+        "name": "Venusmuschel",
+        "amout": 100,
+        "calories": 74,
+        "density": "0,74"
+    },
+    {
+        "name": "Seeteufel",
+        "amout": 100,
+        "calories": 76,
+        "density": "0,76"
+    },
+    {
+        "name": "Krebs",
+        "amout": 100,
+        "calories": 77,
+        "density": "0,77"
+    },
+    {
+        "name": "Kabeljau",
+        "amout": 100,
+        "calories": 82,
+        "density": "0,82"
+    },
+    {
+        "name": "Oktopus",
+        "amout": 100,
+        "calories": 82,
+        "density": "0,82"
+    },
+    {
+        "name": "Schleie",
+        "amout": 100,
+        "calories": 83,
+        "density": "0,83"
+    },
+    {
+        "name": "Zander",
+        "amout": 100,
+        "calories": 83,
+        "density": "0,83"
+    },
+    {
+        "name": "Königskrabbe",
+        "amout": 100,
+        "calories": 84,
+        "density": "0,84"
+    },
+    {
+        "name": "Scampi",
+        "amout": 100,
+        "calories": 84,
+        "density": "0,84"
+    },
+    {
+        "name": "Goldmakrelen",
+        "amout": 100,
+        "calories": 85,
+        "density": "0,85"
+    },
+    {
+        "name": "Miesmuschel",
+        "amout": 100,
+        "calories": 86,
+        "density": "0,86"
+    },
+    {
+        "name": "Scholle",
+        "amout": 100,
+        "calories": 86,
+        "density": "0,86"
+    },
+    {
+        "name": "Krabben",
+        "amout": 100,
+        "calories": 87,
+        "density": "0,87"
+    },
+    {
+        "name": "Lengfisch",
+        "amout": 100,
+        "calories": 87,
+        "density": "0,87"
+    },
+    {
+        "name": "Schellfisch",
+        "amout": 100,
+        "calories": 87,
+        "density": "0,87"
+    },
+    {
+        "name": "Hecht",
+        "amout": 100,
+        "calories": 88,
+        "density": "0,88"
+    },
+    {
+        "name": "Jakobsmuscheln",
+        "amout": 100,
+        "calories": 88,
+        "density": "0,88"
+    },
+    {
+        "name": "Hummer",
+        "amout": 100,
+        "calories": 90,
+        "density": "0,9"
+    },
+    {
+        "name": "Weißfisch",
+        "amout": 100,
+        "calories": 90,
+        "density": "0,9"
+    },
+    {
+        "name": "Barsch",
+        "amout": 100,
+        "calories": 91,
+        "density": "0,91"
+    },
+    {
+        "name": "Seezunge",
+        "amout": 100,
+        "calories": 91,
+        "density": "0,91"
+    },
+    {
+        "name": "Pangasius",
+        "amout": 100,
+        "calories": 92,
+        "density": "0,92"
+    },
+    {
+        "name": "Seehecht",
+        "amout": 100,
+        "calories": 92,
+        "density": "0,92"
+    },
+    {
+        "name": "Tintenfisch",
+        "amout": 100,
+        "calories": 92,
+        "density": "0,92"
+    },
+    {
+        "name": "Zackenbarsch",
+        "amout": 100,
+        "calories": 92,
+        "density": "0,92"
+    },
+    {
+        "name": "Drachenkopf",
+        "amout": 100,
+        "calories": 94,
+        "density": "0,94"
+    },
+    {
+        "name": "Gambas",
+        "amout": 100,
+        "calories": 94,
+        "density": "0,94"
+    },
+    {
+        "name": "Rotbarsch",
+        "amout": 100,
+        "calories": 94,
+        "density": "0,94"
+    },
+    {
+        "name": "Steinbeißer",
+        "amout": 100,
+        "calories": 95,
+        "density": "0,95"
+    },
+    {
+        "name": "Steinbutt",
+        "amout": 100,
+        "calories": 95,
+        "density": "0,95"
+    },
+    {
+        "name": "Seebarsch",
+        "amout": 100,
+        "calories": 97,
+        "density": "0,97"
+    },
+    {
+        "name": "Tilapia",
+        "amout": 100,
+        "calories": 97,
+        "density": "0,97"
+    },
+    {
+        "name": "Wolfsbarsch",
+        "amout": 100,
+        "calories": 97,
+        "density": "0,97"
+    },
+    {
+        "name": "Surimi",
+        "amout": 100,
+        "calories": 99,
+        "density": "0,99"
+    },
+    {
+        "name": "Wildlachsfilet",
+        "amout": 100,
+        "calories": 103,
+        "density": "1,03"
+    },
+    {
+        "name": "Croaker",
+        "amout": 100,
+        "calories": 104,
+        "density": "1,04"
+    },
+    {
+        "name": "Garnelen / Shrimps",
+        "amout": 100,
+        "calories": 106,
+        "density": "1,06"
+    },
+    {
+        "name": "Heilbutt",
+        "amout": 100,
+        "calories": 110,
+        "density": "1,1"
+    },
+    {
+        "name": "Red Snapper",
+        "amout": 100,
+        "calories": 110,
+        "density": "1,1"
+    },
+    {
+        "name": "Languste",
+        "amout": 100,
+        "calories": 112,
+        "density": "1,12"
+    },
+    {
+        "name": "Meeräsche",
+        "amout": 100,
+        "calories": 117,
+        "density": "1,17"
+    },
+    {
+        "name": "Forelle",
+        "amout": 100,
+        "calories": 119,
+        "density": "1,19"
+    },
+    {
+        "name": "Schwertfisch",
+        "amout": 100,
+        "calories": 121,
+        "density": "1,21"
+    },
+    {
+        "name": "Blaufisch",
+        "amout": 100,
+        "calories": 124,
+        "density": "1,24"
+    },
+    {
+        "name": "Sardinen",
+        "amout": 100,
+        "calories": 124,
+        "density": "1,24"
+    },
+    {
+        "name": "Dorade",
+        "amout": 100,
+        "calories": 127,
+        "density": "1,27"
+    },
+    {
+        "name": "Karpfen",
+        "amout": 100,
+        "calories": 127,
+        "density": "1,27"
+    },
+    {
+        "name": "Hai",
+        "amout": 100,
+        "calories": 130,
+        "density": "1,3"
+    },
+    {
+        "name": "Anchovis",
+        "amout": 100,
+        "calories": 131,
+        "density": "1,31"
+    },
+    {
+        "name": "Felchen",
+        "amout": 100,
+        "calories": 134,
+        "density": "1,34"
+    },
+    {
+        "name": "Sushi",
+        "amout": 100,
+        "calories": 135,
+        "density": "1,35"
+    },
+    {
+        "name": "Lachs",
+        "amout": 100,
+        "calories": 142,
+        "density": "1,42"
+    },
+    {
+        "name": "Fischrogen",
+        "amout": 100,
+        "calories": 143,
+        "density": "1,43"
+    },
+    {
+        "name": "Thunfisch",
+        "amout": 100,
+        "calories": 144,
+        "density": "1,44"
+    },
+    {
+        "name": "Lachsforelle",
+        "amout": 100,
+        "calories": 145,
+        "density": "1,45"
+    },
+    {
+        "name": "Butterfisch",
+        "amout": 100,
+        "calories": 146,
+        "density": "1,46"
+    },
+    {
+        "name": "Milchfisch",
+        "amout": 100,
+        "calories": 148,
+        "density": "1,48"
+    },
+    {
+        "name": "Hering",
+        "amout": 100,
+        "calories": 158,
+        "density": "1,58"
+    },
+    {
+        "name": "Wels",
+        "amout": 100,
+        "calories": 163,
+        "density": "1,63"
+    },
+    {
+        "name": "Hoki",
+        "amout": 100,
+        "calories": 167,
+        "density": "1,67"
+    },
+    {
+        "name": "Sahnehering",
+        "amout": 100,
+        "calories": 171,
+        "density": "1,71"
+    },
+    {
+        "name": "Schlemmerfilet Bordelaise",
+        "amout": 100,
+        "calories": 179,
+        "density": "1,79"
+    },
+    {
+        "name": "Aal",
+        "amout": 100,
+        "calories": 184,
+        "density": "1,84"
+    },
+    {
+        "name": "Räucherlachs",
+        "amout": 100,
+        "calories": 186,
+        "density": "1,86"
+    },
+    {
+        "name": "Thunfischsalat",
+        "amout": 100,
+        "calories": 187,
+        "density": "1,87"
+    },
+    {
+        "name": "Kohlenfisch",
+        "amout": 100,
+        "calories": 195,
+        "density": "1,95"
+    },
+    {
+        "name": "Rollmops",
+        "amout": 100,
+        "calories": 203,
+        "density": "2,03"
+    },
+    {
+        "name": "Makrele",
+        "amout": 100,
+        "calories": 205,
+        "density": "2,05"
+    },
+    {
+        "name": "Bismarckhering",
+        "amout": 100,
+        "calories": 210,
+        "density": "2,1"
+    },
+    {
+        "name": "Brathering",
+        "amout": 100,
+        "calories": 216,
+        "density": "2,16"
+    },
+    {
+        "name": "Stremellachs",
+        "amout": 100,
+        "calories": 219,
+        "density": "2,19"
+    },
+    {
+        "name": "Bückling",
+        "amout": 100,
+        "calories": 224,
+        "density": "2,24"
+    },
+    {
+        "name": "Fischfrikadelle",
+        "amout": 100,
+        "calories": 235,
+        "density": "2,35"
+    },
+    {
+        "name": "Tintenfischringe",
+        "amout": 100,
+        "calories": 247,
+        "density": "2,47"
+    },
+    {
+        "name": "Heringssalat",
+        "amout": 100,
+        "calories": 248,
+        "density": "2,48"
+    },
+    {
+        "name": "Fischstäbchen",
+        "amout": 100,
+        "calories": 250,
+        "density": "2,5"
+    },
+    {
+        "name": "Kaviar",
+        "amout": 100,
+        "calories": 252,
+        "density": "2,52"
+    },
+    {
+        "name": "Matjes",
+        "amout": 100,
+        "calories": 267,
+        "density": "2,67"
+    },
+    {
+        "name": "Schillerlocken",
+        "amout": 100,
+        "calories": 300,
+        "density": 3
+    },
+    {
+        "name": "Backfisch",
+        "amout": 100,
+        "calories": 328,
+        "density": "3,28"
+    }
+]

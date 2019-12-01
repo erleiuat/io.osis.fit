@@ -1,0 +1,560 @@
+[
+    {
+        "name": "Salz",
+        "amout": 100,
+        "calories": 0,
+        "density": 0
+    },
+    {
+        "name": "Gemüsebrühe",
+        "amout": 100,
+        "calories": 3,
+        "density": "0,03"
+    },
+    {
+        "name": "Essig",
+        "amout": 100,
+        "calories": 4,
+        "density": "0,04"
+    },
+    {
+        "name": "Safran",
+        "amout": 100,
+        "calories": 7,
+        "density": "0,07"
+    },
+    {
+        "name": "Brunnenkresse",
+        "amout": 100,
+        "calories": 11,
+        "density": "0,11"
+    },
+    {
+        "name": "Apfelessig",
+        "amout": 100,
+        "calories": 16,
+        "density": "0,16"
+    },
+    {
+        "name": "Himbeeressig",
+        "amout": 100,
+        "calories": 17,
+        "density": "0,17"
+    },
+    {
+        "name": "Mangold",
+        "amout": 100,
+        "calories": 19,
+        "density": "0,19"
+    },
+    {
+        "name": "Rotweinessig",
+        "amout": 100,
+        "calories": 19,
+        "density": "0,19"
+    },
+    {
+        "name": "Obstessig",
+        "amout": 100,
+        "calories": 20,
+        "density": "0,2"
+    },
+    {
+        "name": "Borretsch",
+        "amout": 100,
+        "calories": 21,
+        "density": "0,21"
+    },
+    {
+        "name": "Kräutersalz",
+        "amout": 100,
+        "calories": 21,
+        "density": "0,21"
+    },
+    {
+        "name": "Basilikum",
+        "amout": 100,
+        "calories": 23,
+        "density": "0,23"
+    },
+    {
+        "name": "Chrysanthemen",
+        "amout": 100,
+        "calories": 24,
+        "density": "0,24"
+    },
+    {
+        "name": "Jalapeno",
+        "amout": 100,
+        "calories": 30,
+        "density": "0,3"
+    },
+    {
+        "name": "Schnittlauch",
+        "amout": 100,
+        "calories": 30,
+        "density": "0,3"
+    },
+    {
+        "name": "Petersilie",
+        "amout": 100,
+        "calories": 36,
+        "density": "0,36"
+    },
+    {
+        "name": "Beifuß",
+        "amout": 100,
+        "calories": 42,
+        "density": "0,42"
+    },
+    {
+        "name": "Liebstöckel",
+        "amout": 100,
+        "calories": 42,
+        "density": "0,42"
+    },
+    {
+        "name": "Wacholder",
+        "amout": 100,
+        "calories": 42,
+        "density": "0,42"
+    },
+    {
+        "name": "Zitronenmelisse",
+        "amout": 100,
+        "calories": 42,
+        "density": "0,42"
+    },
+    {
+        "name": "Dill",
+        "amout": 100,
+        "calories": 43,
+        "density": "0,43"
+    },
+    {
+        "name": "Sambal Oelek",
+        "amout": 100,
+        "calories": 43,
+        "density": "0,43"
+    },
+    {
+        "name": "Sauce à l´Orange",
+        "amout": 100,
+        "calories": 43,
+        "density": "0,43"
+    },
+    {
+        "name": "Thai Curry Paste",
+        "amout": 100,
+        "calories": 45,
+        "density": "0,45"
+    },
+    {
+        "name": "Tomatensoße",
+        "amout": 100,
+        "calories": 45,
+        "density": "0,45"
+    },
+    {
+        "name": "Meerrettich",
+        "amout": 100,
+        "calories": 48,
+        "density": "0,48"
+    },
+    {
+        "name": "Trüffel",
+        "amout": 100,
+        "calories": 48,
+        "density": "0,48"
+    },
+    {
+        "name": "Tomatenmark",
+        "amout": 100,
+        "calories": 48,
+        "density": "0,48"
+    },
+    {
+        "name": "Kräutersoße",
+        "amout": 100,
+        "calories": 55,
+        "density": "0,55"
+    },
+    {
+        "name": "Hackfleischsoße",
+        "amout": 100,
+        "calories": 57,
+        "density": "0,57"
+    },
+    {
+        "name": "Teriyaki Soße",
+        "amout": 100,
+        "calories": 57,
+        "density": "0,57"
+    },
+    {
+        "name": "Zigeunersoße",
+        "amout": 100,
+        "calories": 61,
+        "density": "0,61"
+    },
+    {
+        "name": "Zaziki",
+        "amout": 100,
+        "calories": 66,
+        "density": "0,66"
+    },
+    {
+        "name": "Tabasco",
+        "amout": 100,
+        "calories": 69,
+        "density": "0,69"
+    },
+    {
+        "name": "Sojasoße",
+        "amout": 100,
+        "calories": 70,
+        "density": "0,7"
+    },
+    {
+        "name": "Barbecue Sauce",
+        "amout": 100,
+        "calories": 71,
+        "density": "0,71"
+    },
+    {
+        "name": "Maggi Würze",
+        "amout": 100,
+        "calories": 74,
+        "density": "0,74"
+    },
+    {
+        "name": "Bärlauch",
+        "amout": 100,
+        "calories": 77,
+        "density": "0,77"
+    },
+    {
+        "name": "Ingwer",
+        "amout": 100,
+        "calories": 80,
+        "density": "0,8"
+    },
+    {
+        "name": "Ajvar",
+        "amout": 100,
+        "calories": 86,
+        "density": "0,86"
+    },
+    {
+        "name": "Käsesoße",
+        "amout": 100,
+        "calories": 87,
+        "density": "0,87"
+    },
+    {
+        "name": "Balsamico Essig",
+        "amout": 100,
+        "calories": 88,
+        "density": "0,88"
+    },
+    {
+        "name": "Ketchup",
+        "amout": 100,
+        "calories": 97,
+        "density": "0,97"
+    },
+    {
+        "name": "Bolognese",
+        "amout": 100,
+        "calories": 98,
+        "density": "0,98"
+    },
+    {
+        "name": "Zitronengras",
+        "amout": 100,
+        "calories": 99,
+        "density": "0,99"
+    },
+    {
+        "name": "Thymian",
+        "amout": 100,
+        "calories": 101,
+        "density": "1,01"
+    },
+    {
+        "name": "Senf",
+        "amout": 100,
+        "calories": 102,
+        "density": "1,02"
+    },
+    {
+        "name": "Kräuter der Provence",
+        "amout": 100,
+        "calories": 103,
+        "density": "1,03"
+    },
+    {
+        "name": "Yamswurzel / Jamswurzel",
+        "amout": 100,
+        "calories": 118,
+        "density": "1,18"
+    },
+    {
+        "name": "Bratensoße",
+        "amout": 100,
+        "calories": 119,
+        "density": "1,19"
+    },
+    {
+        "name": "Bratensoße",
+        "amout": 100,
+        "calories": 119,
+        "density": "1,19"
+    },
+    {
+        "name": "Worcestersoße",
+        "amout": 100,
+        "calories": 140,
+        "density": "1,4"
+    },
+    {
+        "name": "Knoblauch",
+        "amout": 100,
+        "calories": 149,
+        "density": "1,49"
+    },
+    {
+        "name": "Currysauce",
+        "amout": 100,
+        "calories": 155,
+        "density": "1,55"
+    },
+    {
+        "name": "Maniok",
+        "amout": 100,
+        "calories": 160,
+        "density": "1,6"
+    },
+    {
+        "name": "Stevia",
+        "amout": 100,
+        "calories": 197,
+        "density": "1,97"
+    },
+    {
+        "name": "Caesar Dressing",
+        "amout": 100,
+        "calories": 243,
+        "density": "2,43"
+    },
+    {
+        "name": "Zimt",
+        "amout": 100,
+        "calories": 248,
+        "density": "2,48"
+    },
+    {
+        "name": "Pfeffer",
+        "amout": 100,
+        "calories": 255,
+        "density": "2,55"
+    },
+    {
+        "name": "Majoran",
+        "amout": 100,
+        "calories": 271,
+        "density": "2,71"
+    },
+    {
+        "name": "Bohnenkraut",
+        "amout": 100,
+        "calories": 272,
+        "density": "2,72"
+    },
+    {
+        "name": "Vanilleschote",
+        "amout": 100,
+        "calories": 272,
+        "density": "2,72"
+    },
+    {
+        "name": "Minze",
+        "amout": 100,
+        "calories": 285,
+        "density": "2,85"
+    },
+    {
+        "name": "Paprika",
+        "amout": 100,
+        "calories": 289,
+        "density": "2,89"
+    },
+    {
+        "name": "Estragon",
+        "amout": 100,
+        "calories": 295,
+        "density": "2,95"
+    },
+    {
+        "name": "Koriander",
+        "amout": 100,
+        "calories": 298,
+        "density": "2,98"
+    },
+    {
+        "name": "Cayenne-Pfeffer",
+        "amout": 100,
+        "calories": 299,
+        "density": "2,99"
+    },
+    {
+        "name": "Tomatenpulver",
+        "amout": 100,
+        "calories": 302,
+        "density": "3,02"
+    },
+    {
+        "name": "Oregano",
+        "amout": 100,
+        "calories": 306,
+        "density": "3,06"
+    },
+    {
+        "name": "Chili / Peperoni",
+        "amout": 100,
+        "calories": 314,
+        "density": "3,14"
+    },
+    {
+        "name": "Salbei",
+        "amout": 100,
+        "calories": 315,
+        "density": "3,15"
+    },
+    {
+        "name": "Bockshornklee",
+        "amout": 100,
+        "calories": 323,
+        "density": "3,23"
+    },
+    {
+        "name": "Gewürznelken",
+        "amout": 100,
+        "calories": 323,
+        "density": "3,23"
+    },
+    {
+        "name": "Curry",
+        "amout": 100,
+        "calories": 325,
+        "density": "3,25"
+    },
+    {
+        "name": "Rosmarin",
+        "amout": 100,
+        "calories": 331,
+        "density": "3,31"
+    },
+    {
+        "name": "Knoblauchpulver",
+        "amout": 100,
+        "calories": 332,
+        "density": "3,32"
+    },
+    {
+        "name": "Kümmel",
+        "amout": 100,
+        "calories": 333,
+        "density": "3,33"
+    },
+    {
+        "name": "Harissa",
+        "amout": 100,
+        "calories": 335,
+        "density": "3,35"
+    },
+    {
+        "name": "Anis",
+        "amout": 100,
+        "calories": 337,
+        "density": "3,37"
+    },
+    {
+        "name": "Fenchel",
+        "amout": 100,
+        "calories": 345,
+        "density": "3,45"
+    },
+    {
+        "name": "Kurkuma / Curkuma",
+        "amout": 100,
+        "calories": 354,
+        "density": "3,54"
+    },
+    {
+        "name": "Kreuzkümmel",
+        "amout": 100,
+        "calories": 375,
+        "density": "3,75"
+    },
+    {
+        "name": "Zucker",
+        "amout": 100,
+        "calories": 409,
+        "density": "4,09"
+    },
+    {
+        "name": "Kapern",
+        "amout": 100,
+        "calories": 416,
+        "density": "4,16"
+    },
+    {
+        "name": "Kakao",
+        "amout": 100,
+        "calories": 433,
+        "density": "4,33"
+    },
+    {
+        "name": "Senfsamen",
+        "amout": 100,
+        "calories": 469,
+        "density": "4,69"
+    },
+    {
+        "name": "Mohn",
+        "amout": 100,
+        "calories": 525,
+        "density": "5,25"
+    },
+    {
+        "name": "Muskatnuss",
+        "amout": 100,
+        "calories": 525,
+        "density": "5,25"
+    },
+    {
+        "name": "Pesto",
+        "amout": 100,
+        "calories": 571,
+        "density": "5,71"
+    },
+    {
+        "name": "Sesam",
+        "amout": 100,
+        "calories": 631,
+        "density": "6,31"
+    },
+    {
+        "name": "Vinaigrette",
+        "amout": 100,
+        "calories": 649,
+        "density": "6,49"
+    },
+    {
+        "name": "Mayonnaise",
+        "amout": 100,
+        "calories": 711,
+        "density": "7,11"
+    }
+]

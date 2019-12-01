@@ -47,6 +47,7 @@ export default {
     },
 
     beforeMount () {
+        this.$store.dispatch('calorietable/init')
         if (!this.$store.state.app.locale) this.$store.dispatch('app/locale', navigator.language || navigator.userLanguage)
     },
 

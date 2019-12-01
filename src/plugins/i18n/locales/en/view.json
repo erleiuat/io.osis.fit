@@ -8,6 +8,9 @@
             "name": "Week"
         }
     },
+    "calorietable": {
+        "name": "Calorietable"
+    },
     "theme": {
         "name": "Design"
     },

@@ -1,0 +1,332 @@
+[
+    {
+        "name": "Shirataki Nudeln",
+        "amout": 100,
+        "calories": 6,
+        "density": "0,06"
+    },
+    {
+        "name": "Ravioli",
+        "amout": 100,
+        "calories": 73,
+        "density": "0,73"
+    },
+    {
+        "name": "Dinkelkleie",
+        "amout": 100,
+        "calories": 99,
+        "density": "0,99"
+    },
+    {
+        "name": "Kloßteig",
+        "amout": 100,
+        "calories": 103,
+        "density": "1,03"
+    },
+    {
+        "name": "Reis",
+        "amout": 100,
+        "calories": 104,
+        "density": "1,04"
+    },
+    {
+        "name": "Porridge / Haferbrei",
+        "amout": 100,
+        "calories": 106,
+        "density": "1,06"
+    },
+    {
+        "name": "Hirsebrei",
+        "amout": 100,
+        "calories": 120,
+        "density": "1,2"
+    },
+    {
+        "name": "Dinkelnudeln, gekocht",
+        "amout": 100,
+        "calories": 128,
+        "density": "1,28"
+    },
+    {
+        "name": "Low Carb Pasta, gekocht",
+        "amout": 100,
+        "calories": 129,
+        "density": "1,29"
+    },
+    {
+        "name": "Vollkornnudeln, gekocht",
+        "amout": 100,
+        "calories": 129,
+        "density": "1,29"
+    },
+    {
+        "name": "Glasnudeln, gekocht",
+        "amout": 100,
+        "calories": 134,
+        "density": "1,34"
+    },
+    {
+        "name": "Bandnudeln, gekocht",
+        "amout": 100,
+        "calories": 142,
+        "density": "1,42"
+    },
+    {
+        "name": "Eiernudeln, gekocht",
+        "amout": 100,
+        "calories": 142,
+        "density": "1,42"
+    },
+    {
+        "name": "Penne, gekocht",
+        "amout": 100,
+        "calories": 150,
+        "density": "1,5"
+    },
+    {
+        "name": "Farfalle, gekocht",
+        "amout": 100,
+        "calories": 152,
+        "density": "1,52"
+    },
+    {
+        "name": "Penne Gorgonzola",
+        "amout": 100,
+        "calories": 154,
+        "density": "1,54"
+    },
+    {
+        "name": "Sojanudeln, gekocht",
+        "amout": 100,
+        "calories": 155,
+        "density": "1,55"
+    },
+    {
+        "name": "Suppennudeln, gekocht",
+        "amout": 100,
+        "calories": 155,
+        "density": "1,55"
+    },
+    {
+        "name": "Hartweizennudeln, gekocht",
+        "amout": 100,
+        "calories": 156,
+        "density": "1,56"
+    },
+    {
+        "name": "Tagliatelle, gekocht",
+        "amout": 100,
+        "calories": 159,
+        "density": "1,59"
+    },
+    {
+        "name": "Spätzle, gekocht",
+        "amout": 100,
+        "calories": 164,
+        "density": "1,64"
+    },
+    {
+        "name": "Vollkorn Fusilli, gekocht",
+        "amout": 100,
+        "calories": 164,
+        "density": "1,64"
+    },
+    {
+        "name": "Orecchiette, gekocht",
+        "amout": 100,
+        "calories": 165,
+        "density": "1,65"
+    },
+    {
+        "name": "Maccaroni",
+        "amout": 100,
+        "calories": 168,
+        "density": "1,68"
+    },
+    {
+        "name": "Weizenkleie",
+        "amout": 100,
+        "calories": 172,
+        "density": "1,72"
+    },
+    {
+        "name": "Fettuccine, gekocht",
+        "amout": 100,
+        "calories": 179,
+        "density": "1,79"
+    },
+    {
+        "name": "Roggenkleie",
+        "amout": 100,
+        "calories": 181,
+        "density": "1,81"
+    },
+    {
+        "name": "Cappelletti",
+        "amout": 100,
+        "calories": 181,
+        "density": "1,81"
+    },
+    {
+        "name": "Tortellini",
+        "amout": 100,
+        "calories": 187,
+        "density": "1,87"
+    },
+    {
+        "name": "Dampfnudeln",
+        "amout": 100,
+        "calories": 212,
+        "density": "2,12"
+    },
+    {
+        "name": "Backerbsen",
+        "amout": 100,
+        "calories": 213,
+        "density": "2,13"
+    },
+    {
+        "name": "Maultaschen",
+        "amout": 100,
+        "calories": 215,
+        "density": "2,15"
+    },
+    {
+        "name": "Sojakleie",
+        "amout": 100,
+        "calories": 246,
+        "density": "2,46"
+    },
+    {
+        "name": "Pierogi mit Hackfleisch",
+        "amout": 100,
+        "calories": 246,
+        "density": "2,46"
+    },
+    {
+        "name": "Spinat Tortellini",
+        "amout": 100,
+        "calories": 272,
+        "density": "2,72"
+    },
+    {
+        "name": "Tortelloni Prosciutto",
+        "amout": 100,
+        "calories": 285,
+        "density": "2,85"
+    },
+    {
+        "name": "Gemüse Tortellini",
+        "amout": 100,
+        "calories": 290,
+        "density": "2,9"
+    },
+    {
+        "name": "Mehrkornflocken",
+        "amout": 100,
+        "calories": 306,
+        "density": "3,06"
+    },
+    {
+        "name": "Vollkornweizen",
+        "amout": 100,
+        "calories": 309,
+        "density": "3,09"
+    },
+    {
+        "name": "Gerstenflocken",
+        "amout": 100,
+        "calories": 314,
+        "density": "3,14"
+    },
+    {
+        "name": "Gerstenvollkorn",
+        "amout": 100,
+        "calories": 315,
+        "density": "3,15"
+    },
+    {
+        "name": "Roggenflocken",
+        "amout": 100,
+        "calories": 316,
+        "density": "3,16"
+    },
+    {
+        "name": "Roggenmehl",
+        "amout": 100,
+        "calories": 316,
+        "density": "3,16"
+    },
+    {
+        "name": "Getreideflocken",
+        "amout": 100,
+        "calories": 318,
+        "density": "3,18"
+    },
+    {
+        "name": "Getreideflocken",
+        "amout": 100,
+        "calories": 318,
+        "density": "3,18"
+    },
+    {
+        "name": "Gerstengrütze",
+        "amout": 100,
+        "calories": 319,
+        "density": "3,19"
+    },
+    {
+        "name": "Gerstenschrot",
+        "amout": 100,
+        "calories": 320,
+        "density": "3,2"
+    },
+    {
+        "name": "Dinkelmehl",
+        "amout": 100,
+        "calories": 321,
+        "density": "3,21"
+    },
+    {
+        "name": "Grünkern",
+        "amout": 100,
+        "calories": 321,
+        "density": "3,21"
+    },
+    {
+        "name": "Weizengrieß",
+        "amout": 100,
+        "calories": 321,
+        "density": "3,21"
+    },
+    {
+        "name": "Maismehl",
+        "amout": 100,
+        "calories": 324,
+        "density": "3,24"
+    },
+    {
+        "name": "Seitenbacher Müsli",
+        "amout": 100,
+        "calories": 332,
+        "density": "3,32"
+    },
+    {
+        "name": "Dinkelflocken",
+        "amout": 100,
+        "calories": 337,
+        "density": "3,37"
+    },
+    {
+        "name": "Hafergrütze",
+        "amout": 100,
+        "calories": 343,
+        "density": "3,43"
+    },
+    {
+        "name": "Cornflakes",
+        "amout": 100,
+        "calories": 353,
+        "density": "3,53"
+    }
+]

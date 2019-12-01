@@ -114,4 +114,13 @@ export default [{
         }
     ]
 
+}, {
+
+    path: '/calorietable',
+    name: 'calorietable',
+    components: {
+        default: () => import('@/views/calorietable/'),
+        toolbar: () => import('@/views/calorietable/AppBar')
+    }
+
 }]

@@ -1,0 +1,602 @@
+[
+    {
+        "name": "Pak Choi",
+        "amout": 100,
+        "calories": 9,
+        "density": "0,09"
+    },
+    {
+        "name": "Brunnenkresse",
+        "amout": 100,
+        "calories": 11,
+        "density": "0,11"
+    },
+    {
+        "name": "Pfifferlinge",
+        "amout": 100,
+        "calories": 11,
+        "density": "0,11"
+    },
+    {
+        "name": "Chinakohl",
+        "amout": 100,
+        "calories": 13,
+        "density": "0,13"
+    },
+    {
+        "name": "Eisbergsalat",
+        "amout": 100,
+        "calories": 14,
+        "density": "0,14"
+    },
+    {
+        "name": "Rettich",
+        "amout": 100,
+        "calories": 14,
+        "density": "0,14"
+    },
+    {
+        "name": "Gurke",
+        "amout": 100,
+        "calories": 15,
+        "density": "0,15"
+    },
+    {
+        "name": "Radieschen",
+        "amout": 100,
+        "calories": 16,
+        "density": "0,16"
+    },
+    {
+        "name": "Sellerie",
+        "amout": 100,
+        "calories": 16,
+        "density": "0,16"
+    },
+    {
+        "name": "Chicorée",
+        "amout": 100,
+        "calories": 17,
+        "density": "0,17"
+    },
+    {
+        "name": "Endivien",
+        "amout": 100,
+        "calories": 17,
+        "density": "0,17"
+    },
+    {
+        "name": "Tomate",
+        "amout": 100,
+        "calories": 17,
+        "density": "0,17"
+    },
+    {
+        "name": "Gewürzgurke",
+        "amout": 100,
+        "calories": 18,
+        "density": "0,18"
+    },
+    {
+        "name": "Rispentomaten",
+        "amout": 100,
+        "calories": 18,
+        "density": "0,18"
+    },
+    {
+        "name": "Mangold",
+        "amout": 100,
+        "calories": 19,
+        "density": "0,19"
+    },
+    {
+        "name": "Palmherz",
+        "amout": 100,
+        "calories": 19,
+        "density": "0,19"
+    },
+    {
+        "name": "Zucchini",
+        "amout": 100,
+        "calories": 19,
+        "density": "0,19"
+    },
+    {
+        "name": "Spargel",
+        "amout": 100,
+        "calories": 20,
+        "density": "0,2"
+    },
+    {
+        "name": "Cherry-Tomate",
+        "amout": 100,
+        "calories": 21,
+        "density": "0,21"
+    },
+    {
+        "name": "Paprika",
+        "amout": 100,
+        "calories": 21,
+        "density": "0,21"
+    },
+    {
+        "name": "Champignons",
+        "amout": 100,
+        "calories": 22,
+        "density": "0,22"
+    },
+    {
+        "name": "Rote Bete",
+        "amout": 100,
+        "calories": 22,
+        "density": "0,22"
+    },
+    {
+        "name": "Weißkohl",
+        "amout": 100,
+        "calories": 22,
+        "density": "0,22"
+    },
+    {
+        "name": "Spinat",
+        "amout": 100,
+        "calories": 23,
+        "density": "0,23"
+    },
+    {
+        "name": "Aubergine",
+        "amout": 100,
+        "calories": 24,
+        "density": "0,24"
+    },
+    {
+        "name": "Blumenkohl",
+        "amout": 100,
+        "calories": 25,
+        "density": "0,25"
+    },
+    {
+        "name": "Kohl",
+        "amout": 100,
+        "calories": 25,
+        "density": "0,25"
+    },
+    {
+        "name": "Rucola",
+        "amout": 100,
+        "calories": 25,
+        "density": "0,25"
+    },
+    {
+        "name": "Karotte / Möhre",
+        "amout": 100,
+        "calories": 26,
+        "density": "0,26"
+    },
+    {
+        "name": "Kürbis",
+        "amout": 100,
+        "calories": 26,
+        "density": "0,26"
+    },
+    {
+        "name": "Kohlrabi",
+        "amout": 100,
+        "calories": 27,
+        "density": "0,27"
+    },
+    {
+        "name": "Wirsing",
+        "amout": 100,
+        "calories": 27,
+        "density": "0,27"
+    },
+    {
+        "name": "Steckrübe",
+        "amout": 100,
+        "calories": 29,
+        "density": "0,29"
+    },
+    {
+        "name": "Romanesco",
+        "amout": 100,
+        "calories": 30,
+        "density": "0,3"
+    },
+    {
+        "name": "Bohnen",
+        "amout": 100,
+        "calories": 31,
+        "density": "0,31"
+    },
+    {
+        "name": "Fenchel",
+        "amout": 100,
+        "calories": 31,
+        "density": "0,31"
+    },
+    {
+        "name": "Okra",
+        "amout": 100,
+        "calories": 31,
+        "density": "0,31"
+    },
+    {
+        "name": "Rotkohl",
+        "amout": 100,
+        "calories": 31,
+        "density": "0,31"
+    },
+    {
+        "name": "Schalotten",
+        "amout": 100,
+        "calories": 32,
+        "density": "0,32"
+    },
+    {
+        "name": "Paprikaschoten",
+        "amout": 100,
+        "calories": 33,
+        "density": "0,33"
+    },
+    {
+        "name": "Broccoli",
+        "amout": 100,
+        "calories": 34,
+        "density": "0,34"
+    },
+    {
+        "name": "Rosenkohl",
+        "amout": 100,
+        "calories": 36,
+        "density": "0,36"
+    },
+    {
+        "name": "Zuckerschoten",
+        "amout": 100,
+        "calories": 36,
+        "density": "0,36"
+    },
+    {
+        "name": "Chili / Pepperoni",
+        "amout": 100,
+        "calories": 40,
+        "density": "0,4"
+    },
+    {
+        "name": "Zwiebel",
+        "amout": 100,
+        "calories": 40,
+        "density": "0,4"
+    },
+    {
+        "name": "Erbsen",
+        "amout": 100,
+        "calories": 42,
+        "density": "0,42"
+    },
+    {
+        "name": "Zuckerrüben",
+        "amout": 100,
+        "calories": 43,
+        "density": "0,43"
+    },
+    {
+        "name": "Butternusskürbis",
+        "amout": 100,
+        "calories": 45,
+        "density": "0,45"
+    },
+    {
+        "name": "Löwenzahnblätter",
+        "amout": 100,
+        "calories": 45,
+        "density": "0,45"
+    },
+    {
+        "name": "Artischocke",
+        "amout": 100,
+        "calories": 47,
+        "density": "0,47"
+    },
+    {
+        "name": "Grünkohl",
+        "amout": 100,
+        "calories": 50,
+        "density": "0,5"
+    },
+    {
+        "name": "Riesenkürbis",
+        "amout": 100,
+        "calories": 56,
+        "density": "0,56"
+    },
+    {
+        "name": "Lauch / Poree",
+        "amout": 100,
+        "calories": 61,
+        "density": "0,61"
+    },
+    {
+        "name": "Hokkaidokürbis",
+        "amout": 100,
+        "calories": 63,
+        "density": "0,63"
+    },
+    {
+        "name": "Meerrettich",
+        "amout": 100,
+        "calories": 64,
+        "density": "0,64"
+    },
+    {
+        "name": "Pastinaken",
+        "amout": 100,
+        "calories": 64,
+        "density": "0,64"
+    },
+    {
+        "name": "Kartoffelsuppe",
+        "amout": 100,
+        "calories": 65,
+        "density": "0,65"
+    },
+    {
+        "name": "Rahmspinat",
+        "amout": 100,
+        "calories": 68,
+        "density": "0,68"
+    },
+    {
+        "name": "Pellkartoffeln",
+        "amout": 100,
+        "calories": 70,
+        "density": "0,7"
+    },
+    {
+        "name": "Salzkartoffeln",
+        "amout": 100,
+        "calories": 70,
+        "density": "0,7"
+    },
+    {
+        "name": "Topinambur",
+        "amout": 100,
+        "calories": 73,
+        "density": "0,73"
+    },
+    {
+        "name": "Himmel und Erde",
+        "amout": 100,
+        "calories": 73,
+        "density": "0,73"
+    },
+    {
+        "name": "Kartoffel",
+        "amout": 100,
+        "calories": 77,
+        "density": "0,77"
+    },
+    {
+        "name": "Schwarzwurzel",
+        "amout": 100,
+        "calories": 82,
+        "density": "0,82"
+    },
+    {
+        "name": "Kartoffelpüree / Kartoffelbrei",
+        "amout": 100,
+        "calories": 83,
+        "density": "0,83"
+    },
+    {
+        "name": "Mais",
+        "amout": 100,
+        "calories": 86,
+        "density": "0,86"
+    },
+    {
+        "name": "Rosmarinkartoffeln",
+        "amout": 100,
+        "calories": 93,
+        "density": "0,93"
+    },
+    {
+        "name": "Ofenkartoffel",
+        "amout": 100,
+        "calories": 95,
+        "density": "0,95"
+    },
+    {
+        "name": "Kerbelrübe",
+        "amout": 100,
+        "calories": 99,
+        "density": "0,99"
+    },
+    {
+        "name": "Kartoffelknödel / Kartoffelklöße",
+        "amout": 100,
+        "calories": 100,
+        "density": 1
+    },
+    {
+        "name": "Brotfrucht",
+        "amout": 100,
+        "calories": 103,
+        "density": "1,03"
+    },
+    {
+        "name": "Süßkartoffel",
+        "amout": 100,
+        "calories": 108,
+        "density": "1,08"
+    },
+    {
+        "name": "Thüringer Klöße",
+        "amout": 100,
+        "calories": 109,
+        "density": "1,09"
+    },
+    {
+        "name": "Wasabi",
+        "amout": 100,
+        "calories": 110,
+        "density": "1,1"
+    },
+    {
+        "name": "Kartoffeltaschen",
+        "amout": 100,
+        "calories": 111,
+        "density": "1,11"
+    },
+    {
+        "name": "Süßkartoffeln",
+        "amout": 100,
+        "calories": 111,
+        "density": "1,11"
+    },
+    {
+        "name": "Bauernfrühstück",
+        "amout": 100,
+        "calories": 116,
+        "density": "1,16"
+    },
+    {
+        "name": "Backkartoffel",
+        "amout": 100,
+        "calories": 123,
+        "density": "1,23"
+    },
+    {
+        "name": "Kartoffelecken",
+        "amout": 100,
+        "calories": 123,
+        "density": "1,23"
+    },
+    {
+        "name": "Edamame",
+        "amout": 100,
+        "calories": 125,
+        "density": "1,25"
+    },
+    {
+        "name": "Kartoffelgratin",
+        "amout": 100,
+        "calories": 132,
+        "density": "1,32"
+    },
+    {
+        "name": "Oliven",
+        "amout": 100,
+        "calories": 139,
+        "density": "1,39"
+    },
+    {
+        "name": "Kartoffelspalten",
+        "amout": 100,
+        "calories": 141,
+        "density": "1,41"
+    },
+    {
+        "name": "Kartoffelsalat",
+        "amout": 100,
+        "calories": 143,
+        "density": "1,43"
+    },
+    {
+        "name": "Sojabohnen",
+        "amout": 100,
+        "calories": 147,
+        "density": "1,47"
+    },
+    {
+        "name": "Knoblauch",
+        "amout": 100,
+        "calories": 149,
+        "density": "1,49"
+    },
+    {
+        "name": "Bratkartoffeln",
+        "amout": 100,
+        "calories": 159,
+        "density": "1,59"
+    },
+    {
+        "name": "Tartiflette",
+        "amout": 100,
+        "calories": 159,
+        "density": "1,59"
+    },
+    {
+        "name": "Avocado",
+        "amout": 100,
+        "calories": 160,
+        "density": "1,6"
+    },
+    {
+        "name": "Gnocchi",
+        "amout": 100,
+        "calories": 168,
+        "density": "1,68"
+    },
+    {
+        "name": "Schupfnudeln",
+        "amout": 100,
+        "calories": 171,
+        "density": "1,71"
+    },
+    {
+        "name": "Tortilla",
+        "amout": 100,
+        "calories": 175,
+        "density": "1,75"
+    },
+    {
+        "name": "Kartoffelwaffeln",
+        "amout": 100,
+        "calories": 178,
+        "density": "1,78"
+    },
+    {
+        "name": "Rösti",
+        "amout": 100,
+        "calories": 181,
+        "density": "1,81"
+    },
+    {
+        "name": "Kartoffeltaler",
+        "amout": 100,
+        "calories": 191,
+        "density": "1,91"
+    },
+    {
+        "name": "Quarkkeulchen",
+        "amout": 100,
+        "calories": 206,
+        "density": "2,06"
+    },
+    {
+        "name": "Antipasti",
+        "amout": 100,
+        "calories": 217,
+        "density": "2,17"
+    },
+    {
+        "name": "Kidneybohnen",
+        "amout": 100,
+        "calories": 277,
+        "density": "2,77"
+    },
+    {
+        "name": "Algen",
+        "amout": 100,
+        "calories": 278,
+        "density": "2,78"
+    },
+    {
+        "name": "Linsen",
+        "amout": 100,
+        "calories": 314,
+        "density": "3,14"
+    }
+]

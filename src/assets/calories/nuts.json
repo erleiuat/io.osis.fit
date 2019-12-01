@@ -1,0 +1,332 @@
+[
+    {
+        "name": "Kermesbeeren",
+        "amout": 100,
+        "calories": 23,
+        "density": "0,23"
+    },
+    {
+        "name": "Alfalfa-Sprossen",
+        "amout": 100,
+        "calories": 23,
+        "density": "0,23"
+    },
+    {
+        "name": "Bambussprossen",
+        "amout": 100,
+        "calories": 27,
+        "density": "0,27"
+    },
+    {
+        "name": "Brechbohnen",
+        "amout": 100,
+        "calories": 29,
+        "density": "0,29"
+    },
+    {
+        "name": "Rote Bohnen",
+        "amout": 100,
+        "calories": 29,
+        "density": "0,29"
+    },
+    {
+        "name": "Bohnensprossen",
+        "amout": 100,
+        "calories": 31,
+        "density": "0,31"
+    },
+    {
+        "name": "Grüne Bohnen / Buschbohnen",
+        "amout": 100,
+        "calories": 31,
+        "density": "0,31"
+    },
+    {
+        "name": "Okra",
+        "amout": 100,
+        "calories": 31,
+        "density": "0,31"
+    },
+    {
+        "name": "Yambohne",
+        "amout": 100,
+        "calories": 38,
+        "density": "0,38"
+    },
+    {
+        "name": "Radieschensamen",
+        "amout": 100,
+        "calories": 43,
+        "density": "0,43"
+    },
+    {
+        "name": "Faselbohnen",
+        "amout": 100,
+        "calories": 46,
+        "density": "0,46"
+    },
+    {
+        "name": "Langbohnen",
+        "amout": 100,
+        "calories": 47,
+        "density": "0,47"
+    },
+    {
+        "name": "Spargelbohnen",
+        "amout": 100,
+        "calories": 47,
+        "density": "0,47"
+    },
+    {
+        "name": "Zuckererbsen",
+        "amout": 100,
+        "calories": 63,
+        "density": "0,63"
+    },
+    {
+        "name": "Weiße Bohnen",
+        "amout": 100,
+        "calories": 67,
+        "density": "0,67"
+    },
+    {
+        "name": "Erbsen",
+        "amout": 100,
+        "calories": 81,
+        "density": "0,81"
+    },
+    {
+        "name": "Cayenne-Bohnen",
+        "amout": 100,
+        "calories": 82,
+        "density": "0,82"
+    },
+    {
+        "name": "Lotussamen",
+        "amout": 100,
+        "calories": 89,
+        "density": "0,89"
+    },
+    {
+        "name": "Lupinenbohnen",
+        "amout": 100,
+        "calories": 92,
+        "density": "0,92"
+    },
+    {
+        "name": "Schwarze Bohnen",
+        "amout": 100,
+        "calories": 109,
+        "density": "1,09"
+    },
+    {
+        "name": "Chilibohnen",
+        "amout": 100,
+        "calories": 113,
+        "density": "1,13"
+    },
+    {
+        "name": "Limabohnen",
+        "amout": 100,
+        "calories": 113,
+        "density": "1,13"
+    },
+    {
+        "name": "Feuerbohnen",
+        "amout": 100,
+        "calories": 131,
+        "density": "1,31"
+    },
+    {
+        "name": "Sojabohnen",
+        "amout": 100,
+        "calories": 147,
+        "density": "1,47"
+    },
+    {
+        "name": "Pintobohnen",
+        "amout": 100,
+        "calories": 162,
+        "density": "1,62"
+    },
+    {
+        "name": "Maronen / Esskastanien",
+        "amout": 100,
+        "calories": 192,
+        "density": "1,92"
+    },
+    {
+        "name": "Wachsbohnen",
+        "amout": 100,
+        "calories": 263,
+        "density": "2,63"
+    },
+    {
+        "name": "Kichererbsen",
+        "amout": 100,
+        "calories": 275,
+        "density": "2,75"
+    },
+    {
+        "name": "Kidneybohnen",
+        "amout": 100,
+        "calories": 277,
+        "density": "2,77"
+    },
+    {
+        "name": "Mungbohnen",
+        "amout": 100,
+        "calories": 281,
+        "density": "2,81"
+    },
+    {
+        "name": "Azukibohnen",
+        "amout": 100,
+        "calories": 301,
+        "density": "3,01"
+    },
+    {
+        "name": "Erbsen gelb",
+        "amout": 100,
+        "calories": 309,
+        "density": "3,09"
+    },
+    {
+        "name": "Goabohne",
+        "amout": 100,
+        "calories": 310,
+        "density": "3,1"
+    },
+    {
+        "name": "Linsen",
+        "amout": 100,
+        "calories": 314,
+        "density": "3,14"
+    },
+    {
+        "name": "Beluga-Linsen",
+        "amout": 100,
+        "calories": 321,
+        "density": "3,21"
+    },
+    {
+        "name": "Rote Linsen",
+        "amout": 100,
+        "calories": 348,
+        "density": "3,48"
+    },
+    {
+        "name": "Mohnsamen",
+        "amout": 100,
+        "calories": 477,
+        "density": "4,77"
+    },
+    {
+        "name": "Chiasamen",
+        "amout": 100,
+        "calories": 491,
+        "density": "4,91"
+    },
+    {
+        "name": "Gebrannte Mandeln",
+        "amout": 100,
+        "calories": 503,
+        "density": "5,03"
+    },
+    {
+        "name": "Eicheln",
+        "amout": 100,
+        "calories": 509,
+        "density": "5,09"
+    },
+    {
+        "name": "Wasabi Nüsse",
+        "amout": 100,
+        "calories": 530,
+        "density": "5,3"
+    },
+    {
+        "name": "Leinsamen",
+        "amout": 100,
+        "calories": 534,
+        "density": "5,34"
+    },
+    {
+        "name": "Kürbiskerne",
+        "amout": 100,
+        "calories": 541,
+        "density": "5,41"
+    },
+    {
+        "name": "Cashewkerne",
+        "amout": 100,
+        "calories": 553,
+        "density": "5,53"
+    },
+    {
+        "name": "Wassermelonenkerne",
+        "amout": 100,
+        "calories": 557,
+        "density": "5,57"
+    },
+    {
+        "name": "Erdnüsse",
+        "amout": 100,
+        "calories": 567,
+        "density": "5,67"
+    },
+    {
+        "name": "Pistazien",
+        "amout": 100,
+        "calories": 571,
+        "density": "5,71"
+    },
+    {
+        "name": "Pistazien geröstet & gesalzen",
+        "amout": 100,
+        "calories": 571,
+        "density": "5,71"
+    },
+    {
+        "name": "Mandeln",
+        "amout": 100,
+        "calories": 575,
+        "density": "5,75"
+    },
+    {
+        "name": "Bucheckern",
+        "amout": 100,
+        "calories": 576,
+        "density": "5,76"
+    },
+    {
+        "name": "Cashewkerne geröstet & gesalzen",
+        "amout": 100,
+        "calories": 581,
+        "density": "5,81"
+    },
+    {
+        "name": "Sonnenblumenkerne",
+        "amout": 100,
+        "calories": 584,
+        "density": "5,84"
+    },
+    {
+        "name": "Erdnüsse geröstet & gesalzen",
+        "amout": 100,
+        "calories": 585,
+        "density": "5,85"
+    },
+    {
+        "name": "Nussmischung",
+        "amout": 100,
+        "calories": 594,
+        "density": "5,94"
+    },
+    {
+        "name": "Mandeln geröstet & gesalzen",
+        "amout": 100,
+        "calories": 607,
+        "density": "6,07"
+    }
+]
