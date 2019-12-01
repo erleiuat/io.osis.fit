@@ -10,8 +10,9 @@ export default {
 
     getters: {
 
-        ordered: state => {
-            var sortable = Object.values(state.items)
+        ordered: state => (items = false) => {
+            if (!items) items = state.items
+            var sortable = Object.values(items)
             sortable.sort((a, b) => {
                 return new Date(a.date + 'T' + a.time) - new Date(b.date + 'T' + b.time)
             })
@@ -35,11 +36,11 @@ export default {
             return todays
         },
 
-        totalWeek: (state, getters) => {
-            var week = getters.week
+        totalWeek: (state, getters) => (items = false) => {
+            if (!items) items = getters.week
             var total = null
-            for (const key in week) {
-                total += week[key].burnedCalories
+            for (const key in items) {
+                total += items[key].burnedCalories
             }
             return total
         },

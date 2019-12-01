@@ -109,7 +109,7 @@ export default {
 
     computed: {
         total () {
-            return this.$store.getters['logFood/totalWeek']
+            return this.$store.getters['logFood/totalWeek'](this.itemList)
         },
         items () {
             return this.$store.getters['logFood/ordered'](this.itemList)

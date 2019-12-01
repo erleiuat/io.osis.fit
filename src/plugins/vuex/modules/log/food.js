@@ -37,17 +37,17 @@ export default {
             return todays
         },
 
-        totalWeek: (state, getters) => {
-            var week = getters.week
+        totalWeek: (state, getters) => (items = false) => {
+            if (!items) items = getters.week
             var total = {
                 calories: null,
                 fat: null,
                 protein: null
             }
-            for (const key in week) {
-                total.calories += week[key].totalCalories
-                total.fat += week[key].totalFat
-                total.protein += week[key].totalProtein
+            for (const key in items) {
+                total.calories += items[key].totalCalories
+                total.fat += items[key].totalFat
+                total.protein += items[key].totalProtein
             }
             return total
         },

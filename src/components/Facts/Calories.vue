@@ -61,9 +61,9 @@ export default {
             }
 
             let possibleThisWeek = this.$store.getters['destiny/possibleCals'].weekly
-            let extendedThisWeek = this.$store.getters['logActivity/totalWeek'] || 0
+            let extendedThisWeek = this.$store.getters['logActivity/totalWeek']() || 0
             let availableThisWeek = possibleThisWeek + extendedThisWeek
-            let consumedThisWeek = this.$store.getters['logFood/totalWeek'].calories || 0
+            let consumedThisWeek = this.$store.getters['logFood/totalWeek']().calories || 0
 
             if (this.weekly) {
                 vals.availableInTotal = availableThisWeek
