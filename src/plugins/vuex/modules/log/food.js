@@ -10,8 +10,10 @@ export default {
 
     getters: {
 
-        ordered: state => {
-            var sortable = Object.values(state.items)
+        ordered: state => (items = false) => {
+            if (!items) items = state.items
+            var sortable = Object.values(items)
+            console.log(sortable)
             sortable.sort((a, b) => {
                 return new Date(a.date + 'T' + a.time) - new Date(b.date + 'T' + b.time)
             })
