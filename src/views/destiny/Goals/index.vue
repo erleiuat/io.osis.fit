@@ -40,7 +40,7 @@ export default {
 
     computed: {
         state () {
-            let cals = this.$store.getters['destiny/possibleCals'].daily
+            let cals = this.$store.getters['destiny/possibleCals'](0).daily
             if (!cals) return null
             if (cals < 300) return 'error'
             if (cals >= 300 && cals < 500) return 'warning'

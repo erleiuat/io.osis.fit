@@ -60,7 +60,8 @@ export default {
                 percentage: null
             }
 
-            let possibleThisWeek = this.$store.getters['destiny/possibleCals'].weekly
+            let daysToSunday = this.daysToSunday
+            let possibleThisWeek = this.$store.getters['destiny/possibleCals'](daysToSunday).weekly
             let extendedThisWeek = this.$store.getters['logActivity/totalWeek']() || 0
             let availableThisWeek = possibleThisWeek + extendedThisWeek
             let consumedThisWeek = this.$store.getters['logFood/totalWeek']().calories || 0
@@ -70,9 +71,9 @@ export default {
                 vals.consumed = consumedThisWeek
                 vals.remaining = availableThisWeek - consumedThisWeek
             } else {
-                let daysToSunday = this.daysToSunday + 1
+                // let daysToSunday = this.daysToSunday + 1
                 let consumedToday = this.$store.getters['logFood/totalDay'].calories
-                vals.availableInTotal = (availableThisWeek - (consumedThisWeek - consumedToday)) / daysToSunday
+                vals.availableInTotal = (availableThisWeek - (consumedThisWeek - consumedToday)) / (daysToSunday + 1)
                 vals.consumed = consumedToday
                 vals.remaining = vals.availableInTotal - consumedToday
             }

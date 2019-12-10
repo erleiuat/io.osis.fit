@@ -66,12 +66,13 @@ export default {
             }
         },
 
-        possibleCals: (state, getters) => {
+        possibleCals: (state, getters) => minusDays => {
             var toLoose = getters.lossInKg.total
-            var remainingDays = getters.timeRemaining.days
+            var remainingDays = getters.timeRemaining.days - minusDays
             var bmrPal = getters.bmrPal
             if (!toLoose || !remainingDays || !bmrPal) return { daily: false, weekly: false }
             var perDay = Math.round((bmrPal - ((toLoose * 7200) / remainingDays)) * 100) / 100
+            console.log(perDay)
             return {
                 daily: perDay,
                 weekly: perDay * 7

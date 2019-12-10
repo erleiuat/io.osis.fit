@@ -45,7 +45,7 @@ export default {
         },
 
         avgCalsPerDay () {
-            return this.$store.getters['destiny/possibleCals'].daily
+            return this.$store.getters['destiny/possibleCals'](0).daily
         }
 
     },
