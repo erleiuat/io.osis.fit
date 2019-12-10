@@ -5,7 +5,7 @@
                 <v-card-title>
                     Calories
                     <v-spacer></v-spacer>
-                    <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line hide-details></v-text-field>
+                    <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line hide-details autofocus />
                 </v-card-title>
                 <v-data-table @click:row="hasClicked" :headers="headers" :items="items" :search="search"></v-data-table>
             </v-col>
