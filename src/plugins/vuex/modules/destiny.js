@@ -72,7 +72,6 @@ export default {
             var bmrPal = getters.bmrPal
             if (!toLoose || !remainingDays || !bmrPal) return { daily: false, weekly: false }
             var perDay = Math.round((bmrPal - ((toLoose * 7200) / remainingDays)) * 100) / 100
-            console.log(perDay)
             return {
                 daily: perDay,
                 weekly: perDay * 7

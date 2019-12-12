@@ -16,10 +16,13 @@
                         <strong>{{ vals.percentage }} %</strong>
                     </v-progress-linear>
                 </v-col>
-                <v-col cols="auto" class="text-center">
+                <v-col cols="auto" class="text-left">
                     {{ $t('start') }}: {{ vals.first || '-' }} {{ $t('unit.kilogram.short') }}
                 </v-col>
                 <v-col cols="auto" class="text-center">
+                    {{ vals.current - vals.first }} {{ $t('unit.kilogram.short') }}
+                </v-col>
+                <v-col cols="auto" class="text-right">
                     {{ $t('goal') }}: {{ vals.goal || '-' }} {{ $t('unit.kilogram.short') }}
                 </v-col>
             </v-row>
