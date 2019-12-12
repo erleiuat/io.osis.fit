@@ -8,7 +8,7 @@ export default {
         time: false,
         title: process.env.VUE_APP_TITLE,
         loading: 0,
-        drawer: true,
+        drawer: false,
         locale: VueCookies.get(process.env.VUE_APP_COOKIE_PREF + 'appLoc') || false,
         dark: VueCookies.get(process.env.VUE_APP_COOKIE_PREF + 'drkMde') || false,
         hasLoaded: (!!VueCookies.get(process.env.VUE_APP_COOKIE_PREF + 'hasLoaded')),
