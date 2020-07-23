@@ -20,7 +20,7 @@
                     {{ $t('start') }}: {{ vals.first || '-' }} {{ $t('unit.kilogram.short') }}
                 </v-col>
                 <v-col cols="auto" class="text-center">
-                    {{ vals.current - vals.first }} {{ $t('unit.kilogram.short') }}
+                    {{ Math.round((vals.current - vals.first) * 10) / 10 }} {{ $t('unit.kilogram.short') }}
                 </v-col>
                 <v-col cols="auto" class="text-right">
                     {{ $t('goal') }}: {{ vals.goal || '-' }} {{ $t('unit.kilogram.short') }}
