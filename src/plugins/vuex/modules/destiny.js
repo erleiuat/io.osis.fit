@@ -34,14 +34,14 @@ export default {
             var age = getters.age
             if (!weight || !height || !age || !gender) return false
             if (gender === 'male') return Math.round(66.47 + (13.7 * weight) + (5 * height) - (6.8 * age))
-            else return Math.round(((2.4 * weight) + (9 * height) + (4.7 * age) - 65) * 100) / 100
+            else return Math.round(655.1 + (9.6 * weight) + (1.8 * height) - (4.7 * age))
         },
 
         bmrPal: (state, getters) => {
             var bmr = getters.bmr
             var pal = state.metabolism.pal || false
             if (!pal || !bmr) return false
-            return Math.round((((14.65 + (9 * pal)) / 24) * bmr) * 100) / 100
+            return Math.round(bmr * pal)
         },
 
         timeRemaining: (state) => {
