@@ -33,7 +33,7 @@ export default {
             var gender = state.metabolism.gender || false
             var age = getters.age
             if (!weight || !height || !age || !gender) return false
-            if (gender === 'male') return Math.round(((3.4 * weight) + (15.3 * height) + (6.8 * age) - 961) * 100) / 100
+            if (gender === 'male') return Math.round(66.47 + (13.7*weight) + (5*height) - (6.8*age) )
             else return Math.round(((2.4 * weight) + (9 * height) + (4.7 * age) - 65) * 100) / 100
         },
 
