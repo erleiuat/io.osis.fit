@@ -3,12 +3,12 @@
         <RegularImage :image="item.image" :noClick="selectable" :placeholder="require('@/assets/image/food.jpg')" aspectRatio="1" height="120px" />
         <v-card-title class="pt-2 pb-2 subtitle-1">
             {{ item.title }}
-            <v-spacer v-if="editable || deletable" />
-            <SafeDelete v-if="deletable" @click="$emit('delete', item)" />
-            <v-btn v-if="editable" @click="$emit('edit', item)" icon>
-                <v-icon small>mdi-pencil</v-icon>
-            </v-btn>
         </v-card-title>
+        <v-divider v-if="editable || deletable"/>
+        <SafeDelete v-if="deletable" @click="$emit('delete', item)" />
+        <v-btn v-if="editable" @click="$emit('edit', item)" icon>
+            <v-icon small>mdi-pencil</v-icon>
+        </v-btn>
         <v-divider v-if="totals.calories || totals.fat || totals.protein"/>
         <v-card-text v-if="totals.calories || totals.fat || totals.protein" class="pt-1 pb-1">
             <v-chip-group>
