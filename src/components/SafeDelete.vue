@@ -2,7 +2,7 @@
     <v-dialog v-model="dialog" width="500">
         <template v-slot:activator="{ on }">
             <v-btn icon v-on="on">
-                <v-icon>mdi-delete</v-icon>
+                <v-icon small>mdi-delete</v-icon>
             </v-btn>
         </template>
         <v-card @keyup.enter="yesPlease()">
