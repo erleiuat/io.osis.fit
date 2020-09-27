@@ -1,7 +1,7 @@
 <template>
     <v-card @click.native="doSelect()" :link="selectable" flat style="height: 100%">
         <RegularImage :image="item.image" :noClick="selectable" :placeholder="require('@/assets/image/food.jpg')" aspectRatio="1" height="120px" />
-        <v-card-title class="pt-2 pb-2 subtitle-1">
+        <v-card-title class="pt-2 pb-2 body-2">
             {{ item.title }}
         </v-card-title>
         <v-divider v-if="editable || deletable"/>
