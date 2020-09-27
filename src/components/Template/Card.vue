@@ -1,7 +1,7 @@
 <template>
     <v-card @click.native="doSelect()" :link="selectable" flat style="height: 100%">
         <RegularImage :image="item.image" :noClick="selectable" :placeholder="require('@/assets/image/food.jpg')" aspectRatio="1" height="120px" />
-        <v-card-title class="pt-2 pb-2">
+        <v-card-title class="pt-2 pb-2 h5">
             {{ item.title }}
             <v-spacer v-if="editable || deletable" />
             <SafeDelete v-if="deletable" @click="$emit('delete', item)" />
