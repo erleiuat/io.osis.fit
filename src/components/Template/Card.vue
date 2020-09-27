@@ -6,7 +6,7 @@
             <v-spacer v-if="editable || deletable" />
             <SafeDelete v-if="deletable" @click="$emit('delete', item)" />
             <v-btn v-if="editable" @click="$emit('edit', item)" icon>
-                <v-icon>mdi-pencil</v-icon>
+                <v-icon small>mdi-pencil</v-icon>
             </v-btn>
         </v-card-title>
         <v-divider v-if="totals.calories || totals.fat || totals.protein"/>
