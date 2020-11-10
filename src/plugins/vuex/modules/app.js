@@ -1,4 +1,4 @@
-import NProgress from '@/plugins/nprogress/'
+//import NProgress from '@/plugins/nprogress/'
 import VueCookies from 'vue-cookies'
 
 export default {
@@ -34,8 +34,8 @@ export default {
         setLoading: (state, val) => {
             if (val === true) state.loading++
             else if (val === false && state.loading > 0) state.loading--
-            if (state.loading === 1) NProgress.start()
-            else if (state.loading === 0) NProgress.done()
+            //if (state.loading === 1) NProgress.start()
+            //else if (state.loading === 0) NProgress.done()
         },
 
         setDark: (state, val) => {
