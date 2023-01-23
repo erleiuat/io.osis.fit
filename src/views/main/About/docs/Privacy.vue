@@ -12,11 +12,11 @@
 <script>
 export default {
 
-    i18n: {
-        messages: {
-            en: {
-                langNotice: 'Translated by',
-                text: `
+  i18n: {
+    messages: {
+      en: {
+        langNotice: 'Translated by',
+        text: `
                 <div class="headline font-weight-light">Privacy-Policy</div>
                 <p class="body-2">
                     Responsible authority in the sense of the data protection laws, in particular the EU data protection basic regulation (DSGVO), is:
@@ -487,10 +487,10 @@ export default {
                     Source: <a class="caption" href="https://www.swissanwalt.ch" target="_blank" rel="noopener">SwissAnwalt</a>
                 </p>
                 `
-            },
-            de: {
-                langNotice: 'Übersetz mit',
-                text: `
+      },
+      de: {
+        langNotice: 'Übersetz mit',
+        text: `
                 <div class="headline font-weight-light">Datenschutzerklärung</div>
                 <p class="body-2">
                     Verantwortliche Stelle im Sinne der Datenschutzgesetze, insbesondere der EU-Datenschutzgrundverordnung (DSGVO), ist:
@@ -961,9 +961,9 @@ export default {
                     Quelle: <a class="caption" href="https://www.swissanwalt.ch" target="_blank" rel="noopener">SwissAnwalt</a>
                 </p>
                 `
-            }
-        }
+      }
     }
+  }
 
 }
 </script>

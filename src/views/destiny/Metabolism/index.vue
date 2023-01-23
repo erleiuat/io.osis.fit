@@ -35,29 +35,29 @@ import Facts from '@/views/destiny/Metabolism/Facts'
 
 export default {
 
-    components: {
-        CurrentWeight, Gender, Height, Birthdate, PAL, Facts
-    },
+  components: {
+    CurrentWeight, Gender, Height, Birthdate, PAL, Facts
+  },
 
-    computed: {
-        doSend () {
-            return this.$store.state.form.send
-        }
-    },
-
-    watch: {
-        doSend (val) {
-            if (!val) return
-            this.$store.commit('form/sending')
-            this.$store.dispatch('destiny/saveMetabolism').then(() => {
-                this.$notify({ type: 'success', title: this.$t('alert.success.changed') })
-            }).catch(err => {
-                this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
-            }).finally(() => {
-                this.$store.commit('form/sent')
-            })
-        }
+  computed: {
+    doSend () {
+      return this.$store.state.form.send
     }
+  },
+
+  watch: {
+    doSend (val) {
+      if (!val) return
+      this.$store.commit('form/sending')
+      this.$store.dispatch('destiny/saveMetabolism').then(() => {
+        this.$notify({ type: 'success', title: this.$t('alert.success.changed') })
+      }).catch(err => {
+        this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
+      }).finally(() => {
+        this.$store.commit('form/sent')
+      })
+    }
+  }
 
 }
 </script>

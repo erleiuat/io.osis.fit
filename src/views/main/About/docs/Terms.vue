@@ -12,18 +12,18 @@
 <script>
 export default {
 
-    data () {
-        return {
-            ownerName: 'Osis',
-            webUrl: 'https://osis.io'
-        }
-    },
+  data () {
+    return {
+      ownerName: 'Osis',
+      webUrl: 'https://osis.io'
+    }
+  },
 
-    i18n: {
-        messages: {
-            en: {
-                langNotice: 'Translated by',
-                text: `
+  i18n: {
+    messages: {
+      en: {
+        langNotice: 'Translated by',
+        text: `
                 <div class="headline font-weight-light">Terms and conditions</div>
                 <p class="body-2">
                     These terms and conditions outline the rules and regulations for the use of {ownerName}'s Website, located at {webUrl}.
@@ -187,11 +187,11 @@ export default {
                     Our Terms and Conditions were created with the help of the Terms And Conditions Generator (www.termsandconditionsgenerator.com).
                 </p>
                 `
-            },
-            de: {
-                title: '',
-                langNotice: 'Übersetz mit',
-                text: `
+      },
+      de: {
+        title: '',
+        langNotice: 'Übersetz mit',
+        text: `
                 <div class="headline font-weight-light">Allgemeine Geschäftsbedingungen</div>
                 <p class="body-2">
                     Diese Allgemeinen Geschäftsbedingungen enthalten die Regeln und Vorschriften für die Nutzung der Website von {ownerName}, die sich unter {webUrl} befindet.
@@ -355,9 +355,9 @@ export default {
                     Unsere Allgemeinen Geschäftsbedingungen wurden mit Hilfe des Allgemeinen Geschäftsbedingungen-Generators (www.termsandconditionsgenerator.com) erstellt.
                 </p>
                 `
-            }
-        }
+      }
     }
+  }
 
 }
 </script>

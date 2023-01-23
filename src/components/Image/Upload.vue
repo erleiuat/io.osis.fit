@@ -21,75 +21,75 @@ import Apios from '@/plugins/apios/'
 
 export default {
 
-    props: ['value', 'loading'],
+  props: ['value', 'loading'],
 
-    data () {
-        return {
-            dialog: false,
-            uploading: false,
-            progress: 0
-        }
-    },
-
-    methods: {
-
-        deleteImage () {
-            this.$emit('delete')
-            this.dialog = false
-        },
-
-        openUpload () {
-            document.getElementById('uplImgField').click()
-        },
-
-        doUpload () {
-            let photo = document.getElementById('uplImgField').files[0]
-            if (photo.size > 25 * 1000000) {
-                this.$notify({ type: 'error', title: this.$t('fileTooBig') })
-                return
-            }
-
-            var vm = this
-            let config = {
-                onUploadProgress: function (progressEvent) {
-                    vm.progress = Math.round((progressEvent.loaded * 100) / progressEvent.total)
-                }
-            }
-
-            let formData = new FormData()
-            formData.append('file', photo)
-            this.uploading = true
-            Apios.post('files', formData, config).then(res => {
-                document.getElementById('uplImgField').value = null
-                this.$emit('input', res.data)
-                this.dialog = false
-            }).catch(err => {
-                this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
-            }).finally(() => {
-                this.uploading = false
-            })
-        }
-
-    },
-
-    i18n: {
-        messages: {
-            en: {
-                editImage: 'Edit Avatar',
-                uploadNew: 'Upload image',
-                deleteCurrent: 'Remove image',
-                processing: 'Processing',
-                fileTooBig: 'The file is too large (Max. 25 MB)'
-            },
-            de: {
-                editImage: 'Avatar bearbeiten',
-                uploadNew: 'Bild hochladen',
-                deleteCurrent: 'Bild entfernen',
-                processing: 'Wird gespeichert',
-                fileTooBig: 'Die Datei ist zu gross (Max. 25 MB)'
-            }
-        }
+  data () {
+    return {
+      dialog: false,
+      uploading: false,
+      progress: 0
     }
+  },
+
+  methods: {
+
+    deleteImage () {
+      this.$emit('delete')
+      this.dialog = false
+    },
+
+    openUpload () {
+      document.getElementById('uplImgField').click()
+    },
+
+    doUpload () {
+      let photo = document.getElementById('uplImgField').files[0]
+      if (photo.size > 25 * 1000000) {
+        this.$notify({ type: 'error', title: this.$t('fileTooBig') })
+        return
+      }
+
+      var vm = this
+      let config = {
+        onUploadProgress: function (progressEvent) {
+          vm.progress = Math.round((progressEvent.loaded * 100) / progressEvent.total)
+        }
+      }
+
+      let formData = new FormData()
+      formData.append('file', photo)
+      this.uploading = true
+      Apios.post('files', formData, config).then(res => {
+        document.getElementById('uplImgField').value = null
+        this.$emit('input', res.data)
+        this.dialog = false
+      }).catch(err => {
+        this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
+      }).finally(() => {
+        this.uploading = false
+      })
+    }
+
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        editImage: 'Edit Avatar',
+        uploadNew: 'Upload image',
+        deleteCurrent: 'Remove image',
+        processing: 'Processing',
+        fileTooBig: 'The file is too large (Max. 25 MB)'
+      },
+      de: {
+        editImage: 'Avatar bearbeiten',
+        uploadNew: 'Bild hochladen',
+        deleteCurrent: 'Bild entfernen',
+        processing: 'Wird gespeichert',
+        fileTooBig: 'Die Datei ist zu gross (Max. 25 MB)'
+      }
+    }
+  }
 
 }
 </script>

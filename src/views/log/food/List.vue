@@ -92,98 +92,98 @@ import TableNavi from '@/components/TableNavi'
 
 export default {
 
-    components: {
-        TableNavi
-    },
+  components: {
+    TableNavi
+  },
 
-    data () {
-        return {
-            loading: true,
-            itemList: {},
-            filter: {
-                year: null,
-                week: null
-            }
-        }
-    },
-
-    computed: {
-        total () {
-            return this.$store.getters['logFood/totalWeek'](this.itemList)
-        },
-        items () {
-            return this.$store.getters['logFood/ordered'](this.itemList)
-        }
-    },
-
-    methods: {
-
-        setFilter (year, week) {
-            if (year) this.filter.year += year
-            if (week) this.filter.week += week
-            this.$router.replace({ params: { year: this.filter.year, week: this.filter.week } })
-            this.loadItems()
-        },
-
-        loadItems () {
-            this.loading = true
-            this.$store.dispatch('logFood/read', this.filter).then(res => {
-                this.itemList = res
-            }).catch(err => {
-                this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
-            }).finally(() => {
-                this.loading = false
-            })
-        },
-
-        deleteItem (item) {
-            this.$store.dispatch('logFood/remove', item).then(res => {
-                Vue.delete(this.items, item.id)
-                this.$notify({ type: 'success', title: this.$t('alert.success.changed') })
-            }).catch(err => {
-                this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
-            })
-        }
-
-    },
-
-    mounted () {
-        var tmpParams = this.$store.state.app.current
-        this.filter.year = parseInt(this.$route.params.year || tmpParams.year)
-        this.filter.week = parseInt(this.$route.params.week || tmpParams.week)
-        this.loadItems()
-    },
-
-    i18n: {
-        messages: {
-            en: {
-                year: 'Year',
-                week: 'Week',
-                weekSum: 'Weekly summary',
-                tbl: {
-                    time: 'Time',
-                    title: 'Title',
-                    totalCalories: 'Total Calories',
-                    totalFat: 'Total Fat',
-                    totalProtein: 'Total Protein',
-                    portionSize: 'Serving size'
-                }
-            },
-            de: {
-                year: 'Jahr',
-                week: 'Woche',
-                weekSum: 'Wochenübersicht',
-                tbl: {
-                    time: 'Zeit',
-                    title: 'Titel',
-                    totalCalories: 'Total Kalorien',
-                    totalFat: 'Total Fett',
-                    totalProtein: 'Total Protein',
-                    portionSize: 'Portionsgrösse'
-                }
-            }
-        }
+  data () {
+    return {
+      loading: true,
+      itemList: {},
+      filter: {
+        year: null,
+        week: null
+      }
     }
+  },
+
+  computed: {
+    total () {
+      return this.$store.getters['logFood/totalWeek'](this.itemList)
+    },
+    items () {
+      return this.$store.getters['logFood/ordered'](this.itemList)
+    }
+  },
+
+  methods: {
+
+    setFilter (year, week) {
+      if (year) this.filter.year += year
+      if (week) this.filter.week += week
+      this.$router.replace({ params: { year: this.filter.year, week: this.filter.week } })
+      this.loadItems()
+    },
+
+    loadItems () {
+      this.loading = true
+      this.$store.dispatch('logFood/read', this.filter).then(res => {
+        this.itemList = res
+      }).catch(err => {
+        this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
+      }).finally(() => {
+        this.loading = false
+      })
+    },
+
+    deleteItem (item) {
+      this.$store.dispatch('logFood/remove', item).then(res => {
+        Vue.delete(this.items, item.id)
+        this.$notify({ type: 'success', title: this.$t('alert.success.changed') })
+      }).catch(err => {
+        this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
+      })
+    }
+
+  },
+
+  mounted () {
+    var tmpParams = this.$store.state.app.current
+    this.filter.year = parseInt(this.$route.params.year || tmpParams.year)
+    this.filter.week = parseInt(this.$route.params.week || tmpParams.week)
+    this.loadItems()
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        year: 'Year',
+        week: 'Week',
+        weekSum: 'Weekly summary',
+        tbl: {
+          time: 'Time',
+          title: 'Title',
+          totalCalories: 'Total Calories',
+          totalFat: 'Total Fat',
+          totalProtein: 'Total Protein',
+          portionSize: 'Serving size'
+        }
+      },
+      de: {
+        year: 'Jahr',
+        week: 'Woche',
+        weekSum: 'Wochenübersicht',
+        tbl: {
+          time: 'Zeit',
+          title: 'Titel',
+          totalCalories: 'Total Kalorien',
+          totalFat: 'Total Fett',
+          totalProtein: 'Total Protein',
+          portionSize: 'Portionsgrösse'
+        }
+      }
+    }
+  }
 
 }
 </script>

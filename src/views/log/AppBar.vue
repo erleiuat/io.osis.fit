@@ -25,41 +25,41 @@
 <script>
 export default {
 
-    computed: {
+  computed: {
 
-        title () {
-            if (this.$route.name) return this.$t('view.' + this.$route.name + '.name')
-            else return null
-        },
+    title () {
+      if (this.$route.name) return this.$t('view.' + this.$route.name + '.name')
+      else return null
+    },
 
-        show () {
-            var tmp = this.$route.name.split('.')
-            if (tmp[0] !== 'log') return
-            if (tmp[1] === 'food') {
-                return {
-                    add: (tmp[2] !== 'add' ? 'log.food.add' : false),
-                    save: (tmp[2] === 'add'),
-                    back: (tmp[2] === 'add')
-                }
-            }
-            if (tmp[1] === 'activity') {
-                return {
-                    add: (tmp[2] !== 'add' ? 'log.activity.add' : false),
-                    save: (tmp[2] === 'add'),
-                    back: (tmp[2] === 'add')
-                }
-            }
-            if (tmp[1] === 'body') {
-                return {
-                    add: (tmp[2] !== 'add' ? 'log.body.add' : false),
-                    save: (tmp[2] === 'add'),
-                    back: (tmp[2] === 'add')
-                }
-            }
-
-            return false
+    show () {
+      var tmp = this.$route.name.split('.')
+      if (tmp[0] !== 'log') return
+      if (tmp[1] === 'food') {
+        return {
+          add: (tmp[2] !== 'add' ? 'log.food.add' : false),
+          save: (tmp[2] === 'add'),
+          back: (tmp[2] === 'add')
         }
+      }
+      if (tmp[1] === 'activity') {
+        return {
+          add: (tmp[2] !== 'add' ? 'log.activity.add' : false),
+          save: (tmp[2] === 'add'),
+          back: (tmp[2] === 'add')
+        }
+      }
+      if (tmp[1] === 'body') {
+        return {
+          add: (tmp[2] !== 'add' ? 'log.body.add' : false),
+          save: (tmp[2] === 'add'),
+          back: (tmp[2] === 'add')
+        }
+      }
+
+      return false
     }
+  }
 
 }
 </script>

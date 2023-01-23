@@ -25,30 +25,30 @@ import Apios from '@/plugins/apios/'
 
 export default {
 
-    methods: {
+  methods: {
 
-        submit () {
-            Apios.delete('session').then(() => {
-            }).catch(err => {
-                this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
-            }).finally(() => {
-                this.$store.dispatch('auth/logout')
-                this.$router.push({ name: 'auth' })
-            })
-        }
-
-    },
-
-    i18n: {
-        messages: {
-            en: {
-                youSure: 'Do you really want to sign out?'
-            },
-            de: {
-                youSure: 'Möchtest du dich wirklich Abmelden?'
-            }
-        }
+    submit () {
+      Apios.delete('session').then(() => {
+      }).catch(err => {
+        this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
+      }).finally(() => {
+        this.$store.dispatch('auth/logout')
+        this.$router.push({ name: 'auth' })
+      })
     }
+
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        youSure: 'Do you really want to sign out?'
+      },
+      de: {
+        youSure: 'Möchtest du dich wirklich Abmelden?'
+      }
+    }
+  }
 
 }
 </script>

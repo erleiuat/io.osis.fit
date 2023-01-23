@@ -57,107 +57,107 @@ import ImageForm from '@/components/Image/Form'
 
 export default {
 
-    components: {
-        ImageForm
-    },
+  components: {
+    ImageForm
+  },
 
-    data () {
-        return {
-            unit: 'gram',
-            form: {
-                valid: false,
-                data: {
-                    title: '',
-                    caloriesPer100: '',
-                    fatPer100: '',
-                    proteinPer100: '',
-                    portionSize: '',
-                    image: ''
-                },
-                rules: {
-                    title: [
-                        v => v ? v.length < 120 || this.$t('alert.form.tooLong', { amount: 120 }) : true
-                    ],
-                    number: [
-                        v => !isNaN(v) || this.$t('alert.form.format.number')
-                    ]
-                }
-            }
-        }
-    },
-
-    methods: {
-        deleteImage () {
-            this.form.data.image = ''
-        }
-    },
-
-    computed: {
-        doSend () {
-            return this.$store.state.form.send
+  data () {
+    return {
+      unit: 'gram',
+      form: {
+        valid: false,
+        data: {
+          title: '',
+          caloriesPer100: '',
+          fatPer100: '',
+          proteinPer100: '',
+          portionSize: '',
+          image: ''
         },
-        state () {
-            return this.$route.name === 'template.edit' ? 'edit' : 'add'
-        },
-        units () {
-            return [
-                { value: 'gram', text: this.$t('unit.gram.long') },
-                { value: 'milliliters', text: this.$t('unit.milliliters.long') }
-            ]
+        rules: {
+          title: [
+            v => v ? v.length < 120 || this.$t('alert.form.tooLong', { amount: 120 }) : true
+          ],
+          number: [
+            v => !isNaN(v) || this.$t('alert.form.format.number')
+          ]
         }
-    },
-
-    mounted () {
-        if (this.state === 'edit') {
-            var item = this.$store.state.template.items[this.$route.params.id]
-            if (!item) {
-                this.$store.commit('form/sending')
-                this.$store.dispatch('template/readByID', this.$route.params.id).then(res => {
-                    this.form.data = res
-                }).catch(err => {
-                    this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
-                }).finally(() => {
-                    this.$store.commit('form/sent')
-                })
-            } else {
-                this.form.data = item
-            }
-        }
-    },
-
-    watch: {
-        doSend (val) {
-            if (!this.$refs.form.validate() || !val) return false
-            var dispatch = 'template/create'
-            if (this.state === 'edit') dispatch = 'template/edit'
-            this.$store.commit('form/sending')
-            this.$store.dispatch(dispatch, this.form.data).then(() => {
-                this.$router.back()
-                this.$notify({ type: 'success', title: this.$t('alert.success.added') })
-            }).catch(err => {
-                this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
-            }).finally(() => {
-                this.$store.commit('form/sent')
-            })
-        }
-    },
-
-    i18n: {
-        messages: {
-            en: {
-                caloriesPer100: 'Calories per 100',
-                fatPer100: 'Fat per 100',
-                proteinPer100: 'Protein per 100',
-                portionSize: 'Serving Size in '
-            },
-            de: {
-                caloriesPer100: 'Kalorien pro 100',
-                fatPer100: 'Fett pro 100',
-                proteinPer100: 'Protein pro 100',
-                portionSize: 'Portionsgrösse in '
-            }
-        }
+      }
     }
+  },
+
+  methods: {
+    deleteImage () {
+      this.form.data.image = ''
+    }
+  },
+
+  computed: {
+    doSend () {
+      return this.$store.state.form.send
+    },
+    state () {
+      return this.$route.name === 'template.edit' ? 'edit' : 'add'
+    },
+    units () {
+      return [
+        { value: 'gram', text: this.$t('unit.gram.long') },
+        { value: 'milliliters', text: this.$t('unit.milliliters.long') }
+      ]
+    }
+  },
+
+  mounted () {
+    if (this.state === 'edit') {
+      var item = this.$store.state.template.items[this.$route.params.id]
+      if (!item) {
+        this.$store.commit('form/sending')
+        this.$store.dispatch('template/readByID', this.$route.params.id).then(res => {
+          this.form.data = res
+        }).catch(err => {
+          this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
+        }).finally(() => {
+          this.$store.commit('form/sent')
+        })
+      } else {
+        this.form.data = item
+      }
+    }
+  },
+
+  watch: {
+    doSend (val) {
+      if (!this.$refs.form.validate() || !val) return false
+      var dispatch = 'template/create'
+      if (this.state === 'edit') dispatch = 'template/edit'
+      this.$store.commit('form/sending')
+      this.$store.dispatch(dispatch, this.form.data).then(() => {
+        this.$router.back()
+        this.$notify({ type: 'success', title: this.$t('alert.success.added') })
+      }).catch(err => {
+        this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
+      }).finally(() => {
+        this.$store.commit('form/sent')
+      })
+    }
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        caloriesPer100: 'Calories per 100',
+        fatPer100: 'Fat per 100',
+        proteinPer100: 'Protein per 100',
+        portionSize: 'Serving Size in '
+      },
+      de: {
+        caloriesPer100: 'Kalorien pro 100',
+        fatPer100: 'Fett pro 100',
+        proteinPer100: 'Protein pro 100',
+        portionSize: 'Portionsgrösse in '
+      }
+    }
+  }
 
 }
 </script>

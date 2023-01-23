@@ -52,81 +52,81 @@ import Apios from '@/plugins/apios/'
 
 export default {
 
-    data () {
-        return {
-            dialog: false,
-            form: {
-                valid: false,
-                showPW: false,
-                sending: false,
-                data: {
-                    password: '',
-                    new: ''
-                },
-                rules: {
-                    pass: [
-                        v => !!v || this.$t('alert.form.required'),
-                        v => v.length < 255 || this.$t('alert.form.tooLong', { amount: 255 })
-                    ],
-                    newPass: [
-                        v => !!v || this.$t('alert.form.require', { name: this.$t('form.password') }),
-                        v => /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/.test(v) || this.$t('strong'),
-                        v => v.length < 255 || this.$t('alert.form.tooLong', { amount: 255 })
-                    ]
-                }
-            }
+  data () {
+    return {
+      dialog: false,
+      form: {
+        valid: false,
+        showPW: false,
+        sending: false,
+        data: {
+          password: '',
+          new: ''
+        },
+        rules: {
+          pass: [
+            v => !!v || this.$t('alert.form.required'),
+            v => v.length < 255 || this.$t('alert.form.tooLong', { amount: 255 })
+          ],
+          newPass: [
+            v => !!v || this.$t('alert.form.require', { name: this.$t('form.password') }),
+            v => /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/.test(v) || this.$t('strong'),
+            v => v.length < 255 || this.$t('alert.form.tooLong', { amount: 255 })
+          ]
         }
-    },
-
-    methods: {
-
-        submit () {
-            if (!this.$refs.form.validate()) return false
-            this.form.sending = true
-
-            Apios.patch('session/password', this.form.data).then(() => {
-                this.dialog = false
-                this.$notify({ type: 'success', title: this.$t('alert.success.changed') })
-                var tmpMail = this.$store.state.auth.account.mail
-                this.$store.dispatch('auth/logout')
-                this.$router.push({ name: 'auth', query: { mail: tmpMail } })
-            }).catch(err => {
-                if (err.code === 'O1103') {
-                    this.$notify({ type: 'error', title: this.$t('passWrong'), text: err.code + ': ' + err.message })
-                } else {
-                    this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
-                }
-            }).finally(() => {
-                this.form.sending = false
-                this.form.data = {
-                    password: '',
-                    new: ''
-                }
-            })
-        }
-
-    },
-
-    i18n: {
-        messages: {
-            en: {
-                changePass: 'Change Password',
-                passWrong: 'Incorrect password',
-                changePassText: '<b>Caution</b><br/> If you change your password you will be signed out (on all devices). You will have to sign in with your new password afterwards.',
-                currentPW: 'Current Password',
-                newPW: 'New Passwort',
-                strong: 'Not strong enough (8 characters, upper- & lower-case, numbers)'
-            },
-            de: {
-                changePass: 'Passwort ändern',
-                passWrong: 'Falsches Passwort',
-                changePassText: '<b>Achtung</b><br/> Wenn du dein Passwort änderst wirst du (von allen Geräten) abgemeldet. Du musst dich anschliessend mit deinem neuen Passwort anmelden.',
-                currentPW: 'Aktuelles Passwort',
-                newPW: 'Neues Passwort',
-                strong: 'Nicht stark genug (8 Zeichen, Gross- & Kleinbuchstaben, Nummern)'
-            }
-        }
+      }
     }
+  },
+
+  methods: {
+
+    submit () {
+      if (!this.$refs.form.validate()) return false
+      this.form.sending = true
+
+      Apios.patch('session/password', this.form.data).then(() => {
+        this.dialog = false
+        this.$notify({ type: 'success', title: this.$t('alert.success.changed') })
+        var tmpMail = this.$store.state.auth.account.mail
+        this.$store.dispatch('auth/logout')
+        this.$router.push({ name: 'auth', query: { mail: tmpMail } })
+      }).catch(err => {
+        if (err.code === 'O1103') {
+          this.$notify({ type: 'error', title: this.$t('passWrong'), text: err.code + ': ' + err.message })
+        } else {
+          this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
+        }
+      }).finally(() => {
+        this.form.sending = false
+        this.form.data = {
+          password: '',
+          new: ''
+        }
+      })
+    }
+
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        changePass: 'Change Password',
+        passWrong: 'Incorrect password',
+        changePassText: '<b>Caution</b><br/> If you change your password you will be signed out (on all devices). You will have to sign in with your new password afterwards.',
+        currentPW: 'Current Password',
+        newPW: 'New Passwort',
+        strong: 'Not strong enough (8 characters, upper- & lower-case, numbers)'
+      },
+      de: {
+        changePass: 'Passwort ändern',
+        passWrong: 'Falsches Passwort',
+        changePassText: '<b>Achtung</b><br/> Wenn du dein Passwort änderst wirst du (von allen Geräten) abgemeldet. Du musst dich anschliessend mit deinem neuen Passwort anmelden.',
+        currentPW: 'Aktuelles Passwort',
+        newPW: 'Neues Passwort',
+        strong: 'Nicht stark genug (8 Zeichen, Gross- & Kleinbuchstaben, Nummern)'
+      }
+    }
+  }
 
 }
 </script>

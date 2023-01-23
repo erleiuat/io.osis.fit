@@ -17,46 +17,46 @@
 <script>
 export default {
 
-    computed: {
+  computed: {
 
-        show () {
-            if (this.$store.state.app.update) return true
-            return false
-        },
-
-        loading () {
-            if (this.$store.state.app.update === 'loading') return true
-            return false
-        },
-
-        available () {
-            if (this.$store.state.app.update === 'available') return true
-            return false
-        }
-
+    show () {
+      if (this.$store.state.app.update) return true
+      return false
     },
 
-    methods: {
-        doRefresh () {
-            this.$store.dispatch('app/update', null)
-            window.location.reload(true)
-        }
+    loading () {
+      if (this.$store.state.app.update === 'loading') return true
+      return false
     },
 
-    i18n: {
-        messages: {
-            en: {
-                loadingUp: 'Loading update',
-                upAvailable: 'Updates available. Please refresh.',
-                refresh: 'Refresh'
-            },
-            de: {
-                loadingUp: 'Updates werden geladen',
-                upAvailable: 'Updates verfügbar. Bitte aktualisieren.',
-                refresh: 'Aktualisieren'
-            }
-        }
+    available () {
+      if (this.$store.state.app.update === 'available') return true
+      return false
     }
+
+  },
+
+  methods: {
+    doRefresh () {
+      this.$store.dispatch('app/update', null)
+      window.location.reload(true)
+    }
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        loadingUp: 'Loading update',
+        upAvailable: 'Updates available. Please refresh.',
+        refresh: 'Refresh'
+      },
+      de: {
+        loadingUp: 'Updates werden geladen',
+        upAvailable: 'Updates verfügbar. Bitte aktualisieren.',
+        refresh: 'Aktualisieren'
+      }
+    }
+  }
 
 }
 </script>

@@ -30,67 +30,67 @@ import SafeDelete from '@/components/SafeDelete'
 
 export default {
 
-    components: {
-        RegularImage, SafeDelete
-    },
+  components: {
+    RegularImage, SafeDelete
+  },
 
-    data () {
-        return {
-            detailed: false,
-            loading: false,
-            page: 1,
-            images: []
-        }
-    },
-
-    methods: {
-
-        delImage (key) {
-            this.loading = true
-            Apios.delete('admin/images/' + this.images[key].id).then(() => {
-                this.images[key] = false
-                this.$notify({ type: 'success', title: this.$t('alert.success.changed') })
-            }).catch(err => {
-                if (err.code === 'D0204') {
-                    this.images[key] = false
-                    this.$notify({ type: 'error', title: 'Image removed but still in DB', text: err })
-                } else {
-                    this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
-                }
-            }).finally(() => {
-                this.loading = false
-            })
-        },
-
-        loadImages () {
-            this.loading = true
-            Apios.get('admin/images/' + this.page).then(res => {
-                if (res.data.length) this.images.push(...res.data)
-                else window.onscroll = null
-            }).catch(err => {
-                this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
-            }).finally(() => {
-                this.loading = false
-            })
-        }
-
-    },
-
-    mounted () {
-        var vm = this
-        window.onscroll = function (ev) {
-            if (vm.loading) return
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-                vm.page++
-                vm.loadImages()
-            }
-        }
-        this.loadImages()
-    },
-
-    beforeDestroy () {
-        window.onscroll = null
+  data () {
+    return {
+      detailed: false,
+      loading: false,
+      page: 1,
+      images: []
     }
+  },
+
+  methods: {
+
+    delImage (key) {
+      this.loading = true
+      Apios.delete('admin/images/' + this.images[key].id).then(() => {
+        this.images[key] = false
+        this.$notify({ type: 'success', title: this.$t('alert.success.changed') })
+      }).catch(err => {
+        if (err.code === 'D0204') {
+          this.images[key] = false
+          this.$notify({ type: 'error', title: 'Image removed but still in DB', text: err })
+        } else {
+          this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
+        }
+      }).finally(() => {
+        this.loading = false
+      })
+    },
+
+    loadImages () {
+      this.loading = true
+      Apios.get('admin/images/' + this.page).then(res => {
+        if (res.data.length) this.images.push(...res.data)
+        else window.onscroll = null
+      }).catch(err => {
+        this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
+      }).finally(() => {
+        this.loading = false
+      })
+    }
+
+  },
+
+  mounted () {
+    var vm = this
+    window.onscroll = function (ev) {
+      if (vm.loading) return
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        vm.page++
+        vm.loadImages()
+      }
+    }
+    this.loadImages()
+  },
+
+  beforeDestroy () {
+    window.onscroll = null
+  }
 
 }
 </script>

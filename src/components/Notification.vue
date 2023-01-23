@@ -46,21 +46,21 @@
 <script>
 export default {
 
-    data () {
-        return {
-            show: false,
-            title: null,
-            text: null
-        }
-    },
-
-    methods: {
-        showDetail (content) {
-            this.title = content.title
-            this.text = content.text
-            this.show = true
-        }
+  data () {
+    return {
+      show: false,
+      title: null,
+      text: null
     }
+  },
+
+  methods: {
+    showDetail (content) {
+      this.title = content.title
+      this.text = content.text
+      this.show = true
+    }
+  }
 
 }
 </script>

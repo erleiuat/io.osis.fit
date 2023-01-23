@@ -14,33 +14,33 @@
 <script>
 export default {
 
-    computed: {
+  computed: {
 
-        noLogin () {
-            if (!this.$store.state.auth.login) return true
-            return false
-        },
-
-        backToPrev () {
-            if (this.$route.name !== 'about') return true
-            return false
-        },
-
-        viewTitle () {
-            if (this.$route.name) return this.$t('view.' + this.$route.name + '.name')
-            else return null
-        }
-
+    noLogin () {
+      if (!this.$store.state.auth.login) return true
+      return false
     },
 
-    methods: {
+    backToPrev () {
+      if (this.$route.name !== 'about') return true
+      return false
+    },
 
-        goBack () {
-            if (history.length > 1) this.$router.back()
-            else this.$router.push({ name: 'home' })
-        }
-
+    viewTitle () {
+      if (this.$route.name) return this.$t('view.' + this.$route.name + '.name')
+      else return null
     }
+
+  },
+
+  methods: {
+
+    goBack () {
+      if (history.length > 1) this.$router.back()
+      else this.$router.push({ name: 'home' })
+    }
+
+  }
 
 }
 </script>

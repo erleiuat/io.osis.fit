@@ -22,6 +22,6 @@
 
 <script>
 export default {
-    props: ['value', 'label']
+  props: ['value', 'label']
 }
 </script>

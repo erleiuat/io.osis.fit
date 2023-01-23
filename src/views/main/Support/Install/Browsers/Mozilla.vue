@@ -22,20 +22,20 @@
 <script>
 export default {
 
-    i18n: {
-        messages: {
-            en: {
-                s1: 'Click on the cottage above',
-                s2_1: 'Hit',
-                s2_2: 'Add to homescreen'
-            },
-            de: {
-                s1: 'Klicke oben auf das Häuschen',
-                s2_1: 'Klicke auf',
-                s2_2: 'Zu Startbildschirm hinzufügen'
-            }
-        }
+  i18n: {
+    messages: {
+      en: {
+        s1: 'Click on the cottage above',
+        s2_1: 'Hit',
+        s2_2: 'Add to homescreen'
+      },
+      de: {
+        s1: 'Klicke oben auf das Häuschen',
+        s2_1: 'Klicke auf',
+        s2_2: 'Zu Startbildschirm hinzufügen'
+      }
     }
+  }
 
 }
 </script>

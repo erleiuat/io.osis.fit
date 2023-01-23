@@ -28,30 +28,30 @@
 <script>
 export default {
 
-    i18n: {
-        messages: {
-            en: {
-                install: 'Install App',
-                installText: `
+  i18n: {
+    messages: {
+      en: {
+        install: 'Install App',
+        installText: `
                     We rely on the latest technologies, which is why our app is not available in the App Store or Google Play Store. 
                     The technologies allow us to install apps without these stores, which saves tons of (unnecessary) effort.
                     At the same time, many errors that could be caused by a store-app are directly eliminated.
                     For you it makes no difference at all, because the operations and design are identical everywhere.
                     Choose your platform to find out how to "install" the app:
                 `
-            },
-            de: {
-                install: 'App installieren',
-                installText: `
+      },
+      de: {
+        install: 'App installieren',
+        installText: `
                     Wir setzen auf neuste Technologien, weshalb unsere App nicht im App Store bzw. Google Play Store zur Verfügung steht. 
                     Die Technologien erlauben uns, Apps auch ohne diese Stores zu installieren, wodurch tonnenweise (unnötiger) Aufwand vermieden werden kann.
                     Gleichzeitig werden viele Fehler direkt eliminiert, welche durch eine Store-App bestehen könnten.
                     Für dich macht es überhaupt keinen Unterschied, da die Bedienung sowie das Design überall identisch sind.
                     Wähle deine Plattform um herauszufinden wie du die App "installieren" kannst:
                 `
-            }
-        }
+      }
     }
+  }
 
 }
 </script>

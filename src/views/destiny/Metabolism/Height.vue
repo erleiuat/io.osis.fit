@@ -29,41 +29,41 @@
 <script>
 export default {
 
-    data () {
-        return {
-            edit: false,
-            form: {
-                valid: false,
-                rules: {
-                    number: [
-                        v => !!v || this.$t('alert.form.required'),
-                        v => !isNaN(v) || this.$t('alert.form.format.number')
-                    ]
-                }
-            }
+  data () {
+    return {
+      edit: false,
+      form: {
+        valid: false,
+        rules: {
+          number: [
+            v => !!v || this.$t('alert.form.required'),
+            v => !isNaN(v) || this.$t('alert.form.format.number')
+          ]
         }
-    },
-
-    methods: {
-        saveChange () {
-            if (!this.$refs.form.validate()) return false
-            this.$store.commit('form/send')
-            this.edit = false
-        }
-    },
-
-    i18n: {
-        messages: {
-            en: {
-                height: 'Height',
-                howHeight: 'How tall are you?'
-            },
-            de: {
-                height: 'Körpergrösse',
-                howHeight: 'Wie gross bist du?'
-            }
-        }
+      }
     }
+  },
+
+  methods: {
+    saveChange () {
+      if (!this.$refs.form.validate()) return false
+      this.$store.commit('form/send')
+      this.edit = false
+    }
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        height: 'Height',
+        howHeight: 'How tall are you?'
+      },
+      de: {
+        height: 'Körpergrösse',
+        howHeight: 'Wie gross bist du?'
+      }
+    }
+  }
 
 }
 </script>

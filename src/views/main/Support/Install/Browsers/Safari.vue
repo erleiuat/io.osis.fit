@@ -27,24 +27,24 @@
 <script>
 export default {
 
-    i18n: {
-        messages: {
-            en: {
-                s1: 'Tap the Share button at the top/bottom of the screen',
-                s2_1: 'Select the option',
-                s2_2: 'Add to homescreen',
-                s3_1: 'Hit',
-                s3_2: 'Add'
-            },
-            de: {
-                s1: 'Öffne die Optionen über den Teilen-Knopf oben/unten am Bildschirm',
-                s2_1: 'Wähle die Option',
-                s2_2: 'Zum Startbildschirm zufügen',
-                s3_1: 'Klicke auf',
-                s3_2: 'Hinzufügen'
-            }
-        }
+  i18n: {
+    messages: {
+      en: {
+        s1: 'Tap the Share button at the top/bottom of the screen',
+        s2_1: 'Select the option',
+        s2_2: 'Add to homescreen',
+        s3_1: 'Hit',
+        s3_2: 'Add'
+      },
+      de: {
+        s1: 'Öffne die Optionen über den Teilen-Knopf oben/unten am Bildschirm',
+        s2_1: 'Wähle die Option',
+        s2_2: 'Zum Startbildschirm zufügen',
+        s3_1: 'Klicke auf',
+        s3_2: 'Hinzufügen'
+      }
     }
+  }
 
 }
 </script>

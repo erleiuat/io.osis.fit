@@ -12,13 +12,13 @@
 <script>
 export default {
 
-    i18n: {
-        messages: {
-            en: {
-                title: 'Imprint',
-                contact: 'Contact',
-                langNotice: 'Translated by',
-                text: `
+  i18n: {
+    messages: {
+      en: {
+        title: 'Imprint',
+        contact: 'Contact',
+        langNotice: 'Translated by',
+        text: `
                 <div class="headline font-weight-light">Contact address</div>
                 <p class="body-2">
                     Osis | <a target="_blank" href="mailto:mail@osis.io">mail@osis.io</a><br/>
@@ -62,12 +62,12 @@ export default {
                     Source: <a href="https://www.swissanwalt.ch" target="_blank" rel="noopener">SwissAnwalt</a>
                 </p>
                 `
-            },
-            de: {
-                title: 'Impressum',
-                contact: 'Kontakt',
-                langNotice: 'Übersetz mit',
-                text: `
+      },
+      de: {
+        title: 'Impressum',
+        contact: 'Kontakt',
+        langNotice: 'Übersetz mit',
+        text: `
                 <div class="headline font-weight-light">Kontakt-Adresse</div>
                 <p class="body-2">
                     Osis | <a target="_blank" href="mailto:mail@osis.io">mail@osis.io</a><br/>
@@ -111,9 +111,9 @@ export default {
                     Quelle: <a href="https://www.swissanwalt.ch" target="_blank" rel="noopener">SwissAnwalt</a>
                 </p>
                 `
-            }
-        }
+      }
     }
+  }
 
 }
 </script>

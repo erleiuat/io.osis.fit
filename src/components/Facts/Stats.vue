@@ -37,58 +37,58 @@
 <script>
 export default {
 
-    props: {
-        daily: {
-            type: Boolean,
-            default: true
-        },
-        weekly: {
-            type: Boolean,
-            default: false
-        }
+  props: {
+    daily: {
+      type: Boolean,
+      default: true
     },
-
-    computed: {
-
-        vals () {
-            var tmp = null
-            var toReturn = {
-                activity: null,
-                fat: null,
-                protein: null
-            }
-
-            if (this.weekly) {
-                tmp = this.$store.getters['logFood/totalWeek']()
-                toReturn.activity = Math.round(this.$store.getters['logActivity/totalWeek']() * 10) / 10
-            } else {
-                tmp = this.$store.getters['logFood/totalDay']
-                toReturn.activity = Math.round(this.$store.getters['logActivity/totalDay'] * 10) / 10
-            }
-
-            toReturn.fat = Math.round(tmp.fat * 10) / 10
-            toReturn.protein = Math.round(tmp.protein * 10) / 10
-            return toReturn
-        }
-
-    },
-
-    i18n: {
-        messages: {
-            en: {
-                stats: 'Statistics',
-                activityCals: 'Calories burned',
-                fats: 'Fats',
-                proteins: 'Proteins'
-            },
-            de: {
-                stats: 'Statistik',
-                activityCals: 'Kalorien verbrannt',
-                fats: 'Fette',
-                proteins: 'Proteine'
-            }
-        }
+    weekly: {
+      type: Boolean,
+      default: false
     }
+  },
+
+  computed: {
+
+    vals () {
+      var tmp = null
+      var toReturn = {
+        activity: null,
+        fat: null,
+        protein: null
+      }
+
+      if (this.weekly) {
+        tmp = this.$store.getters['logFood/totalWeek']()
+        toReturn.activity = Math.round(this.$store.getters['logActivity/totalWeek']() * 10) / 10
+      } else {
+        tmp = this.$store.getters['logFood/totalDay']
+        toReturn.activity = Math.round(this.$store.getters['logActivity/totalDay'] * 10) / 10
+      }
+
+      toReturn.fat = Math.round(tmp.fat * 10) / 10
+      toReturn.protein = Math.round(tmp.protein * 10) / 10
+      return toReturn
+    }
+
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        stats: 'Statistics',
+        activityCals: 'Calories burned',
+        fats: 'Fats',
+        proteins: 'Proteins'
+      },
+      de: {
+        stats: 'Statistik',
+        activityCals: 'Kalorien verbrannt',
+        fats: 'Fette',
+        proteins: 'Proteine'
+      }
+    }
+  }
 
 }
 </script>

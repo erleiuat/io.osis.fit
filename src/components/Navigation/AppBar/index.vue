@@ -27,16 +27,16 @@
 <script>
 export default {
 
-    computed: {
-        viewTitle () {
-            if (this.$route.name) return this.$t('view.' + this.$route.name + '.name')
-            else return null
-        },
-        login () {
-            if (this.$store.state.auth.login) return true
-            return false
-        }
+  computed: {
+    viewTitle () {
+      if (this.$route.name) return this.$t('view.' + this.$route.name + '.name')
+      else return null
+    },
+    login () {
+      if (this.$store.state.auth.login) return true
+      return false
     }
+  }
 
 }
 </script>

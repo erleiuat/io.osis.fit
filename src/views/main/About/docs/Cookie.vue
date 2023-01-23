@@ -12,18 +12,18 @@
 <script>
 export default {
 
-    data () {
-        return {
-            ownerName: 'Osis',
-            webUrl: 'https://osis.io'
-        }
-    },
+  data () {
+    return {
+      ownerName: 'Osis',
+      webUrl: 'https://osis.io'
+    }
+  },
 
-    i18n: {
-        messages: {
-            en: {
-                langNotice: 'Translated by',
-                text: `
+  i18n: {
+    messages: {
+      en: {
+        langNotice: 'Translated by',
+        text: `
                 <div class="headline font-weight-light">Cookie Policy</div>
                 <p class="body-2">
                     This is the Cookie Policy for {ownerName}, accessible from {webUrl}
@@ -165,10 +165,10 @@ export default {
                     However if you are still looking for more information then you can contact us through one of our preferred contact methods:
                 </p>
                 `
-            },
-            de: {
-                langNotice: 'Übersetz mit',
-                text: `
+      },
+      de: {
+        langNotice: 'Übersetz mit',
+        text: `
                 <div class="headline font-weight-light">Cookie Richtlinie</div>
                 <p class="body-2">
                     Dies ist die Cookie-Richtlinie für {ownerName}, zugänglich von {webUrl}
@@ -318,9 +318,9 @@ export default {
                     Wie auch immer, wenn Sie noch auf der Suche nach mehr Informationen sind, dann können Sie uns über eine unserer bevorzugten Kontaktmöglichkeiten kontaktieren:
                 </p>
                 `
-            }
-        }
+      }
     }
+  }
 
 }
 </script>

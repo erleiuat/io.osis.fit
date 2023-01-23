@@ -87,46 +87,46 @@ import WinChrome from '@/views/main/Support/Install/Browsers/WinChrome'
 
 export default {
 
-    components: {
-        Chrome, Samsung, Mozilla, Edge, Safari, WinChrome
-    },
+  components: {
+    Chrome, Samsung, Mozilla, Edge, Safari, WinChrome
+  },
 
-    data () {
-        return {
-            tab: null
-        }
-    },
-
-    mounted () {
-        if (this.$route.query.plattform) {
-            switch (this.$route.query.plattform) {
-            case 'apple':
-                this.tab = 1
-                break
-            case 'windows':
-                this.tab = 2
-                break
-            default:
-                this.tab = 0
-                break
-            }
-        }
-    },
-
-    i18n: {
-        messages: {
-            en: {
-                browser: 'Select your Browser:',
-                install: 'Install App',
-                mobile: '(Mobile)'
-            },
-            de: {
-                browser: 'Wähle deinen Browser:',
-                install: 'App installieren',
-                mobile: '(Mobile)'
-            }
-        }
+  data () {
+    return {
+      tab: null
     }
+  },
+
+  mounted () {
+    if (this.$route.query.plattform) {
+      switch (this.$route.query.plattform) {
+      case 'apple':
+        this.tab = 1
+        break
+      case 'windows':
+        this.tab = 2
+        break
+      default:
+        this.tab = 0
+        break
+      }
+    }
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        browser: 'Select your Browser:',
+        install: 'Install App',
+        mobile: '(Mobile)'
+      },
+      de: {
+        browser: 'Wähle deinen Browser:',
+        install: 'App installieren',
+        mobile: '(Mobile)'
+      }
+    }
+  }
 
 }
 </script>

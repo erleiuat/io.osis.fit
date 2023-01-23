@@ -105,45 +105,45 @@ import Apios from '@/plugins/apios/'
 
 export default {
 
-    data () {
-        return {
-            detailed: false,
-            loading: false,
-            filter: {
-                identity: null,
-                level: null,
-                from: 0,
-                to: 100
-            },
-            log: [
+  data () {
+    return {
+      detailed: false,
+      loading: false,
+      filter: {
+        identity: null,
+        level: null,
+        from: 0,
+        to: 100
+      },
+      log: [
 
-            ]
-        }
-    },
-
-    methods: {
-
-        loadLog () {
-            this.loading = true
-            let url = 'admin/log?from=' + this.filter.from + '&to=' + this.filter.to
-
-            if (this.filter.level) url += '&level=' + this.filter.level
-            if (this.filter.identity) url += '&identity=' + this.filter.identity
-
-            Apios.get(url).then(res => {
-                this.log = res.data
-            }).catch(err => {
-                this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
-            }).finally(() => {
-                this.loading = false
-            })
-        }
-
-    },
-
-    mounted () {
-        this.loadLog()
+      ]
     }
+  },
+
+  methods: {
+
+    loadLog () {
+      this.loading = true
+      let url = 'admin/log?from=' + this.filter.from + '&to=' + this.filter.to
+
+      if (this.filter.level) url += '&level=' + this.filter.level
+      if (this.filter.identity) url += '&identity=' + this.filter.identity
+
+      Apios.get(url).then(res => {
+        this.log = res.data
+      }).catch(err => {
+        this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
+      }).finally(() => {
+        this.loading = false
+      })
+    }
+
+  },
+
+  mounted () {
+    this.loadLog()
+  }
 
 }
 </script>

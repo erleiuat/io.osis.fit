@@ -19,47 +19,47 @@
 <script>
 export default {
 
-    props: {
-        weekly: {
-            type: Boolean,
-            default: false
-        }
-    },
-
-    computed: {
-
-        vals () {
-            let tmp = this.$store.getters['destiny/timeRemaining']
-
-            var now = new Date().getTime()
-            var countTo = new Date().setHours(23, 59, 59)
-            var distance = countTo - now
-
-            return {
-                hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-                days: tmp.days,
-                weeks: tmp.weeks
-            }
-        }
-
-    },
-
-    i18n: {
-        messages: {
-            en: {
-                time: 'Remaining time',
-                days: 'Days',
-                hours: 'Hours',
-                weeks: 'Weeks'
-            },
-            de: {
-                time: 'Verbleibende Zeit',
-                days: 'Tage',
-                hours: 'Stunden',
-                weeks: 'Wochen'
-            }
-        }
+  props: {
+    weekly: {
+      type: Boolean,
+      default: false
     }
+  },
+
+  computed: {
+
+    vals () {
+      let tmp = this.$store.getters['destiny/timeRemaining']
+
+      var now = new Date().getTime()
+      var countTo = new Date().setHours(23, 59, 59)
+      var distance = countTo - now
+
+      return {
+        hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+        days: tmp.days,
+        weeks: tmp.weeks
+      }
+    }
+
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        time: 'Remaining time',
+        days: 'Days',
+        hours: 'Hours',
+        weeks: 'Weeks'
+      },
+      de: {
+        time: 'Verbleibende Zeit',
+        days: 'Tage',
+        hours: 'Stunden',
+        weeks: 'Wochen'
+      }
+    }
+  }
 
 }
 </script>

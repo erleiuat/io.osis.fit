@@ -34,42 +34,42 @@
 <script>
 export default {
 
-    computed: {
+  computed: {
 
-        remaining () {
-            return this.$store.getters['destiny/timeRemaining']
-        },
-
-        requiredLoss () {
-            return this.$store.getters['destiny/lossInKg']
-        },
-
-        avgCalsPerDay () {
-            return this.$store.getters['destiny/possibleCals'](0).daily
-        }
-
+    remaining () {
+      return this.$store.getters['destiny/timeRemaining']
     },
 
-    i18n: {
-        messages: {
-            en: {
-                timeRemaining: 'Time left',
-                requiredLoss: 'Required weight loss',
-                perWeek: '/ Week',
-                days: 'Days',
-                weeks: 'Weeks',
-                avgCalsPerDay: 'Ø Calories / Day'
-            },
-            de: {
-                timeRemaining: 'Verbleibende Zeit',
-                requiredLoss: 'Nötiger Gewichtsverlust',
-                perWeek: '/ Woche',
-                days: 'Tage',
-                weeks: 'Wochen',
-                avgCalsPerDay: 'Ø Kalorien / Tag'
-            }
-        }
+    requiredLoss () {
+      return this.$store.getters['destiny/lossInKg']
+    },
+
+    avgCalsPerDay () {
+      return this.$store.getters['destiny/possibleCals'](0).daily
     }
+
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        timeRemaining: 'Time left',
+        requiredLoss: 'Required weight loss',
+        perWeek: '/ Week',
+        days: 'Days',
+        weeks: 'Weeks',
+        avgCalsPerDay: 'Ø Calories / Day'
+      },
+      de: {
+        timeRemaining: 'Verbleibende Zeit',
+        requiredLoss: 'Nötiger Gewichtsverlust',
+        perWeek: '/ Woche',
+        days: 'Tage',
+        weeks: 'Wochen',
+        avgCalsPerDay: 'Ø Kalorien / Tag'
+      }
+    }
+  }
 
 }
 </script>

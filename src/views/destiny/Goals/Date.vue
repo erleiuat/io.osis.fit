@@ -29,50 +29,50 @@
 <script>
 export default {
 
-    props: {
-        state: {
-            type: String,
-            default: null
-        }
-    },
-
-    data () {
-        return {
-            edit: false,
-            form: {
-                valid: false,
-                rules: {
-                    date: [
-                        v => !!v || this.$t('alert.form.required'),
-                        v => !isNaN(Date.parse(v)) || this.$t('alert.form.format.date')
-                    ]
-                }
-            }
-        }
-    },
-
-    methods: {
-
-        saveChange () {
-            if (!this.$refs.form.validate()) return false
-            this.$store.commit('form/send')
-            this.edit = false
-        }
-
-    },
-
-    i18n: {
-        messages: {
-            en: {
-                goalDate: 'Goal Date',
-                byWhen: 'By when do you want to reach your goal?'
-            },
-            de: {
-                goalDate: 'Ziel-Datum',
-                byWhen: 'Bis wann möchtest du dein Ziel erreichen?'
-            }
-        }
+  props: {
+    state: {
+      type: String,
+      default: null
     }
+  },
+
+  data () {
+    return {
+      edit: false,
+      form: {
+        valid: false,
+        rules: {
+          date: [
+            v => !!v || this.$t('alert.form.required'),
+            v => !isNaN(Date.parse(v)) || this.$t('alert.form.format.date')
+          ]
+        }
+      }
+    }
+  },
+
+  methods: {
+
+    saveChange () {
+      if (!this.$refs.form.validate()) return false
+      this.$store.commit('form/send')
+      this.edit = false
+    }
+
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        goalDate: 'Goal Date',
+        byWhen: 'By when do you want to reach your goal?'
+      },
+      de: {
+        goalDate: 'Ziel-Datum',
+        byWhen: 'Bis wann möchtest du dein Ziel erreichen?'
+      }
+    }
+  }
 
 }
 </script>

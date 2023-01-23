@@ -66,49 +66,49 @@ import RegularImage from '@/components/Image/Regular'
 
 export default {
 
-    components: {
-        Detailed, RegularImage
-    },
+  components: {
+    Detailed, RegularImage
+  },
 
-    data () {
-        return {
-            detailed: false,
-            loading: false,
-            filter: {
-                identity: null,
-                status: null,
-                from: 0,
-                to: 100
-            },
-            accounts: [
+  data () {
+    return {
+      detailed: false,
+      loading: false,
+      filter: {
+        identity: null,
+        status: null,
+        from: 0,
+        to: 100
+      },
+      accounts: [
 
-            ]
-        }
-    },
-
-    methods: {
-
-        loadAccounts () {
-            this.loading = true
-            let url = 'admin/accounts?from=' + this.filter.from + '&to=' + this.filter.to
-
-            if (this.filter.status) url += '&status=' + this.filter.status
-            if (this.filter.identity) url += '&identity=' + this.filter.identity
-
-            Apios.get(url).then(res => {
-                this.accounts = res.data
-            }).catch(err => {
-                this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
-            }).finally(() => {
-                this.loading = false
-            })
-        }
-
-    },
-
-    mounted () {
-        this.loadAccounts()
+      ]
     }
+  },
+
+  methods: {
+
+    loadAccounts () {
+      this.loading = true
+      let url = 'admin/accounts?from=' + this.filter.from + '&to=' + this.filter.to
+
+      if (this.filter.status) url += '&status=' + this.filter.status
+      if (this.filter.identity) url += '&identity=' + this.filter.identity
+
+      Apios.get(url).then(res => {
+        this.accounts = res.data
+      }).catch(err => {
+        this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
+      }).finally(() => {
+        this.loading = false
+      })
+    }
+
+  },
+
+  mounted () {
+    this.loadAccounts()
+  }
 
 }
 </script>

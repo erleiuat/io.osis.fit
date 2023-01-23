@@ -22,20 +22,20 @@
 <script>
 export default {
 
-    i18n: {
-        messages: {
-            en: {
-                title: '404 - Not found',
-                text: 'This page was not found',
-                backBtn: 'Go Home'
-            },
-            de: {
-                title: '404 - Nicht gefunden',
-                text: 'Diese Seite scheint nicht zu existieren',
-                backBtn: 'Zur Startseite'
-            }
-        }
+  i18n: {
+    messages: {
+      en: {
+        title: '404 - Not found',
+        text: 'This page was not found',
+        backBtn: 'Go Home'
+      },
+      de: {
+        title: '404 - Nicht gefunden',
+        text: 'Diese Seite scheint nicht zu existieren',
+        backBtn: 'Zur Startseite'
+      }
     }
+  }
 
 }
 </script>

@@ -53,69 +53,69 @@
 
 <script>
 export default {
-    name: 'Theme',
+  name: 'Theme',
 
-    data () {
-        return {
-            text: 'Osis.fit',
-            alerts: [
-                'success',
-                'error',
-                'warning',
-                'info'
-            ],
-            textStyles: [
-                'display-4',
-                'display-3',
-                'display-2',
-                'display-1',
-                'headline',
-                'title',
-                'subtitle-1',
-                'subtitle-2',
-                'body-1',
-                'body-2',
-                'caption',
-                'overline'
-            ],
-            colors: [
-                '',
-                'primary',
-                'secondary',
-                'accent',
-                'success',
-                'error',
-                'warning',
-                'info'
-            ],
-            langItems: [
-                { value: 'de', text: 'Deutsch' },
-                { value: 'en', text: 'English' }
-            ]
-        }
+  data () {
+    return {
+      text: 'Osis.fit',
+      alerts: [
+        'success',
+        'error',
+        'warning',
+        'info'
+      ],
+      textStyles: [
+        'display-4',
+        'display-3',
+        'display-2',
+        'display-1',
+        'headline',
+        'title',
+        'subtitle-1',
+        'subtitle-2',
+        'body-1',
+        'body-2',
+        'caption',
+        'overline'
+      ],
+      colors: [
+        '',
+        'primary',
+        'secondary',
+        'accent',
+        'success',
+        'error',
+        'warning',
+        'info'
+      ],
+      langItems: [
+        { value: 'de', text: 'Deutsch' },
+        { value: 'en', text: 'English' }
+      ]
+    }
+  },
+
+  computed: {
+
+    mode: {
+      get () {
+        return this.$store.state.app.dark
+      },
+      set (val) {
+        this.$store.dispatch('app/dark', val)
+      }
     },
 
-    computed: {
-
-        mode: {
-            get () {
-                return this.$store.state.app.dark
-            },
-            set (val) {
-                this.$store.dispatch('app/dark', val)
-            }
-        },
-
-        lang: {
-            get () {
-                return this.$store.state.app.locale
-            },
-            set (val) {
-                this.$store.dispatch('app/locale', val)
-            }
-        }
-
+    lang: {
+      get () {
+        return this.$store.state.app.locale
+      },
+      set (val) {
+        this.$store.dispatch('app/locale', val)
+      }
     }
+
+  }
 
 }
 </script>

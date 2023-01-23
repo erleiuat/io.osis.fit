@@ -36,94 +36,94 @@
 <script>
 export default {
 
-    data () {
-        return {
-            form: {
-                valid: false,
-                data: {
-                    weight: '',
-                    fat: '',
-                    date: '',
-                    time: ''
-                },
-                rules: {
-                    title: [
-                        v => v.length < 120 || this.$t('alert.form.tooLong', { amount: 120 })
-                    ],
-                    reqNumber: [
-                        v => !!v || this.$t('alert.form.required'),
-                        v => !isNaN(v) || this.$t('alert.form.format.number')
-                    ],
-                    number: [
-                        v => (v ? !isNaN(v) : true) || this.$t('alert.form.format.number')
-                    ],
-                    date: [
-                        v => !!v || this.$t('alert.form.required'),
-                        v => !isNaN(Date.parse(v)) || this.$t('alert.form.format.date')
-                    ],
-                    time: [
-                        v => !!v || this.$t('alert.form.required'),
-                        v => !isNaN(Date.parse('01-01-2000 ' + v)) || this.$t('alert.form.format.date')
-                    ]
-                }
-            }
+  data () {
+    return {
+      form: {
+        valid: false,
+        data: {
+          weight: '',
+          fat: '',
+          date: '',
+          time: ''
+        },
+        rules: {
+          title: [
+            v => v.length < 120 || this.$t('alert.form.tooLong', { amount: 120 })
+          ],
+          reqNumber: [
+            v => !!v || this.$t('alert.form.required'),
+            v => !isNaN(v) || this.$t('alert.form.format.number')
+          ],
+          number: [
+            v => (v ? !isNaN(v) : true) || this.$t('alert.form.format.number')
+          ],
+          date: [
+            v => !!v || this.$t('alert.form.required'),
+            v => !isNaN(Date.parse(v)) || this.$t('alert.form.format.date')
+          ],
+          time: [
+            v => !!v || this.$t('alert.form.required'),
+            v => !isNaN(Date.parse('01-01-2000 ' + v)) || this.$t('alert.form.format.date')
+          ]
         }
-    },
-
-    computed: {
-        doSend () {
-            return this.$store.state.form.send
-        }
-    },
-
-    watch: {
-        doSend (val) {
-            if (!this.$refs.form.validate() || !val) {
-                this.$store.commit('form/sent')
-                return false
-            }
-
-            this.$store.commit('form/sending')
-            this.$store.dispatch('logBody/create', this.form.data).then(() => {
-                this.$router.back()
-                this.$notify({ type: 'success', title: this.$t('alert.success.added') })
-            }).catch(err => {
-                this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
-            }).finally(() => {
-                this.$store.commit('form/sent')
-            })
-        }
-    },
-
-    mounted () {
-        var today = new Date()
-        var dd = today.getDate()
-        var mm = today.getMonth() + 1
-        var yyyy = today.getFullYear()
-        var hh = today.getHours()
-        var min = today.getMinutes()
-
-        if (dd < 10) dd = '0' + dd
-        if (mm < 10) mm = '0' + mm
-        if (hh < 10) hh = '0' + hh
-        if (min < 10) min = '0' + min
-
-        this.form.data.date = yyyy + '-' + mm + '-' + dd
-        this.form.data.time = hh + ':' + min
-    },
-
-    i18n: {
-        messages: {
-            en: {
-                weight: 'Weight',
-                fat: 'Body-Fat'
-            },
-            de: {
-                weight: 'Gewicht',
-                fat: 'Körperfett'
-            }
-        }
+      }
     }
+  },
+
+  computed: {
+    doSend () {
+      return this.$store.state.form.send
+    }
+  },
+
+  watch: {
+    doSend (val) {
+      if (!this.$refs.form.validate() || !val) {
+        this.$store.commit('form/sent')
+        return false
+      }
+
+      this.$store.commit('form/sending')
+      this.$store.dispatch('logBody/create', this.form.data).then(() => {
+        this.$router.back()
+        this.$notify({ type: 'success', title: this.$t('alert.success.added') })
+      }).catch(err => {
+        this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
+      }).finally(() => {
+        this.$store.commit('form/sent')
+      })
+    }
+  },
+
+  mounted () {
+    var today = new Date()
+    var dd = today.getDate()
+    var mm = today.getMonth() + 1
+    var yyyy = today.getFullYear()
+    var hh = today.getHours()
+    var min = today.getMinutes()
+
+    if (dd < 10) dd = '0' + dd
+    if (mm < 10) mm = '0' + mm
+    if (hh < 10) hh = '0' + hh
+    if (min < 10) min = '0' + min
+
+    this.form.data.date = yyyy + '-' + mm + '-' + dd
+    this.form.data.time = hh + ':' + min
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        weight: 'Weight',
+        fat: 'Body-Fat'
+      },
+      de: {
+        weight: 'Gewicht',
+        fat: 'Körperfett'
+      }
+    }
+  }
 
 }
 </script>

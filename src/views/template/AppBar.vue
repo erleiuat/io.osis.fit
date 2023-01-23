@@ -25,35 +25,35 @@
 <script>
 export default {
 
-    computed: {
+  computed: {
 
-        title () {
-            if (this.$route.name) return this.$t('view.' + this.$route.name + '.name')
-            else return null
-        },
+    title () {
+      if (this.$route.name) return this.$t('view.' + this.$route.name + '.name')
+      else return null
+    },
 
-        show () {
-            if (this.$route.name === 'template.add') {
-                return {
-                    add: false,
-                    save: true,
-                    back: true
-                }
-            } else if (this.$route.name === 'template.edit') {
-                return {
-                    add: false,
-                    save: true,
-                    back: true
-                }
-            } else {
-                return {
-                    add: 'template.add',
-                    save: false,
-                    back: false
-                }
-            }
+    show () {
+      if (this.$route.name === 'template.add') {
+        return {
+          add: false,
+          save: true,
+          back: true
         }
+      } else if (this.$route.name === 'template.edit') {
+        return {
+          add: false,
+          save: true,
+          back: true
+        }
+      } else {
+        return {
+          add: 'template.add',
+          save: false,
+          back: false
+        }
+      }
     }
+  }
 
 }
 </script>

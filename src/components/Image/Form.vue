@@ -22,35 +22,35 @@ import RegularImage from '@/components/Image/Regular'
 
 export default {
 
-    components: {
-        ImageUpload, RegularImage
-    },
+  components: {
+    ImageUpload, RegularImage
+  },
 
-    props: {
-        value: {
-            type: [Object, String],
-            default: null
-        },
-        placeholder: {
-            type: String,
-            default: null
-        },
-        loading: {
-            type: Boolean,
-            default: false
-        }
+  props: {
+    value: {
+      type: [Object, String],
+      default: null
     },
-
-    computed: {
-        img: {
-            get () {
-                return this.value || false
-            },
-            set (val) {
-                this.$emit('input', val)
-            }
-        }
+    placeholder: {
+      type: String,
+      default: null
+    },
+    loading: {
+      type: Boolean,
+      default: false
     }
+  },
+
+  computed: {
+    img: {
+      get () {
+        return this.value || false
+      },
+      set (val) {
+        this.$emit('input', val)
+      }
+    }
+  }
 
 }
 </script>

@@ -16,16 +16,16 @@
 <script>
 export default {
 
-    i18n: {
-        messages: {
-            en: {
-                currentWeight: 'Current Weight'
-            },
-            de: {
-                currentWeight: 'Aktuelles Gewicht'
-            }
-        }
+  i18n: {
+    messages: {
+      en: {
+        currentWeight: 'Current Weight'
+      },
+      de: {
+        currentWeight: 'Aktuelles Gewicht'
+      }
     }
+  }
 
 }
 </script>

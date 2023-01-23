@@ -34,29 +34,29 @@ import Change from '@/views/auth/forgotten/Change'
 
 export default {
 
-    components: {
-        Request, Change
-    },
+  components: {
+    Request, Change
+  },
 
-    computed: {
-        step () {
-            if (this.$route.query.change) return 'change'
-            else return 'request'
-        }
-    },
-
-    i18n: {
-        messages: {
-            en: {
-                reset: 'Reset Password',
-                followThese: 'Follow these steps to get a new password'
-            },
-            de: {
-                reset: 'Passwort zurücksetzen',
-                followThese: 'Folge diesen Schritten, um ein neues Passwort anzufordern'
-            }
-        }
+  computed: {
+    step () {
+      if (this.$route.query.change) return 'change'
+      else return 'request'
     }
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        reset: 'Reset Password',
+        followThese: 'Follow these steps to get a new password'
+      },
+      de: {
+        reset: 'Passwort zurücksetzen',
+        followThese: 'Folge diesen Schritten, um ein neues Passwort anzufordern'
+      }
+    }
+  }
 
 }
 </script>

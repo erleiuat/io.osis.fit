@@ -75,127 +75,127 @@ import Apios from '@/plugins/apios/'
 
 export default {
 
-    data () {
-        return {
-            checkTimeout: null,
-            acceptAgb: false,
-            form: {
-                valid: false,
-                sending: false,
-                showPW: false,
-                existing: {
-                    mail: null,
-                    username: null
-                },
-                data: {
-                    mail: '',
-                    username: '',
-                    password: '',
-                    firstname: '',
-                    lastname: '',
-                    birthdate: '',
-                    locale: ''
-                },
-                rules: {
-                    accept: [
-                        v => !!v || this.$t('alert.form.required')
-                    ],
-                    name: [
-                        v => !!v || this.$t('alert.form.required'),
-                        v => v.length < 150 || this.$t('alert.form.tooLong', { amount: 150 })
-                    ],
-                    username: [
-                        v => !!v || this.$t('alert.form.require', { name: this.$t('form.username') }),
-                        v => !/\s/.test(v) || this.$t('alert.form.whitespace'),
-                        v => v.length < 250 || this.$t('alert.form.tooLong', { amount: 250 }),
-                        v => v.length > 5 || this.$t('alert.form.tooShort', { amount: 5 })
-                    ],
-                    mail: [
-                        v => !!v || this.$t('alert.form.require', { name: this.$t('form.mail') }),
-                        v => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || this.$t('alert.form.invalid'),
-                        v => v.length < 90 || this.$t('alert.form.tooLong', { amount: 90 })
-                    ],
-                    password: [
-                        v => !!v || this.$t('alert.form.require', { name: this.$t('form.password') }),
-                        v => /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/.test(v) || this.$t('strong'),
-                        v => v.length < 255 || this.$t('alert.form.tooLong', { amount: 255 })
-                    ]
-                }
-            }
-        }
-    },
-
-    methods: {
-
-        submit () {
-            if (!this.$refs.form.validate()) return false
-            this.form.sending = true
-
-            Apios.post('account', this.form.data).then(() => {
-                this.$notify({ type: 'success', title: this.$t('accCreated') })
-                this.$router.push({ name: 'auth', query: { mail: this.form.data.mail } })
-            }).catch(err => {
-                if (err.code === 'A1005') {
-                    this.form.existing.mail = this.$t('alert.form.existing.mail')
-                    this.$notify({ type: 'error', title: this.$t('alert.form.existing.mail'), text: err.code + ': ' + err.message })
-                } else if (err.code === 'A1006') {
-                    this.form.existing.username = this.$t('alert.form.existing.username')
-                    this.$notify({ type: 'error', title: this.$t('alert.form.existing.username'), text: err.code + ': ' + err.message })
-                } else {
-                    this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
-                }
-            }).finally(() => {
-                this.form.sending = false
-            })
+  data () {
+    return {
+      checkTimeout: null,
+      acceptAgb: false,
+      form: {
+        valid: false,
+        sending: false,
+        showPW: false,
+        existing: {
+          mail: null,
+          username: null
         },
-
-        exists (enty) {
-            clearTimeout(this.checkTimeout)
-            this.checkTimeout = setTimeout(() => {
-                if (this.form.data[enty].length < 5) return
-                let url = 'account/check?identifier=' + this.form.data[enty]
-                Apios.get(url).then(res => {
-                    if (res.data.found === true) this.form.existing[enty] = this.$t('alert.form.existing.' + enty)
-                    else this.form.existing[enty] = null
-                }).catch(err => {
-                    this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
-                })
-            }, 1000)
+        data: {
+          mail: '',
+          username: '',
+          password: '',
+          firstname: '',
+          lastname: '',
+          birthdate: '',
+          locale: ''
+        },
+        rules: {
+          accept: [
+            v => !!v || this.$t('alert.form.required')
+          ],
+          name: [
+            v => !!v || this.$t('alert.form.required'),
+            v => v.length < 150 || this.$t('alert.form.tooLong', { amount: 150 })
+          ],
+          username: [
+            v => !!v || this.$t('alert.form.require', { name: this.$t('form.username') }),
+            v => !/\s/.test(v) || this.$t('alert.form.whitespace'),
+            v => v.length < 250 || this.$t('alert.form.tooLong', { amount: 250 }),
+            v => v.length > 5 || this.$t('alert.form.tooShort', { amount: 5 })
+          ],
+          mail: [
+            v => !!v || this.$t('alert.form.require', { name: this.$t('form.mail') }),
+            v => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || this.$t('alert.form.invalid'),
+            v => v.length < 90 || this.$t('alert.form.tooLong', { amount: 90 })
+          ],
+          password: [
+            v => !!v || this.$t('alert.form.require', { name: this.$t('form.password') }),
+            v => /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})/.test(v) || this.$t('strong'),
+            v => v.length < 255 || this.$t('alert.form.tooLong', { amount: 255 })
+          ]
         }
-
-    },
-
-    beforeCreate () {
-        var authState = this.$store.getters['auth/status']
-        if (authState === 'authorized') this.$router.push({ name: 'home' })
-    },
-
-    i18n: {
-        messages: {
-            en: {
-                createYourAcc: 'Create your account to use the app',
-                acceptStuff: 'Accept our Terms and Conditions',
-                termsLink: 'Terms and Conditions',
-                signUp: 'Sign Up',
-                orAlready: 'Do you already have an account?',
-                haveAccount: 'Sign In now',
-                about: 'About',
-                accCreated: 'The account has been created. You can now sign in.',
-                strong: 'Not strong enough (8 characters, upper- & lower-case, numbers)'
-            },
-            de: {
-                createYourAcc: 'Erstelle dein Konto um die App zu nutzen',
-                acceptStuff: 'Ich akzeptiere die',
-                termsLink: 'Allgemeinen Geschäftsbedingungen',
-                signUp: 'Registrieren',
-                orAlready: 'Hast du bereits ein Konto?',
-                haveAccount: 'Jetzt anmelden',
-                about: 'Über',
-                accCreated: 'Das Konto wurde erstellt. Du kannst dich nun anmelden.',
-                strong: 'Nicht stark genug (8 Zeichen, Gross- & Kleinbuchstaben, Nummern)'
-            }
-        }
+      }
     }
+  },
+
+  methods: {
+
+    submit () {
+      if (!this.$refs.form.validate()) return false
+      this.form.sending = true
+
+      Apios.post('account', this.form.data).then(() => {
+        this.$notify({ type: 'success', title: this.$t('accCreated') })
+        this.$router.push({ name: 'auth', query: { mail: this.form.data.mail } })
+      }).catch(err => {
+        if (err.code === 'A1005') {
+          this.form.existing.mail = this.$t('alert.form.existing.mail')
+          this.$notify({ type: 'error', title: this.$t('alert.form.existing.mail'), text: err.code + ': ' + err.message })
+        } else if (err.code === 'A1006') {
+          this.form.existing.username = this.$t('alert.form.existing.username')
+          this.$notify({ type: 'error', title: this.$t('alert.form.existing.username'), text: err.code + ': ' + err.message })
+        } else {
+          this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
+        }
+      }).finally(() => {
+        this.form.sending = false
+      })
+    },
+
+    exists (enty) {
+      clearTimeout(this.checkTimeout)
+      this.checkTimeout = setTimeout(() => {
+        if (this.form.data[enty].length < 5) return
+        let url = 'account/check?identifier=' + this.form.data[enty]
+        Apios.get(url).then(res => {
+          if (res.data.found === true) this.form.existing[enty] = this.$t('alert.form.existing.' + enty)
+          else this.form.existing[enty] = null
+        }).catch(err => {
+          this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
+        })
+      }, 1000)
+    }
+
+  },
+
+  beforeCreate () {
+    var authState = this.$store.getters['auth/status']
+    if (authState === 'authorized') this.$router.push({ name: 'home' })
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        createYourAcc: 'Create your account to use the app',
+        acceptStuff: 'Accept our Terms and Conditions',
+        termsLink: 'Terms and Conditions',
+        signUp: 'Sign Up',
+        orAlready: 'Do you already have an account?',
+        haveAccount: 'Sign In now',
+        about: 'About',
+        accCreated: 'The account has been created. You can now sign in.',
+        strong: 'Not strong enough (8 characters, upper- & lower-case, numbers)'
+      },
+      de: {
+        createYourAcc: 'Erstelle dein Konto um die App zu nutzen',
+        acceptStuff: 'Ich akzeptiere die',
+        termsLink: 'Allgemeinen Geschäftsbedingungen',
+        signUp: 'Registrieren',
+        orAlready: 'Hast du bereits ein Konto?',
+        haveAccount: 'Jetzt anmelden',
+        about: 'Über',
+        accCreated: 'Das Konto wurde erstellt. Du kannst dich nun anmelden.',
+        strong: 'Nicht stark genug (8 Zeichen, Gross- & Kleinbuchstaben, Nummern)'
+      }
+    }
+  }
 
 }
 </script>

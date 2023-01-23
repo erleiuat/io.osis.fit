@@ -40,56 +40,56 @@ import Card from '@/components/Template/Card'
 
 export default {
 
-    components: {
-        Card
-    },
+  components: {
+    Card
+  },
 
-    data () {
-        return {
-            dialog: false,
-            loading: true
+  data () {
+    return {
+      dialog: false,
+      loading: true
 
-        }
-    },
-
-    computed: {
-        items () {
-            return this.$store.getters['template/items']
-        }
-    },
-
-    methods: {
-
-        doSelect (item) {
-            this.dialog = false
-            this.$emit('select', item)
-        },
-
-        loadItems () {
-            this.loading = true
-            this.$store.dispatch('template/read', this.filter).catch(err => {
-                this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
-            }).finally(() => {
-                this.loading = false
-            })
-        }
-
-    },
-
-    mounted () {
-        this.loadItems()
-    },
-
-    i18n: {
-        messages: {
-            en: {
-                useTemplate: 'Template'
-            },
-            de: {
-                useTemplate: 'Vorlage'
-            }
-        }
     }
+  },
+
+  computed: {
+    items () {
+      return this.$store.getters['template/items']
+    }
+  },
+
+  methods: {
+
+    doSelect (item) {
+      this.dialog = false
+      this.$emit('select', item)
+    },
+
+    loadItems () {
+      this.loading = true
+      this.$store.dispatch('template/read', this.filter).catch(err => {
+        this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
+      }).finally(() => {
+        this.loading = false
+      })
+    }
+
+  },
+
+  mounted () {
+    this.loadItems()
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        useTemplate: 'Template'
+      },
+      de: {
+        useTemplate: 'Vorlage'
+      }
+    }
+  }
 
 }
 </script>

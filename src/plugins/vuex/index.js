@@ -15,21 +15,21 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
 
-    actions: {
-        clean (con) {
-            return new Promise((resolve, reject) => {
-                con.commit('logFood/clean')
-                con.commit('logActivity/clean')
-                con.commit('logBody/clean')
-                con.commit('template/clean')
-                con.commit('destiny/clean')
-                resolve()
-            })
-        }
-    },
-
-    modules: {
-        auth, app, form, logFood, logActivity, logBody, template, destiny, calorietable
+  actions: {
+    clean (con) {
+      return new Promise((resolve, reject) => {
+        con.commit('logFood/clean')
+        con.commit('logActivity/clean')
+        con.commit('logBody/clean')
+        con.commit('template/clean')
+        con.commit('destiny/clean')
+        resolve()
+      })
     }
+  },
+
+  modules: {
+    auth, app, form, logFood, logActivity, logBody, template, destiny, calorietable
+  }
 
 })

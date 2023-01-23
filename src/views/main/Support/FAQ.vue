@@ -29,30 +29,30 @@ import Preview from '@/views/main/Support/Install/Preview'
 
 export default {
 
-    components: {
-        Preview
-    },
+  components: {
+    Preview
+  },
 
-    i18n: {
-        messages: {
-            en: {
-                support: 'Support',
-                faq: 'Frequently asked questions',
-                contact: 'Contact',
-                contactText: 'Do you still have questions?',
-                contactBtn: 'Contact us',
-                faqText: 'Check the frequently asked questions before contacting us. They may be able to help you faster than our support team.'
-            },
-            de: {
-                support: 'Support',
-                faq: 'Oft gestellte Fragen',
-                contact: 'Kontakt',
-                contactText: 'Hast du noch weitere Fragen?',
-                contactBtn: 'Kontaktiere uns!',
-                faqText: 'Durchsuche die häufig gestellten Fragen bevor du uns kontaktierst. Sie können dir vielleicht schneller helfen als unser Support-Team.'
-            }
-        }
+  i18n: {
+    messages: {
+      en: {
+        support: 'Support',
+        faq: 'Frequently asked questions',
+        contact: 'Contact',
+        contactText: 'Do you still have questions?',
+        contactBtn: 'Contact us',
+        faqText: 'Check the frequently asked questions before contacting us. They may be able to help you faster than our support team.'
+      },
+      de: {
+        support: 'Support',
+        faq: 'Oft gestellte Fragen',
+        contact: 'Kontakt',
+        contactText: 'Hast du noch weitere Fragen?',
+        contactBtn: 'Kontaktiere uns!',
+        faqText: 'Durchsuche die häufig gestellten Fragen bevor du uns kontaktierst. Sie können dir vielleicht schneller helfen als unser Support-Team.'
+      }
     }
+  }
 
 }
 </script>

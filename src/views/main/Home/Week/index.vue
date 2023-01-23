@@ -35,9 +35,9 @@ import Time from '@/components/Facts/Time'
 
 export default {
 
-    components: {
-        Adders, Stats, Weight, Calories, Time
-    }
+  components: {
+    Adders, Stats, Weight, Calories, Time
+  }
 
 }
 </script>

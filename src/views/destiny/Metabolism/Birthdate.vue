@@ -29,43 +29,43 @@
 <script>
 export default {
 
-    data () {
-        return {
-            edit: false,
-            form: {
-                valid: false,
-                rules: {
-                    date: [
-                        v => !!v || this.$t('alert.form.required'),
-                        v => !isNaN(Date.parse(v)) || this.$t('alert.form.format.date')
-                    ]
-                }
-            }
+  data () {
+    return {
+      edit: false,
+      form: {
+        valid: false,
+        rules: {
+          date: [
+            v => !!v || this.$t('alert.form.required'),
+            v => !isNaN(Date.parse(v)) || this.$t('alert.form.format.date')
+          ]
         }
-    },
-
-    methods: {
-
-        saveChange () {
-            if (!this.$refs.form.validate()) return false
-            this.$store.commit('form/send')
-            this.edit = false
-        }
-
-    },
-
-    i18n: {
-        messages: {
-            en: {
-                birthdate: 'Birthdate',
-                howOld: 'How old are you?'
-            },
-            de: {
-                birthdate: 'Geburtsdatum',
-                howOld: 'Wie alt bist du?'
-            }
-        }
+      }
     }
+  },
+
+  methods: {
+
+    saveChange () {
+      if (!this.$refs.form.validate()) return false
+      this.$store.commit('form/send')
+      this.edit = false
+    }
+
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        birthdate: 'Birthdate',
+        howOld: 'How old are you?'
+      },
+      de: {
+        birthdate: 'Geburtsdatum',
+        howOld: 'Wie alt bist du?'
+      }
+    }
+  }
 
 }
 </script>

@@ -62,143 +62,143 @@
 <script>
 export default {
 
-    data () {
-        return {
-            edit: false,
-            form: {
-                valid: false,
-                rules: {
-                    number: [
-                        v => !!v || this.$t('alert.form.required'),
-                        v => !isNaN(v) || this.$t('alert.form.format.number'),
-                        v => v >= 0.95 || this.$t('alert.form.tooSmall', { amount: 0.95 }),
-                        v => v <= 2.4 || this.$t('alert.form.tooBig', { amount: 2.4 })
-                    ]
-                }
-            }
+  data () {
+    return {
+      edit: false,
+      form: {
+        valid: false,
+        rules: {
+          number: [
+            v => !!v || this.$t('alert.form.required'),
+            v => !isNaN(v) || this.$t('alert.form.format.number'),
+            v => v >= 0.95 || this.$t('alert.form.tooSmall', { amount: 0.95 }),
+            v => v <= 2.4 || this.$t('alert.form.tooBig', { amount: 2.4 })
+          ]
         }
-    },
-
-    computed: {
-        slidePal: {
-            get () {
-                return (this.$store.state.destiny.metabolism.pal || 1.2) * 100
-            },
-            set (val) {
-                this.$store.state.destiny.metabolism.pal = val / 100
-            }
-        },
-        activePal () {
-            for (const key in this.pals) {
-                if (this.pals[key].active) return key
-            }
-            return false
-        },
-        pals () {
-            var pal = this.$store.state.destiny.metabolism.pal
-            var rgb = (pal - 0.95) / 1.45 * 255
-            var color = 'rgba(' + rgb + ', 127,' + (255 - rgb) + ',1)'
-            return {
-                1: {
-                    icon1: 'mdi-wheelchair-accessibility',
-                    icon2: 'mdi-sleep',
-                    active: pal < 1.4,
-                    color: color
-                },
-                2: {
-                    icon1: 'mdi-seat-outline',
-                    icon2: 'mdi-desktop-classic',
-                    active: (pal >= 1.4 && pal < 1.6),
-                    color: color
-                },
-                3: {
-                    icon1: 'mdi-school',
-                    icon2: 'mdi-taxi',
-                    active: (pal >= 1.6 && pal < 1.8),
-                    color: color
-                },
-                4: {
-                    icon1: 'mdi-store',
-                    icon2: 'mdi-room-service-outline',
-                    active: (pal >= 1.8 && pal < 2),
-                    color: color
-                },
-                5: {
-                    icon1: 'mdi-worker',
-                    icon2: 'mdi-tractor',
-                    active: pal >= 2,
-                    color: color
-                }
-            }
-        }
-    },
-
-    methods: {
-        saveChange () {
-            if (!this.$refs.form.validate()) return false
-            this.$store.commit('form/send')
-            this.edit = false
-        }
-    },
-
-    i18n: {
-        messages: {
-            en: {
-                pal: 'PAL',
-                waaat: 'Physical Activity Level',
-                howActive: 'How active are you on average in your everyday life?',
-                pals: {
-                    1: {
-                        title: 'Low',
-                        description: 'Sitting and lying activities only <br/> (like sleeping all day / frail people)'
-                    },
-                    2: {
-                        title: 'Simple',
-                        description: 'Mostly sitting, little physical activity <br/> (such as office work at the desk)'
-                    },
-                    3: {
-                        title: 'Medium',
-                        description: 'Mainly sitting, partly walking and standing <br/> (like students and taxi drivers)'
-                    },
-                    4: {
-                        title: 'Heavy',
-                        description: 'Mainly walking and standing <br/> (like sellers and waiters)'
-                    },
-                    5: {
-                        title: 'Extreme',
-                        description: 'Physically strenuous work <br/> (like farmers and construction workers)'
-                    }
-                }
-            },
-            de: {
-                pal: 'PAL',
-                waaat: 'Physical Activity Level (körperliche Aktivität / Leistungsumsatz)',
-                howActive: 'Wie aktiv bist du durchschnittlich in deinem Alltag?',
-                pals: {
-                    1: {
-                        title: 'Niedrig',
-                        description: 'Nur sitzende und liegende Aktivitäten <br/> (z.B. gebrechliche Menschen)'
-                    },
-                    2: {
-                        title: 'Einfach',
-                        description: 'Meist sitzend, wenig körperliche Aktivität <br/> (z.B. Büroarbeiten am Schreibtisch)'
-                    },
-                    3: {
-                        title: 'Mittel',
-                        description: 'Überwiegend sitzend, teilweise gehend und stehend <br/> (z.B. Studenten, Schüler, Taxifahrer)'
-                    },
-                    4: {
-                        title: 'Schwer',
-                        description: 'Hauptsächlich gehend und stehend <br/> (z.B. Verkäufer, Kellner)'
-                    },
-                    5: {
-                        title: 'Extrem',
-                        description: 'Körperlich anstrengende Arbeiten <br/> (z.B. Landwirte, Bauarbeiter)'
-                    }
-                }
-            }
-        }
+      }
     }
+  },
+
+  computed: {
+    slidePal: {
+      get () {
+        return (this.$store.state.destiny.metabolism.pal || 1.2) * 100
+      },
+      set (val) {
+        this.$store.state.destiny.metabolism.pal = val / 100
+      }
+    },
+    activePal () {
+      for (const key in this.pals) {
+        if (this.pals[key].active) return key
+      }
+      return false
+    },
+    pals () {
+      var pal = this.$store.state.destiny.metabolism.pal
+      var rgb = (pal - 0.95) / 1.45 * 255
+      var color = 'rgba(' + rgb + ', 127,' + (255 - rgb) + ',1)'
+      return {
+        1: {
+          icon1: 'mdi-wheelchair-accessibility',
+          icon2: 'mdi-sleep',
+          active: pal < 1.4,
+          color: color
+        },
+        2: {
+          icon1: 'mdi-seat-outline',
+          icon2: 'mdi-desktop-classic',
+          active: (pal >= 1.4 && pal < 1.6),
+          color: color
+        },
+        3: {
+          icon1: 'mdi-school',
+          icon2: 'mdi-taxi',
+          active: (pal >= 1.6 && pal < 1.8),
+          color: color
+        },
+        4: {
+          icon1: 'mdi-store',
+          icon2: 'mdi-room-service-outline',
+          active: (pal >= 1.8 && pal < 2),
+          color: color
+        },
+        5: {
+          icon1: 'mdi-worker',
+          icon2: 'mdi-tractor',
+          active: pal >= 2,
+          color: color
+        }
+      }
+    }
+  },
+
+  methods: {
+    saveChange () {
+      if (!this.$refs.form.validate()) return false
+      this.$store.commit('form/send')
+      this.edit = false
+    }
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        pal: 'PAL',
+        waaat: 'Physical Activity Level',
+        howActive: 'How active are you on average in your everyday life?',
+        pals: {
+          1: {
+            title: 'Low',
+            description: 'Sitting and lying activities only <br/> (like sleeping all day / frail people)'
+          },
+          2: {
+            title: 'Simple',
+            description: 'Mostly sitting, little physical activity <br/> (such as office work at the desk)'
+          },
+          3: {
+            title: 'Medium',
+            description: 'Mainly sitting, partly walking and standing <br/> (like students and taxi drivers)'
+          },
+          4: {
+            title: 'Heavy',
+            description: 'Mainly walking and standing <br/> (like sellers and waiters)'
+          },
+          5: {
+            title: 'Extreme',
+            description: 'Physically strenuous work <br/> (like farmers and construction workers)'
+          }
+        }
+      },
+      de: {
+        pal: 'PAL',
+        waaat: 'Physical Activity Level (körperliche Aktivität / Leistungsumsatz)',
+        howActive: 'Wie aktiv bist du durchschnittlich in deinem Alltag?',
+        pals: {
+          1: {
+            title: 'Niedrig',
+            description: 'Nur sitzende und liegende Aktivitäten <br/> (z.B. gebrechliche Menschen)'
+          },
+          2: {
+            title: 'Einfach',
+            description: 'Meist sitzend, wenig körperliche Aktivität <br/> (z.B. Büroarbeiten am Schreibtisch)'
+          },
+          3: {
+            title: 'Mittel',
+            description: 'Überwiegend sitzend, teilweise gehend und stehend <br/> (z.B. Studenten, Schüler, Taxifahrer)'
+          },
+          4: {
+            title: 'Schwer',
+            description: 'Hauptsächlich gehend und stehend <br/> (z.B. Verkäufer, Kellner)'
+          },
+          5: {
+            title: 'Extrem',
+            description: 'Körperlich anstrengende Arbeiten <br/> (z.B. Landwirte, Bauarbeiter)'
+          }
+        }
+      }
+    }
+  }
 
 }
 </script>

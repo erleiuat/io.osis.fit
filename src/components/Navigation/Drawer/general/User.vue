@@ -16,9 +16,9 @@ import RegularImage from '@/components/Image/Regular'
 
 export default {
 
-    components: {
-        RegularImage
-    }
+  components: {
+    RegularImage
+  }
 
 }
 </script>

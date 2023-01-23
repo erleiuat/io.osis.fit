@@ -34,53 +34,53 @@ import CurrentWeight from '@/views/destiny/CurrentWeight'
 
 export default {
 
-    components: {
-        Weight, Date, Facts, CurrentWeight
-    },
+  components: {
+    Weight, Date, Facts, CurrentWeight
+  },
 
-    computed: {
-        state () {
-            let cals = this.$store.getters['destiny/possibleCals'](0).daily
-            if (!cals) return null
-            if (cals < 300) return 'error'
-            if (cals >= 300 && cals < 500) return 'warning'
-            if (cals >= 500 && cals < 800) return 'primary'
-            if (cals >= 800) return 'success'
-            return null
-        },
-        doSend () {
-            return this.$store.state.form.send
-        }
+  computed: {
+    state () {
+      let cals = this.$store.getters['destiny/possibleCals'](0).daily
+      if (!cals) return null
+      if (cals < 300) return 'error'
+      if (cals >= 300 && cals < 500) return 'warning'
+      if (cals >= 500 && cals < 800) return 'primary'
+      if (cals >= 800) return 'success'
+      return null
     },
-
-    watch: {
-        doSend (val) {
-            if (!val) return
-            this.$store.commit('form/sending')
-            this.$store.dispatch('destiny/saveGoals').then(() => {
-                this.$notify({ type: 'success', title: this.$t('alert.success.changed') })
-            }).catch(err => {
-                this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
-            }).finally(() => {
-                this.$store.commit('form/sent')
-            })
-        }
-    },
-
-    i18n: {
-        messages: {
-            en: {
-                null: ''
-            },
-            de: {
-                null: 'Lege fest was deine Ziele sind',
-                error: 'Dein Ziel ist sehr kritisch. So schnell so viel abzunehmen kann auch ungesund sein.',
-                warning: 'Es kann sehr anstrengend sein, dieses Zeil zu erreichen. Vielleicht solltest du dir etwas mehr Zeit nehmen.',
-                primary: 'Dieses Ziel sollte mit etwas Aufwand erreichbar sein.',
-                success: 'Gutes Ziel! Du solltest es mit wenig Aufwand erreichen können.'
-            }
-        }
+    doSend () {
+      return this.$store.state.form.send
     }
+  },
+
+  watch: {
+    doSend (val) {
+      if (!val) return
+      this.$store.commit('form/sending')
+      this.$store.dispatch('destiny/saveGoals').then(() => {
+        this.$notify({ type: 'success', title: this.$t('alert.success.changed') })
+      }).catch(err => {
+        this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
+      }).finally(() => {
+        this.$store.commit('form/sent')
+      })
+    }
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        null: ''
+      },
+      de: {
+        null: 'Lege fest was deine Ziele sind',
+        error: 'Dein Ziel ist sehr kritisch. So schnell so viel abzunehmen kann auch ungesund sein.',
+        warning: 'Es kann sehr anstrengend sein, dieses Zeil zu erreichen. Vielleicht solltest du dir etwas mehr Zeit nehmen.',
+        primary: 'Dieses Ziel sollte mit etwas Aufwand erreichbar sein.',
+        success: 'Gutes Ziel! Du solltest es mit wenig Aufwand erreichen können.'
+      }
+    }
+  }
 
 }
 </script>

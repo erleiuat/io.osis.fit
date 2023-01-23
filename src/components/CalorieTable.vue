@@ -24,28 +24,28 @@ import calorietable from '@/views/calorietable/'
 
 export default {
 
-    components: {
-        calorietable
-    },
+  components: {
+    calorietable
+  },
 
-    data () {
-        return {
-            dialog: false
-        }
-    },
-
-    methods: {
-        didSelect (item) {
-            this.dialog = false
-            this.$emit('select', {
-                title: item.name,
-                portionSize: item.amount,
-                caloriesPer100: item.calories,
-                fatPer100: null,
-                proteinPer100: null
-            })
-        }
+  data () {
+    return {
+      dialog: false
     }
+  },
+
+  methods: {
+    didSelect (item) {
+      this.dialog = false
+      this.$emit('select', {
+        title: item.name,
+        portionSize: item.amount,
+        caloriesPer100: item.calories,
+        fatPer100: null,
+        proteinPer100: null
+      })
+    }
+  }
 
 }
 </script>

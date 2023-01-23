@@ -23,41 +23,41 @@
 <script>
 export default {
 
-    data () {
-        return {
-            edit: false
-        }
-    },
-
-    computed: {
-        selected () {
-            var tmp = this.$store.state.destiny.metabolism.gender
-            return {
-                male: (tmp === 'male' ? 'primary' : null),
-                female: (tmp === 'female' ? 'primary' : null)
-            }
-        }
-    },
-
-    methods: {
-        setGender (gender) {
-            this.$store.state.destiny.metabolism.gender = gender
-            this.$store.commit('form/send')
-        }
-    },
-
-    i18n: {
-        messages: {
-            en: {
-                gender: 'Gender',
-                byWhen: 'By when do you want to reach your goal?'
-            },
-            de: {
-                gender: 'Geschlecht',
-                byWhen: 'Bis wann möchtest du dein Ziel erreichen?'
-            }
-        }
+  data () {
+    return {
+      edit: false
     }
+  },
+
+  computed: {
+    selected () {
+      var tmp = this.$store.state.destiny.metabolism.gender
+      return {
+        male: (tmp === 'male' ? 'primary' : null),
+        female: (tmp === 'female' ? 'primary' : null)
+      }
+    }
+  },
+
+  methods: {
+    setGender (gender) {
+      this.$store.state.destiny.metabolism.gender = gender
+      this.$store.commit('form/send')
+    }
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        gender: 'Gender',
+        byWhen: 'By when do you want to reach your goal?'
+      },
+      de: {
+        gender: 'Geschlecht',
+        byWhen: 'Bis wann möchtest du dein Ziel erreichen?'
+      }
+    }
+  }
 
 }
 </script>

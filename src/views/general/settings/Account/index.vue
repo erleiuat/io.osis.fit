@@ -48,24 +48,24 @@ import Verify from '@/views/general/settings/Account/Verify'
 
 export default {
 
-    components: {
-        Avatar, General, Password, Verify
-    },
+  components: {
+    Avatar, General, Password, Verify
+  },
 
-    i18n: {
-        messages: {
-            en: {
-                logout: 'Logout',
-                account: 'Account',
-                actions: 'Actions'
-            },
-            de: {
-                logout: 'Abmelden',
-                account: 'Benutzerkonto',
-                actions: 'Aktionen'
-            }
-        }
+  i18n: {
+    messages: {
+      en: {
+        logout: 'Logout',
+        account: 'Account',
+        actions: 'Actions'
+      },
+      de: {
+        logout: 'Abmelden',
+        account: 'Benutzerkonto',
+        actions: 'Aktionen'
+      }
     }
+  }
 
 }
 </script>

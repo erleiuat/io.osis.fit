@@ -29,50 +29,50 @@
 <script>
 export default {
 
-    props: {
-        state: {
-            type: String,
-            default: null
-        }
-    },
-
-    data () {
-        return {
-            edit: false,
-            form: {
-                valid: false,
-                rules: {
-                    number: [
-                        v => !!v || this.$t('alert.form.required'),
-                        v => !isNaN(v) || this.$t('alert.form.format.number')
-                    ]
-                }
-            }
-        }
-    },
-
-    methods: {
-        saveChange () {
-            if (!this.$refs.form.validate()) return false
-            this.$store.commit('form/send')
-            this.edit = false
-        }
-    },
-
-    i18n: {
-        messages: {
-            en: {
-                goalWeight: 'Goal Weight',
-                howMuch: 'How much do you want to weigh?',
-                inKg: 'in Kilograms'
-            },
-            de: {
-                goalWeight: 'Ziel-Gewicht',
-                howMuch: 'Wie viel möchtest du wiegen?',
-                inKg: 'in Kilogramm'
-            }
-        }
+  props: {
+    state: {
+      type: String,
+      default: null
     }
+  },
+
+  data () {
+    return {
+      edit: false,
+      form: {
+        valid: false,
+        rules: {
+          number: [
+            v => !!v || this.$t('alert.form.required'),
+            v => !isNaN(v) || this.$t('alert.form.format.number')
+          ]
+        }
+      }
+    }
+  },
+
+  methods: {
+    saveChange () {
+      if (!this.$refs.form.validate()) return false
+      this.$store.commit('form/send')
+      this.edit = false
+    }
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        goalWeight: 'Goal Weight',
+        howMuch: 'How much do you want to weigh?',
+        inKg: 'in Kilograms'
+      },
+      de: {
+        goalWeight: 'Ziel-Gewicht',
+        howMuch: 'Wie viel möchtest du wiegen?',
+        inKg: 'in Kilogramm'
+      }
+    }
+  }
 
 }
 </script>

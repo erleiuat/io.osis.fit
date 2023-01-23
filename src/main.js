@@ -15,15 +15,15 @@ Vue.config.productionTip = false
 Vue.use(Notifications)
 
 Vue.prototype.$dateFormat = (date) => {
-    if (!date) return null
-    const [year, month, day] = date.split('-')
-    return `${day}.${month}.${year}`
+  if (!date) return null
+  const [year, month, day] = date.split('-')
+  return `${day}.${month}.${year}`
 }
 
 new Vue({
-    router,
-    store,
-    i18n,
-    vuetify,
-    render: h => h(App)
+  router,
+  store,
+  i18n,
+  vuetify,
+  render: h => h(App)
 }).$mount('#app')

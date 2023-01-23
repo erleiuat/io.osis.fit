@@ -47,67 +47,67 @@ import Apios from '@/plugins/apios/'
 
 export default {
 
-    data () {
-        return {
-            sent: false,
-            form: {
-                valid: false,
-                sending: false,
-                data: {
-                    mail: this.$store.state.auth.account.mail || '',
-                    firstname: this.$store.state.auth.account.firstname || '',
-                    lastname: this.$store.state.auth.account.lastname || '',
-                    subject: '',
-                    message: ''
-                },
-                rules: {
-                    mail: [
-                        v => !!v || this.$t('alert.form.require', { name: this.$t('form.mail') }),
-                        v => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || this.$t('alert.form.invalid'),
-                        v => v.length < 90 || this.$t('alert.form.tooLong', { amount: 90 })
-                    ],
-                    required: [
-                        v => !!v || this.$t('alert.form.required'),
-                        v => v.length < 255 || this.$t('alert.form.tooLong', { amount: 150 })
-                    ]
-                }
-            }
+  data () {
+    return {
+      sent: false,
+      form: {
+        valid: false,
+        sending: false,
+        data: {
+          mail: this.$store.state.auth.account.mail || '',
+          firstname: this.$store.state.auth.account.firstname || '',
+          lastname: this.$store.state.auth.account.lastname || '',
+          subject: '',
+          message: ''
+        },
+        rules: {
+          mail: [
+            v => !!v || this.$t('alert.form.require', { name: this.$t('form.mail') }),
+            v => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || this.$t('alert.form.invalid'),
+            v => v.length < 90 || this.$t('alert.form.tooLong', { amount: 90 })
+          ],
+          required: [
+            v => !!v || this.$t('alert.form.required'),
+            v => v.length < 255 || this.$t('alert.form.tooLong', { amount: 150 })
+          ]
         }
-    },
-
-    methods: {
-
-        submit () {
-            if (!this.$refs.form.validate()) return false
-            this.form.sending = true
-
-            Apios.post('contact', this.form.data).then(() => {
-                this.sent = true
-            }).catch(err => {
-                this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
-            }).finally(() => {
-                this.form.sending = false
-            })
-        }
-
-    },
-
-    i18n: {
-        messages: {
-            en: {
-                contact: 'Contact',
-                contactText: 'Do you have questions or a problem with the app? Or do you have an improvement suggestion/criticism for us?',
-                fSubject: 'Subject',
-                fMessage: 'Message'
-            },
-            de: {
-                contact: 'Kontakt',
-                contactText: 'Hast du Fragen oder ein Problem mit der App? Oder hast du einen Verbesserungsvorschlag/Kritik für uns?',
-                fSubject: 'Betreff',
-                fMessage: 'Nachricht'
-            }
-        }
+      }
     }
+  },
+
+  methods: {
+
+    submit () {
+      if (!this.$refs.form.validate()) return false
+      this.form.sending = true
+
+      Apios.post('contact', this.form.data).then(() => {
+        this.sent = true
+      }).catch(err => {
+        this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
+      }).finally(() => {
+        this.form.sending = false
+      })
+    }
+
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        contact: 'Contact',
+        contactText: 'Do you have questions or a problem with the app? Or do you have an improvement suggestion/criticism for us?',
+        fSubject: 'Subject',
+        fMessage: 'Message'
+      },
+      de: {
+        contact: 'Kontakt',
+        contactText: 'Hast du Fragen oder ein Problem mit der App? Oder hast du einen Verbesserungsvorschlag/Kritik für uns?',
+        fSubject: 'Betreff',
+        fMessage: 'Nachricht'
+      }
+    }
+  }
 
 }
 </script>

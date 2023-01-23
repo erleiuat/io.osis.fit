@@ -84,72 +84,72 @@
 <script>
 export default {
 
-    i18n: {
-        messages: {
-            en: {
-                browser: 'Select your Browser:',
-                chrome: {
-                    s1: 'Open the options via the 3 points at the top right',
-                    s2_1: 'Select the option',
-                    s2_2: 'Add to homescreen',
-                    s3_1: 'Hit',
-                    s3_2: 'Add'
-                },
-                samsung: {
-                    s1: 'Open the options via the 3 dashes at the bottom right',
-                    s2_1: 'Select the option',
-                    s2_2: 'Add page to',
-                    s3_1: 'Hit',
-                    s3_2: 'App-Screen',
-                    s4_1: 'Hit',
-                    s4_2: 'Install'
-                },
-                mozilla: {
-                    s1: 'Click on the cottage above',
-                    s2_1: 'Hit',
-                    s2_2: 'Add to homescreen'
-                },
-                edge: {
-                    s1: 'Open the options via the 3 points at the bottom right',
-                    s2_1: 'Select the option',
-                    s2_2: 'Add to homescreen',
-                    s3_1: 'Hit',
-                    s3_2: 'Add'
-                }
-            },
-            de: {
-                browser: 'Wähle deinen Browser:',
-                chrome: {
-                    s1: 'Öffne die Optionen über die 3 Punkte oben rechts',
-                    s2_1: 'Wähle die Option',
-                    s2_2: 'Zum Startbildschirm zufügen',
-                    s3_1: 'Klicke auf',
-                    s3_2: 'Hinzufügen'
-                },
-                samsung: {
-                    s1: 'Öffne die Optionen über die 3 Striche unten rechts',
-                    s2_1: 'Wähle die Option',
-                    s2_2: 'Seite hinzufügen zu',
-                    s3_1: 'Klicke auf',
-                    s3_2: 'App-Bildschirm',
-                    s4_1: 'Klicke auf',
-                    s4_2: 'Installieren'
-                },
-                mozilla: {
-                    s1: 'Klicke oben auf das Häuschen',
-                    s2_1: 'Klicke auf',
-                    s2_2: 'Zu Startbildschirm hinzufügen'
-                },
-                edge: {
-                    s1: 'Öffne die Optionen über die 3 Punkte unten rechts',
-                    s2_1: 'Wähle die Option',
-                    s2_2: 'Zum Startbildschirm zufügen',
-                    s3_1: 'Klicke auf',
-                    s3_2: 'Hinzufügen'
-                }
-            }
+  i18n: {
+    messages: {
+      en: {
+        browser: 'Select your Browser:',
+        chrome: {
+          s1: 'Open the options via the 3 points at the top right',
+          s2_1: 'Select the option',
+          s2_2: 'Add to homescreen',
+          s3_1: 'Hit',
+          s3_2: 'Add'
+        },
+        samsung: {
+          s1: 'Open the options via the 3 dashes at the bottom right',
+          s2_1: 'Select the option',
+          s2_2: 'Add page to',
+          s3_1: 'Hit',
+          s3_2: 'App-Screen',
+          s4_1: 'Hit',
+          s4_2: 'Install'
+        },
+        mozilla: {
+          s1: 'Click on the cottage above',
+          s2_1: 'Hit',
+          s2_2: 'Add to homescreen'
+        },
+        edge: {
+          s1: 'Open the options via the 3 points at the bottom right',
+          s2_1: 'Select the option',
+          s2_2: 'Add to homescreen',
+          s3_1: 'Hit',
+          s3_2: 'Add'
         }
+      },
+      de: {
+        browser: 'Wähle deinen Browser:',
+        chrome: {
+          s1: 'Öffne die Optionen über die 3 Punkte oben rechts',
+          s2_1: 'Wähle die Option',
+          s2_2: 'Zum Startbildschirm zufügen',
+          s3_1: 'Klicke auf',
+          s3_2: 'Hinzufügen'
+        },
+        samsung: {
+          s1: 'Öffne die Optionen über die 3 Striche unten rechts',
+          s2_1: 'Wähle die Option',
+          s2_2: 'Seite hinzufügen zu',
+          s3_1: 'Klicke auf',
+          s3_2: 'App-Bildschirm',
+          s4_1: 'Klicke auf',
+          s4_2: 'Installieren'
+        },
+        mozilla: {
+          s1: 'Klicke oben auf das Häuschen',
+          s2_1: 'Klicke auf',
+          s2_2: 'Zu Startbildschirm hinzufügen'
+        },
+        edge: {
+          s1: 'Öffne die Optionen über die 3 Punkte unten rechts',
+          s2_1: 'Wähle die Option',
+          s2_2: 'Zum Startbildschirm zufügen',
+          s3_1: 'Klicke auf',
+          s3_2: 'Hinzufügen'
+        }
+      }
     }
+  }
 
 }
 </script>

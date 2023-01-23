@@ -26,84 +26,84 @@
 <script>
 export default {
 
-    props: {
-        daily: {
-            type: Boolean,
-            default: true
-        },
-        weekly: {
-            type: Boolean,
-            default: false
-        }
+  props: {
+    daily: {
+      type: Boolean,
+      default: true
     },
-
-    computed: {
-
-        daysToSunday () {
-            var today = new Date()
-            today = today.getDay()
-            if (today === 0) return 0 // So
-            else if (today === 1) return 6 // Mo
-            else if (today === 2) return 5 // Di
-            else if (today === 3) return 4 // Mi
-            else if (today === 4) return 3 // Do
-            else if (today === 5) return 2 // Fr
-            else if (today === 6) return 1 // Sa
-            return null
-        },
-
-        vals () {
-            let vals = {
-                availableInTotal: null,
-                consumed: null,
-                remaining: null,
-                percentage: null
-            }
-
-            let daysToSunday = this.daysToSunday
-            let possibleThisWeek = this.$store.getters['destiny/possibleCals'](daysToSunday).weekly
-            let extendedThisWeek = this.$store.getters['logActivity/totalWeek']() || 0
-            let availableThisWeek = possibleThisWeek + extendedThisWeek
-            let consumedThisWeek = this.$store.getters['logFood/totalWeek']().calories || 0
-
-            if (this.weekly) {
-                vals.availableInTotal = availableThisWeek
-                vals.consumed = consumedThisWeek
-                vals.remaining = availableThisWeek - consumedThisWeek
-            } else {
-                // let daysToSunday = this.daysToSunday + 1
-                let consumedToday = this.$store.getters['logFood/totalDay'].calories
-                vals.availableInTotal = (availableThisWeek - (consumedThisWeek - consumedToday)) / (daysToSunday + 1)
-                vals.consumed = consumedToday
-                vals.remaining = vals.availableInTotal - consumedToday
-            }
-
-            vals.percentage = Math.round(((vals.consumed / vals.availableInTotal) * 100))
-            return vals
-        }
-
-    },
-
-    i18n: {
-        messages: {
-            en: {
-                leftCals: 'Remaining Calories',
-                of: 'of',
-                used: 'used',
-                totalPerWeek: 'this week in total',
-                daysLeft: 'days',
-                dayLeft: 'day'
-            },
-            de: {
-                leftCals: 'Verbleibende Kalorien',
-                of: 'von',
-                used: 'verbraucht',
-                totalPerWeek: 'insg. diese Woche',
-                daysLeft: 'Tage',
-                dayLeft: 'Tag'
-            }
-        }
+    weekly: {
+      type: Boolean,
+      default: false
     }
+  },
+
+  computed: {
+
+    daysToSunday () {
+      var today = new Date()
+      today = today.getDay()
+      if (today === 0) return 0 // So
+      else if (today === 1) return 6 // Mo
+      else if (today === 2) return 5 // Di
+      else if (today === 3) return 4 // Mi
+      else if (today === 4) return 3 // Do
+      else if (today === 5) return 2 // Fr
+      else if (today === 6) return 1 // Sa
+      return null
+    },
+
+    vals () {
+      let vals = {
+        availableInTotal: null,
+        consumed: null,
+        remaining: null,
+        percentage: null
+      }
+
+      let daysToSunday = this.daysToSunday
+      let possibleThisWeek = this.$store.getters['destiny/possibleCals'](daysToSunday).weekly
+      let extendedThisWeek = this.$store.getters['logActivity/totalWeek']() || 0
+      let availableThisWeek = possibleThisWeek + extendedThisWeek
+      let consumedThisWeek = this.$store.getters['logFood/totalWeek']().calories || 0
+
+      if (this.weekly) {
+        vals.availableInTotal = availableThisWeek
+        vals.consumed = consumedThisWeek
+        vals.remaining = availableThisWeek - consumedThisWeek
+      } else {
+        // let daysToSunday = this.daysToSunday + 1
+        let consumedToday = this.$store.getters['logFood/totalDay'].calories
+        vals.availableInTotal = (availableThisWeek - (consumedThisWeek - consumedToday)) / (daysToSunday + 1)
+        vals.consumed = consumedToday
+        vals.remaining = vals.availableInTotal - consumedToday
+      }
+
+      vals.percentage = Math.round(((vals.consumed / vals.availableInTotal) * 100))
+      return vals
+    }
+
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        leftCals: 'Remaining Calories',
+        of: 'of',
+        used: 'used',
+        totalPerWeek: 'this week in total',
+        daysLeft: 'days',
+        dayLeft: 'day'
+      },
+      de: {
+        leftCals: 'Verbleibende Kalorien',
+        of: 'von',
+        used: 'verbraucht',
+        totalPerWeek: 'insg. diese Woche',
+        daysLeft: 'Tage',
+        dayLeft: 'Tag'
+      }
+    }
+  }
 
 }
 </script>

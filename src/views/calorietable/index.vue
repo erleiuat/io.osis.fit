@@ -16,32 +16,32 @@
 <script>
 export default {
 
-    props: {
-        clickable: {
-            type: Boolean,
-            default: false
-        }
-    },
-
-    data () {
-        return {
-            search: '',
-            headers: [
-                { text: 'Name', value: 'name' },
-                { text: 'Amout', value: 'amout' },
-                { text: 'Calories', value: 'calories' }
-            ],
-            items: this.$store.getters['calorietable/all']
-        }
-    },
-
-    methods: {
-        hasClicked (item) {
-            if (this.clickable) {
-                this.$emit('select', item)
-            }
-        }
+  props: {
+    clickable: {
+      type: Boolean,
+      default: false
     }
+  },
+
+  data () {
+    return {
+      search: '',
+      headers: [
+        { text: 'Name', value: 'name' },
+        { text: 'Amout', value: 'amout' },
+        { text: 'Calories', value: 'calories' }
+      ],
+      items: this.$store.getters['calorietable/all']
+    }
+  },
+
+  methods: {
+    hasClicked (item) {
+      if (this.clickable) {
+        this.$emit('select', item)
+      }
+    }
+  }
 
 }
 </script>

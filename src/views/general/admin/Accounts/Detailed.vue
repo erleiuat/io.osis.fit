@@ -102,78 +102,78 @@ import RegularImage from '@/components/Image/Regular'
 
 export default {
 
-    components: {
-        RegularImage
-    },
+  components: {
+    RegularImage
+  },
 
-    props: ['value'],
+  props: ['value'],
 
-    data () {
-        return {
-            cLevel: false,
-            cStatus: false,
-            dSessions: false,
-            dAccount: false,
-            loading: false,
-            levels: [
-                { value: 'user', text: 'User' },
-                { value: 'moderator', text: 'Moderator' },
-                { value: 'admin', text: 'Admin' }
-            ],
-            stati: [
-                { value: 'unverified', text: 'Unverified' },
-                { value: 'verified', text: 'Verified' },
-                { value: 'locked', text: 'Locked' },
-                { value: 'deleted', text: 'Deleted' }
-            ]
-        }
-    },
-
-    methods: {
-
-        saveLevel () {
-            let url = 'admin/account/' + this.value.account_id
-            let body = { level: this.value.level }
-            this.submit(url, body)
-            this.cLevel = false
-        },
-
-        saveStatus () {
-            let url = 'admin/account/' + this.value.account_id
-            let body = { status: this.value.status }
-            this.submit(url, body)
-            this.cStatus = false
-        },
-
-        submit (url, body) {
-            this.loading = true
-            Apios.post(url, body).then(() => {
-                this.$notify({ type: 'success', title: this.$t('alert.success.changed') })
-            }).catch(err => {
-                this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
-            }).finally(() => {
-                this.loading = false
-            })
-        },
-
-        delSessions () {
-            this.loading = true
-            this.dSessions = false
-            Apios.delete('admin/sessions/' + this.value.account_id).then(() => {
-                this.$notify({ type: 'success', title: this.$t('alert.success.changed') })
-            }).catch(err => {
-                this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
-            }).finally(() => {
-                this.loading = false
-            })
-        },
-
-        delAccount () {
-            // TODO
-            this.dAccount = false
-        }
-
+  data () {
+    return {
+      cLevel: false,
+      cStatus: false,
+      dSessions: false,
+      dAccount: false,
+      loading: false,
+      levels: [
+        { value: 'user', text: 'User' },
+        { value: 'moderator', text: 'Moderator' },
+        { value: 'admin', text: 'Admin' }
+      ],
+      stati: [
+        { value: 'unverified', text: 'Unverified' },
+        { value: 'verified', text: 'Verified' },
+        { value: 'locked', text: 'Locked' },
+        { value: 'deleted', text: 'Deleted' }
+      ]
     }
+  },
+
+  methods: {
+
+    saveLevel () {
+      let url = 'admin/account/' + this.value.account_id
+      let body = { level: this.value.level }
+      this.submit(url, body)
+      this.cLevel = false
+    },
+
+    saveStatus () {
+      let url = 'admin/account/' + this.value.account_id
+      let body = { status: this.value.status }
+      this.submit(url, body)
+      this.cStatus = false
+    },
+
+    submit (url, body) {
+      this.loading = true
+      Apios.post(url, body).then(() => {
+        this.$notify({ type: 'success', title: this.$t('alert.success.changed') })
+      }).catch(err => {
+        this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
+      }).finally(() => {
+        this.loading = false
+      })
+    },
+
+    delSessions () {
+      this.loading = true
+      this.dSessions = false
+      Apios.delete('admin/sessions/' + this.value.account_id).then(() => {
+        this.$notify({ type: 'success', title: this.$t('alert.success.changed') })
+      }).catch(err => {
+        this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
+      }).finally(() => {
+        this.loading = false
+      })
+    },
+
+    delAccount () {
+      // TODO
+      this.dAccount = false
+    }
+
+  }
 
 }
 </script>

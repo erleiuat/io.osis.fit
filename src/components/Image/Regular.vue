@@ -76,73 +76,73 @@
 <script>
 export default {
 
-    props: {
-        image: {
-            type: [Object, Boolean],
-            default: false
-        },
-        aspectRatio: [String, Number],
-        width: [String, Number],
-        height: [String, Number],
-        placeholder: {
-            type: String,
-            default: require('@/assets/image/noFile.jpg')
-        },
-        noClick: {
-            type: Boolean,
-            default: false
-        }
+  props: {
+    image: {
+      type: [Object, Boolean],
+      default: false
     },
-
-    data () {
-        return {
-            dialog: false,
-            error: false
-        }
+    aspectRatio: [String, Number],
+    width: [String, Number],
+    height: [String, Number],
+    placeholder: {
+      type: String,
+      default: require('@/assets/image/noFile.jpg')
     },
-
-    computed: {
-
-        pic () {
-            if (!this.image) {
-                this.setError(false)
-                return false
-            }
-            return {
-                name: this.image.name,
-                original: this.image.path,
-                medium: this.image.path_medium,
-                small: this.image.path_small,
-                lazy: this.image.path_lazy,
-                error: this.error
-            }
-        }
-
-    },
-
-    methods: {
-
-        getError () {
-            if (!this.image) this.error = false
-            return this.error
-        },
-
-        setError (val) {
-            this.error = val
-        }
-
-    },
-
-    i18n: {
-        messages: {
-            en: {
-                fileNotFound: 'File not available'
-            },
-            de: {
-                fileNotFound: 'Datei nicht verfügbar'
-            }
-        }
+    noClick: {
+      type: Boolean,
+      default: false
     }
+  },
+
+  data () {
+    return {
+      dialog: false,
+      error: false
+    }
+  },
+
+  computed: {
+
+    pic () {
+      if (!this.image) {
+        this.setError(false)
+        return false
+      }
+      return {
+        name: this.image.name,
+        original: this.image.path,
+        medium: this.image.path_medium,
+        small: this.image.path_small,
+        lazy: this.image.path_lazy,
+        error: this.error
+      }
+    }
+
+  },
+
+  methods: {
+
+    getError () {
+      if (!this.image) this.error = false
+      return this.error
+    },
+
+    setError (val) {
+      this.error = val
+    }
+
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        fileNotFound: 'File not available'
+      },
+      de: {
+        fileNotFound: 'Datei nicht verfügbar'
+      }
+    }
+  }
 
 }
 </script>

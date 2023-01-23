@@ -32,56 +32,56 @@ import SafeDelete from '@/components/SafeDelete'
 
 export default {
 
-    components: {
-        RegularImage, SafeDelete
-    },
+  components: {
+    RegularImage, SafeDelete
+  },
 
-    props: {
-        item: {
-            type: Object
-        },
-        editable: {
-            type: Boolean,
-            default: false
-        },
-        selectable: {
-            type: Boolean,
-            default: false
-        },
-        deletable: {
-            type: Boolean,
-            default: false
-        }
+  props: {
+    item: {
+      type: Object
     },
-
-    computed: {
-        totals () {
-            return {
-                calories: Math.round((this.item.caloriesPer100 / 100 * this.item.portionSize) * 100) / 100,
-                fat: Math.round((this.item.fatPer100 / 100 * this.item.portionSize) * 100) / 100,
-                protein: Math.round((this.item.proteinPer100 / 100 * this.item.portionSize) * 100) / 100
-            }
-        }
+    editable: {
+      type: Boolean,
+      default: false
     },
-
-    methods: {
-        doSelect () {
-            if (this.selectable) this.$emit('select', this.item)
-        }
+    selectable: {
+      type: Boolean,
+      default: false
     },
-
-    i18n: {
-        messages: {
-            en: {
-                fat: 'Fat',
-                protein: 'Protein'
-            },
-            de: {
-                fat: 'Fett',
-                protein: 'Protein'
-            }
-        }
+    deletable: {
+      type: Boolean,
+      default: false
     }
+  },
+
+  computed: {
+    totals () {
+      return {
+        calories: Math.round((this.item.caloriesPer100 / 100 * this.item.portionSize) * 100) / 100,
+        fat: Math.round((this.item.fatPer100 / 100 * this.item.portionSize) * 100) / 100,
+        protein: Math.round((this.item.proteinPer100 / 100 * this.item.portionSize) * 100) / 100
+      }
+    }
+  },
+
+  methods: {
+    doSelect () {
+      if (this.selectable) this.$emit('select', this.item)
+    }
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        fat: 'Fat',
+        protein: 'Protein'
+      },
+      de: {
+        fat: 'Fett',
+        protein: 'Protein'
+      }
+    }
+  }
 
 }
 </script>

@@ -28,49 +28,49 @@ import Card from '@/components/Template/Card'
 
 export default {
 
-    components: {
-        Card
-    },
+  components: {
+    Card
+  },
 
-    data () {
-        return {
-            loading: true
-        }
-    },
-
-    computed: {
-        items () {
-            return this.$store.getters['template/items']
-        }
-    },
-
-    methods: {
-        edit (item) {
-            this.$router.push({ name: 'template.edit', params: { id: item.id } })
-        },
-
-        loadItems () {
-            this.loading = true
-            this.$store.dispatch('template/read', this.filter).catch(err => {
-                this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
-            }).finally(() => {
-                this.loading = false
-            })
-        },
-
-        deleteItem (item) {
-            this.$store.dispatch('template/remove', item).then(() => {
-                this.$notify({ type: 'success', title: this.$t('alert.success.changed') })
-            }).catch(err => {
-                this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
-            })
-        }
-
-    },
-
-    mounted () {
-        this.loadItems()
+  data () {
+    return {
+      loading: true
     }
+  },
+
+  computed: {
+    items () {
+      return this.$store.getters['template/items']
+    }
+  },
+
+  methods: {
+    edit (item) {
+      this.$router.push({ name: 'template.edit', params: { id: item.id } })
+    },
+
+    loadItems () {
+      this.loading = true
+      this.$store.dispatch('template/read', this.filter).catch(err => {
+        this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
+      }).finally(() => {
+        this.loading = false
+      })
+    },
+
+    deleteItem (item) {
+      this.$store.dispatch('template/remove', item).then(() => {
+        this.$notify({ type: 'success', title: this.$t('alert.success.changed') })
+      }).catch(err => {
+        this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
+      })
+    }
+
+  },
+
+  mounted () {
+    this.loadItems()
+  }
 
 }
 </script>

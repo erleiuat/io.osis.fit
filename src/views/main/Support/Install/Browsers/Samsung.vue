@@ -28,28 +28,28 @@
 <script>
 export default {
 
-    i18n: {
-        messages: {
-            en: {
-                s1: 'Open the options via the 3 dashes at the bottom right',
-                s2_1: 'Select the option',
-                s2_2: 'Add page to',
-                s3_1: 'Hit',
-                s3_2: 'App-Screen',
-                s4_1: 'Hit',
-                s4_2: 'Install'
-            },
-            de: {
-                s1: 'Öffne die Optionen über die 3 Striche unten rechts',
-                s2_1: 'Wähle die Option',
-                s2_2: 'Seite hinzufügen zu',
-                s3_1: 'Klicke auf',
-                s3_2: 'App-Bildschirm',
-                s4_1: 'Klicke auf',
-                s4_2: 'Installieren'
-            }
-        }
+  i18n: {
+    messages: {
+      en: {
+        s1: 'Open the options via the 3 dashes at the bottom right',
+        s2_1: 'Select the option',
+        s2_2: 'Add page to',
+        s3_1: 'Hit',
+        s3_2: 'App-Screen',
+        s4_1: 'Hit',
+        s4_2: 'Install'
+      },
+      de: {
+        s1: 'Öffne die Optionen über die 3 Striche unten rechts',
+        s2_1: 'Wähle die Option',
+        s2_2: 'Seite hinzufügen zu',
+        s3_1: 'Klicke auf',
+        s3_2: 'App-Bildschirm',
+        s4_1: 'Klicke auf',
+        s4_2: 'Installieren'
+      }
     }
+  }
 
 }
 </script>

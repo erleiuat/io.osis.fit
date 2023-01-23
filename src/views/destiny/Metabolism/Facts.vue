@@ -31,36 +31,36 @@
 <script>
 export default {
 
-    computed: {
+  computed: {
 
-        bmr () {
-            return this.$store.getters['destiny/bmr']
-        },
-
-        bmrPal () {
-            return this.$store.getters['destiny/bmrPal']
-        }
-
+    bmr () {
+      return this.$store.getters['destiny/bmr']
     },
 
-    i18n: {
-        messages: {
-            en: {
-                bmr: 'BMR',
-                waaatBMR: '',
-                bmrPal: 'BMR + PAL',
-                waaatBMRPAL: '',
-                day: 'Day'
-            },
-            de: {
-                bmr: 'GU',
-                waaatBMR: 'Grundumsatz',
-                bmrPal: 'GU + PAL',
-                waaatBMRPAL: 'Leistungsumsatz ( = Grundumsatz * PAL)',
-                day: 'Tag'
-            }
-        }
+    bmrPal () {
+      return this.$store.getters['destiny/bmrPal']
     }
+
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        bmr: 'BMR',
+        waaatBMR: '',
+        bmrPal: 'BMR + PAL',
+        waaatBMRPAL: '',
+        day: 'Day'
+      },
+      de: {
+        bmr: 'GU',
+        waaatBMR: 'Grundumsatz',
+        bmrPal: 'GU + PAL',
+        waaatBMRPAL: 'Leistungsumsatz ( = Grundumsatz * PAL)',
+        day: 'Tag'
+      }
+    }
+  }
 
 }
 </script>

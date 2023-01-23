@@ -90,86 +90,86 @@ import Vue from 'vue'
 
 export default {
 
-    data () {
-        return {
-            loading: true
-        }
-    },
-
-    computed: {
-
-        current () {
-            let current = this.$store.getters['logBody/current']
-            return {
-                weight: current.weight,
-                fat: current.fat
-            }
-        },
-
-        progress () {
-            let first = this.$store.getters['logBody/first']
-            return {
-                weight: (first.weight - this.current.weight) * -1,
-                fat: (first.fat - this.current.fat) * -1
-            }
-        },
-
-        items () {
-            return this.$store.getters['logBody/ordered']
-        }
-
-    },
-
-    methods: {
-
-        loadItems () {
-            this.loading = true
-            this.$store.dispatch('logBody/read').then().catch(err => {
-                this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
-            }).finally(() => {
-                this.loading = false
-            })
-        },
-
-        deleteItem (item) {
-            this.$store.dispatch('logBody/remove', item).then(res => {
-                Vue.delete(this.items, item.id)
-                this.$notify({ type: 'success', title: this.$t('alert.success.changed') })
-            }).catch(err => {
-                this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
-            })
-        }
-
-    },
-
-    mounted () {
-        this.loadItems()
-    },
-
-    i18n: {
-        messages: {
-            en: {
-                current: 'Currently',
-                progress: 'Progress',
-                tbl: {
-                    time: 'Time',
-                    title: 'Title',
-                    weight: 'Weight',
-                    fat: 'Body-Fat'
-                }
-            },
-            de: {
-                current: 'Aktuell',
-                progress: 'Fortschritt',
-                tbl: {
-                    time: 'Zeit',
-                    title: 'Titel',
-                    weight: 'Gewicht',
-                    fat: 'Körperfett'
-                }
-            }
-        }
+  data () {
+    return {
+      loading: true
     }
+  },
+
+  computed: {
+
+    current () {
+      let current = this.$store.getters['logBody/current']
+      return {
+        weight: current.weight,
+        fat: current.fat
+      }
+    },
+
+    progress () {
+      let first = this.$store.getters['logBody/first']
+      return {
+        weight: (first.weight - this.current.weight) * -1,
+        fat: (first.fat - this.current.fat) * -1
+      }
+    },
+
+    items () {
+      return this.$store.getters['logBody/ordered']
+    }
+
+  },
+
+  methods: {
+
+    loadItems () {
+      this.loading = true
+      this.$store.dispatch('logBody/read').then().catch(err => {
+        this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
+      }).finally(() => {
+        this.loading = false
+      })
+    },
+
+    deleteItem (item) {
+      this.$store.dispatch('logBody/remove', item).then(res => {
+        Vue.delete(this.items, item.id)
+        this.$notify({ type: 'success', title: this.$t('alert.success.changed') })
+      }).catch(err => {
+        this.$notify({ type: 'error', title: this.$t('alert.error.general'), text: err })
+      })
+    }
+
+  },
+
+  mounted () {
+    this.loadItems()
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        current: 'Currently',
+        progress: 'Progress',
+        tbl: {
+          time: 'Time',
+          title: 'Title',
+          weight: 'Weight',
+          fat: 'Body-Fat'
+        }
+      },
+      de: {
+        current: 'Aktuell',
+        progress: 'Fortschritt',
+        tbl: {
+          time: 'Zeit',
+          title: 'Titel',
+          weight: 'Gewicht',
+          fat: 'Körperfett'
+        }
+      }
+    }
+  }
 
 }
 </script>

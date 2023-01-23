@@ -26,53 +26,53 @@
 <script>
 export default {
 
-    data () {
-        return {
-            langItems: [
-                { value: 'de', text: 'Deutsch' },
-                { value: 'en', text: 'English' }
-            ]
-        }
-    },
-
-    computed: {
-
-        mode: {
-            get () {
-                return this.$store.state.app.dark
-            },
-            set (val) {
-                this.$store.dispatch('app/dark', val)
-            }
-        },
-
-        lang: {
-            get () {
-                return this.$store.state.app.locale
-            },
-            set (val) {
-                this.$store.dispatch('app/locale', val)
-            }
-        }
-
-    },
-
-    i18n: {
-        messages: {
-            en: {
-                darkmode: 'Darkmode',
-                language: 'Language',
-                notifications: 'Notifications',
-                comingSoon: 'Coming soon...'
-            },
-            de: {
-                darkmode: 'Dunkelmodus',
-                language: 'Sprache',
-                notifications: 'Benachrichtigungen',
-                comingSoon: 'Demnächst verfügbar...'
-            }
-        }
+  data () {
+    return {
+      langItems: [
+        { value: 'de', text: 'Deutsch' },
+        { value: 'en', text: 'English' }
+      ]
     }
+  },
+
+  computed: {
+
+    mode: {
+      get () {
+        return this.$store.state.app.dark
+      },
+      set (val) {
+        this.$store.dispatch('app/dark', val)
+      }
+    },
+
+    lang: {
+      get () {
+        return this.$store.state.app.locale
+      },
+      set (val) {
+        this.$store.dispatch('app/locale', val)
+      }
+    }
+
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        darkmode: 'Darkmode',
+        language: 'Language',
+        notifications: 'Notifications',
+        comingSoon: 'Coming soon...'
+      },
+      de: {
+        darkmode: 'Dunkelmodus',
+        language: 'Sprache',
+        notifications: 'Benachrichtigungen',
+        comingSoon: 'Demnächst verfügbar...'
+      }
+    }
+  }
 
 }
 </script>

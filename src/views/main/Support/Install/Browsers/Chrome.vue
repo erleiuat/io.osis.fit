@@ -22,24 +22,24 @@
 <script>
 export default {
 
-    i18n: {
-        messages: {
-            en: {
-                s1: 'Open the options via the 3 points at the top right',
-                s2_1: 'Select the option',
-                s2_2: 'Add to homescreen',
-                s3_1: 'Hit',
-                s3_2: 'Add'
-            },
-            de: {
-                s1: 'Öffne die Optionen über die 3 Punkte oben rechts',
-                s2_1: 'Wähle die Option',
-                s2_2: 'Zum Startbildschirm zufügen',
-                s3_1: 'Klicke auf',
-                s3_2: 'Hinzufügen'
-            }
-        }
+  i18n: {
+    messages: {
+      en: {
+        s1: 'Open the options via the 3 points at the top right',
+        s2_1: 'Select the option',
+        s2_2: 'Add to homescreen',
+        s3_1: 'Hit',
+        s3_2: 'Add'
+      },
+      de: {
+        s1: 'Öffne die Optionen über die 3 Punkte oben rechts',
+        s2_1: 'Wähle die Option',
+        s2_2: 'Zum Startbildschirm zufügen',
+        s3_1: 'Klicke auf',
+        s3_2: 'Hinzufügen'
+      }
     }
+  }
 
 }
 </script>

@@ -31,44 +31,44 @@
 <script>
 export default {
 
-    data () {
-        return {
-            dialog: false
-        }
-    },
-
-    methods: {
-        onkey (event) {
-            if (event.key === 'Enter' && this.dialog) {
-                this.yesPlease()
-            }
-        },
-        yesPlease () {
-            this.$emit('click')
-            this.dialog = false
-        },
-        nope () {
-            this.$emit('cancel')
-            this.dialog = false
-        }
-    },
-
-    created: function () {
-        window.addEventListener('keydown', this.onkey)
-    },
-
-    i18n: {
-        messages: {
-            en: {
-                confirmDelete: 'Confirm delete',
-                doYouReally: 'Do you really want to delete this entry?'
-            },
-            de: {
-                confirmDelete: 'Löschen bestätigen',
-                doYouReally: 'Willst du diesen Eintrag löschen?'
-            }
-        }
+  data () {
+    return {
+      dialog: false
     }
+  },
+
+  methods: {
+    onkey (event) {
+      if (event.key === 'Enter' && this.dialog) {
+        this.yesPlease()
+      }
+    },
+    yesPlease () {
+      this.$emit('click')
+      this.dialog = false
+    },
+    nope () {
+      this.$emit('cancel')
+      this.dialog = false
+    }
+  },
+
+  created: function () {
+    window.addEventListener('keydown', this.onkey)
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        confirmDelete: 'Confirm delete',
+        doYouReally: 'Do you really want to delete this entry?'
+      },
+      de: {
+        confirmDelete: 'Löschen bestätigen',
+        doYouReally: 'Willst du diesen Eintrag löschen?'
+      }
+    }
+  }
 
 }
 </script>

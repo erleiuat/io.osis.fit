@@ -44,9 +44,9 @@
 <script>
 export default {
 
-    computed: {
+  computed: {
 
-        /* TODO?
+    /* TODO?
         line () {
             return {
                 gradient: [this.$vuetify.theme.currentTheme.error, this.$vuetify.theme.currentTheme.success],
@@ -56,36 +56,36 @@ export default {
         },
         */
 
-        vals () {
-            var toReturn = {
-                first: this.$store.getters['logBody/first'].weight || 0,
-                current: this.$store.getters['logBody/current'].weight || 0,
-                goal: this.$store.state.destiny.goals.weight || 0,
-                percentage: null
-            }
+    vals () {
+      var toReturn = {
+        first: this.$store.getters['logBody/first'].weight || 0,
+        current: this.$store.getters['logBody/current'].weight || 0,
+        goal: this.$store.state.destiny.goals.weight || 0,
+        percentage: null
+      }
 
-            let percentage = 100 - (((toReturn.current - toReturn.goal) / (toReturn.first - toReturn.goal)) * 100) || 0
-            toReturn.percentage = Math.round(percentage * 10) / 10
+      let percentage = 100 - (((toReturn.current - toReturn.goal) / (toReturn.first - toReturn.goal)) * 100) || 0
+      toReturn.percentage = Math.round(percentage * 10) / 10
 
-            return toReturn
-        }
-
-    },
-
-    i18n: {
-        messages: {
-            en: {
-                weight: 'Progress',
-                start: 'Start',
-                goal: 'Goal'
-            },
-            de: {
-                weight: 'Fortschritt',
-                start: 'Start',
-                goal: 'Ziel'
-            }
-        }
+      return toReturn
     }
+
+  },
+
+  i18n: {
+    messages: {
+      en: {
+        weight: 'Progress',
+        start: 'Start',
+        goal: 'Goal'
+      },
+      de: {
+        weight: 'Fortschritt',
+        start: 'Start',
+        goal: 'Ziel'
+      }
+    }
+  }
 
 }
 </script>
