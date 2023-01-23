@@ -70,7 +70,11 @@ export default {
   i18n: {
     messages: {
       en: {
-        null: ''
+        null: 'Set what your goals are',
+        error: 'Your goal is very critical. Losing so much weight so quickly can also be unhealthy',
+        warning: 'It can be very exhausting to reach this goal. Maybe you should take a little more time.',
+        primary: 'This goal should be achievable with some effort.',
+        success: 'Good goal! You should be able to achieve it with little effort.'
       },
       de: {
         null: 'Lege fest was deine Ziele sind',
