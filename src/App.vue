@@ -7,12 +7,12 @@
 
         <Drawer />
 
-        <v-content>
+        <v-main>
             <Update />
             <transition name="fade-transition" mode="out-in">
                 <router-view />
             </transition>
-        </v-content>
+        </v-main>
 
         <Notification />
 

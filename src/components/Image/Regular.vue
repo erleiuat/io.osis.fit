@@ -31,7 +31,7 @@
                 </template>
             </v-img>
         </template>
-        <v-card v-if="!getError()" tile dark height="100%">
+        <v-card v-if="!getError()" tile dark height="100%" :style="'background-image: url('+pic.original+')'" class="reg-img-card">
             <v-container fluid fill-height class="pt-0 pb-0 reg-img-container">
                 <v-row class="reg-img-container-inner">
 
@@ -48,7 +48,7 @@
                     </v-col>
 
                     <v-col cols="12" class="pa-0">
-                        <v-img v-if="!pic.error" :src="pic.medium" :lazy-src="pic.small" @error="setError(true)" contain class="reg-img-fullscreen">
+                        <v-img v-if="!pic.error" :src="pic.original" :lazy-src="pic.small" @error="setError(true)" contain class="reg-img-fullscreen">
                             <template v-slot:placeholder>
                                 <v-row class="fill-height ma-0" align="center" justify="center">
                                     <v-progress-circular indeterminate color="white" />
@@ -148,26 +148,39 @@ export default {
 </script>
 
 <style>
-.reg-img-toolbar {
-    height: 80px;
+  .reg-img-card {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .reg-img-toolbar {
+    height: 100%;
     z-index: 200 !important;
     position: absolute;
-    background-image: linear-gradient(to bottom, rgba(66, 66, 66, 1) 0%, transparent 60px);
-}
-.reg-img-container-inner {
+  }
+
+  .reg-img-toolbar .v-btn * {
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.75);
+  }
+
+  .reg-img-container-inner {
+    backdrop-filter: blur(20px);
     height: 100%;
     position: relative;
-}
-.reg-img-container {
+  }
+
+  .reg-img-container {
     max-width: 100vw;
     overflow: hidden;
-}
-.reg-img-fullscreen {
+  }
+
+  .reg-img-fullscreen {
     z-index: 100 !important;
     max-width: 100vw;
     max-height: 100vh;
     top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-}
+  }
 </style>
