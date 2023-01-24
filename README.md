@@ -1,6 +1,9 @@
 # osis-vue
 
-*Node v10.24.1*
+*Node v18.13.0*
+
+Tags: 
+vue, vuejs, javascript, html, vuetify, fitness, fitness-app, fitness-tracker, health, calories, calories-counter, calories-tracker, calories-calculator, weight, weightloss, weight-tracking
 
 ## Project setup
 ```
