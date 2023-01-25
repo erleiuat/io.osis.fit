@@ -1,26 +1,26 @@
 <template>
-    <v-card flat :color="vals.color">
-        <v-card-title>
-            {{ $t('leftCals') }}
-        </v-card-title>
-        <v-container>
-            <v-row justify="space-around" no-gutters align="center">
-                <v-col cols="6" class="text-center">
-                    <v-progress-circular :rotate="-90" :size="100" :width="15" :value="vals.percentage">
-                        {{ vals.percentage || '0' }} %
-                    </v-progress-circular>
-                </v-col>
-                <v-col cols="6" class="text-center">
-                    <span class="display-1">
-                        {{ Math.round(vals.remaining) || '0' }}<br />
-                    </span>
-                </v-col>
-            </v-row>
-        </v-container>
-        <v-card-text class="text-center">
-            <b>{{ Math.round(vals.consumed) || '0' }}</b> {{ $t('of') }} {{ Math.round(vals.availableInTotal) || '-' }} {{ $t('unit.calories.short') }} {{ $t('used') }}
-        </v-card-text>
-    </v-card>
+  <v-card flat :color="vals.color">
+    <v-card-title>
+      {{ $t('leftCals') }}
+    </v-card-title>
+    <v-container>
+      <v-row justify="space-around" no-gutters align="center">
+        <v-col cols="6" class="text-center">
+          <v-progress-circular :rotate="-90" :size="100" :width="15" :value="vals.percentage">
+            {{ vals.percentage || '0' }} %
+          </v-progress-circular>
+        </v-col>
+        <v-col cols="6" class="text-center">
+          <span class="display-1">
+            {{ Math.round(vals.remaining) || '0' }}<br />
+          </span>
+        </v-col>
+      </v-row>
+    </v-container>
+    <v-card-text class="text-center">
+      <b>{{ Math.round(vals.consumed) || '0' }}</b> {{ $t('of') }} {{ Math.round(vals.availableInTotal) || '-' }} {{ $t('unit.calories.short') }} {{ $t('used') }}
+    </v-card-text>
+  </v-card>
 </template>
 
 <script>

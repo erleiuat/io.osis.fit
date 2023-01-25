@@ -1,31 +1,31 @@
 <template>
-    <v-form v-model="form.valid" ref="form" @submit.prevent="submit()">
-        <v-row no-gutters>
-            <v-col cols="12" md="6">
-                <v-text-field v-model="form.data.mail" :rules="form.rules.mail" :label="$t('form.mail')" @keyup="exists('mail')" :error-messages="form.existing.mail" required filled @keydown="form.changes++" />
-            </v-col>
-            <v-col cols="12" md="6">
-                <v-text-field v-model="form.data.username" :rules="form.rules.username" :label="$t('form.username')" @keyup="exists('username')" :error-messages="form.existing.username" required filled @keydown="form.changes++" />
-            </v-col>
-            <v-col cols="12" md="6">
-                <v-text-field v-model="form.data.firstname" :rules="form.rules.name" :label="$t('form.firstname')" required filled @keydown="form.changes++" />
-            </v-col>
-            <v-col cols="12" md="6">
-                <v-text-field v-model="form.data.lastname" :rules="form.rules.name" :label="$t('form.lastname')" required filled @keydown="form.changes++" />
-            </v-col>
-            <v-col cols="6" md="6">
-                <v-text-field disabled :label="$t('accLevel')" :value="$t('level.'+$store.state.auth.account.level)" />
-            </v-col>
-            <v-col cols="6" md="6">
-                <v-text-field disabled :label="$t('accStatus')" :value="$t('status.'+$store.state.auth.account.status)" />
-            </v-col>
-            <v-col cols="12">
-                <v-btn :loading="form.sending" :disabled="!form.changes" type="submit" block color="primary">
-                    {{ $t('button.save') }}
-                </v-btn>
-            </v-col>
-        </v-row>
-    </v-form>
+  <v-form v-model="form.valid" ref="form" @submit.prevent="submit()">
+    <v-row no-gutters>
+      <v-col cols="12" md="6">
+        <v-text-field v-model="form.data.mail" :rules="form.rules.mail" :label="$t('form.mail')" @keyup="exists('mail')" :error-messages="form.existing.mail" required filled @keydown="form.changes++" />
+      </v-col>
+      <v-col cols="12" md="6">
+        <v-text-field v-model="form.data.username" :rules="form.rules.username" :label="$t('form.username')" @keyup="exists('username')" :error-messages="form.existing.username" required filled @keydown="form.changes++" />
+      </v-col>
+      <v-col cols="12" md="6">
+        <v-text-field v-model="form.data.firstname" :rules="form.rules.name" :label="$t('form.firstname')" required filled @keydown="form.changes++" />
+      </v-col>
+      <v-col cols="12" md="6">
+        <v-text-field v-model="form.data.lastname" :rules="form.rules.name" :label="$t('form.lastname')" required filled @keydown="form.changes++" />
+      </v-col>
+      <v-col cols="6" md="6">
+        <v-text-field disabled :label="$t('accLevel')" :value="$t('level.'+$store.state.auth.account.level)" />
+      </v-col>
+      <v-col cols="6" md="6">
+        <v-text-field disabled :label="$t('accStatus')" :value="$t('status.'+$store.state.auth.account.status)" />
+      </v-col>
+      <v-col cols="12">
+        <v-btn :loading="form.sending" :disabled="!form.changes" type="submit" block color="primary">
+          {{ $t('button.save') }}
+        </v-btn>
+      </v-col>
+    </v-row>
+  </v-form>
 </template>
 
 <script>

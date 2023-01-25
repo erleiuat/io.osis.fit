@@ -1,5 +1,5 @@
 <template>
-    <ImageForm v-model="form.data.avatar" :loading="form.sending" @input="save()" @delete="deleteImage()" :placeholder="require('@/assets/image/avatar.jpg')" />
+  <ImageForm v-model="form.data.avatar" :loading="form.sending" @input="save()" @delete="deleteImage()" :placeholder="require('@/assets/image/avatar.jpg')" />
 </template>
 
 <script>

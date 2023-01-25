@@ -1,27 +1,27 @@
 <template>
-    <v-container fill-height>
-        <v-row>
-            <v-col cols="12">
-                <span class="headline">{{ $t('faq') }}</span><br />
-                <span class="caption">{{ $t('faqText') }}</span>
-            </v-col>
-            <v-col cols="12">
-                <v-divider />
-            </v-col>
-        </v-row>
-        <Preview />
-        <v-row justify="center" align="center">
-            <v-col cols="12">
-                <v-divider />
-            </v-col>
-            <v-col cols="auto" class="caption">
-                {{ $t('contactText') }}
-                <v-btn block depressed :to="{name: 'support.contact'}" color="primary">
-                {{ $t('contactBtn') }}
-                </v-btn>
-            </v-col>
-        </v-row>
-    </v-container>
+  <v-container fill-height>
+    <v-row>
+      <v-col cols="12">
+        <span class="headline">{{ $t('faq') }}</span><br />
+        <span class="caption">{{ $t('faqText') }}</span>
+      </v-col>
+      <v-col cols="12">
+        <v-divider />
+      </v-col>
+    </v-row>
+    <Preview />
+    <v-row justify="center" align="center">
+      <v-col cols="12">
+        <v-divider />
+      </v-col>
+      <v-col cols="auto" class="caption">
+        {{ $t('contactText') }}
+        <v-btn block depressed :to="{name: 'support.contact'}" color="primary">
+          {{ $t('contactBtn') }}
+        </v-btn>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>

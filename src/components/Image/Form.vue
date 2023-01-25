@@ -1,19 +1,19 @@
 <template>
-    <v-container>
-        <v-row dense justify="center" align="center">
-            <v-col cols="auto">
-                <v-card :link="img !== false">
-                    <RegularImage v-if="placeholder" :image="img" aspectRatio="1" width="200" :placeholder="placeholder" />
-                    <RegularImage v-else :image="img" aspectRatio="1" width="200" />
-                </v-card>
-            </v-col>
-        </v-row>
-        <v-row dense justify="center" align="center">
-            <v-col style="max-width:210px">
-                <ImageUpload @delete="$emit('delete')" v-model="img" :loading="loading" />
-            </v-col>
-        </v-row>
-    </v-container>
+  <v-container>
+    <v-row dense justify="center" align="center">
+      <v-col cols="auto">
+        <v-card :link="img !== false">
+          <RegularImage v-if="placeholder" :image="img" aspectRatio="1" width="200" :placeholder="placeholder" />
+          <RegularImage v-else :image="img" aspectRatio="1" width="200" />
+        </v-card>
+      </v-col>
+    </v-row>
+    <v-row dense justify="center" align="center">
+      <v-col style="max-width:210px">
+        <ImageUpload @delete="$emit('delete')" v-model="img" :loading="loading" />
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>

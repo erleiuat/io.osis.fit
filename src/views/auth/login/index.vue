@@ -1,61 +1,61 @@
 <template>
-    <v-container fill-height>
+  <v-container fill-height>
 
-        <v-row dense justify="center" align="center">
-            <v-col cols="12" class="display-1 text-center">
-                {{ $t('signIn') }}
-            </v-col>
-            <v-col cols="12" class="caption text-center">
-                {{ $t('niceToSeeYou') }}
-            </v-col>
-        </v-row>
+    <v-row dense justify="center" align="center">
+      <v-col cols="12" class="display-1 text-center">
+        {{ $t('signIn') }}
+      </v-col>
+      <v-col cols="12" class="caption text-center">
+        {{ $t('niceToSeeYou') }}
+      </v-col>
+    </v-row>
 
-        <v-row dense justify="center" align="center">
-            <v-col cols="12">
-                <v-form v-model="form.valid" ref="form" @submit.prevent="submit()">
-                    <v-row dense justify="center" align="center">
-                        <v-col cols="12" md="10">
-                            <v-text-field v-model="form.data.identifier" :rules="form.rules.required" :label="$t('form.identifier')" prepend-inner-icon="mdi-account-circle-outline" solo required />
-                        </v-col>
-                        <v-col cols="12" md="10">
-                            <v-text-field v-model="form.data.password" :rules="form.rules.required" :label="$t('form.password')" type="password" prepend-inner-icon="mdi-textbox-password" solo required />
-                        </v-col>
-                        <v-col cols="auto" md="4">
-                            <v-checkbox v-model="form.data.keep" class="mx-2" :label="$t('keepSession')" />
-                        </v-col>
-                        <v-col cols="12" md="6">
-                            <v-btn :loading="form.sending" type="submit" block color="primary">
-                                {{ $t('button.login') }}
-                            </v-btn>
-                        </v-col>
-                    </v-row>
-                </v-form>
+    <v-row dense justify="center" align="center">
+      <v-col cols="12">
+        <v-form v-model="form.valid" ref="form" @submit.prevent="submit()">
+          <v-row dense justify="center" align="center">
+            <v-col cols="12" md="10">
+              <v-text-field v-model="form.data.identifier" :rules="form.rules.required" :label="$t('form.identifier')" prepend-inner-icon="mdi-account-circle-outline" solo required />
             </v-col>
-            <v-col cols="auto" class="caption">
-                {{ $t('haveyou') }}
-                <router-link :to="{name: 'auth.forgotten'}">
-                    {{ $t('forgottenPass') }}
-                </router-link><br/>
-                {{ $t('orNeedto') }}
-                <router-link :to="{name: 'auth.register'}">
-                    {{ $t('createAccount') }}
-                </router-link>
+            <v-col cols="12" md="10">
+              <v-text-field v-model="form.data.password" :rules="form.rules.required" :label="$t('form.password')" type="password" prepend-inner-icon="mdi-textbox-password" solo required />
             </v-col>
-        </v-row>
+            <v-col cols="auto" md="4">
+              <v-checkbox v-model="form.data.keep" class="mx-2" :label="$t('keepSession')" />
+            </v-col>
+            <v-col cols="12" md="6">
+              <v-btn :loading="form.sending" type="submit" block color="primary">
+                {{ $t('button.login') }}
+              </v-btn>
+            </v-col>
+          </v-row>
+        </v-form>
+      </v-col>
+      <v-col cols="auto" class="caption">
+        {{ $t('haveyou') }}
+        <router-link :to="{name: 'auth.forgotten'}">
+          {{ $t('forgottenPass') }}
+        </router-link><br/>
+        {{ $t('orNeedto') }}
+        <router-link :to="{name: 'auth.register'}">
+          {{ $t('createAccount') }}
+        </router-link>
+      </v-col>
+    </v-row>
 
-        <v-row dense justify="center" align="center">
-            <v-col cols="12">
-                <v-divider />
-            </v-col>
-            <v-spacer />
-            <v-col cols="auto" class="caption">
-                <router-link :to="{name: 'about'}">
-                    {{ $t('about') }}
-                </router-link>
-            </v-col>
-        </v-row>
+    <v-row dense justify="center" align="center">
+      <v-col cols="12">
+        <v-divider />
+      </v-col>
+      <v-spacer />
+      <v-col cols="auto" class="caption">
+        <router-link :to="{name: 'about'}">
+          {{ $t('about') }}
+        </router-link>
+      </v-col>
+    </v-row>
 
-    </v-container>
+  </v-container>
 </template>
 
 <script>

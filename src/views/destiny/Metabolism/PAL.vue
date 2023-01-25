@@ -1,62 +1,62 @@
 <template>
-    <v-card flat>
-        <v-card-title>
-            <v-tooltip right>
-                <template v-slot:activator="{ on }">
-                    <span v-on="on">
-                        {{ $t('pal') }} <v-icon x-small>mdi-help-circle-outline</v-icon>
-                    </span>
-                </template>
-                <span>{{ $t('waaat') }}</span>
-            </v-tooltip>
-            <v-spacer />
-            <v-btn icon v-if="!edit" @click="edit = true">
-                <v-icon>mdi-pencil</v-icon>
-            </v-btn>
-            <v-btn icon v-else @click="saveChange()" :loading="$store.state.form.sending">
-                <v-icon>mdi-content-save</v-icon>
-            </v-btn>
-        </v-card-title>
-        <v-card-text v-if="!edit && $store.state.destiny.metabolism.pal" class="text-center headline">
-            {{ $store.state.destiny.metabolism.pal }} ({{ $t('pals.'+activePal+'.title') }})
-        </v-card-text>
-        <v-card-text v-else-if="!edit" class="text-center headline">
-            -
-        </v-card-text>
-        <v-card-text v-else>
-            <v-form v-model="form.valid" ref="form" @submit.prevent="saveChange()">
-                <span class="caption">{{ $t('howActive') }}</span>
-                <v-row dense justify="center" align="center">
-                    <v-col cols="6" sm="4" md="" v-for="(item, key) in pals" :key="key" class="text-center">
-                        <v-card :elevation="item.active ? 9 : 0" flat :color="item.active ? item.color : null">
-                            <v-card-title class="pt-1 pb-1 pl-2 text-center">
-                                {{ $t('pals.'+key+'.title') }}
-                            </v-card-title>
-                            <v-card-text class="pt-1 pb-4 pl-2 pr-2">
-                                <v-icon x-large>
-                                    {{ item.icon1 }}
-                                </v-icon>
-                                <v-icon x-large="">
-                                    |
-                                </v-icon>
-                                <v-icon x-large>
-                                    {{ item.icon2 }}
-                                </v-icon>
-                            </v-card-text>
-                        </v-card>
-                    </v-col>
-                    <v-col cols="12" class="text-center caption" v-html="$t('pals.'+activePal+'.description')">
-                    </v-col>
-                </v-row>
-                <v-slider v-model="slidePal" :min="95" :max="240" append-icon="mdi-plus" prepend-icon="mdi-minus" hide-details />
-                <v-text-field class="pa-0" v-model="$store.state.destiny.metabolism.pal" :rules="form.rules.number" type="number" min="0.95" max="2.4" step="0.1" outlined />
-                <v-btn type="submit" depressed color="primary" block :loading="$store.state.form.sending">
-                    <v-icon left>mdi-content-save</v-icon>
-                    {{ $t('button.save') }}
-                </v-btn>
-            </v-form>
-        </v-card-text>
-    </v-card>
+  <v-card flat>
+    <v-card-title>
+      <v-tooltip right>
+        <template v-slot:activator="{ on }">
+          <span v-on="on">
+            {{ $t('pal') }} <v-icon x-small>mdi-help-circle-outline</v-icon>
+          </span>
+        </template>
+        <span>{{ $t('waaat') }}</span>
+      </v-tooltip>
+      <v-spacer />
+      <v-btn icon v-if="!edit" @click="edit = true">
+        <v-icon>mdi-pencil</v-icon>
+      </v-btn>
+      <v-btn icon v-else @click="saveChange()" :loading="$store.state.form.sending">
+        <v-icon>mdi-content-save</v-icon>
+      </v-btn>
+    </v-card-title>
+    <v-card-text v-if="!edit && $store.state.destiny.metabolism.pal" class="text-center headline">
+      {{ $store.state.destiny.metabolism.pal }} ({{ $t('pals.'+activePal+'.title') }})
+    </v-card-text>
+    <v-card-text v-else-if="!edit" class="text-center headline">
+      -
+    </v-card-text>
+    <v-card-text v-else>
+      <v-form v-model="form.valid" ref="form" @submit.prevent="saveChange()">
+        <span class="caption">{{ $t('howActive') }}</span>
+        <v-row dense justify="center" align="center">
+          <v-col cols="6" sm="4" md="" v-for="(item, key) in pals" :key="key" class="text-center">
+            <v-card :elevation="item.active ? 9 : 0" flat :color="item.active ? item.color : null">
+              <v-card-title class="pt-1 pb-1 pl-2 text-center">
+                {{ $t('pals.'+key+'.title') }}
+              </v-card-title>
+              <v-card-text class="pt-1 pb-4 pl-2 pr-2">
+                <v-icon x-large>
+                  {{ item.icon1 }}
+                </v-icon>
+                <v-icon x-large="">
+                  |
+                </v-icon>
+                <v-icon x-large>
+                  {{ item.icon2 }}
+                </v-icon>
+              </v-card-text>
+            </v-card>
+          </v-col>
+          <v-col cols="12" class="text-center caption" v-html="$t('pals.'+activePal+'.description')">
+          </v-col>
+        </v-row>
+        <v-slider v-model="slidePal" :min="95" :max="240" append-icon="mdi-plus" prepend-icon="mdi-minus" hide-details />
+        <v-text-field class="pa-0" v-model="$store.state.destiny.metabolism.pal" :rules="form.rules.number" type="number" min="0.95" max="2.4" step="0.1" outlined />
+        <v-btn type="submit" depressed color="primary" block :loading="$store.state.form.sending">
+          <v-icon left>mdi-content-save</v-icon>
+          {{ $t('button.save') }}
+        </v-btn>
+      </v-form>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script>

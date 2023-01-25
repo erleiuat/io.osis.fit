@@ -1,16 +1,16 @@
 <template>
-    <v-container>
-        <v-row>
-            <v-col>
-                <v-card-title>
-                    Calories
-                    <v-spacer></v-spacer>
-                    <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line hide-details autofocus />
-                </v-card-title>
-                <v-data-table @click:row="hasClicked" :headers="headers" :items="items" :search="search"></v-data-table>
-            </v-col>
-        </v-row>
-    </v-container>
+  <v-container>
+    <v-row>
+      <v-col>
+        <v-card-title>
+          Calories
+          <v-spacer></v-spacer>
+          <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line hide-details autofocus />
+        </v-card-title>
+        <v-data-table @click:row="hasClicked" :headers="headers" :items="items" :search="search"></v-data-table>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>

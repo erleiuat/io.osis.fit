@@ -1,26 +1,26 @@
 <template>
-    <v-container>
+  <v-container>
 
-        <v-row dense>
-            <v-col v-for="(item, key) in images" :key="key" class="d-flex child-flex" cols="12" md="4">
-                <v-card flat>
-                    <RegularImage :key="key" :image="item" aspectRatio="1" />
-                    <v-card-text class="pa-1 pb-0 caption text-center">
-                        {{ item.id }}
-                    </v-card-text>
-                    <v-card-actions class="pa-1 pt-0">
-                        <v-spacer />
-                        <SafeDelete @click="delImage(key)" />
-                        <v-spacer />
-                    </v-card-actions>
-                </v-card>
-            </v-col>
-            <v-col class="text-center" cols="12" md="4" v-if="loading">
-                <v-skeleton-loader class="mx-auto" max-width="300" type="card" />
-            </v-col>
-        </v-row>
+    <v-row dense>
+      <v-col v-for="(item, key) in images" :key="key" class="d-flex child-flex" cols="12" md="4">
+        <v-card flat>
+          <RegularImage :key="key" :image="item" aspectRatio="1" />
+          <v-card-text class="pa-1 pb-0 caption text-center">
+            {{ item.id }}
+          </v-card-text>
+          <v-card-actions class="pa-1 pt-0">
+            <v-spacer />
+            <SafeDelete @click="delImage(key)" />
+            <v-spacer />
+          </v-card-actions>
+        </v-card>
+      </v-col>
+      <v-col class="text-center" cols="12" md="4" v-if="loading">
+        <v-skeleton-loader class="mx-auto" max-width="300" type="card" />
+      </v-col>
+    </v-row>
 
-    </v-container>
+  </v-container>
 </template>
 
 <script>

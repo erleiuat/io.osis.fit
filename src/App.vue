@@ -1,22 +1,22 @@
 <template>
-    <v-app>
+  <v-app>
 
-        <transition name="fade-transition">
-            <router-view name="toolbar" />
-        </transition>
+    <transition name="fade-transition">
+      <router-view name="toolbar" />
+    </transition>
 
-        <Drawer />
+    <Drawer />
 
-        <v-main>
-            <Update />
-            <transition name="fade-transition" mode="out-in">
-                <router-view />
-            </transition>
-        </v-main>
+    <v-main>
+      <Update />
+      <transition name="fade-transition" mode="out-in">
+        <router-view />
+      </transition>
+    </v-main>
 
-        <Notification />
+    <Notification />
 
-    </v-app>
+  </v-app>
 </template>
 
 <script>

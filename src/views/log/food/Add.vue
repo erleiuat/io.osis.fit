@@ -1,96 +1,96 @@
 <template>
-    <v-form v-model="form.valid" ref="form" @submit.prevent="$store.commit('form/send')">
-        <v-container>
-            <v-row dense justify="center" align="center">
+  <v-form v-model="form.valid" ref="form" @submit.prevent="$store.commit('form/send')">
+    <v-container>
+      <v-row dense justify="center" align="center">
 
-                <v-col cols="6" md="8">
-                    <TemplateSelect @select="useItem" />
-                </v-col>
-                <v-col cols="3" md="2">
-                    <Barcode @select="useItem" />
-                </v-col>
-                <v-col cols="3" md="2">
-                    <CalorieTable @select="useItem" />
-                </v-col>
+        <v-col cols="6" md="8">
+          <TemplateSelect @select="useItem" />
+        </v-col>
+        <v-col cols="3" md="2">
+          <Barcode @select="useItem" />
+        </v-col>
+        <v-col cols="3" md="2">
+          <CalorieTable @select="useItem" />
+        </v-col>
 
-                <v-col cols="12" md="6">
-                    <v-text-field v-model="form.data.title" :rules="form.rules.title" :label="$t('form.title')" type="text" filled hide-details />
-                </v-col>
-                <v-col cols="8" md="4">
-                    <v-text-field v-model="form.data.portionSize" :rules="form.rules.number" :label="$t('portionSize')" :suffix="$t('unit.'+unit+'.short')" type="number" filled hide-details />
-                </v-col>
-                <v-col cols="4" md="2">
-                    <v-select v-model="unit" :items="units" :label="$t('unit.name')" filled hide-details />
-                </v-col>
+        <v-col cols="12" md="6">
+          <v-text-field v-model="form.data.title" :rules="form.rules.title" :label="$t('form.title')" type="text" filled hide-details />
+        </v-col>
+        <v-col cols="8" md="4">
+          <v-text-field v-model="form.data.portionSize" :rules="form.rules.number" :label="$t('portionSize')" :suffix="$t('unit.'+unit+'.short')" type="number" filled hide-details />
+        </v-col>
+        <v-col cols="4" md="2">
+          <v-select v-model="unit" :items="units" :label="$t('unit.name')" filled hide-details />
+        </v-col>
 
-                <v-col cols="12">
-                    <v-tabs v-model="tab" grow show-arrows>
-                        <v-tab>
-                            {{ tCalories || '' }} {{ $t('unit.calories.long') }}
-                        </v-tab>
-                        <v-tab>
-                            {{ tFat ? tFat + $t('unit.gram.short') : '' }} {{ $t('fat') }}
-                        </v-tab>
-                        <v-tab>
-                            {{ tProtein ? tProtein + $t('unit.gram.short') : '' }} {{ $t('protein') }}
-                        </v-tab>
-                        <v-tab>
-                            {{ $t('form.time') }}
-                        </v-tab>
-                    </v-tabs>
-                    <v-tabs-items v-model="tab">
-                        <v-tab-item>
-                            <v-card flat>
-                                <v-card-text class="pa-2">
-                                    <v-text-field v-model="per100.calories" :rules="form.rules.number" :label="$t('caloriesPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.calories.short')" type="number" filled hide-details />
-                                    <v-text-field v-model="tCalories" :rules="form.rules.number" :label="$t('totalCalories')" :suffix="$t('unit.calories.short')" type="number" filled hide-details />
-                                </v-card-text>
-                            </v-card>
-                        </v-tab-item>
-                        <v-tab-item>
-                            <v-card flat>
-                                <v-card-text class="pa-2">
-                                    <v-text-field v-model="per100.fat" :rules="form.rules.number" :label="$t('fatPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.gram.short')" type="number" filled hide-details />
-                                    <v-text-field v-model="tFat" :rules="form.rules.number" :label="$t('totalFat')" :suffix="$t('unit.gram.short')" type="number" filled hide-details />
-                                </v-card-text>
-                            </v-card>
-                        </v-tab-item>
-                        <v-tab-item>
-                            <v-card flat>
-                                <v-card-text class="pa-2">
-                                    <v-text-field v-model="per100.protein" :rules="form.rules.number" :label="$t('proteinPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.gram.short')" type="number" filled hide-details />
-                                    <v-text-field v-model="tProtein" :rules="form.rules.number" :label="$t('totalProtein')" :suffix="$t('unit.gram.short')" type="number" filled hide-details />
-                                </v-card-text>
-                            </v-card>
-                        </v-tab-item>
-                        <v-tab-item>
-                            <v-card flat>
-                                <v-card-text class="pa-2">
-                                    <v-text-field v-model="form.data.date" :rules="form.rules.date" :label="$t('form.date')" type="date" filled hide-details />
-                                    <v-text-field v-model="form.data.time" :rules="form.rules.time" :label="$t('form.time')" type="time" filled hide-details />
-                                </v-card-text>
-                            </v-card>
-                        </v-tab-item>
-                    </v-tabs-items>
-                </v-col>
+        <v-col cols="12">
+          <v-tabs v-model="tab" grow show-arrows>
+            <v-tab>
+              {{ tCalories || '' }} {{ $t('unit.calories.long') }}
+            </v-tab>
+            <v-tab>
+              {{ tFat ? tFat + $t('unit.gram.short') : '' }} {{ $t('fat') }}
+            </v-tab>
+            <v-tab>
+              {{ tProtein ? tProtein + $t('unit.gram.short') : '' }} {{ $t('protein') }}
+            </v-tab>
+            <v-tab>
+              {{ $t('form.time') }}
+            </v-tab>
+          </v-tabs>
+          <v-tabs-items v-model="tab">
+            <v-tab-item>
+              <v-card flat>
+                <v-card-text class="pa-2">
+                  <v-text-field v-model="per100.calories" :rules="form.rules.number" :label="$t('caloriesPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.calories.short')" type="number" filled hide-details />
+                  <v-text-field v-model="tCalories" :rules="form.rules.number" :label="$t('totalCalories')" :suffix="$t('unit.calories.short')" type="number" filled hide-details />
+                </v-card-text>
+              </v-card>
+            </v-tab-item>
+            <v-tab-item>
+              <v-card flat>
+                <v-card-text class="pa-2">
+                  <v-text-field v-model="per100.fat" :rules="form.rules.number" :label="$t('fatPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.gram.short')" type="number" filled hide-details />
+                  <v-text-field v-model="tFat" :rules="form.rules.number" :label="$t('totalFat')" :suffix="$t('unit.gram.short')" type="number" filled hide-details />
+                </v-card-text>
+              </v-card>
+            </v-tab-item>
+            <v-tab-item>
+              <v-card flat>
+                <v-card-text class="pa-2">
+                  <v-text-field v-model="per100.protein" :rules="form.rules.number" :label="$t('proteinPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.gram.short')" type="number" filled hide-details />
+                  <v-text-field v-model="tProtein" :rules="form.rules.number" :label="$t('totalProtein')" :suffix="$t('unit.gram.short')" type="number" filled hide-details />
+                </v-card-text>
+              </v-card>
+            </v-tab-item>
+            <v-tab-item>
+              <v-card flat>
+                <v-card-text class="pa-2">
+                  <v-text-field v-model="form.data.date" :rules="form.rules.date" :label="$t('form.date')" type="date" filled hide-details />
+                  <v-text-field v-model="form.data.time" :rules="form.rules.time" :label="$t('form.time')" type="time" filled hide-details />
+                </v-card-text>
+              </v-card>
+            </v-tab-item>
+          </v-tabs-items>
+        </v-col>
 
-            </v-row>
-            <v-row justify="space-between" align="center">
-                <v-col cols="auto">
-                    <v-btn @click="$router.back()" depressed :loading="$store.state.form.sending">
-                        <v-icon left>mdi-cancel</v-icon>
-                        {{ $t('button.cancel') }}
-                    </v-btn>
-                </v-col>
-                <v-col cols="auto">
-                    <v-btn type="submit" depressed color="primary" :loading="$store.state.form.sending">
-                        <v-icon left>mdi-content-save</v-icon>
-                        {{ $t('button.add') }}
-                    </v-btn>
-                </v-col>
-            </v-row>
-        </v-container>
-    </v-form>
+      </v-row>
+      <v-row justify="space-between" align="center">
+        <v-col cols="auto">
+          <v-btn @click="$router.back()" depressed :loading="$store.state.form.sending">
+            <v-icon left>mdi-cancel</v-icon>
+            {{ $t('button.cancel') }}
+          </v-btn>
+        </v-col>
+        <v-col cols="auto">
+          <v-btn type="submit" depressed color="primary" :loading="$store.state.form.sending">
+            <v-icon left>mdi-content-save</v-icon>
+            {{ $t('button.add') }}
+          </v-btn>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-form>
 </template>
 
 <script>

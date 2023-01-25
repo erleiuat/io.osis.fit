@@ -1,31 +1,31 @@
 <template>
-    <v-container fill-height>
+  <v-container fill-height>
 
-        <v-row dense justify="center" align="center">
-            <v-col cols="12" class="display-1 text-center">
-                {{ $t('reset') }}
-            </v-col>
-            <v-col cols="12" class="caption text-center">
-                {{ $t('followThese') }}
-            </v-col>
-        </v-row>
+    <v-row dense justify="center" align="center">
+      <v-col cols="12" class="display-1 text-center">
+        {{ $t('reset') }}
+      </v-col>
+      <v-col cols="12" class="caption text-center">
+        {{ $t('followThese') }}
+      </v-col>
+    </v-row>
 
-        <Request v-if="step === 'request'" />
-        <Change v-else />
+    <Request v-if="step === 'request'" />
+    <Change v-else />
 
-        <v-row dense justify="center" align="center">
-            <v-col cols="12">
-                <v-divider />
-            </v-col>
-            <v-spacer />
-            <v-col cols="auto" class="caption">
-                <router-link :to="{name: 'about'}">
-                    {{ $t('about') }}
-                </router-link>
-            </v-col>
-        </v-row>
+    <v-row dense justify="center" align="center">
+      <v-col cols="12">
+        <v-divider />
+      </v-col>
+      <v-spacer />
+      <v-col cols="auto" class="caption">
+        <router-link :to="{name: 'about'}">
+          {{ $t('about') }}
+        </router-link>
+      </v-col>
+    </v-row>
 
-    </v-container>
+  </v-container>
 </template>
 
 <script>

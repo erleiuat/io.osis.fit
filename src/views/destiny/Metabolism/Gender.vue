@@ -1,23 +1,23 @@
 <template>
-    <v-card flat>
-        <v-card-title class="pb-1">
-            {{ $t('gender') }}
-        </v-card-title>
-        <v-container class="pt-0">
-            <v-row no-gutters justify="center" align="center">
-                <v-col cols="6" class="text-center">
-                    <v-btn @click="setGender('male')" :color="selected.male" :loading="$store.state.form.sending" text x-large>
-                        <v-icon x-large>mdi-human-male</v-icon>
-                    </v-btn>
-                </v-col>
-                <v-col cols="6" class="text-center">
-                    <v-btn @click="setGender('female')" :color="selected.female" :loading="$store.state.form.sending" text x-large>
-                        <v-icon x-large>mdi-human-female</v-icon>
-                    </v-btn>
-                </v-col>
-            </v-row>
-        </v-container>
-    </v-card>
+  <v-card flat>
+    <v-card-title class="pb-1">
+      {{ $t('gender') }}
+    </v-card-title>
+    <v-container class="pt-0">
+      <v-row no-gutters justify="center" align="center">
+        <v-col cols="6" class="text-center">
+          <v-btn @click="setGender('male')" :color="selected.male" :loading="$store.state.form.sending" text x-large>
+            <v-icon x-large>mdi-human-male</v-icon>
+          </v-btn>
+        </v-col>
+        <v-col cols="6" class="text-center">
+          <v-btn @click="setGender('female')" :color="selected.female" :loading="$store.state.form.sending" text x-large>
+            <v-icon x-large>mdi-human-female</v-icon>
+          </v-btn>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-card>
 </template>
 
 <script>

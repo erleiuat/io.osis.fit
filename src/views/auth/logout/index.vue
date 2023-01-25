@@ -1,23 +1,23 @@
 <template>
-    <v-container fill-height>
-        <v-row justify="center" align="center">
-            <v-col cols="11" md="8">
-                {{ $t('youSure') }}
-            </v-col>
-        </v-row>
-        <v-row justify="center" align="center">
-            <v-col cols="11" md="4">
-                <v-btn block color="primary" @click="submit()">
-                    {{ $t('button.logout') }}
-                </v-btn>
-            </v-col>
-            <v-col cols="11" md="4">
-                <v-btn block depressed @click="$router.go(-1)">
-                    {{ $t('button.cancel') }}
-                </v-btn>
-            </v-col>
-        </v-row>
-    </v-container>
+  <v-container fill-height>
+    <v-row justify="center" align="center">
+      <v-col cols="11" md="8">
+        {{ $t('youSure') }}
+      </v-col>
+    </v-row>
+    <v-row justify="center" align="center">
+      <v-col cols="11" md="4">
+        <v-btn block color="primary" @click="submit()">
+          {{ $t('button.logout') }}
+        </v-btn>
+      </v-col>
+      <v-col cols="11" md="4">
+        <v-btn block depressed @click="$router.go(-1)">
+          {{ $t('button.cancel') }}
+        </v-btn>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>

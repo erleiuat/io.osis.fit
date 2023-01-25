@@ -1,28 +1,28 @@
 <template>
-    <v-row>
-        <v-col cols="12">
-            <span class="headline">{{ $t('install') }}</span><br />
-            <span class="caption">{{ $t('installText') }}</span>
-        </v-col>
-        <v-col md="" class="text-center">
-            <v-icon x-large class="pb-3">mdi-android-head</v-icon>
-            <v-btn :to="{ name: 'support.install', query: { plattform: 'android' } }" block depressed color="primary">
-                Android
-            </v-btn>
-        </v-col>
-        <v-col md="" class="text-center">
-            <v-icon x-large class="pb-3">mdi-apple</v-icon>
-            <v-btn :to="{ name: 'support.install', query: { plattform: 'apple' } }" block depressed color="primary">
-                Apple
-            </v-btn>
-        </v-col>
-        <v-col md="" class="text-center">
-            <v-icon x-large class="pb-3">mdi-windows</v-icon>
-            <v-btn :to="{ name: 'support.install', query: { plattform: 'windows' } }" block depressed color="primary">
-                Windows
-            </v-btn>
-        </v-col>
-    </v-row>
+  <v-row>
+    <v-col cols="12">
+      <span class="headline">{{ $t('install') }}</span><br />
+      <span class="caption">{{ $t('installText') }}</span>
+    </v-col>
+    <v-col md="" class="text-center">
+      <v-icon x-large class="pb-3">mdi-android-head</v-icon>
+      <v-btn :to="{ name: 'support.install', query: { plattform: 'android' } }" block depressed color="primary">
+        Android
+      </v-btn>
+    </v-col>
+    <v-col md="" class="text-center">
+      <v-icon x-large class="pb-3">mdi-apple</v-icon>
+      <v-btn :to="{ name: 'support.install', query: { plattform: 'apple' } }" block depressed color="primary">
+        Apple
+      </v-btn>
+    </v-col>
+    <v-col md="" class="text-center">
+      <v-icon x-large class="pb-3">mdi-windows</v-icon>
+      <v-btn :to="{ name: 'support.install', query: { plattform: 'windows' } }" block depressed color="primary">
+        Windows
+      </v-btn>
+    </v-col>
+  </v-row>
 </template>
 
 <script>

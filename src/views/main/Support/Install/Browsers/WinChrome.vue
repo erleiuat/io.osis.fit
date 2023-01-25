@@ -1,32 +1,32 @@
 <template>
-    <v-row>
-        <v-col cols="12">
-            <span class="headline">
-            {{ $t('title') }}
-            </span>
-        </v-col>
-        <v-col cols="12">
-            {{ $t('text') }}
-            <br /><br />
-            <ol class="body-1">
-                <li class="pb-2">
-                    {{ $t('s1') }} <a href="https://www.google.com/intl/de/chrome/">Google Chrome</a>
-                </li>
-                <li class="pb-2">
-                    {{ $t('s2') }}
-                    <v-chip label>
-                        <v-icon>mdi-plus-circle-outline</v-icon>
-                    </v-chip>
-                </li>
-                <li class="pb-2">
-                    {{ $t('s3_1') }}
-                    <v-chip label>
-                        {{ $t('s3_2') }}
-                    </v-chip>
-                </li>
-            </ol>
-        </v-col>
-    </v-row>
+  <v-row>
+    <v-col cols="12">
+      <span class="headline">
+        {{ $t('title') }}
+      </span>
+    </v-col>
+    <v-col cols="12">
+      {{ $t('text') }}
+      <br /><br />
+      <ol class="body-1">
+        <li class="pb-2">
+          {{ $t('s1') }} <a href="https://www.google.com/intl/de/chrome/">Google Chrome</a>
+        </li>
+        <li class="pb-2">
+          {{ $t('s2') }}
+          <v-chip label>
+            <v-icon>mdi-plus-circle-outline</v-icon>
+          </v-chip>
+        </li>
+        <li class="pb-2">
+          {{ $t('s3_1') }}
+          <v-chip label>
+            {{ $t('s3_2') }}
+          </v-chip>
+        </li>
+      </ol>
+    </v-col>
+  </v-row>
 </template>
 
 <script>

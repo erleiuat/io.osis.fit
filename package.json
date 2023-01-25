@@ -32,7 +32,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
-    "sass": "^1.57.1",
+    "sass": "~1.29.0",
     "sass-loader": "^8.0.2",
     "vue-cli-plugin-vuetify": "^1.1.2",
     "vue-template-compiler": "^2.7.14",
@@ -52,6 +52,17 @@
       "indent": [
         "error",
         2
+      ],
+      "vue/html-indent": [
+        "warn",
+        "number",
+        {
+          "attribute": 1,
+          "baseIndent": 1,
+          "closeBracket": 0,
+          "alignAttributesVertically": true,
+          "ignores": []
+        }
       ]
     },
     "parserOptions": {

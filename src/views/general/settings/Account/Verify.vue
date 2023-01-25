@@ -1,29 +1,29 @@
 <template>
-    <v-form v-model="form.valid" ref="form" @submit.prevent="submit()">
-        <v-row v-if="!show" dense justify="center" align="center">
-            <v-col cols="12">
-                <v-btn @click="makeCode()" block depressed :loading="doingCode">
-                    {{ $t('verifyMail') }}
-                </v-btn>
-            </v-col>
-        </v-row>
-        <v-row v-else justify="center" align="center">
-            <v-col cols="12">
-                {{ $t('enterCode') }}
-            </v-col>
-            <v-col cols="10">
-                <v-text-field v-model="form.data.code" :rules="form.rules.code" :label="$t('verifyCode')" required outlined hide-details @keydown="form.changes++" />
-            </v-col>
-            <v-col cols="2">
-                <v-btn :loading="form.sending" :disabled="!form.changes" type="submit" block color="primary">
-                    {{ $t('button.submit') }}
-                </v-btn>
-            </v-col>
-            <v-col cols="12">
-                <v-divider />
-            </v-col>
-        </v-row>
-    </v-form>
+  <v-form v-model="form.valid" ref="form" @submit.prevent="submit()">
+    <v-row v-if="!show" dense justify="center" align="center">
+      <v-col cols="12">
+        <v-btn @click="makeCode()" block depressed :loading="doingCode">
+          {{ $t('verifyMail') }}
+        </v-btn>
+      </v-col>
+    </v-row>
+    <v-row v-else justify="center" align="center">
+      <v-col cols="12">
+        {{ $t('enterCode') }}
+      </v-col>
+      <v-col cols="10">
+        <v-text-field v-model="form.data.code" :rules="form.rules.code" :label="$t('verifyCode')" required outlined hide-details @keydown="form.changes++" />
+      </v-col>
+      <v-col cols="2">
+        <v-btn :loading="form.sending" :disabled="!form.changes" type="submit" block color="primary">
+          {{ $t('button.submit') }}
+        </v-btn>
+      </v-col>
+      <v-col cols="12">
+        <v-divider />
+      </v-col>
+    </v-row>
+  </v-form>
 </template>
 
 <script>

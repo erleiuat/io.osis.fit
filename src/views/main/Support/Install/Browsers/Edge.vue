@@ -1,22 +1,22 @@
 <template>
-    <v-expansion-panel>
-        <v-expansion-panel-header>Microsoft Edge</v-expansion-panel-header>
-        <v-expansion-panel-content class="body-1">
-            <ol>
-                <li class="pb-2">
-                    {{ $t('s1') }} <v-chip label>
-                        <v-icon>mdi-dots-horizontal</v-icon>
-                    </v-chip>
-                </li>
-                <li class="pb-2">
-                    {{ $t('s2_1') }} <v-chip label>{{ $t('s2_2') }}</v-chip>
-                </li>
-                <li class="pb-2">
-                    {{ $t('s3_1') }} <v-chip label>{{ $t('s3_2') }}</v-chip>
-                </li>
-            </ol>
-        </v-expansion-panel-content>
-    </v-expansion-panel>
+  <v-expansion-panel>
+    <v-expansion-panel-header>Microsoft Edge</v-expansion-panel-header>
+    <v-expansion-panel-content class="body-1">
+      <ol>
+        <li class="pb-2">
+          {{ $t('s1') }} <v-chip label>
+            <v-icon>mdi-dots-horizontal</v-icon>
+          </v-chip>
+        </li>
+        <li class="pb-2">
+          {{ $t('s2_1') }} <v-chip label>{{ $t('s2_2') }}</v-chip>
+        </li>
+        <li class="pb-2">
+          {{ $t('s3_1') }} <v-chip label>{{ $t('s3_2') }}</v-chip>
+        </li>
+      </ol>
+    </v-expansion-panel-content>
+  </v-expansion-panel>
 </template>
 
 <script>

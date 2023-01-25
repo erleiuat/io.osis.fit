@@ -1,29 +1,29 @@
 <template>
-    <v-container fill-height>
-        <v-row justify="center" align="center" dense>
-            <v-col cols="12">
-                <v-card flat>
-                    <Facts />
-                </v-card>
-            </v-col>
-            <v-col cols="12" sm="6" md="" align-self="stretch">
-                <CurrentWeight />
-            </v-col>
-            <v-col cols="12" sm="6" md="" align-self="stretch">
-                <Weight :state="state" />
-            </v-col>
-            <v-col cols="12" md="" align-self="stretch">
-                <Date :state="state" />
-            </v-col>
-            <v-col cols="12">
-                <v-card flat :color="state">
-                    <v-card-text class="text-center">
-                        {{ state ? $t(state) : $t('null') }}
-                    </v-card-text>
-                </v-card>
-            </v-col>
-        </v-row>
-    </v-container>
+  <v-container fill-height>
+    <v-row justify="center" align="center" dense>
+      <v-col cols="12">
+        <v-card flat>
+          <Facts />
+        </v-card>
+      </v-col>
+      <v-col cols="12" sm="6" md="" align-self="stretch">
+        <CurrentWeight />
+      </v-col>
+      <v-col cols="12" sm="6" md="" align-self="stretch">
+        <Weight :state="state" />
+      </v-col>
+      <v-col cols="12" md="" align-self="stretch">
+        <Date :state="state" />
+      </v-col>
+      <v-col cols="12">
+        <v-card flat :color="state">
+          <v-card-text class="text-center">
+            {{ state ? $t(state) : $t('null') }}
+          </v-card-text>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>

@@ -1,38 +1,38 @@
 <template>
-    <v-container>
+  <v-container>
 
-        <Adders />
+    <Adders />
 
-        <v-row justify="center" align="center" dense>
+    <v-row justify="center" align="center" dense>
 
-            <v-col cols="12" sm="6" align-self="stretch">
-                <Calories />
-            </v-col>
+      <v-col cols="12" sm="6" align-self="stretch">
+        <Calories />
+      </v-col>
 
-            <v-col cols="12" sm="6" align-self="stretch">
-                <Stats />
-            </v-col>
+      <v-col cols="12" sm="6" align-self="stretch">
+        <Stats />
+      </v-col>
 
-            <v-col cols="12" md="8" align-self="stretch">
-                <Weight />
-            </v-col>
+      <v-col cols="12" md="8" align-self="stretch">
+        <Weight />
+      </v-col>
 
-            <v-col cols="12" md="4" align-self="stretch">
-                <Time />
-            </v-col>
+      <v-col cols="12" md="4" align-self="stretch">
+        <Time />
+      </v-col>
 
-            <v-col cols="12" align-self="stretch">
-              <v-card flat style="height:100%;">
-                <v-card-title class="pb-0">
-                  {{ $t('weeklyIntake') }}
-                </v-card-title>
-                <FoodList />
-              </v-card>
-            </v-col>
+      <v-col cols="12" align-self="stretch">
+        <v-card flat style="height:100%;">
+          <v-card-title class="pb-0">
+            {{ $t('weeklyIntake') }}
+          </v-card-title>
+          <FoodList />
+        </v-card>
+      </v-col>
 
-        </v-row>
+    </v-row>
 
-    </v-container>
+  </v-container>
 </template>
 
 <script>

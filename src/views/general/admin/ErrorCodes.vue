@@ -1,17 +1,17 @@
 <template>
-    <v-container>
+  <v-container>
 
-        <v-row justify="center">
-            <v-col cols="12" v-if="loading">
-                <v-progress-circular :size="50" color="primary" indeterminate />
-            </v-col>
-            <v-col cols="12" v-else>
-                <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" filled hide-details />
-                <v-data-table :headers="headers" :items="codes" :search="search" dense />
-            </v-col>
-        </v-row>
+    <v-row justify="center">
+      <v-col cols="12" v-if="loading">
+        <v-progress-circular :size="50" color="primary" indeterminate />
+      </v-col>
+      <v-col cols="12" v-else>
+        <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" filled hide-details />
+        <v-data-table :headers="headers" :items="codes" :search="search" dense />
+      </v-col>
+    </v-row>
 
-    </v-container>
+  </v-container>
 </template>
 
 <script>

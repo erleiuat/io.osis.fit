@@ -1,14 +1,14 @@
 <template>
-    <v-app-bar app flat dense color="primary" dark>
-        <v-btn v-if="noLogin || backToPrev" icon @click="goBack()">
-            <v-icon>mdi-arrow-left</v-icon>
-        </v-btn>
-        <v-app-bar-nav-icon v-else-if="!$store.state.app.drawer" @click.stop="$store.dispatch('app/drawer')" />
-        <v-spacer />
-        <v-toolbar-title>
-            {{ viewTitle }}
-        </v-toolbar-title>
-    </v-app-bar>
+  <v-app-bar app flat dense color="primary" dark>
+    <v-btn v-if="noLogin || backToPrev" icon @click="goBack()">
+      <v-icon>mdi-arrow-left</v-icon>
+    </v-btn>
+    <v-app-bar-nav-icon v-else-if="!$store.state.app.drawer" @click.stop="$store.dispatch('app/drawer')" />
+    <v-spacer />
+    <v-toolbar-title>
+      {{ viewTitle }}
+    </v-toolbar-title>
+  </v-app-bar>
 </template>
 
 <script>

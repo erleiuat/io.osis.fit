@@ -1,27 +1,27 @@
 <template>
-    <v-app-bar app flat dense color="primary" dark>
+  <v-app-bar app flat dense color="primary" dark>
 
-        <v-app-bar-nav-icon v-if="login && !$store.state.app.drawer" @click.stop="$store.dispatch('app/drawer')" />
+    <v-app-bar-nav-icon v-if="login && !$store.state.app.drawer" @click.stop="$store.dispatch('app/drawer')" />
 
-        <v-spacer />
+    <v-spacer />
 
-        <v-toolbar-items v-if="!login">
-            <v-btn text :to="{name: 'auth'}">
-                {{ $t('view.auth.name') }}
-            </v-btn>
-            <v-btn text :to="{name: 'auth.register'}">
-                {{ $t('view.auth.register.name') }}
-            </v-btn>
-            <v-btn text :to="{name: 'about'}">
-                {{ $t('view.about.name') }}
-            </v-btn>
-        </v-toolbar-items>
+    <v-toolbar-items v-if="!login">
+      <v-btn text :to="{name: 'auth'}">
+        {{ $t('view.auth.name') }}
+      </v-btn>
+      <v-btn text :to="{name: 'auth.register'}">
+        {{ $t('view.auth.register.name') }}
+      </v-btn>
+      <v-btn text :to="{name: 'about'}">
+        {{ $t('view.about.name') }}
+      </v-btn>
+    </v-toolbar-items>
 
-        <v-toolbar-title v-if="login">
-            {{ viewTitle }}
-        </v-toolbar-title>
+    <v-toolbar-title v-if="login">
+      {{ viewTitle }}
+    </v-toolbar-title>
 
-    </v-app-bar>
+  </v-app-bar>
 </template>
 
 <script>

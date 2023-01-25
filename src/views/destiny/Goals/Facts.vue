@@ -1,34 +1,34 @@
 <template>
-    <v-container>
-        <v-row no-gutters justify="center" align="center">
-            <v-col cols="12" sm="" class="text-center">
-                <span class="caption">
-                    {{ $t('timeRemaining') }}
-                </span><br />
-                {{ remaining.days || '-' }} {{ $t('days') }}
-                <span class="caption">
-                    ({{ remaining.weeks || '-' }} {{ $t('weeks') }})
-                </span>
-            </v-col>
-            <v-divider vertical />
-            <v-col cols="12" sm="" class="text-center">
-                <span class="caption">
-                    {{ $t('requiredLoss') }}
-                </span><br />
-                {{ Math.round(requiredLoss.total * 10) / 10 }} {{ $t('unit.kilogram.short') }}
-                <span class="caption">
-                    ({{ Math.round(requiredLoss.perWeek * 10) / 10 }} {{ $t('perWeek') }})
-                </span>
-            </v-col>
-            <v-divider vertical />
-            <v-col cols="12" sm="" class="text-center">
-                <span class="caption">
-                    {{ $t('avgCalsPerDay') }}
-                </span><br />
-                {{ avgCalsPerDay ? '≈ ' + Math.round(avgCalsPerDay * 10) / 10 : '-' }} {{ $t('unit.calories.short') }}
-            </v-col>
-        </v-row>
-    </v-container>
+  <v-container>
+    <v-row no-gutters justify="center" align="center">
+      <v-col cols="12" sm="" class="text-center">
+        <span class="caption">
+          {{ $t('timeRemaining') }}
+        </span><br />
+        {{ remaining.days || '-' }} {{ $t('days') }}
+        <span class="caption">
+          ({{ remaining.weeks || '-' }} {{ $t('weeks') }})
+        </span>
+      </v-col>
+      <v-divider vertical />
+      <v-col cols="12" sm="" class="text-center">
+        <span class="caption">
+          {{ $t('requiredLoss') }}
+        </span><br />
+        {{ Math.round(requiredLoss.total * 10) / 10 }} {{ $t('unit.kilogram.short') }}
+        <span class="caption">
+          ({{ Math.round(requiredLoss.perWeek * 10) / 10 }} {{ $t('perWeek') }})
+        </span>
+      </v-col>
+      <v-divider vertical />
+      <v-col cols="12" sm="" class="text-center">
+        <span class="caption">
+          {{ $t('avgCalsPerDay') }}
+        </span><br />
+        {{ avgCalsPerDay ? '≈ ' + Math.round(avgCalsPerDay * 10) / 10 : '-' }} {{ $t('unit.calories.short') }}
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>

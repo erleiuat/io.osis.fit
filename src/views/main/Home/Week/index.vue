@@ -1,29 +1,29 @@
 <template>
-    <v-container>
+  <v-container>
 
-        <Adders />
+    <Adders />
 
-        <v-row justify="center" align="center" dense>
+    <v-row justify="center" align="center" dense>
 
-            <v-col cols="12" sm="6">
-                <Calories weekly />
-            </v-col>
+      <v-col cols="12" sm="6">
+        <Calories weekly />
+      </v-col>
 
-            <v-col cols="12" sm="6" align-self="stretch">
-                <Stats weekly />
-            </v-col>
+      <v-col cols="12" sm="6" align-self="stretch">
+        <Stats weekly />
+      </v-col>
 
-            <v-col cols="12" md="8" align-self="stretch">
-                <Weight />
-            </v-col>
+      <v-col cols="12" md="8" align-self="stretch">
+        <Weight />
+      </v-col>
 
-            <v-col cols="12" md="4" align-self="stretch">
-                <Time weekly />
-            </v-col>
+      <v-col cols="12" md="4" align-self="stretch">
+        <Time weekly />
+      </v-col>
 
-        </v-row>
+    </v-row>
 
-    </v-container>
+  </v-container>
 </template>
 
 <script>

@@ -1,26 +1,26 @@
 <template>
-    <v-container>
-        <v-row justify="center" align="center">
-            <v-col cols="auto" md="2">
-                <v-switch v-model="mode" :label="$t('darkmode')" />
-            </v-col>
-            <v-col cols="12" md="8">
-                <v-select :items="langItems" v-model="lang" :label="$t('language')" />
-            </v-col>
-            <v-col cols="12">
-                <v-divider />
-            </v-col>
-        </v-row>
-        <v-row justify="center" align="center">
-            <v-col cols="12">
-                <span class="headline">{{ $t('notifications') }}</span>
-            </v-col>
-            <v-col cols="12">
-                <i>{{ $t('comingSoon') }}</i>
-            </v-col>
-        </v-row>
+  <v-container>
+    <v-row justify="center" align="center">
+      <v-col cols="auto" md="2">
+        <v-switch v-model="mode" :label="$t('darkmode')" />
+      </v-col>
+      <v-col cols="12" md="8">
+        <v-select :items="langItems" v-model="lang" :label="$t('language')" />
+      </v-col>
+      <v-col cols="12">
+        <v-divider />
+      </v-col>
+    </v-row>
+    <v-row justify="center" align="center">
+      <v-col cols="12">
+        <span class="headline">{{ $t('notifications') }}</span>
+      </v-col>
+      <v-col cols="12">
+        <i>{{ $t('comingSoon') }}</i>
+      </v-col>
+    </v-row>
 
-    </v-container>
+  </v-container>
 </template>
 
 <script>

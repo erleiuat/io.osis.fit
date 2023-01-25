@@ -1,50 +1,50 @@
 <template>
-    <v-dialog v-model="dialog" :fullscreen="$vuetify.breakpoint.xsOnly" scrollable width="500">
+  <v-dialog v-model="dialog" :fullscreen="$vuetify.breakpoint.xsOnly" scrollable width="500">
 
-        <template v-slot:activator="{ on }">
-            <v-btn block depressed v-on="on">
-                {{ $t('changePass') }}
-            </v-btn>
-        </template>
+    <template v-slot:activator="{ on }">
+      <v-btn block depressed v-on="on">
+        {{ $t('changePass') }}
+      </v-btn>
+    </template>
 
-        <v-card>
-            <v-card-title>
-                {{ $t('changePass') }}
-            </v-card-title>
+    <v-card>
+      <v-card-title>
+        {{ $t('changePass') }}
+      </v-card-title>
 
-            <v-card-text>
-                <v-form v-model="form.valid" ref="form" @submit.prevent="submit()">
-                    <v-row dense>
-                        <v-col cols="12">
-                            <v-alert class="warning" v-html="$t('changePassText')">
-                            </v-alert>
-                        </v-col>
-                        <v-col cols="12">
-                            <v-text-field v-model="form.data.password" :rules="form.rules.pass" :label="$t('currentPW')" type="password" outlined required />
-                        </v-col>
-                        <v-col cols="12">
-                            <v-text-field v-model="form.data.new" :rules="form.rules.newPass" :label="$t('newPW')" :type="form.showPW ? 'text' : 'password'" :append-icon="form.showPW ? 'mdi-eye' : 'mdi-eye-off'" @click:append="form.showPW = !form.showPW" outlined required />
-                        </v-col>
-                        <v-col cols="12">
-                            <v-btn :loading="form.sending" type="submit" block color="primary">
-                                {{ $t('button.submit') }}
-                            </v-btn>
-                        </v-col>
-                    </v-row>
-                </v-form>
-            </v-card-text>
+      <v-card-text>
+        <v-form v-model="form.valid" ref="form" @submit.prevent="submit()">
+          <v-row dense>
+            <v-col cols="12">
+              <v-alert class="warning" v-html="$t('changePassText')">
+              </v-alert>
+            </v-col>
+            <v-col cols="12">
+              <v-text-field v-model="form.data.password" :rules="form.rules.pass" :label="$t('currentPW')" type="password" outlined required />
+            </v-col>
+            <v-col cols="12">
+              <v-text-field v-model="form.data.new" :rules="form.rules.newPass" :label="$t('newPW')" :type="form.showPW ? 'text' : 'password'" :append-icon="form.showPW ? 'mdi-eye' : 'mdi-eye-off'" @click:append="form.showPW = !form.showPW" outlined required />
+            </v-col>
+            <v-col cols="12">
+              <v-btn :loading="form.sending" type="submit" block color="primary">
+                {{ $t('button.submit') }}
+              </v-btn>
+            </v-col>
+          </v-row>
+        </v-form>
+      </v-card-text>
 
-            <v-divider></v-divider>
+      <v-divider></v-divider>
 
-            <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn color="primary" text @click="dialog = false">
-                    {{ $t('button.cancel') }}
-                </v-btn>
-            </v-card-actions>
-        </v-card>
+      <v-card-actions>
+        <v-spacer></v-spacer>
+        <v-btn color="primary" text @click="dialog = false">
+          {{ $t('button.cancel') }}
+        </v-btn>
+      </v-card-actions>
+    </v-card>
 
-    </v-dialog>
+  </v-dialog>
 </template>
 
 <script>

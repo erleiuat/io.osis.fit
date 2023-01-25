@@ -1,80 +1,80 @@
 <template>
-    <v-dialog v-model="dialog" fullscreen transition="fade-transition">
-        <template v-if="getError()" v-slot:activator="{ on }">
-            <v-img :aspect-ratio="aspectRatio" :width="width" :height="height">
-                <v-row class="fill-height ma-0 error" align="center" justify="center">
-                    <span class="white--text title text-center">
-                        <v-icon dark x-large>mdi-file-alert-outline</v-icon>
-                        <br />{{ $t('fileNotFound') }}
-                    </span>
-                </v-row>
-            </v-img>
-        </template>
-        <template v-else-if="!pic" v-slot:activator="{ on }">
-          <v-img :src="placeholder" :aspect-ratio="aspectRatio" :width="width" :height="height" />
-        </template>
-        <template v-else-if="!noClick" v-slot:activator="{ on }">
-          <div :style="'background-image: url('+pic.lazy+')'" class="img-backdrop">
-            <v-img :src="pic.small" :lazy-src="pic.lazy" :contain="contain" :aspect-ratio="aspectRatio" :width="width" :height="height" v-on="on" @error="setError(true)" style="cursor:pointer;">
+  <v-dialog v-model="dialog" fullscreen transition="fade-transition">
+    <template v-if="getError()" v-slot:activator="{ on }">
+      <v-img :aspect-ratio="aspectRatio" :width="width" :height="height">
+        <v-row class="fill-height ma-0 error" align="center" justify="center">
+          <span class="white--text title text-center">
+            <v-icon dark x-large>mdi-file-alert-outline</v-icon>
+            <br />{{ $t('fileNotFound') }}
+          </span>
+        </v-row>
+      </v-img>
+    </template>
+    <template v-else-if="!pic" v-slot:activator="{ on }">
+      <v-img :src="placeholder" :aspect-ratio="aspectRatio" :width="width" :height="height" />
+    </template>
+    <template v-else-if="!noClick" v-slot:activator="{ on }">
+      <div :style="'background-image: url('+pic.lazy+')'" class="img-backdrop">
+        <v-img :src="pic.small" :lazy-src="pic.lazy" :contain="contain" :aspect-ratio="aspectRatio" :width="width" :height="height" v-on="on" @error="setError(true)" style="cursor:pointer;">
+          <template v-slot:placeholder>
+            <v-row class="fill-height ma-0" align="center" justify="center">
+              <v-progress-circular indeterminate color="grey" />
+            </v-row>
+          </template>
+        </v-img>
+      </div>
+    </template>
+    <template v-else v-slot:activator="{ on }">
+      <div :style="'background-image: url('+pic.lazy+')'" class="img-backdrop">
+        <v-img :src="pic.small" :lazy-src="pic.lazy" :contain="contain" :aspect-ratio="aspectRatio" :width="width" :height="height" @error="setError(true)">
+          <template v-slot:placeholder>
+            <v-row class="fill-height ma-0" align="center" justify="center">
+              <v-progress-circular indeterminate color="grey" />
+            </v-row>
+          </template>
+        </v-img>
+      </div>
+    </template>
+    <v-card v-if="!getError()" tile dark height="100%" :style="'background-image: url('+pic.lazy+')'" class="reg-img-card">
+      <v-container fluid fill-height class="pt-0 pb-0 reg-img-container">
+        <v-row class="reg-img-container-inner">
+
+          <v-col cols="12" class="pt-0 reg-img-toolbar">
+            <v-toolbar flat class="transparent">
+              <v-btn icon :href="pic.original" :download="pic.name" target="_blank">
+                <v-icon large>mdi-download</v-icon>
+              </v-btn>
+              <v-spacer />
+              <v-btn icon @click="dialog = false">
+                <v-icon large>mdi-close</v-icon>
+              </v-btn>
+            </v-toolbar>
+          </v-col>
+
+          <v-col cols="12" class="pa-0">
+            <v-img v-if="!pic.error" :src="pic.original" :lazy-src="pic.small" @error="setError(true)" contain class="reg-img-fullscreen">
               <template v-slot:placeholder>
                 <v-row class="fill-height ma-0" align="center" justify="center">
-                  <v-progress-circular indeterminate color="grey" />
+                  <v-progress-circular indeterminate color="white" />
                 </v-row>
               </template>
             </v-img>
-          </div>
-        </template>
-        <template v-else v-slot:activator="{ on }">
-          <div :style="'background-image: url('+pic.lazy+')'" class="img-backdrop">
-            <v-img :src="pic.small" :lazy-src="pic.lazy" :contain="contain" :aspect-ratio="aspectRatio" :width="width" :height="height" @error="setError(true)">
-                <template v-slot:placeholder>
-                    <v-row class="fill-height ma-0" align="center" justify="center">
-                        <v-progress-circular indeterminate color="grey" />
-                    </v-row>
-                </template>
-            </v-img>
-          </div>
-        </template>
-        <v-card v-if="!getError()" tile dark height="100%" :style="'background-image: url('+pic.lazy+')'" class="reg-img-card">
-            <v-container fluid fill-height class="pt-0 pb-0 reg-img-container">
-                <v-row class="reg-img-container-inner">
-
-                    <v-col cols="12" class="pt-0 reg-img-toolbar">
-                        <v-toolbar flat class="transparent">
-                            <v-btn icon :href="pic.original" :download="pic.name" target="_blank">
-                                <v-icon large>mdi-download</v-icon>
-                            </v-btn>
-                            <v-spacer />
-                            <v-btn icon @click="dialog = false">
-                                <v-icon large>mdi-close</v-icon>
-                            </v-btn>
-                        </v-toolbar>
-                    </v-col>
-
-                    <v-col cols="12" class="pa-0">
-                        <v-img v-if="!pic.error" :src="pic.original" :lazy-src="pic.small" @error="setError(true)" contain class="reg-img-fullscreen">
-                            <template v-slot:placeholder>
-                                <v-row class="fill-height ma-0" align="center" justify="center">
-                                    <v-progress-circular indeterminate color="white" />
-                                </v-row>
-                            </template>
-                        </v-img>
-                        <v-img v-else contain class="reg-img-fullscreen">
-                            <template v-slot:placeholder>
-                                <v-row class="fill-height ma-0 error" align="center" justify="center">
-                                    <span class="white--text title text-center">
-                                        <v-icon dark x-large>mdi-file-alert-outline</v-icon>
-                                        <br />{{ $t('fileNotFound') }}
-                                    </span>
-                                </v-row>
-                            </template>
-                        </v-img>
-                    </v-col>
-
+            <v-img v-else contain class="reg-img-fullscreen">
+              <template v-slot:placeholder>
+                <v-row class="fill-height ma-0 error" align="center" justify="center">
+                  <span class="white--text title text-center">
+                    <v-icon dark x-large>mdi-file-alert-outline</v-icon>
+                    <br />{{ $t('fileNotFound') }}
+                  </span>
                 </v-row>
-            </v-container>
-        </v-card>
-    </v-dialog>
+              </template>
+            </v-img>
+          </v-col>
+
+        </v-row>
+      </v-container>
+    </v-card>
+  </v-dialog>
 </template>
 
 <script>

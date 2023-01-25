@@ -1,12 +1,12 @@
 <template>
-    <v-container fill-height>
-        <v-row justify="center">
-            <v-col cols="12" md="10" v-html="$t('text')" />
-            <v-col cols="12" md="5" class="text-sm-right">
-                <p class="caption">{{ $t('langNotice') }} <a href="https://www.deepl.com/">Deepl.com</a></p>
-            </v-col>
-        </v-row>
-    </v-container>
+  <v-container fill-height>
+    <v-row justify="center">
+      <v-col cols="12" md="10" v-html="$t('text')" />
+      <v-col cols="12" md="5" class="text-sm-right">
+        <p class="caption">{{ $t('langNotice') }} <a href="https://www.deepl.com/">Deepl.com</a></p>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>

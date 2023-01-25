@@ -1,19 +1,19 @@
 <template>
-    <v-card :flat="!uploading">
-        <v-btn v-if="value" @click="deleteImage()" text block :loading="uploading || loading">
-            <v-icon left>mdi-delete-forever-outline</v-icon>
-            {{ $t('deleteCurrent') }}
-        </v-btn>
-        <v-btn v-else-if="!uploading" @click="openUpload()" color="primary" block :loading="uploading || loading">
-            <v-icon left>mdi-upload</v-icon>
-            {{ $t('uploadNew') }}
-        </v-btn>
-        <v-progress-linear v-else :value="progress" :indeterminate="progress >= 100" :dark="progress < 50" rounded active height="36">
-            <strong v-if="progress < 100">{{ progress }}%</strong>
-            <strong v-else>{{ $t('processing') }}</strong>
-        </v-progress-linear>
-        <input @change="doUpload()" type="file" id="uplImgField" class="img-field" accept="image/png, image/jpeg">
-    </v-card>
+  <v-card :flat="!uploading">
+    <v-btn v-if="value" @click="deleteImage()" text block :loading="uploading || loading">
+      <v-icon left>mdi-delete-forever-outline</v-icon>
+      {{ $t('deleteCurrent') }}
+    </v-btn>
+    <v-btn v-else-if="!uploading" @click="openUpload()" color="primary" block :loading="uploading || loading">
+      <v-icon left>mdi-upload</v-icon>
+      {{ $t('uploadNew') }}
+    </v-btn>
+    <v-progress-linear v-else :value="progress" :indeterminate="progress >= 100" :dark="progress < 50" rounded active height="36">
+      <strong v-if="progress < 100">{{ progress }}%</strong>
+      <strong v-else>{{ $t('processing') }}</strong>
+    </v-progress-linear>
+    <input @change="doUpload()" type="file" id="uplImgField" class="img-field" accept="image/png, image/jpeg">
+  </v-card>
 </template>
 
 <script>

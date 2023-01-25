@@ -1,41 +1,41 @@
 <template>
-    <v-row dense justify="center" align="center">
-        <v-col cols="12" md="7">
-            <v-alert class="info">
-                {{ $t('checkMails') }}
-            </v-alert>
-        </v-col>
-        <v-col cols="12">
-            <v-form v-model="form.valid" ref="form" @submit.prevent="submit()">
-                <v-row dense justify="center" align="center">
-                    <v-col cols="12" md="7">
-                        <v-text-field v-model="form.data.identifier" :rules="form.rules.required" :label="$t('form.identifier')" prepend-inner-icon="mdi-account-circle-outline" solo required />
-                    </v-col>
-                    <v-col cols="12" md="7">
-                        <v-text-field v-model="form.data.code" :rules="form.rules.required" :label="$t('fCode')" solo required />
-                    </v-col>
-                    <v-col cols="11" md="7">
-                        <v-text-field v-model="form.data.password" :rules="form.rules.password" :label="$t('form.password')" :type="form.showPW ? 'text' : 'password'" :append-icon="form.showPW ? 'mdi-eye' : 'mdi-eye-off'" @click:append="form.showPW = !form.showPW" prepend-inner-icon="mdi-textbox-password" solo required />
-                    </v-col>
-                    <v-col cols="12" md="7">
-                        <v-btn :loading="form.sending" type="submit" block color="primary">
-                            {{ $t('btnReset') }}
-                        </v-btn>
-                    </v-col>
-                </v-row>
-            </v-form>
-        </v-col>
-        <v-col cols="auto" class="caption">
-            {{ $t('didRemember') }}
-            <router-link :to="{name: 'auth'}">
-                {{ $t('doLogin') }}
-            </router-link><br />
-            {{ $t('orNeedto') }}
-            <router-link :to="{name: 'auth.register'}">
-                {{ $t('createAccount') }}
-            </router-link>
-        </v-col>
-    </v-row>
+  <v-row dense justify="center" align="center">
+    <v-col cols="12" md="7">
+      <v-alert class="info">
+        {{ $t('checkMails') }}
+      </v-alert>
+    </v-col>
+    <v-col cols="12">
+      <v-form v-model="form.valid" ref="form" @submit.prevent="submit()">
+        <v-row dense justify="center" align="center">
+          <v-col cols="12" md="7">
+            <v-text-field v-model="form.data.identifier" :rules="form.rules.required" :label="$t('form.identifier')" prepend-inner-icon="mdi-account-circle-outline" solo required />
+          </v-col>
+          <v-col cols="12" md="7">
+            <v-text-field v-model="form.data.code" :rules="form.rules.required" :label="$t('fCode')" solo required />
+          </v-col>
+          <v-col cols="11" md="7">
+            <v-text-field v-model="form.data.password" :rules="form.rules.password" :label="$t('form.password')" :type="form.showPW ? 'text' : 'password'" :append-icon="form.showPW ? 'mdi-eye' : 'mdi-eye-off'" @click:append="form.showPW = !form.showPW" prepend-inner-icon="mdi-textbox-password" solo required />
+          </v-col>
+          <v-col cols="12" md="7">
+            <v-btn :loading="form.sending" type="submit" block color="primary">
+              {{ $t('btnReset') }}
+            </v-btn>
+          </v-col>
+        </v-row>
+      </v-form>
+    </v-col>
+    <v-col cols="auto" class="caption">
+      {{ $t('didRemember') }}
+      <router-link :to="{name: 'auth'}">
+        {{ $t('doLogin') }}
+      </router-link><br />
+      {{ $t('orNeedto') }}
+      <router-link :to="{name: 'auth.register'}">
+        {{ $t('createAccount') }}
+      </router-link>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
