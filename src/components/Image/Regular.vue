@@ -11,27 +11,31 @@
             </v-img>
         </template>
         <template v-else-if="!pic" v-slot:activator="{ on }">
-            <v-img :src="placeholder" :aspect-ratio="aspectRatio" :width="width" :height="height" />
+          <v-img :src="placeholder" :aspect-ratio="aspectRatio" :width="width" :height="height" />
         </template>
         <template v-else-if="!noClick" v-slot:activator="{ on }">
-            <v-img :src="pic.small" :lazy-src="pic.lazy" :aspect-ratio="aspectRatio" :width="width" :height="height" v-on="on" @error="setError(true)" style="cursor:pointer;">
-                <template v-slot:placeholder>
-                    <v-row class="fill-height ma-0" align="center" justify="center">
-                        <v-progress-circular indeterminate color="grey" />
-                    </v-row>
-                </template>
+          <div :style="'background-image: url('+pic.lazy+')'" class="img-backdrop">
+            <v-img :src="pic.small" :lazy-src="pic.lazy" :contain="contain" :aspect-ratio="aspectRatio" :width="width" :height="height" v-on="on" @error="setError(true)" style="cursor:pointer;">
+              <template v-slot:placeholder>
+                <v-row class="fill-height ma-0" align="center" justify="center">
+                  <v-progress-circular indeterminate color="grey" />
+                </v-row>
+              </template>
             </v-img>
+          </div>
         </template>
         <template v-else v-slot:activator="{ on }">
-            <v-img :src="pic.small" :lazy-src="pic.lazy" :aspect-ratio="aspectRatio" :width="width" :height="height" @error="setError(true)">
+          <div :style="'background-image: url('+pic.lazy+')'" class="img-backdrop">
+            <v-img :src="pic.small" :lazy-src="pic.lazy" :contain="contain" :aspect-ratio="aspectRatio" :width="width" :height="height" @error="setError(true)">
                 <template v-slot:placeholder>
                     <v-row class="fill-height ma-0" align="center" justify="center">
                         <v-progress-circular indeterminate color="grey" />
                     </v-row>
                 </template>
             </v-img>
+          </div>
         </template>
-        <v-card v-if="!getError()" tile dark height="100%" :style="'background-image: url('+pic.original+')'" class="reg-img-card">
+        <v-card v-if="!getError()" tile dark height="100%" :style="'background-image: url('+pic.lazy+')'" class="reg-img-card">
             <v-container fluid fill-height class="pt-0 pb-0 reg-img-container">
                 <v-row class="reg-img-container-inner">
 
@@ -91,6 +95,10 @@ export default {
     noClick: {
       type: Boolean,
       default: false
+    },
+    contain: {
+      type: Boolean,
+      default: false
     }
   },
 
@@ -148,6 +156,16 @@ export default {
 </script>
 
 <style>
+  .img-backdrop {
+    width: 100%;
+    height: auto;
+  }
+
+  .img-backdrop .v-image__image {
+    backdrop-filter: blur(4px);
+  }
+
+  .img-backdrop,
   .reg-img-card {
     background-size: cover;
     background-repeat: no-repeat;

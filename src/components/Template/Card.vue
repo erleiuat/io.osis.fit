@@ -1,28 +1,34 @@
 <template>
-    <v-card @click.native="doSelect()" :link="selectable" flat style="height: 100%">
-        <RegularImage :image="item.image" :noClick="selectable" :placeholder="require('@/assets/image/food.jpg')" aspectRatio="1" height="120px" />
-        <v-card-title class="pt-2 pb-2 body-2">
+    <v-card @click.native="doSelect()" :link="selectable" style="height: 100%">
+        <RegularImage :image="item.image" :noClick="selectable" contain :placeholder="require('@/assets/image/food.jpg')" aspectRatio="1" height="240px" />
+        <v-card-title class="py-2 body-2 px-2 card-title">
             {{ item.title }}
         </v-card-title>
-        <v-divider v-if="editable || deletable"/>
-        <SafeDelete v-if="deletable" @click="$emit('delete', item)" />
-        <v-btn v-if="editable" @click="$emit('edit', item)" icon>
-            <v-icon small>mdi-pencil</v-icon>
-        </v-btn>
         <v-divider v-if="totals.calories || totals.fat || totals.protein"/>
-        <v-card-text v-if="totals.calories || totals.fat || totals.protein" class="pt-1 pb-1">
-            <v-chip-group>
-                <v-chip small v-if="totals.calories">
-                    {{ totals.calories }}{{ $t('unit.calories.short') }}
-                </v-chip>
-                <v-chip small v-if="totals.fat">
-                    {{ totals.fat }}{{ $t('unit.gram.short') }} {{ $t('fat') }}
-                </v-chip>
-                <v-chip small v-if="totals.protein">
-                    {{ totals.protein }}{{ $t('unit.gram.short') }} {{ $t('protein') }}
-                </v-chip>
-            </v-chip-group>
+        <v-card-text v-if="totals.calories || totals.fat || totals.protein" class="py-1 px-2 chips-group">
+          <v-row dense align="center" justify="center">
+            <v-col cols="4" class="text-center">
+              {{ $t('unit.calories.short') }}<br />{{ totals.calories }}
+            </v-col>
+            <v-col cols="4" class="text-center">
+              {{ $t('fat') }}<br />{{ totals.fat }}{{ $t('unit.gram.short') }}
+            </v-col>
+            <v-col cols="4" class="text-center">
+              {{ $t('protein') }}<br />{{ totals.protein }}{{ $t('unit.gram.short') }}
+            </v-col>
+          </v-row>
         </v-card-text>
+        <v-divider v-if="editable || deletable"/>
+        <v-row dense justify="space-between">
+          <v-col cols>
+            <SafeDelete v-if="deletable" @click="$emit('delete', item)" />
+          </v-col>
+          <v-col style="text-align:right;">
+            <v-btn v-if="editable" @click="$emit('edit', item)" icon>
+              <v-icon>mdi-pencil</v-icon>
+            </v-btn>
+          </v-col>
+        </v-row>
     </v-card>
 </template>
 
@@ -85,3 +91,14 @@ export default {
 
 }
 </script>
+
+<style>
+.card-title {
+    height: 36px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    overflow: hidden;
+    display: block;
+}
+</style>
