@@ -8,7 +8,7 @@ export default {
     time: false,
     title: process.env.VUE_APP_TITLE,
     loading: 0,
-    drawer: false,
+    drawer: VueCookies.get(process.env.VUE_APP_COOKIE_PREF + 'appDrawer') || false,
     locale: VueCookies.get(process.env.VUE_APP_COOKIE_PREF + 'appLoc') || false,
     dark: VueCookies.get(process.env.VUE_APP_COOKIE_PREF + 'drkMde') || false,
     hasLoaded: (!!VueCookies.get(process.env.VUE_APP_COOKIE_PREF + 'hasLoaded')),
@@ -29,6 +29,8 @@ export default {
 
     setDrawer: (state, condition) => {
       state.drawer = condition
+      if (condition) VueCookies.set(process.env.VUE_APP_COOKIE_PREF + 'appDrawer', 1, Infinity)
+      else VueCookies.remove(process.env.VUE_APP_COOKIE_PREF + 'appDrawer')
     },
 
     setLoading: (state, val) => {
