@@ -70,12 +70,15 @@ export default {
     },
 
     processItem (item) {
+      console.log(item)
+
       let product = {
         title: item.product_name,
         portionSize: item.product_quantity,
         caloriesPer100: item.nutriments['energy-kcal_100g'],
         fatPer100: item.nutriments['fat_100g'],
-        proteinPer100: item.nutriments['proteins_100g']
+        proteinPer100: item.nutriments['proteins_100g'],
+        carbsPer100: item.nutriments['carbohydrates_100g']
       }
 
       let lang = this.$store.state.app.locale

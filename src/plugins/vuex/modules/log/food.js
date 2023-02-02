@@ -13,7 +13,6 @@ export default {
     ordered: state => (items = false) => {
       if (!items) items = state.items
       var sortable = Object.values(items)
-      console.log(sortable)
       sortable.sort((a, b) => {
         return new Date(a.date + 'T' + a.time) - new Date(b.date + 'T' + b.time)
       })
@@ -42,12 +41,14 @@ export default {
       var total = {
         calories: null,
         fat: null,
-        protein: null
+        protein: null,
+        carbs: null
       }
       for (const key in items) {
         total.calories += items[key].totalCalories
         total.fat += items[key].totalFat
         total.protein += items[key].totalProtein
+        total.carbs += items[key].totalCarbs
       }
       return total
     },
@@ -57,12 +58,14 @@ export default {
       var total = {
         calories: null,
         fat: null,
-        protein: null
+        protein: null,
+        carbs: null
       }
       for (const key in day) {
         total.calories += day[key].totalCalories
         total.fat += day[key].totalFat
         total.protein += day[key].totalProtein
+        total.carbs += day[key].totalCarbs
       }
       return total
     }

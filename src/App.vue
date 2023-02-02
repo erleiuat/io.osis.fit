@@ -1,7 +1,7 @@
 <template>
   <v-app>
 
-    <transition name="fade-transition">
+    <transition name="fade">
       <router-view name="toolbar" />
     </transition>
 
@@ -9,7 +9,7 @@
 
     <v-main>
       <Update />
-      <transition name="fade-transition" mode="out-in">
+      <transition name="fade" mode="out-in">
         <router-view />
       </transition>
     </v-main>
@@ -63,3 +63,15 @@ export default {
 
 }
 </script>
+
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.1s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+</style>

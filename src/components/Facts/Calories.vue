@@ -18,7 +18,7 @@
       </v-row>
     </v-container>
     <v-card-text class="text-center">
-      <b>{{ Math.round(vals.consumed) || '0' }}</b> {{ $t('of') }} {{ Math.round(vals.availableInTotal) || '-' }} {{ $t('unit.calories.short') }} {{ $t('used') }}
+      <b>{{ Math.round(vals.consumed) || '0' }}</b> {{ $t('of') }} {{ Math.round(vals.total) || '-' }} {{ $t('unit.calories.short') }} {{ $t('used') }}
     </v-card-text>
   </v-card>
 </template>
@@ -53,33 +53,7 @@ export default {
     },
 
     vals () {
-      let vals = {
-        availableInTotal: null,
-        consumed: null,
-        remaining: null,
-        percentage: null
-      }
-
-      let daysToSunday = this.daysToSunday
-      let possibleThisWeek = this.$store.getters['destiny/possibleCals'](daysToSunday).weekly
-      let extendedThisWeek = this.$store.getters['logActivity/totalWeek']() || 0
-      let availableThisWeek = possibleThisWeek + extendedThisWeek
-      let consumedThisWeek = this.$store.getters['logFood/totalWeek']().calories || 0
-
-      if (this.weekly) {
-        vals.availableInTotal = availableThisWeek
-        vals.consumed = consumedThisWeek
-        vals.remaining = availableThisWeek - consumedThisWeek
-      } else {
-        // let daysToSunday = this.daysToSunday + 1
-        let consumedToday = this.$store.getters['logFood/totalDay'].calories
-        vals.availableInTotal = (availableThisWeek - (consumedThisWeek - consumedToday)) / (daysToSunday + 1)
-        vals.consumed = consumedToday
-        vals.remaining = vals.availableInTotal - consumedToday
-      }
-
-      vals.percentage = Math.round(((vals.consumed / vals.availableInTotal) * 100))
-      return vals
+      return this.$store.getters['cals'](this.weekly)
     }
 
   },

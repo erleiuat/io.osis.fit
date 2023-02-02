@@ -35,6 +35,9 @@
               {{ tProtein ? tProtein + $t('unit.gram.short') : '' }} {{ $t('protein') }}
             </v-tab>
             <v-tab>
+              {{ tCarbs ? tCarbs + $t('unit.gram.short') : '' }} {{ $t('carbs') }}
+            </v-tab>
+            <v-tab>
               {{ $t('form.time') }}
             </v-tab>
           </v-tabs>
@@ -60,6 +63,14 @@
                 <v-card-text class="pa-2">
                   <v-text-field v-model="per100.protein" :rules="form.rules.number" :label="$t('proteinPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.gram.short')" type="number" filled hide-details />
                   <v-text-field v-model="tProtein" :rules="form.rules.number" :label="$t('totalProtein')" :suffix="$t('unit.gram.short')" type="number" filled hide-details />
+                </v-card-text>
+              </v-card>
+            </v-tab-item>
+            <v-tab-item>
+              <v-card flat>
+                <v-card-text class="pa-2">
+                  <v-text-field v-model="per100.carbs" :rules="form.rules.number" :label="$t('carbsPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.gram.short')" type="number" filled hide-details />
+                  <v-text-field v-model="tCarbs" :rules="form.rules.number" :label="$t('totalCarbs')" :suffix="$t('unit.gram.short')" type="number" filled hide-details />
                 </v-card-text>
               </v-card>
             </v-tab-item>
@@ -108,12 +119,13 @@ export default {
     return {
       tab: null,
       tabItems: [
-        this.$t('totalCalories'), this.$t('totalFat'), this.$t('totalProtein'), this.$t('form.date')
+        this.$t('totalCalories'), this.$t('totalFat'), this.$t('totalProtein'), this.$t('totalCarbs'), this.$t('form.time')
       ],
       per100: {
         calories: null,
         fat: null,
-        protein: null
+        protein: null,
+        carbs: null
       },
       unit: 'gram',
       form: {
@@ -123,6 +135,7 @@ export default {
           totalCalories: '',
           totalFat: '',
           totalProtein: '',
+          totalCarbs: '',
           portionSize: '',
           date: '',
           time: ''
@@ -182,6 +195,17 @@ export default {
       }
     },
 
+    tCarbs: {
+      get () {
+        if (this.form.data.portionSize && this.per100.carbs) return Math.round(((this.per100.carbs / 100) * this.form.data.portionSize) * 100) / 100
+        else if (this.form.data.totalCarbs) return Math.round(this.form.data.totalCarbs * 100) / 100
+        return null
+      },
+      set (val) {
+        this.form.data.totalCarbs = val
+      }
+    },
+
     doSend () {
       return this.$store.state.form.send
     },
@@ -202,6 +226,7 @@ export default {
       this.per100.calories = item.caloriesPer100
       this.per100.fat = item.fatPer100
       this.per100.protein = item.proteinPer100
+      this.per100.carbs = item.carbsPer100
     }
   },
 
@@ -215,6 +240,7 @@ export default {
       this.form.data.totalCalories = this.tCalories
       this.form.data.totalFat = this.tFat
       this.form.data.totalProtein = this.tProtein
+      this.form.data.totalCarbs = this.tCarbs
 
       this.$store.commit('form/sending')
       this.$store.dispatch('logFood/create', this.form.data).then(() => {
@@ -250,24 +276,30 @@ export default {
       en: {
         fat: 'Fat',
         protein: 'Protein',
+        carbs: 'Carbs',
         totalCalories: 'Total Calories',
         totalFat: 'Total Fat',
         totalProtein: 'Total Protein',
+        totalCarbs: 'Total Carbs',
         portionSize: 'Serving size',
         caloriesPer100: 'Calories per 100',
         fatPer100: 'Fat per 100',
-        proteinPer100: 'Protein per 100'
+        proteinPer100: 'Protein per 100',
+        carbsPer100: 'Carbs per 100'
       },
       de: {
         fat: 'Fett',
         protein: 'Protein',
+        carbs: 'Kohlenhydrate',
         totalCalories: 'Total Kalorien',
         totalFat: 'Total Fett',
         totalProtein: 'Total Protein',
+        totalCarbs: 'Total Kohlenhydrate',
         portionSize: 'Portionsgrösse',
         caloriesPer100: 'Kalorien pro 100',
         fatPer100: 'Fett pro 100',
-        proteinPer100: 'Protein pro 100'
+        proteinPer100: 'Protein pro 100',
+        carbsPer100: 'Kohlenhydrate pro 100'
       }
     }
   }

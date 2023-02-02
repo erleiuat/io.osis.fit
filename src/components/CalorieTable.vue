@@ -42,7 +42,8 @@ export default {
         portionSize: item.amount,
         caloriesPer100: item.calories,
         fatPer100: null,
-        proteinPer100: null
+        proteinPer100: null,
+        carbsPer100: null
       })
     }
   }

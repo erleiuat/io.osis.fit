@@ -63,7 +63,8 @@
           "alignAttributesVertically": true,
           "ignores": []
         }
-      ]
+      ],
+      "no-unused-vars": "warn"
     },
     "parserOptions": {
       "parser": "babel-eslint"

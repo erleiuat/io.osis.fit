@@ -10,6 +10,12 @@ export default {
 
   getters: {
     items: state => {
+      let items = state.items
+      let i = Object.keys(items).length
+      Object.keys(items).forEach(key => {
+        items[key].pos = i
+        i--
+      })
       return state.items
     }
   },

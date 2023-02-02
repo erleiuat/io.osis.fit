@@ -13,14 +13,17 @@
             <v-col cols="4">
               <v-select v-model="unit" :items="units" :label="$t('unit.name')" />
             </v-col>
-            <v-col cols="12" md="4">
+            <v-col cols="12" md="3">
               <v-text-field v-model="form.data.caloriesPer100" :rules="form.rules.number" :label="$t('caloriesPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.calories.short')" type="number" />
             </v-col>
-            <v-col cols="12" md="4">
+            <v-col cols="12" md="3">
               <v-text-field v-model="form.data.fatPer100" :rules="form.rules.number" :label="$t('fatPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.gram.short')" type="number" />
             </v-col>
-            <v-col cols="12" md="4">
+            <v-col cols="12" md="3">
               <v-text-field v-model="form.data.proteinPer100" :rules="form.rules.number" :label="$t('proteinPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.gram.short')" type="number" />
+            </v-col>
+            <v-col cols="12" md="3">
+              <v-text-field v-model="form.data.carbsPer100" :rules="form.rules.number" :label="$t('carbsPer100')+$t('unit.'+unit+'.short')" :suffix="$t('unit.gram.short')" type="number" />
             </v-col>
             <v-col cols="12">
               <v-text-field v-model="form.data.portionSize" :rules="form.rules.number" :label="$t('portionSize')+$t('unit.'+unit+'.long')" :suffix="$t('unit.'+unit+'.short')" type="number" />
@@ -71,6 +74,7 @@ export default {
           caloriesPer100: '',
           fatPer100: '',
           proteinPer100: '',
+          carbsPer100: '',
           portionSize: '',
           image: ''
         },
@@ -148,12 +152,14 @@ export default {
         caloriesPer100: 'Calories per 100',
         fatPer100: 'Fat per 100',
         proteinPer100: 'Protein per 100',
+        carbsPer100: 'Carbs per 100',
         portionSize: 'Serving Size in '
       },
       de: {
         caloriesPer100: 'Kalorien pro 100',
         fatPer100: 'Fett pro 100',
         proteinPer100: 'Protein pro 100',
+        carbsPer100: 'Kohlenhydrate pro 100',
         portionSize: 'Portionsgrösse in '
       }
     }

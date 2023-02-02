@@ -6,7 +6,7 @@
       </v-col>
     </v-row>
     <v-row dense v-else-if="Object.keys(items).length" align="center" justify="center">
-      <v-col cols="12" sm="4" md="3" v-for="(item, key) in items" :key="key" align-self="stretch">
+      <v-col cols="12" sm="4" md="3" v-for="(item, key) in items" :key="key" :style="'order: '+item.pos+';'" align-self="stretch">
         <Card :item="item" editable deletable @edit="edit" @delete="deleteItem" />
       </v-col>
     </v-row>

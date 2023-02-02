@@ -18,23 +18,29 @@
       </v-row>
       <v-divider />
       <v-row align="center" justify="center">
-        <v-col cols="4" class="text-center">
+        <v-col cols="3" class="text-center">
           <span class="title text-center">
             {{ $t('tbl.totalCalories') }}
           </span><br />
           {{ Math.round(total.calories * 10) /10 }} {{ $t('unit.calories.short') }}
         </v-col>
-        <v-col cols="4" class="text-center">
+        <v-col cols="3" class="text-center">
           <span class="title text-center">
             {{ $t('tbl.totalFat') }}
           </span><br />
           {{ Math.round(total.fat * 10) /10 }} {{ $t('unit.gram.short') }}
         </v-col>
-        <v-col cols="4" class="text-center">
+        <v-col cols="3" class="text-center">
           <span class="title text-center">
             {{ $t('tbl.totalProtein') }}
           </span><br />
           {{ Math.round(total.protein * 10) /10 }} {{ $t('unit.gram.short') }}
+        </v-col>
+        <v-col cols="3" class="text-center">
+          <span class="title text-center">
+            {{ $t('tbl.totalCarbs') }}
+          </span><br />
+          {{ Math.round(total.carbs * 10) /10 }} {{ $t('unit.gram.short') }}
         </v-col>
       </v-row>
     </v-sheet>
@@ -53,6 +59,7 @@
                       <th>{{ $t('tbl.totalCalories') }}</th>
                       <th>{{ $t('tbl.totalFat') }}</th>
                       <th>{{ $t('tbl.totalProtein') }}</th>
+                      <th>{{ $t('tbl.totalCarbs') }}</th>
                       <th>{{ $t('tbl.portionSize') }}</th>
                       <th></th>
                     </tr>
@@ -64,6 +71,7 @@
                       <td>{{ item.totalCalories || 0 }} {{ $t('unit.calories.short') }}</td>
                       <td>{{ item.totalFat || 0 }} {{ $t('unit.gram.short') }}</td>
                       <td>{{ item.totalProtein || 0 }} {{ $t('unit.gram.short') }}</td>
+                      <td>{{ item.totalCarbs || 0 }} {{ $t('unit.gram.short') }}</td>
                       <td>{{ item.portionSize || 0 }} {{ $t('unit.gram.short') }}</td>
                       <td>
                         <v-btn icon @click="deleteItem(item)">
@@ -166,6 +174,7 @@ export default {
           totalCalories: 'Total Calories',
           totalFat: 'Total Fat',
           totalProtein: 'Total Protein',
+          totalCarbs: 'Total Carbs',
           portionSize: 'Serving size'
         }
       },
@@ -179,6 +188,7 @@ export default {
           totalCalories: 'Total Kalorien',
           totalFat: 'Total Fett',
           totalProtein: 'Total Protein',
+          totalCarbs: 'Total Kohlenhydrate',
           portionSize: 'Portionsgrösse'
         }
       }
