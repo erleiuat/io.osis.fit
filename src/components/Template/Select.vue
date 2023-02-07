@@ -58,12 +58,10 @@ export default {
     items () {
       const items = this.$store.getters['template/items']
       if (!Object.keys(items).length) return []
-
-      const itemsFiltered = Object.values(items).filter(item => {
+      if (!this.search) return items
+      return Object.values(items).filter(item => {
         return item.title.toLowerCase().includes(this.search.toLowerCase())
       })
-
-      return itemsFiltered
     }
   },
 
