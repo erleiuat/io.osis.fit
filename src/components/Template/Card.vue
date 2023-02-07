@@ -60,16 +60,20 @@ export default {
     deletable: {
       type: Boolean,
       default: false
+    },
+    rounding: {
+      type: Number,
+      default: 1
     }
   },
 
   computed: {
     totals () {
       return {
-        calories: Math.round((this.item.caloriesPer100 / 100 * this.item.portionSize) * 100) / 100,
-        fat: Math.round((this.item.fatPer100 / 100 * this.item.portionSize) * 100) / 100,
-        protein: Math.round((this.item.proteinPer100 / 100 * this.item.portionSize) * 100) / 100,
-        carbs: Math.round((this.item.carbsPer100 / 100 * this.item.portionSize) * 100) / 100
+        calories: Math.round((this.item.caloriesPer100 / 100 * this.item.portionSize) * this.rounding) / this.rounding,
+        fat: Math.round((this.item.fatPer100 / 100 * this.item.portionSize) * this.rounding) / this.rounding,
+        protein: Math.round((this.item.proteinPer100 / 100 * this.item.portionSize) * this.rounding) / this.rounding,
+        carbs: Math.round((this.item.carbsPer100 / 100 * this.item.portionSize) * this.rounding) / this.rounding
       }
     }
   },

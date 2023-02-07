@@ -53,6 +53,7 @@
         "error",
         2
       ],
+      "vue/no-unused-components": "warn",
       "vue/html-indent": [
         "warn",
         "number",

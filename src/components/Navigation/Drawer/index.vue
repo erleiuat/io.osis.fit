@@ -1,10 +1,9 @@
 <template>
   <!-- height:100% = Safari Bottom-Nav Fix on mobile -->
-  <v-navigation-drawer v-model="drawer" v-if="$store.state.auth.login" width="300" style="height: 100%;" hide-overlay floating app>
+  <v-navigation-drawer v-model="drawer" v-if="$store.state.auth.login" width="260" style="height: 100%;" hide-overlay floating app>
     <v-list nav dense>
 
       <Head />
-      <User />
       <v-divider class="mb-2 mt-2" />
 
       <v-list-item v-for="(item, key) in items" :key="key" :to="item.to" active-class="primary" color="white">
@@ -33,7 +32,6 @@
 
 <script>
 import Head from '@/components/Navigation/Drawer/general/Head'
-import User from '@/components/Navigation/Drawer/general/User'
 import Settings from '@/components/Navigation/Drawer/general/Settings'
 import Admin from '@/components/Navigation/Drawer/general/Admin'
 import Append from '@/components/Navigation/Drawer/general/Append'
@@ -43,7 +41,7 @@ import Logs from '@/components/Navigation/Drawer/Logs'
 export default {
 
   components: {
-    Head, User, Settings, Admin, Append, Logs
+    Head, Settings, Admin, Append, Logs
   },
 
   computed: {
