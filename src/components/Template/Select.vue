@@ -8,8 +8,6 @@
     </template>
     <v-card class="selector-window" tile>
       <v-card-title class="pt-2 pb-2 primary">
-        <v-toolbar-title class="white--text">{{ $t('useTemplate') }}</v-toolbar-title>
-        <v-spacer></v-spacer>
         <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" class="pt-0 mt-0" single-line hide-details />
         <v-spacer></v-spacer>
         <v-btn icon dark @click="dialog = false">
