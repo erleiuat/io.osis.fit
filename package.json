@@ -54,6 +54,10 @@
         2
       ],
       "vue/no-unused-components": "warn",
+      "curly": [
+        "error",
+        "multi-line"
+      ],
       "vue/html-indent": [
         "warn",
         "number",

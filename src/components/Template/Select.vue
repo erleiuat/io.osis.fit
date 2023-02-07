@@ -10,6 +10,8 @@
       <v-card-title class="pt-2 pb-2 primary">
         <v-toolbar-title class="white--text">{{ $t('useTemplate') }}</v-toolbar-title>
         <v-spacer></v-spacer>
+        <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" class="pt-0 mt-0" single-line hide-details />
+        <v-spacer></v-spacer>
         <v-btn icon dark @click="dialog = false">
           <v-icon>mdi-close</v-icon>
         </v-btn>
@@ -47,13 +49,21 @@ export default {
   data () {
     return {
       dialog: false,
-      loading: true
+      loading: true,
+      search: ''
     }
   },
 
   computed: {
     items () {
-      return this.$store.getters['template/items']
+      const items = this.$store.getters['template/items']
+      if (!Object.keys(items).length) return []
+
+      const itemsFiltered = Object.values(items).filter(item => {
+        return item.title.toLowerCase().includes(this.search.toLowerCase())
+      })
+
+      return itemsFiltered
     }
   },
 
