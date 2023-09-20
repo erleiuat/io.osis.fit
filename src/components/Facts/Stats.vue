@@ -1,22 +1,13 @@
 <template>
   <v-card flat style="height:100%;">
     <v-container class="fill-height">
+
       <v-row justify="space-between" dense align="start">
         <v-card-title class="pa-1">
           {{ $t('stats') }}
         </v-card-title>
       </v-row>
-      <v-row justify="space-between" dense align="center" class="ma-0">
-        <v-col cols="auto" class="text-center py-0">
-          {{ $t('fats') }}
-        </v-col>
-        <v-col cols="auto" class="text-center title py-0">
-          {{ vals.fat || '0' }} {{ $t('unit.gram.short') }} / {{ vals.fatShould || '0' }} {{ $t('unit.gram.short') }}
-        </v-col>
-        <v-col cols="12" class="pa-0">
-          <v-divider />
-        </v-col>
-      </v-row>
+
       <v-row justify="space-between" dense align="center" class="ma-0">
         <v-col cols="auto" class="text-center py-0">
           {{ $t('proteins') }}
@@ -28,6 +19,7 @@
           <v-divider />
         </v-col>
       </v-row>
+
       <v-row justify="space-between" dense align="center" class="ma-0">
         <v-col cols="auto" class="text-center py-0">
           {{ $t('carbs') }}
@@ -39,6 +31,19 @@
           <v-divider />
         </v-col>
       </v-row>
+
+      <v-row justify="space-between" dense align="center" class="ma-0">
+        <v-col cols="auto" class="text-center py-0">
+          {{ $t('fats') }}
+        </v-col>
+        <v-col cols="auto" class="text-center title py-0">
+          {{ vals.fat || '0' }} {{ $t('unit.gram.short') }}
+        </v-col>
+        <v-col cols="12" class="pa-0">
+          <v-divider />
+        </v-col>
+      </v-row>
+
       <v-row justify="space-between" dense align="end">
         <v-col cols="auto" class="text-center">
           {{ $t('activityCals') }}
@@ -47,6 +52,7 @@
           {{ vals.activity || '0' }} {{ $t('unit.calories.short') }}
         </v-col>
       </v-row>
+
     </v-container>
   </v-card>
 </template>
@@ -73,9 +79,7 @@ export default {
       let calsTotal = this.$store.getters['cals']().total * multiplier
 
       let proteinByCals = Math.round((calsTotal * 0.4) / 4)
-      let fatByCals = Math.round((calsTotal * 0.15) / 9)
       let proteinByWeight = Math.round((weight * 1.1))
-      let fatByWeight = Math.round((weight * 0.5))
 
       var tmp = null
       var toReturn = {
@@ -83,7 +87,6 @@ export default {
         fat: null,
         protein: null,
         carbs: null,
-        fatShould: fatByCals < fatByWeight ? fatByCals : fatByWeight,
         proteinShould: proteinByCals < proteinByWeight ? proteinByWeight : proteinByCals
       }
 

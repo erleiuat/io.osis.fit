@@ -14,32 +14,55 @@
           </span>
         </v-col>
       </v-row>
+
       <v-divider />
+
       <v-row dense align="center" justify="center">
-        <v-col cols="12" class="text-center caption">
+        <v-col cols="12" class="text-center caption pb-0">
+          {{ $t('start') }}
+        </v-col>
+      </v-row>
+      <v-row align="center" justify="center">
+        <v-col cols="6" class="text-center pt-0 mb-2">
+          {{ Math.round(first.weight * 10) / 10  || '-' }} {{ $t('unit.kilogram.short') }}
+        </v-col>
+        <v-col cols="6" class="text-center pt-0 mb-2">
+          {{ Math.round(first.fat * 10) / 10  || '-' }} {{ $t('unit.percentage.short') }}
+          ({{ Math.round(first.fat / 100 * first.weight) }} {{ $t('unit.kilogram.short') }})
+        </v-col>
+      </v-row>
+
+      <v-divider />
+
+      <v-row dense align="center" justify="center">
+        <v-col cols="12" class="text-center caption pb-0">
           {{ $t('current') }}
         </v-col>
       </v-row>
       <v-row align="center" justify="center">
-        <v-col cols="6" class="text-center">
+        <v-col cols="6" class="text-center pt-0 mb-2">
           {{ Math.round(current.weight * 10) / 10  || '-' }} {{ $t('unit.kilogram.short') }}
         </v-col>
-        <v-col cols="6" class="text-center">
+        <v-col cols="6" class="text-center pt-0 mb-2">
           {{ Math.round(current.fat * 10) / 10  || '-' }} {{ $t('unit.percentage.short') }}
+          ({{ Math.round(current.fat / 100 * current.weight) }} {{ $t('unit.kilogram.short') }})
         </v-col>
       </v-row>
+
       <v-divider />
+
       <v-row dense align="center" justify="center">
-        <v-col cols="12" class="text-center caption">
+        <v-col cols="12" class="text-center caption pb-0">
           {{ $t('progress') }}
         </v-col>
       </v-row>
       <v-row align="center" justify="center">
-        <v-col cols="6" class="text-center">
+        <v-col cols="6" class="text-center pt-0 mb-2">
           {{ Math.round(progress.weight * 10) /10  }} {{ $t('unit.kilogram.short') }}
         </v-col>
-        <v-col cols="6" class="text-center">
+        <v-col cols="6" class="text-center pt-0 mb-2">
           {{ Math.round(progress.fat * 10) /10  }} {{ $t('unit.percentage.short') }}
+          ({{ Math.round(current.fat / 100 * current.weight) - Math.round(first.fat / 100 * first.weight) }} {{ $t('unit.kilogram.short') }})
         </v-col>
       </v-row>
     </v-sheet>
@@ -106,11 +129,18 @@ export default {
       }
     },
 
-    progress () {
+    first () {
       let first = this.$store.getters['logBody/first']
       return {
-        weight: (first.weight - this.current.weight) * -1,
-        fat: (first.fat - this.current.fat) * -1
+        weight: first.weight,
+        fat: first.fat
+      }
+    },
+
+    progress () {
+      return {
+        weight: (this.first.weight - this.current.weight) * -1,
+        fat: (this.first.fat - this.current.fat) * -1
       }
     },
 
@@ -149,6 +179,7 @@ export default {
   i18n: {
     messages: {
       en: {
+        start: 'Start',
         current: 'Currently',
         progress: 'Progress',
         tbl: {
@@ -159,6 +190,7 @@ export default {
         }
       },
       de: {
+        start: 'Start',
         current: 'Aktuell',
         progress: 'Fortschritt',
         tbl: {
